@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Hoops. All rights reserved.
 //
 
+// POSIBLE QUESTIONS ON INTERVIEW:
+// Why some objects are pointers and others are not in objective-c
+
 #import "AppDelegate.h"
 
 @implementation AppDelegate
@@ -16,7 +19,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [GMSServices provideAPIKey:@"AIzaSyDMKDw8oVSqOMBMat2P4O2_g1OqZzYbl9Q"];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    //TripsListViewController *simple = [[TripsListViewController alloc] initWithNibName:nil bundle:nil];
+    TripShowcaseViewController *showcase = [[TripShowcaseViewController alloc] initWithNibName:nil bundle:nil];
+    [self.window setRootViewController:showcase];
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

@@ -1,0 +1,15 @@
+"distance_unit" = "km";
+"trip_complexity_medium" = "Difficulty: Medium";
+"trip_complexity_easy" = "Difficulty: Easy";
+"trip_complexity_hard" = "Difficulty: Hard";
+"trip_available_soon" = "Coming Soon";
+
+"details_main_noche_museos" = "The meeting is at 6:30 PM at Museo del Chopo. We recommend the use of lights and helmet.";
+
+
+"complexity_easy" = "Easy";
+"complexity_medium" = "Regular";
+"complexity_hard" = "Hard";
+
+"route_start" = "Trip Start";
+"route_end" = "Trip End";

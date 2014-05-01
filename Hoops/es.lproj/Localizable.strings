@@ -1,0 +1,18 @@
+"distance_unit" = "km";
+"trip_complexity_medium" = "Dificultad: Media";
+"trip_complexity_easy" = "Dificultad: Fácil";
+"trip_complexity_hard" = "Dificultad: Dura";
+"trip_available_soon" = "Próximamente";
+
+"details_main_noche_museos" = "La reunión es a las 6:30 PM en el Museo del Chopo. Recomendamos llevar luces y preferentemente usar casco.";
+
+"complexity_easy" = "Ruta Fácil";
+"complexity_medium" = "Ruta Regular";
+"complexity_hard" = "Ruta Difícil";
+
+"route_start" = "Inicio de Ruta";
+"route_end" = "Fin de Ruta";
+
+"bike_sharing_spots" = "Préstamo de bicis";
+"bike_service_spots" = "Estación de servicios";
+"bike_school" = "Aprende a andar en bici";
