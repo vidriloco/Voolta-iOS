@@ -13,7 +13,7 @@
 
 @property (nonatomic, assign) float lastScrollPositionY;
 @property (nonatomic, strong) UIButton *centerBottomButton;
-
+@property (nonatomic, strong) NSArray *sectionsOnTable;
 
 - (void) buildTitleElementView;
 - (void) buildPhotoElementView;
@@ -193,6 +193,7 @@ static TripBrochureViewController* instance;
 
     // Add route-defined brochure contents
     CGPoint lastPoint = CGPointMake(0, textView.frame.size.height+textView.frame.origin.y);
+    BOOL switchLegendSide = NO;
     for (BrochureElement *element in _currentTrip.brochureList) {
         if ([element isParagraph]) {
             lastPoint = [self drawParagraphOnContainer:container
@@ -203,7 +204,8 @@ static TripBrochureViewController* instance;
                                         startingAtPosition:CGPointMake(0, lastPoint.y)];
         } else if ([element isLegend]) {
             lastPoint = [self drawLegendElementOnContainer:container startingAtPosition:lastPoint
-                                       withBrochureElement:element withRightSideOn:YES];
+                                       withBrochureElement:element withRightSideOn:switchLegendSide];
+            switchLegendSide = !switchLegendSide;
         }
     }
     
@@ -212,22 +214,32 @@ static TripBrochureViewController* instance;
     UILabel *blockSectionLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, lastPoint.y-20, [App viewBounds].size.width-40, 70)];
     [blockSectionLabel setFont:[LookAndFeel defaultFontBoldWithSize:15]];
     [blockSectionLabel setTextColor:[UIColor grayColor]];
-    [blockSectionLabel setText:@"Listado de servicios"];
+    [blockSectionLabel setText:NSLocalizedString(@"trip_pois", nil)];
     [container addSubview:blockSectionLabel];
     scrollContentHeight += blockSectionLabel.frame.size.height;
 
+    // Building the POI table list
+    _sectionsOnTable = [[_currentTrip categorizedPois] allKeys];
+    
+    float tableHeight = [_currentTrip numberOfPOIsListed] * kTableRowHeight;
+    tableHeight+= [[_currentTrip.categorizedPois allKeys] count] * kTableSectionHeight;
     UITableView *blockTableView = [[UITableView alloc] initWithFrame:
                                    CGRectMake(30,
                                               blockSectionLabel.frame.origin.y+blockSectionLabel.frame.size.height+10,
-                                              [App viewBounds].size.width-60,
-                                              [[[_currentTrip pois] objectForKey:@"listed"] count]*kRowHeight)];
-    [blockTableView.layer setBorderWidth:1];
-    [blockTableView.layer setBorderColor:[[UIColor grayColor] colorWithAlphaComponent:0.1].CGColor];
-    [blockTableView.layer setCornerRadius:5];
-    [blockTableView setSeparatorColor:[[UIColor grayColor] colorWithAlphaComponent:0.1]];
+                                              [App viewBounds].size.width-60, tableHeight)];
+
+    [blockTableView setSeparatorColor:[UIColor clearColor]];
     [blockTableView setDelegate:self];
     [blockTableView setDataSource:self];
+    [blockTableView setBounces:NO];
+    [blockTableView setScrollEnabled:NO];
     [blockTableView setSeparatorInset:UIEdgeInsetsZero];
+    
+    [blockTableView registerNib:[UINib nibWithNibName:@"POITableHeaderView" bundle:nil]
+forHeaderFooterViewReuseIdentifier:kHeaderIdentifier];
+    [blockTableView registerNib:[UINib nibWithNibName:@"POITableViewCell" bundle:nil]
+forCellReuseIdentifier:kCellViewIdentifier];
+    
     [container addSubview:blockTableView];
     
     scrollContentHeight += blockTableView.frame.size.height+kBottomMargin;
@@ -333,7 +345,6 @@ static TripBrochureViewController* instance;
     self.lastScrollPositionY = scrollView.contentOffset.y;
     [_mainImageView setFrame:CGRectMake(0, [_mainImageView frame].origin.y+increment, [_mainImageView frame].size.width, [_mainImageView frame].size.height)];
     [self.view sendSubviewToBack:_mainImageView];
-    //NSLog([NSString stringWithFormat:@"%f", self.lastScrollPositionY]);
     
     if ((self.lastScrollPositionY > -65 && [_titleContainerView isHidden])) {
         [_titleContainerView setHidden:NO];
@@ -346,45 +357,55 @@ static TripBrochureViewController* instance;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [_sectionsOnTable count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Will only show listed POIs on a trip
-    return [[_currentTrip.pois objectForKey:@"listed"] count];
+    NSString *sectionKey = [_sectionsOnTable objectAtIndex:section];
+    return [[_currentTrip.categorizedPois objectForKey:sectionKey] count];
+}
+
+- (UIView*) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    NSString *sectionName = [_sectionsOnTable objectAtIndex:section];
+    POITableHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:kHeaderIdentifier];
+    [header stylize];
+    [[header imageView] setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@-icon.png", sectionName]]];
+    [[header sectionLabel] setText:NSLocalizedString(sectionName, nil)];
+    return header;
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int index = [indexPath row];
+    POITableViewCell *cardView = [tableView dequeueReusableCellWithIdentifier:kCellViewIdentifier];
+    NSString *sectionKey = [_sectionsOnTable objectAtIndex:[indexPath section]];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"POIOnCardView"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"POICellView"];
-    }
+    Poi *poi = [[_currentTrip.categorizedPois objectForKey:sectionKey] objectAtIndex:[indexPath row]];
     
-    POIOnCardView *cardView = [[[NSBundle mainBundle] loadNibNamed:@"POIOnCardView" owner:self options:nil] objectAtIndex:0];
-    [cell setFrame:CGRectMake(cell.frame.origin.x, cell.frame.origin.y, cardView.frame.size.width, cardView.frame.size.height)];
-    [cardView setFrame:CGRectMake(0, 0, cardView.frame.size.width, cardView.frame.size.height)];
-    
-    Poi *poi = [[_currentTrip.pois objectForKey:@"listed"] objectAtIndex:index];
-    
-    
-    [[cardView titleLabel] setText:poi.mainTitle];
-    [[cardView subtitleLabel] setText:poi.subtitle];
-    [[cardView titleLabel] setFont:[LookAndFeel defaultFontBoldWithSize:12]];
-    [[cardView subtitleLabel] setFont:[LookAndFeel defaultFontBookWithSize:9]];
-    
-    [[cardView iconView] setImage:[UIImage imageNamed:poi.associatedIconName]];
-    [cell addSubview:cardView];
+    [[cardView imageBackground] setImage:[UIImage imageNamed:poi.mainPic]];
+    //[[cardView titleLabel] setText:poi.mainTitle];
+    [cardView stylize];
 
-    return cell;
+    return (UITableViewCell*) cardView;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *sectionKey = [_sectionsOnTable objectAtIndex:[indexPath section]];
+    Poi *poi = [[_currentTrip.categorizedPois objectForKey:sectionKey] objectAtIndex:[indexPath row]];
+    [(TripViewController*) self.presentingViewController centerMapOnPoi:poi];
+    [self dismissViewController];
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return kRowHeight;
+    return kTableRowHeight;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return kTableSectionHeight;
 }
 
 @end

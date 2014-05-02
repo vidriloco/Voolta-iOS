@@ -15,10 +15,17 @@
 #import "TripKeyDetailsView.h"
 #import "MainCardButton.h"
 #import "LegendElementView.h"
+#import "POITableHeaderView.h"
+#import "POITableViewCell.h"
 
-#define kTopYOffset         90
-#define kRowHeight          63
-#define kBottomMargin       30
+#define kTopYOffset                 90
+#define kBottomMargin               30
+
+#define kTableRowHeight             120
+#define kTableSectionHeight         51
+
+#define kHeaderIdentifier           @"POIHeader"
+#define kCellViewIdentifier         @"POICellView"
 
 @class TripViewController;
 

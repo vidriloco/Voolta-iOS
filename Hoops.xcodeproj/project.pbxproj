@@ -117,6 +117,12 @@
 		3A534C3618E9252C00CBAB86 /* pin-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A534C3018E9252C00CBAB86 /* pin-icon@2x.png */; };
 		3A594BCF18E7174A00220D61 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A594BCE18E7174A00220D61 /* GoogleMaps.framework */; };
 		3A594BD118E7175300220D61 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3A594BD018E7175300220D61 /* GoogleMaps.bundle */; };
+		3A5B5B371913F5A100546B92 /* POITableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A5B5B361913F5A100546B92 /* POITableHeaderView.xib */; };
+		3A5B5B3A1913F5CF00546B92 /* POITableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5B5B391913F5CF00546B92 /* POITableHeaderView.m */; };
+		3A5B5B3E1913FADC00546B92 /* POITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5B5B3C1913FADC00546B92 /* POITableViewCell.m */; };
+		3A5B5B3F1913FADC00546B92 /* POITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A5B5B3D1913FADC00546B92 /* POITableViewCell.xib */; };
+		3A5B5B421914148E00546B92 /* chomp-chomp-list.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A5B5B401914148E00546B92 /* chomp-chomp-list.png */; };
+		3A5B5B431914148E00546B92 /* chomp-chomp-list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A5B5B411914148E00546B92 /* chomp-chomp-list@2x.png */; };
 		3A624DFA18FBC9F9002F4C5A /* paseo_dominical.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A624DF818FBC9F9002F4C5A /* paseo_dominical.jpg */; };
 		3A624DFB18FBC9F9002F4C5A /* paseo_dominical@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A624DF918FBC9F9002F4C5A /* paseo_dominical@2x.jpg */; };
 		3A7D566D18FEFF14005BD5CA /* BrochureElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D566C18FEFF14005BD5CA /* BrochureElement.m */; };
@@ -357,6 +363,14 @@
 		3A534C3018E9252C00CBAB86 /* pin-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin-icon@2x.png"; sourceTree = "<group>"; };
 		3A594BCE18E7174A00220D61 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		3A594BD018E7175300220D61 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		3A5B5B361913F5A100546B92 /* POITableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POITableHeaderView.xib; sourceTree = "<group>"; };
+		3A5B5B381913F5CF00546B92 /* POITableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POITableHeaderView.h; sourceTree = "<group>"; };
+		3A5B5B391913F5CF00546B92 /* POITableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POITableHeaderView.m; sourceTree = "<group>"; };
+		3A5B5B3B1913FADC00546B92 /* POITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POITableViewCell.h; sourceTree = "<group>"; };
+		3A5B5B3C1913FADC00546B92 /* POITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POITableViewCell.m; sourceTree = "<group>"; };
+		3A5B5B3D1913FADC00546B92 /* POITableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POITableViewCell.xib; sourceTree = "<group>"; };
+		3A5B5B401914148E00546B92 /* chomp-chomp-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "chomp-chomp-list.png"; path = "Hoops/Assets/Images/paseos/dominical/pois/chomp-chomp/chomp-chomp-list.png"; sourceTree = SOURCE_ROOT; };
+		3A5B5B411914148E00546B92 /* chomp-chomp-list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "chomp-chomp-list@2x.png"; path = "Hoops/Assets/Images/paseos/dominical/pois/chomp-chomp/chomp-chomp-list@2x.png"; sourceTree = SOURCE_ROOT; };
 		3A624DF818FBC9F9002F4C5A /* paseo_dominical.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paseo_dominical.jpg; sourceTree = "<group>"; };
 		3A624DF918FBC9F9002F4C5A /* paseo_dominical@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "paseo_dominical@2x.jpg"; sourceTree = "<group>"; };
 		3A7D566B18FEFF14005BD5CA /* BrochureElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrochureElement.h; sourceTree = "<group>"; };
@@ -805,6 +819,8 @@
 		3A3B8F6218F4E91F0010067E /* chomp-chomp */ = {
 			isa = PBXGroup;
 			children = (
+				3A5B5B401914148E00546B92 /* chomp-chomp-list.png */,
+				3A5B5B411914148E00546B92 /* chomp-chomp-list@2x.png */,
 				3A3B8F6318F4E91F0010067E /* chomp-chomp-front.png */,
 				3A3B8F6418F4E91F0010067E /* chomp-chomp-front@2x.png */,
 			);
@@ -1053,6 +1069,12 @@
 				3A7D566E18FF16CC005BD5CA /* LegendElementView.xib */,
 				3A7D567018FF17D8005BD5CA /* LegendElementView.h */,
 				3A7D567118FF17D8005BD5CA /* LegendElementView.m */,
+				3A5B5B361913F5A100546B92 /* POITableHeaderView.xib */,
+				3A5B5B381913F5CF00546B92 /* POITableHeaderView.h */,
+				3A5B5B391913F5CF00546B92 /* POITableHeaderView.m */,
+				3A5B5B3B1913FADC00546B92 /* POITableViewCell.h */,
+				3A5B5B3C1913FADC00546B92 /* POITableViewCell.m */,
+				3A5B5B3D1913FADC00546B92 /* POITableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1190,6 +1212,7 @@
 				3A624DFB18FBC9F9002F4C5A /* paseo_dominical@2x.jpg in Resources */,
 				3A0513CC18E74E5800C25512 /* paseo_trenes@2x.png in Resources */,
 				3A0513F318E74E5F00C25512 /* next_icon@2x.png in Resources */,
+				3A5B5B421914148E00546B92 /* chomp-chomp-list.png in Resources */,
 				3A0513E918E74E5F00C25512 /* new-ribbon.png in Resources */,
 				3AE7897918F72F7100E46085 /* stamaria-empty@2x.png in Resources */,
 				3A41CEA018F7D2FF005A706B /* sprocket-icon@2x.png in Resources */,
@@ -1237,8 +1260,10 @@
 				3AF072A118F6679A009017A5 /* panflet-icon.png in Resources */,
 				3A94768318F277F0004CA859 /* compass-3d-icon.png in Resources */,
 				3A7FB85418F0D2AD001BBD1A /* food-icon@2x.png in Resources */,
+				3A5B5B431914148E00546B92 /* chomp-chomp-list@2x.png in Resources */,
 				3A0513FC18E74E6C00C25512 /* coloreddiscrete_bg.jpg in Resources */,
 				3A0513FE18E74E6C00C25512 /* road_bg.jpg in Resources */,
+				3A5B5B371913F5A100546B92 /* POITableHeaderView.xib in Resources */,
 				3A3B8F3A18F47B850010067E /* huevitos-y-hotcakes-front.png in Resources */,
 				3A43651618DF5BC000205EA3 /* OpenSans-Semibold.ttf in Resources */,
 				3A0513FF18E74E6C00C25512 /* aquamarine_bg.jpg in Resources */,
@@ -1250,6 +1275,7 @@
 				3A424FF218EC6A9700BDADAB /* compass-icon@2x.png in Resources */,
 				3A3B8F5818F4A3440010067E /* estacion-servicio-loreto-front@2x.png in Resources */,
 				3A3B8F4E18F4A1080010067E /* estacion-servicio-diana-front@2x.png in Resources */,
+				3A5B5B3F1913FADC00546B92 /* POITableViewCell.xib in Resources */,
 				3A43650E18DF5BC000205EA3 /* OpenSans-Bold.ttf in Resources */,
 				3A7FB85B18F0D990001BBD1A /* landmark-icon.png in Resources */,
 				3A4C2CBF18EB4E1A006DD458 /* logo-map.png in Resources */,
@@ -1330,6 +1356,7 @@
 				3A42500418ECBFB600BDADAB /* UIViewController+CardSized.m in Sources */,
 				3A91C17218DE8BC000E30CBF /* AppDelegate.m in Sources */,
 				3A1BA7F718DED3E50002F958 /* SBJsonUTF8Stream.m in Sources */,
+				3A5B5B3E1913FADC00546B92 /* POITableViewCell.m in Sources */,
 				3A05140618E7B04000C25512 /* Poi.m in Sources */,
 				3A91C17518DE8BC000E30CBF /* Hoops.xcdatamodeld in Sources */,
 				3A9AA08018E385FB00F075D3 /* TripCardView.m in Sources */,
@@ -1342,6 +1369,7 @@
 				3AC1B63F18FE1B040019CCC7 /* TripKeyDetailsView.m in Sources */,
 				3A1BA7ED18DED3E50002F958 /* NSObject+SBJson.m in Sources */,
 				3A1BA7F118DED3E50002F958 /* SBJsonStreamParserAdapter.m in Sources */,
+				3A5B5B3A1913F5CF00546B92 /* POITableHeaderView.m in Sources */,
 				3A7FB86F18F0F9AF001BBD1A /* DirectionMarker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

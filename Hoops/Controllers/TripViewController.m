@@ -49,6 +49,8 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
 
 @property (nonatomic, assign) int currentPoiIndex;
 
+@property (nonatomic, strong) POIDetailsViewController *lastDetailsViewController;
+
 @end
 
 @implementation TripViewController
@@ -291,13 +293,9 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
     startMarker.icon = [UIImage imageNamed:@"start_flag-icon.png"];
     [startMarker setMap:_mapView];
     
-    for (NSString *key in [_currentTrip.pois allKeys]) {
-        for (Poi *poi in [_currentTrip.pois objectForKey:key]) {
-            [poi setMap:_mapView];
-        }
+    for (Poi *poi in [_currentTrip allPois]) {
+        [poi setMap:_mapView];
     }
-    
-    
     
     // Finally, draw final marker
     GMSMarker *finalMarker = [[GMSMarker alloc] init];
@@ -330,8 +328,11 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
 {
     for (GMSMarker *currentMarker in _currentTrip.allPois) {
         if (currentMarker == marker) {
-            POIDetailsViewController *detailsViewController = [[POIDetailsViewController alloc] initWithTripPoi:(Poi*) currentMarker];
-            [self presentCustomPopupViewController:detailsViewController];
+            if (_lastDetailsViewController != nil) {
+                [_lastDetailsViewController dismissPopupViewControllerWithanimationType:0];
+            }
+            _lastDetailsViewController = [[POIDetailsViewController alloc] initWithTripPoi:(Poi*) currentMarker];
+            [self presentCustomPopupViewController:_lastDetailsViewController];
         }
     }
     return NO;
@@ -364,6 +365,23 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
 - (Trip*) currentTrip
 {
     return _currentTrip;
+}
+
+#pragma TripPoisDelegate methods
+
+- (void) centerMapOnPoi:(Poi *)poi
+{
+    [_mapView animateToCameraPosition:[GMSCameraPosition cameraWithLatitude:poi.position.latitude
+                                                                  longitude:poi.position.longitude
+                                                                       zoom:defaultZoomInLevel]];
+    
+    if (_lastDetailsViewController != nil) {
+        [_lastDetailsViewController dismissPopupViewControllerWithanimationType:0];
+    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.4 * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void) {
+        _lastDetailsViewController = [[POIDetailsViewController alloc] initWithTripPoi:poi];
+        [self presentCustomPopupViewController:_lastDetailsViewController];
+    });
 }
 
 #pragma LocationDelegate methods

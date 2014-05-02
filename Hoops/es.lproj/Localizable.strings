@@ -16,3 +16,14 @@
 "bike_sharing_spots" = "Préstamo de bicis";
 "bike_service_spots" = "Estación de servicios";
 "bike_school" = "Aprende a andar en bici";
+
+"trip_pois" = "Puntos de Interés";
+
+// Categories
+"food" = "Para comer";
+"breakfast" = "Para desayunar";
+"museum" = "Lugar cultural";
+"landmark" = "Lugar conocido";
+"public_space" = "Para descansar";
+"shop" = "Ir de compras";
+"bakery" = "De antojo";

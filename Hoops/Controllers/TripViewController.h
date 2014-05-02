@@ -19,13 +19,14 @@
 #import "POIDetailsViewController.h"
 #import "TripPoisDelegate.h"
 #import "TripBrochureViewController.h"
+#import "TripPoisDelegate.h"
 
 #define defaultZoomInLevel      17
 #define defaultZoomOutLevel     15
 
 @class TripShowcaseViewController;
 
-@interface TripViewController : UIViewController <GMSMapViewDelegate, TripSelectedDelegate, CLLocationManagerDelegate>
+@interface TripViewController : UIViewController <GMSMapViewDelegate, TripSelectedDelegate, CLLocationManagerDelegate, TripPoisDelegate>
 
 @property (nonatomic, strong) Trip *currentTrip;
 

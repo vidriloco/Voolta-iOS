@@ -13,6 +13,8 @@
 #import "DirectionMarker.h"
 #import "BrochureElement.h"
 
+#define kListedKey @"listed"
+
 @interface Trip : NSObject
 
 @property (nonatomic, strong) NSString *kind;
@@ -30,8 +32,6 @@
 @property (nonatomic, assign) CLLocationCoordinate2D endCoordinate;
 
 @property (nonatomic, strong) NSArray *paths;
-@property (nonatomic, strong) NSDictionary *pois;
-@property (nonatomic, strong) NSArray *allPois;
 @property (nonatomic, strong) NSArray *directionMarkers;
 
 @property (nonatomic, strong) NSString *introEs;
@@ -41,6 +41,10 @@
 @property (nonatomic, strong) NSString *distance;
 
 @property (nonatomic, strong) NSArray* brochureList;
+
+@property (nonatomic, strong) NSDictionary *categorizedPois;
+@property (nonatomic, strong) NSArray *allPois;
+@property (nonatomic, assign) int numberOfPOIsListed;
 
 + (Trip*) initWithDictionary:(NSDictionary*)dictionary;
 + (int) count;

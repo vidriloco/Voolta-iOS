@@ -15,7 +15,7 @@
  */
 + (UIColor*) blueColor
 {
-    return [UIColor colorWithHexString:@"1f3a50"];
+    return [UIColor colorWithHexString:@"008dff"];
 }
 
 /*

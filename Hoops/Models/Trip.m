@@ -8,6 +8,12 @@
 
 #import "Trip.h"
 
+@interface Trip ()
+
+- (void) readPoisFromDictionary:(NSDictionary*)dictionary;
+
+@end
+
 @implementation Trip
 static NSArray *list;
 
@@ -57,29 +63,8 @@ static NSArray *list;
             trip.detailsPic = [route objectForKey:@"detailed_pic"];
         }
         
-        // Loading pois
-        NSMutableDictionary *poisTmp = [NSMutableDictionary dictionary];
-        NSMutableArray *poisList = [NSMutableArray array];
-
-        for (NSDictionary *dict in [dictionary objectForKey:@"pois"]) {
-            Poi *poi = [Poi initWithDictionary:dict];
-            
-            // Separate listed from unlisted
-            NSString *listedOrNotKey = @"listed";
-            if (![[dict objectForKey:listedOrNotKey] boolValue]) {
-                listedOrNotKey = @"unlisted";
-            }
-            
-            if (![poisTmp objectForKey:listedOrNotKey]) {
-                [poisTmp setObject:[NSMutableArray array] forKey:listedOrNotKey];
-            }
-            
-            [[poisTmp objectForKey:listedOrNotKey] addObject:poi];
-            [poisList addObject:poi];
-        }
-        
-        [trip setPois:poisTmp];
-        [trip setAllPois:poisList];
+        // Load POIs
+        [trip readPoisFromDictionary:dictionary];
         // Loading brochure elements
         
         NSMutableArray *brochureList = [NSMutableArray array];
@@ -114,6 +99,34 @@ static NSArray *list;
 + (NSArray*) all
 {
     return list;
+}
+
+- (void) readPoisFromDictionary:(NSDictionary *)dictionary
+{
+    // Loading pois
+    NSMutableDictionary *poisDict = [NSMutableDictionary dictionary];
+    NSMutableArray *poisList = [NSMutableArray array];
+    
+    for (NSDictionary *dict in [dictionary objectForKey:@"pois"]) {
+        Poi *poi = [Poi initWithDictionary:dict];
+        
+        // Separate listed from unlisted
+        if ([[dict objectForKey:kListedKey] boolValue]) {
+            NSString *poiCategory = [dict objectForKey:@"kind"];
+            
+            if (![poisDict objectForKey:poiCategory]) {
+                [poisDict setObject:[NSMutableArray array] forKey:poiCategory];
+            }
+            
+            [[poisDict objectForKey:poiCategory] addObject:poi];
+            _numberOfPOIsListed++;
+        }
+        
+        [poisList addObject:poi];
+    }
+    [self setCategorizedPois:poisDict];
+    [self setAllPois:poisList];
+
 }
 
 - (BOOL) isLandingView

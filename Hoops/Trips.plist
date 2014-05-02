@@ -291,7 +291,7 @@
 				<key>sponsored</key>
 				<true/>
 				<key>kind</key>
-				<string>food</string>
+				<string>breakfast</string>
 				<key>location</key>
 				<dict>
 					<key>lon</key>
@@ -535,7 +535,7 @@
 				<key>details</key>
 				<string></string>
 				<key>title</key>
-				<string>Zona Arqueológica de Tlatelolco</string>
+				<string>Tlatelolco Altépetl</string>
 			</dict>
 			<dict>
 				<key>listed</key>

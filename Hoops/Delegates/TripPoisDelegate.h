@@ -12,8 +12,6 @@
 @protocol TripPoisDelegate <NSObject>
 
 @required
-- (Poi*) nextPoi;
-- (Poi*) previousPoi;
-- (Poi*) currentPoi;
+- (void) centerMapOnPoi:(Poi*)poi;
 
 @end
