@@ -87,8 +87,8 @@ static int environment;
     environment = env;
 }
 
-
-+ (UIImage*)takeScreenshot:(CALayer*)layer{
++ (UIImage*)takeScreenshot:(CALayer*)layer
+{
     UIGraphicsBeginImageContextWithOptions([App viewBounds].size, YES, [[UIScreen mainScreen] scale]);
     [layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();

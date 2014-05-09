@@ -232,7 +232,7 @@ static TripBrochureViewController* instance;
     [blockTableView setDelegate:self];
     [blockTableView setDataSource:self];
     [blockTableView setBounces:NO];
-    [blockTableView setScrollEnabled:NO];
+    [blockTableView setScrollEnabled:YES];
     [blockTableView setSeparatorInset:UIEdgeInsetsZero];
     
     [blockTableView registerNib:[UINib nibWithNibName:@"POITableHeaderView" bundle:nil]

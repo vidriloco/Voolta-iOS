@@ -14,8 +14,8 @@
 {
     Poi *poi = [[Poi alloc] init];
     
-    poi.mainTitle = [dictionary objectForKey:@"title"];
-    poi.details = [dictionary objectForKey:@"details"];
+    poi.theTitle = [dictionary objectForKey:@"title"];
+    poi.theSubtitle = [dictionary objectForKey:@"subtitle"];
     poi.kind = [dictionary objectForKey:@"kind"];
     poi.sponsored = [[dictionary objectForKey:@"sponsored"] boolValue];
     
@@ -24,8 +24,27 @@
     poi.position = CLLocationCoordinate2DMake(lat, lon);
     poi.mainPic = [dictionary objectForKey:@"main_pic"];
     poi.icon = [UIImage imageNamed:[[poi kind] stringByAppendingString:@"-icon.png"]];
+    poi.snippet = nil;
+    
+    if ([poi isAMuseum]) {
+        if([dictionary objectForKey:@"slides"]) {
+            NSMutableArray *slideList = [NSMutableArray array];
 
+            for (NSDictionary *slide in [dictionary objectForKey:@"slides"]) {
+                SlideElement *slideElement = [[SlideElement alloc] initWithDictionary:slide];
+                [slideList addObject:slideElement];
+            }
+            [poi setSlideElements:slideList];
+            
+        }
+    }
+    
     return poi;
+}
+
+- (BOOL) isAMuseum
+{
+    return [self.kind isEqualToString:@"museum"];
 }
 
 - (BOOL) isAPlaceToEat {
@@ -67,26 +86,6 @@
     return [self.kind isEqualToString: @"bicycle_sharing"];
 }
 
-- (NSString*) subtitle
-{
-    if ([self isAPlaceToEat]) {
-        return @"Un restaurante bike-friendly";
-    } else if ([self isAPlaceToExplore]) {
-        return @"Para explorar";
-    } else if ([self isAPlaceToSee]) {
-        return @"Un lugar para contemplar";
-    } else if ([self isAPlaceToInteract]) {
-        return @"Un esacio para interactuar";
-    } else if ([self isAServiceStation]) {
-        return @"Punto de servicios";
-    } else if ([self isABikeSchool]) {
-        return @"Bici-escuela";
-    } else if ([self isABikeLending]) {
-        return @"Préstamo de Bicis";
-    }
-    return @"Un lugar más";
-}
-
 - (NSString*) associatedIconName
 {
     if ([self isAPlaceToEat]) {
@@ -105,6 +104,11 @@
         return @"bicycle_sharing-icon.png";
     }
     return nil;
+}
+
+- (NSString*) iconName
+{
+    return [self.kind stringByAppendingString:@"-icon.png"];
 }
 
 @end

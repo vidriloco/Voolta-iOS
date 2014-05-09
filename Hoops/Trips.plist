@@ -258,11 +258,32 @@
 					<real>19.42514431325704</real>
 				</dict>
 				<key>main_pic</key>
-				<string>bici_entrenate.jpg</string>
+				<string>salon-corona-front.png</string>
 				<key>details</key>
 				<string>Tortas y Cervezas frías</string>
 				<key>title</key>
-				<string>Salón Corona</string>
+				<string>Salón Corona Reforma</string>
+			</dict>
+			<dict>
+				<key>listed</key>
+				<true/>
+				<key>sponsored</key>
+				<true/>
+				<key>kind</key>
+				<string>food</string>
+				<key>location</key>
+				<dict>
+					<key>lon</key>
+					<real>-99.171993</real>
+					<key>lat</key>
+					<real>19.428423</real>
+				</dict>
+				<key>main_pic</key>
+				<string>daikoku-panuco.png</string>
+				<key>details</key>
+				<string>Comida Japonesa</string>
+				<key>title</key>
+				<string>Daikoku Río Pánuco</string>
 			</dict>
 			<dict>
 				<key>listed</key>
@@ -363,7 +384,7 @@
 					<real>19.43604992753778</real>
 				</dict>
 				<key>main_pic</key>
-				<string>bici_entrenate.jpg</string>
+				<string>plaza-republica.png</string>
 				<key>details</key>
 				<string>El monumento a la Revolución</string>
 				<key>title</key>
@@ -384,7 +405,7 @@
 					<real>19.4356958168564</real>
 				</dict>
 				<key>main_pic</key>
-				<string>bici_entrenate.jpg</string>
+				<string>alameda-central.png</string>
 				<key>details</key>
 				<string>Alameda Central</string>
 				<key>title</key>
@@ -433,6 +454,47 @@
 				<string>Museo Panteón San Fernando</string>
 			</dict>
 			<dict>
+				<key>slides</key>
+				<array>
+					<dict>
+						<key>front</key>
+						<true/>
+						<key>contrasted</key>
+						<string>YES</string>
+					</dict>
+					<dict>
+						<key>url</key>
+						<string>http://www.franzmayer.org.mx/detallexpo.php?id=236&amp;&amp;tipo=presentes</string>
+						<key>alignment</key>
+						<string>TR</string>
+						<key>front</key>
+						<false/>
+						<key>contrasted</key>
+						<true/>
+						<key>picture</key>
+						<string>peon.jpg</string>
+						<key>subtitle</key>
+						<string>De Abril 30 a Mayo 25</string>
+						<key>title</key>
+						<string>Intermitencias de Carlota Péon</string>
+					</dict>
+					<dict>
+						<key>url</key>
+						<string>http://www.franzmayer.org.mx/detallexpo.php?id=233&amp;&amp;tipo=presentes</string>
+						<key>alignment</key>
+						<string>BL</string>
+						<key>front</key>
+						<false/>
+						<key>contrasted</key>
+						<true/>
+						<key>subtitle</key>
+						<string>De Febrero 07 a Mayo 18</string>
+						<key>title</key>
+						<string>El radio en México: historia, diseño y tecnología</string>
+						<key>picture</key>
+						<string>radio-pic.jpg</string>
+					</dict>
+				</array>
 				<key>listed</key>
 				<true/>
 				<key>sponsored</key>
@@ -447,9 +509,9 @@
 					<real>19.43727328974084</real>
 				</dict>
 				<key>main_pic</key>
-				<string>bici_entrenate.jpg</string>
-				<key>details</key>
-				<string></string>
+				<string>franz-mayer.jpg</string>
+				<key>subtitle</key>
+				<string>Abierto de 8 AM a 6 PM</string>
 				<key>title</key>
 				<string>Museo Franz Mayer</string>
 			</dict>

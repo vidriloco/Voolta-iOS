@@ -11,15 +11,16 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "UIColor-Expanded.h"
 #import "App.h"
-#import "UIViewController+MJPopupViewController.h"
 #import "TripLandingViewController.h"
 #import "TripSelectedDelegate.h"
 #import "DirectionMarker.h"
 #import <CoreLocation/CoreLocation.h>
-#import "POIDetailsViewController.h"
 #import "TripPoisDelegate.h"
 #import "TripBrochureViewController.h"
 #import "TripPoisDelegate.h"
+
+#import "POIDetailsManager.h"
+#import "POIDetailsView.h"
 
 #define defaultZoomInLevel      17
 #define defaultZoomOutLevel     15
@@ -31,5 +32,6 @@
 @property (nonatomic, strong) Trip *currentTrip;
 
 - (id) initWithTrip:(Trip*)trip;
+- (void) toggleMapControlsOff:(BOOL)state;
 
 @end

@@ -13,7 +13,6 @@
 + (id) initWithDictionary:(NSDictionary*)dictionary
 {
     DirectionMarker *marker = [[DirectionMarker alloc] init];
-    NSLog([dictionary description]);
     float lat = [[dictionary objectForKey:@"lat"] floatValue];
     float lon = [[dictionary objectForKey:@"lon"] floatValue];
     [marker setPosition:CLLocationCoordinate2DMake(lat, lon)];

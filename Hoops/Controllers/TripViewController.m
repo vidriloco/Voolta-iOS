@@ -49,7 +49,7 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
 
 @property (nonatomic, assign) int currentPoiIndex;
 
-@property (nonatomic, strong) POIDetailsViewController *lastDetailsViewController;
+@property (nonatomic, strong) POIDetailsManager *poiDetailsManager;
 
 @end
 
@@ -61,6 +61,7 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
     if (self) {
         self.currentTrip = trip;
         self.currentFollowMode = FollowNone;
+        _poiDetailsManager = [POIDetailsManager newWithController:self];
     }
     return self;
 }
@@ -84,9 +85,9 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
                                                                  zoom:self.currentTrip.startZoom];
 
     // Loading map
-    _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    _mapView = [GMSMapView mapWithFrame:[App viewBounds] camera:camera];
     [_mapView setDelegate:self];
-    self.view = _mapView;
+    [self.view addSubview:_mapView];
 
     _markerCenter = [[GMSMarker alloc] init];
     [_markerCenter setIcon: [UIImage imageNamed:@"my-location.png"]];
@@ -113,8 +114,6 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
     [self centerMapOnTripStart];
 
 }
-
-
 
 - (void) loadTopControls
 {
@@ -309,32 +308,34 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
     }
 }
 
+
+- (void) toggleMapControlsOff:(BOOL)state
+{
+    if(state) {
+        _currentMapControlsMode = ControlsHidden;
+    } else {
+        _currentMapControlsMode = ControlsShown;
+    }
+    
+    [_centerBottomButton setHidden:state];
+    [_centerTopButton setHidden:state];
+}
+
 #pragma GMSMapDelegate
 
 - (void) mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate
 {
     if (_currentMapControlsMode == ControlsShown) {
-        _currentMapControlsMode = ControlsHidden;
-        [_centerBottomButton setHidden:YES];
-        [_centerTopButton setHidden:YES];
+        [self toggleMapControlsOff:YES];
     } else {
         _currentMapControlsMode = ControlsShown;
-        [_centerBottomButton setHidden:NO];
-        [_centerTopButton setHidden:NO];
+        [self toggleMapControlsOff:NO];
     }
 }
 
 - (BOOL) mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker
 {
-    for (GMSMarker *currentMarker in _currentTrip.allPois) {
-        if (currentMarker == marker) {
-            if (_lastDetailsViewController != nil) {
-                [_lastDetailsViewController dismissPopupViewControllerWithanimationType:0];
-            }
-            _lastDetailsViewController = [[POIDetailsViewController alloc] initWithTripPoi:(Poi*) currentMarker];
-            [self presentCustomPopupViewController:_lastDetailsViewController];
-        }
-    }
+    [_poiDetailsManager showDetailsViewForPoi:(Poi*) marker];
     return NO;
 }
 
@@ -343,7 +344,6 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
 
 - (void) centerMapOnTripStart
 {
-    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationSlideBottomBottom];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.4 * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void) {
         [_mapView animateToCameraPosition:[GMSCameraPosition cameraWithLatitude:[_currentTrip originCoordinate].latitude
                                                                       longitude:[_currentTrip originCoordinate].longitude
@@ -352,9 +352,7 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
 }
 
 - (void) centerMapOnTripFinal
-{
-    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationSlideBottomBottom];
-    
+{    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.4 * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void) {
         [_mapView animateToCameraPosition:[GMSCameraPosition cameraWithLatitude:[_currentTrip endCoordinate].latitude
                                                                       longitude:[_currentTrip endCoordinate].longitude
@@ -374,13 +372,9 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
     [_mapView animateToCameraPosition:[GMSCameraPosition cameraWithLatitude:poi.position.latitude
                                                                   longitude:poi.position.longitude
                                                                        zoom:defaultZoomInLevel]];
-    
-    if (_lastDetailsViewController != nil) {
-        [_lastDetailsViewController dismissPopupViewControllerWithanimationType:0];
-    }
+
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.4 * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void) {
-        _lastDetailsViewController = [[POIDetailsViewController alloc] initWithTripPoi:poi];
-        [self presentCustomPopupViewController:_lastDetailsViewController];
+        [_poiDetailsManager showDetailsViewForPoi:poi];
     });
 }
 

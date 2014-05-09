@@ -8,14 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import "SlideElement.h"
+#import "App.h"
 
 @interface Poi : GMSMarker
 
 @property (nonatomic, assign) BOOL sponsored;
 @property (nonatomic, strong) NSString *kind;
-@property (nonatomic, strong) NSString *mainTitle;
-@property (nonatomic, strong) NSString *details;
+@property (nonatomic, strong) NSString *theTitle;
+@property (nonatomic, strong) NSString *theSubtitle;
 @property (nonatomic, strong) NSString *mainPic;
+
+@property (nonatomic, strong) NSArray *slideElements;
 
 + (Poi*) initWithDictionary:(NSDictionary*)dictionary;
 
@@ -28,6 +32,9 @@
 - (BOOL) isABikeSchool;
 - (BOOL) isABikeLending;
 
-- (NSString*) subtitle;
+- (BOOL) isAMuseum;
+
+- (NSString*) iconName;
+
 - (NSString*) associatedIconName;
 @end

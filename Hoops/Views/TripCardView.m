@@ -88,8 +88,8 @@
         if ([poi sponsored]) {
             POIOnCardView *card = [[[NSBundle mainBundle] loadNibNamed:@"POIOnCardView" owner:self options:nil] objectAtIndex:0];
             
-            [[card titleLabel] setText:poi.mainTitle];
-            [[card subtitleLabel] setText:poi.subtitle];
+            [[card titleLabel] setText:poi.theTitle];
+            [[card subtitleLabel] setText:poi.theSubtitle];
             [[card titleLabel] setFont:[LookAndFeel defaultFontBoldWithSize:12]];
             [[card subtitleLabel] setFont:[LookAndFeel defaultFontBookWithSize:9]];
             

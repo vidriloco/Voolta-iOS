@@ -14,9 +14,6 @@
 {
     [self.view setFrame:CGRectMake([App viewBounds].size.width/2, [App viewBounds].size.height/2, kCardWidth, kCardHeight)];
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    [self.view setClipsToBounds:YES];
-    [self.view.layer setMasksToBounds:YES];
-    [self.view.layer setCornerRadius:7];
 }
 
 @end

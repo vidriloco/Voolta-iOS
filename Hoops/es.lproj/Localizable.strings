@@ -23,7 +23,7 @@
 "food" = "Para comer";
 "breakfast" = "Para desayunar";
 "museum" = "Lugar cultural";
-"landmark" = "Lugar conocido";
+"landmark" = "Lugar importante";
 "public_space" = "Para descansar";
-"shop" = "Ir de compras";
-"bakery" = "De antojo";
+"shop" = "De compras";
+"bakery" = "Para el antojo";
