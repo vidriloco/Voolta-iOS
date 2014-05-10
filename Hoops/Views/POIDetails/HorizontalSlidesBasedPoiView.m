@@ -61,7 +61,7 @@
         if ([element isMainSlide]) {
             [imageView setImage:[UIImage imageNamed:poi.mainPic]];
             [self drawMainSlideWithTitle:poi.theTitle
-                            withSubtitle:poi.theSubtitle
+                            withSubtitle:poi.subtitle
                             withIconName:poi.iconName
                  withContrastViewEnabled:[element contrasted]
                        andBackgroundView:imageView];

@@ -15,9 +15,10 @@
     Poi *poi = [[Poi alloc] init];
     
     poi.theTitle = [dictionary objectForKey:@"title"];
-    poi.theSubtitle = [dictionary objectForKey:@"subtitle"];
+    poi.details = [dictionary objectForKey:@"details"];
     poi.kind = [dictionary objectForKey:@"kind"];
     poi.sponsored = [[dictionary objectForKey:@"sponsored"] boolValue];
+    poi.categoryBackgroundIcon = [dictionary objectForKey:@"category"];
     
     float lat = [[[dictionary objectForKey:@"location"] objectForKey:@"lat"] floatValue];
     float lon = [[[dictionary objectForKey:@"location"] objectForKey:@"lon"] floatValue];
@@ -40,6 +41,11 @@
     }
     
     return poi;
+}
+
+- (NSString*) subtitle
+{
+    return NSLocalizedString(self.kind, nil);
 }
 
 - (BOOL) isAMuseum

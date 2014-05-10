@@ -61,11 +61,15 @@
         [horizontalSlide drawSlidesForPoi:poi];
         [_mainView addSubview:horizontalSlide];
     } else {
-        UIImageView *headImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:poi.mainPic]];
-        [headImageView setClipsToBounds:YES];
-        [headImageView setFrame:CGRectMake(0, 0, kCardWidth, headImageView.frame.size.height)];
-        [headImageView setContentMode:UIViewContentModeScaleAspectFill];
-        [_mainView addSubview:headImageView];
+        StandardPoiView *poiView = [[[NSBundle mainBundle] loadNibNamed:@"StandardPoiView" owner:self options:nil] objectAtIndex:0];
+        [[poiView mainImageView] setImage:[UIImage imageNamed:poi.mainPic]];        
+        [[poiView iconView] setImage:[UIImage imageNamed:poi.iconName]];
+        [[poiView titleLabel] setText:poi.theTitle];
+        [poiView setDetailsViewWithText:poi.details];
+        [[poiView subtitleLabel] setText:poi.subtitle];
+        [[poiView categoryImageView] setImage:[UIImage imageNamed:poi.categoryBackgroundIcon]];
+        [poiView stylize];
+        [_mainView addSubview:poiView];
     }
 
 }

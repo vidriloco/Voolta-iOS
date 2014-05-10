@@ -16,12 +16,15 @@
 @property (nonatomic, assign) BOOL sponsored;
 @property (nonatomic, strong) NSString *kind;
 @property (nonatomic, strong) NSString *theTitle;
-@property (nonatomic, strong) NSString *theSubtitle;
+@property (nonatomic, strong) NSString *details;
 @property (nonatomic, strong) NSString *mainPic;
+@property (nonatomic, strong) NSString *categoryBackgroundIcon;
 
 @property (nonatomic, strong) NSArray *slideElements;
 
 + (Poi*) initWithDictionary:(NSDictionary*)dictionary;
+
+- (NSString*) subtitle;
 
 - (BOOL) isAPlaceToEat;
 - (BOOL) isAPlaceToInteract;

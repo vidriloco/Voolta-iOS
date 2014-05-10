@@ -221,10 +221,10 @@
 				<string>Fuente de la Diana</string>
 			</dict>
 			<dict>
+				<key>category</key>
+				<string>learn</string>
 				<key>listed</key>
 				<false/>
-				<key>main_pic</key>
-				<string>bike_school.png</string>
 				<key>sponsored</key>
 				<false/>
 				<key>kind</key>
@@ -236,14 +236,16 @@
 					<key>lat</key>
 					<real>19.423605</real>
 				</dict>
-				<key>picture</key>
-				<string>bici_entrenate.jpg</string>
+				<key>main_pic</key>
+				<string>bicientrenate.jpg</string>
 				<key>details</key>
-				<string>Aprende a moverte en bici en la ciudad en esta bici-escuela. Justo frente a la Torre Mayor.</string>
+				<string>En esta bici-escuela te enseñarán todo lo que necesitas saber para empezar a moverte en bicicleta por la ciudad.</string>
 				<key>title</key>
 				<string>Bicientrénate</string>
 			</dict>
 			<dict>
+				<key>category</key>
+				<string>mexican-food</string>
 				<key>listed</key>
 				<true/>
 				<key>sponsored</key>
@@ -260,11 +262,13 @@
 				<key>main_pic</key>
 				<string>salon-corona-front.png</string>
 				<key>details</key>
-				<string>Tortas y Cervezas frías</string>
+				<string>Si te gusta la comida mexicana y las cervezas, este puede ser el lugar idóneo para comer después de pedalear.</string>
 				<key>title</key>
 				<string>Salón Corona Reforma</string>
 			</dict>
 			<dict>
+				<key>category</key>
+				<string>japanese-food</string>
 				<key>listed</key>
 				<true/>
 				<key>sponsored</key>
@@ -281,11 +285,13 @@
 				<key>main_pic</key>
 				<string>daikoku-panuco.png</string>
 				<key>details</key>
-				<string>Comida Japonesa</string>
+				<string>Sin duda, uno de los mejores restaurantes de comida japonesa tradicional a precios muy accesibles.</string>
 				<key>title</key>
 				<string>Daikoku Río Pánuco</string>
 			</dict>
 			<dict>
+				<key>category</key>
+				<string>sweetie-food</string>
 				<key>listed</key>
 				<true/>
 				<key>sponsored</key>
@@ -302,11 +308,13 @@
 				<key>main_pic</key>
 				<string>chomp-chomp-front.png</string>
 				<key>details</key>
-				<string>Malteadas</string>
+				<string>Si eres fan de los postres, en este lugar los encontrarás y podrás saborear las mejores malteadas del rumbo.</string>
 				<key>title</key>
 				<string>Chomp Chomp</string>
 			</dict>
 			<dict>
+				<key>category</key>
+				<string>pancakes-food</string>
 				<key>listed</key>
 				<true/>
 				<key>sponsored</key>
@@ -321,13 +329,15 @@
 					<real>19.43262901508966</real>
 				</dict>
 				<key>main_pic</key>
-				<string>huevitos-y-hotcakes-front.png</string>
+				<string>huevitos-y-hotcakes-front.jpg</string>
 				<key>details</key>
-				<string></string>
+				<string>El lugar perfecto para desayunar antes de empezar el paseo dominical, con variedad de platillos y jugos naturales.</string>
 				<key>title</key>
-				<string>Huevitos y Hot-cakes</string>
+				<string>Los Huevitos y Hot-cakes</string>
 			</dict>
 			<dict>
+				<key>category</key>
+				<string>artistical</string>
 				<key>listed</key>
 				<true/>
 				<key>sponsored</key>
@@ -344,30 +354,9 @@
 				<key>main_pic</key>
 				<string>jardin-arte-front.png</string>
 				<key>details</key>
-				<string>Una exposición de pinturas por artistas locales cada domingo</string>
+				<string>Cada domingo este parque se transforma en una galería de arte que exhibe el trabajo de artistas locales.</string>
 				<key>title</key>
 				<string>Jardin del Arte</string>
-			</dict>
-			<dict>
-				<key>listed</key>
-				<true/>
-				<key>sponsored</key>
-				<true/>
-				<key>kind</key>
-				<string>landmark</string>
-				<key>location</key>
-				<dict>
-					<key>lon</key>
-					<real>-99.16184804396893</real>
-					<key>lat</key>
-					<real>19.43290657804639</real>
-				</dict>
-				<key>main_pic</key>
-				<string>monumento-madres-front.png</string>
-				<key>details</key>
-				<string>Una explanada para las madres</string>
-				<key>title</key>
-				<string>Monumento a la Madre</string>
 			</dict>
 			<dict>
 				<key>listed</key>
@@ -384,13 +373,15 @@
 					<real>19.43604992753778</real>
 				</dict>
 				<key>main_pic</key>
-				<string>plaza-republica.png</string>
+				<string>plaza-republica.jpg</string>
 				<key>details</key>
-				<string>El monumento a la Revolución</string>
+				<string>Una de las plazas públicas más grandes de la Ciudad de México y que alberga al monumento a la revolución.</string>
 				<key>title</key>
 				<string>Plaza de la República</string>
 			</dict>
 			<dict>
+				<key>category</key>
+				<string>park</string>
 				<key>listed</key>
 				<true/>
 				<key>sponsored</key>
@@ -405,13 +396,15 @@
 					<real>19.4356958168564</real>
 				</dict>
 				<key>main_pic</key>
-				<string>alameda-central.png</string>
+				<string>alameda-central.jpg</string>
 				<key>details</key>
-				<string>Alameda Central</string>
+				<string>El parque público más antiguo de la Ciudad de México y un espacio de esparcimiento típico entre los locales.</string>
 				<key>title</key>
 				<string>Alameda Central</string>
 			</dict>
 			<dict>
+				<key>category</key>
+				<string>peace</string>
 				<key>listed</key>
 				<true/>
 				<key>sponsored</key>
@@ -426,9 +419,9 @@
 					<real>19.43497747567228</real>
 				</dict>
 				<key>main_pic</key>
-				<string>bici_entrenate.jpg</string>
+				<string>hemiciclo-juarez.jpg</string>
 				<key>details</key>
-				<string>El monumento a la Revolución</string>
+				<string>Obra del arquitecto Guillermo Heredia, este es el monumento más importante dedicado al Benemérito de las Américas. </string>
 				<key>title</key>
 				<string>Hemiciclo a Juárez</string>
 			</dict>
@@ -663,6 +656,8 @@
 				<string>Templo Mayor</string>
 			</dict>
 			<dict>
+				<key>category</key>
+				<string>handmade</string>
 				<key>listed</key>
 				<true/>
 				<key>sponsored</key>
@@ -679,7 +674,7 @@
 				<key>main_pic</key>
 				<string>downtown-front.png</string>
 				<key>details</key>
-				<string></string>
+				<string>Un lugar diferente de todo lo que has visto hasta ahora y que preserva el estilo mexicano de forma muy innovadora.</string>
 				<key>title</key>
 				<string>Downtown Centro Histórico</string>
 			</dict>
