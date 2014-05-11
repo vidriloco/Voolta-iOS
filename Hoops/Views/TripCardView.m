@@ -93,8 +93,7 @@
             [[card titleLabel] setFont:[LookAndFeel defaultFontBoldWithSize:12]];
             [[card subtitleLabel] setFont:[LookAndFeel defaultFontBookWithSize:9]];
             
-            [[card iconView] setImage:[UIImage imageNamed:poi.associatedIconName]];
-
+            [[card iconView] setImage:poi.icon];
             
             [card setFrame:CGRectMake(0, self.subpanel.frame.size.height-card.frame.size.height-5, card.frame.size.width, card.frame.size.height)];
             [tmpCardsHolder addObject:card];
