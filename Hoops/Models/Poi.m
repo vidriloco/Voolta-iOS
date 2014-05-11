@@ -24,7 +24,7 @@
     float lon = [[[dictionary objectForKey:@"location"] objectForKey:@"lon"] floatValue];
     poi.position = CLLocationCoordinate2DMake(lat, lon);
     poi.mainPic = [dictionary objectForKey:@"main_pic"];
-    poi.icon = [UIImage imageNamed:[[poi kind] stringByAppendingString:@"-icon.png"]];
+    poi.icon = [UIImage imageNamed:[[poi kind] stringByAppendingString:@"-marker.png"]];
     poi.snippet = nil;
     
     if ([poi isAMuseum]) {

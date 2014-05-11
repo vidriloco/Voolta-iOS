@@ -289,7 +289,7 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
     // First, draw origin marker
     GMSMarker *startMarker = [[GMSMarker alloc] init];
     startMarker.position = [_currentTrip originCoordinate];
-    startMarker.icon = [UIImage imageNamed:@"start_flag-icon.png"];
+    startMarker.icon = [UIImage imageNamed:@"start_flag-marker.png"];
     [startMarker setMap:_mapView];
     
     for (Poi *poi in [_currentTrip allPois]) {
@@ -299,7 +299,7 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
     // Finally, draw final marker
     GMSMarker *finalMarker = [[GMSMarker alloc] init];
     finalMarker.position = [_currentTrip endCoordinate];
-    finalMarker.icon = [UIImage imageNamed:@"final_flag-icon.png"];
+    finalMarker.icon = [UIImage imageNamed:@"final_flag-marker.png"];
     [finalMarker setMap:_mapView];
     
     for (DirectionMarker *directionMarker in _currentTrip.directionMarkers) {
