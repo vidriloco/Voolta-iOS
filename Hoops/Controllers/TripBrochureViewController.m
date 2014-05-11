@@ -383,8 +383,10 @@ forCellReuseIdentifier:kCellViewIdentifier];
     
     Poi *poi = [[_currentTrip.categorizedPois objectForKey:sectionKey] objectAtIndex:[indexPath row]];
     
-    [[cardView imageBackground] setImage:[UIImage imageNamed:poi.mainPic]];
-    //[[cardView titleLabel] setText:poi.mainTitle];
+    UIImage *img = [UIImage imageNamed:poi.mainPic];
+    [[cardView imageBackground] setImage:img];
+    [[cardView titleLabel] setText:poi.theTitle];
+    [[cardView subtitleLabel] setText:poi.subtitle];
     [cardView stylize];
 
     return (UITableViewCell*) cardView;

@@ -12,8 +12,11 @@
 @interface POITableViewCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *subtitleLabel;
+
 @property (nonatomic, weak) IBOutlet UIImageView *imageBackground;
 @property (nonatomic, weak) IBOutlet UIView *containingView;
+
 
 - (void) stylize;
 

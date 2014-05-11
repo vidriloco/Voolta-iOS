@@ -34,6 +34,24 @@
     [_containingView.layer setBorderWidth:1];
     [_containingView.layer setCornerRadius:2];
     [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
+    [_subtitleLabel setMinimumScaleFactor:0.3];
+    [_subtitleLabel setAdjustsFontSizeToFitWidth:YES];
+    [_subtitleLabel setFont:[LookAndFeel defaultFontBookWithSize:14]];
+    [_subtitleLabel setTextColor:[UIColor whiteColor]];
+    _subtitleLabel.layer.shadowOffset = CGSizeMake(3, 3);
+    _subtitleLabel.layer.shadowRadius = 3;
+    _subtitleLabel.layer.shadowOpacity = 0.4;
+    _subtitleLabel.layer.shouldRasterize = YES;
+    
+    [_titleLabel setMinimumScaleFactor:0.5];
+    [_titleLabel setAdjustsFontSizeToFitWidth:YES];
+    [_titleLabel setFont:[LookAndFeel defaultFontBoldWithSize:17]];
+    [_titleLabel setTextColor:[UIColor whiteColor]];
+    _titleLabel.layer.shadowOffset = CGSizeMake(3, 3);
+    _titleLabel.layer.shadowRadius = 3;
+    _titleLabel.layer.shadowOpacity = 0.4;
+    _titleLabel.layer.shouldRasterize = YES;
 }
 
 @end
