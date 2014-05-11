@@ -96,7 +96,7 @@
 				<key>details</key>
 				<string>Estación de Bicigratis® en Reforma (dirección oriente) e Insurgentes</string>
 				<key>title</key>
-				<string>Bicigratis Reforma-Insurgentes</string>
+				<string>Préstamo de bicicletas</string>
 			</dict>
 			<dict>
 				<key>listed</key>
@@ -115,7 +115,7 @@
 				<key>details</key>
 				<string>Estación de Bicigratis® en Reforma (dirección poniente) e Insurgentes</string>
 				<key>title</key>
-				<string>Bicigratis Reforma-Insurgentes</string>
+				<string>Préstamo de bicicletas</string>
 			</dict>
 			<dict>
 				<key>listed</key>
@@ -127,14 +127,14 @@
 				<key>location</key>
 				<dict>
 					<key>lon</key>
-					<real>-99.16336617428753</real>
+					<real>-99.16264200000001</real>
 					<key>lat</key>
-					<real>19.42923451046049</real>
+					<real>19.4290901</real>
 				</dict>
 				<key>details</key>
-				<string>Estación de Bicigratis® cerca de la glorieta de la palma</string>
+				<string>Estación de Bicigratis® frente a Reforma 222</string>
 				<key>title</key>
-				<string>Bicigratis de la glorieta de la palma</string>
+				<string>Préstamo de bicicletas</string>
 			</dict>
 			<dict>
 				<key>listed</key>
@@ -148,12 +148,33 @@
 				<key>location</key>
 				<dict>
 					<key>lon</key>
-					<real>-99.15942200000001</real>
+					<real>-99.160101</real>
 					<key>lat</key>
-					<real>19.43093</real>
+					<real>19.430383</real>
 				</dict>
 				<key>title</key>
-				<string>Monumento a Cuauhtémoc</string>
+				<string>Reforma e Insurgentes</string>
+				<key>details</key>
+				<string>Cuenta con los siguientes servicios: 1. Reparación 2. Locatel</string>
+			</dict>
+			<dict>
+				<key>listed</key>
+				<false/>
+				<key>main_pic</key>
+				<string>estacion-servicio-cuauhtemoc-front.png</string>
+				<key>sponsored</key>
+				<false/>
+				<key>kind</key>
+				<string>service_hub</string>
+				<key>location</key>
+				<dict>
+					<key>lon</key>
+					<real>-99.148599</real>
+					<key>lat</key>
+					<real>19.435312</real>
+				</dict>
+				<key>title</key>
+				<string>Fuente Bicentenario</string>
 				<key>details</key>
 				<string>Cuenta con los siguientes servicios: 1. Reparación 2. Locatel</string>
 			</dict>
@@ -169,9 +190,9 @@
 				<key>location</key>
 				<dict>
 					<key>lon</key>
-					<real>-99.163327</real>
+					<real>-99.16357000000001</real>
 					<key>lat</key>
-					<real>19.428664</real>
+					<real>19.428931</real>
 				</dict>
 				<key>details</key>
 				<string>Cuenta con los siguientes servicios: 1. Baño 2. Atención Médica 3. Reparación 4. Muévete y métete en cintura 5. Locatel 6. Clases de Yoga</string>
@@ -211,9 +232,9 @@
 				<key>location</key>
 				<dict>
 					<key>lon</key>
-					<real>-99.171395</real>
+					<real>-99.171418</real>
 					<key>lat</key>
-					<real>19.42486</real>
+					<real>19.425197</real>
 				</dict>
 				<key>details</key>
 				<string>Cuenta con los siguientes servicios: 1. Baño 2. Reparación 3. Paseo a Ciegas 4. Clases de Yoga 5. Locatel</string>
@@ -359,12 +380,14 @@
 				<string>Jardin del Arte</string>
 			</dict>
 			<dict>
+				<key>category</key>
+				<string>monument</string>
 				<key>listed</key>
 				<true/>
 				<key>sponsored</key>
 				<string>NO</string>
 				<key>kind</key>
-				<string>landmark</string>
+				<string>star</string>
 				<key>location</key>
 				<dict>
 					<key>lon</key>
@@ -404,13 +427,13 @@
 			</dict>
 			<dict>
 				<key>category</key>
-				<string>peace</string>
+				<string>wreath</string>
 				<key>listed</key>
 				<true/>
 				<key>sponsored</key>
 				<false/>
 				<key>kind</key>
-				<string>landmark</string>
+				<string>star</string>
 				<key>location</key>
 				<dict>
 					<key>lon</key>
@@ -424,27 +447,6 @@
 				<string>Obra del arquitecto Guillermo Heredia, este es el monumento más importante dedicado al Benemérito de las Américas. </string>
 				<key>title</key>
 				<string>Hemiciclo a Juárez</string>
-			</dict>
-			<dict>
-				<key>listed</key>
-				<true/>
-				<key>sponsored</key>
-				<false/>
-				<key>kind</key>
-				<string>museum</string>
-				<key>location</key>
-				<dict>
-					<key>lon</key>
-					<real>-99.14771280245816</real>
-					<key>lat</key>
-					<real>19.43915004931844</real>
-				</dict>
-				<key>main_pic</key>
-				<string>bici_entrenate.jpg</string>
-				<key>details</key>
-				<string></string>
-				<key>title</key>
-				<string>Museo Panteón San Fernando</string>
 			</dict>
 			<dict>
 				<key>slides</key>
@@ -509,27 +511,47 @@
 				<string>Museo Franz Mayer</string>
 			</dict>
 			<dict>
-				<key>listed</key>
-				<true/>
-				<key>sponsored</key>
-				<false/>
-				<key>kind</key>
-				<string>museum</string>
-				<key>location</key>
-				<dict>
-					<key>lon</key>
-					<real>-99.1445746179178</real>
-					<key>lat</key>
-					<real>19.43453652058326</real>
-				</dict>
-				<key>main_pic</key>
-				<string>bici_entrenate.jpg</string>
-				<key>details</key>
-				<string></string>
-				<key>title</key>
-				<string>Museo Memoria y Tolerancia</string>
-			</dict>
-			<dict>
+				<key>slides</key>
+				<array>
+					<dict>
+						<key>front</key>
+						<true/>
+						<key>contrasted</key>
+						<string>YES</string>
+					</dict>
+					<dict>
+						<key>url</key>
+						<string>http://www.franzmayer.org.mx/detallexpo.php?id=236&amp;&amp;tipo=presentes</string>
+						<key>alignment</key>
+						<string>TR</string>
+						<key>front</key>
+						<false/>
+						<key>contrasted</key>
+						<true/>
+						<key>picture</key>
+						<string>peon.jpg</string>
+						<key>subtitle</key>
+						<string>De Abril 30 a Mayo 25</string>
+						<key>title</key>
+						<string>Intermitencias de Carlota Péon</string>
+					</dict>
+					<dict>
+						<key>url</key>
+						<string>http://www.franzmayer.org.mx/detallexpo.php?id=233&amp;&amp;tipo=presentes</string>
+						<key>alignment</key>
+						<string>BL</string>
+						<key>front</key>
+						<false/>
+						<key>contrasted</key>
+						<true/>
+						<key>subtitle</key>
+						<string>De Febrero 07 a Mayo 18</string>
+						<key>title</key>
+						<string>El radio en México: historia, diseño y tecnología</string>
+						<key>picture</key>
+						<string>radio-pic.jpg</string>
+					</dict>
+				</array>
 				<key>listed</key>
 				<true/>
 				<key>sponsored</key>
@@ -544,19 +566,21 @@
 					<real>19.44987380498593</real>
 				</dict>
 				<key>main_pic</key>
-				<string>bici_entrenate.jpg</string>
+				<string>centro-universitario.jpg</string>
 				<key>details</key>
-				<string></string>
+				<string>Abierto de 8 AM a 6 PM</string>
 				<key>title</key>
 				<string>Centro Cultural Universitario</string>
 			</dict>
 			<dict>
+				<key>category</key>
+				<string>revolution</string>
 				<key>listed</key>
 				<true/>
 				<key>sponsored</key>
 				<false/>
 				<key>kind</key>
-				<string>public_space</string>
+				<string>star</string>
 				<key>location</key>
 				<dict>
 					<key>lon</key>
@@ -565,40 +589,44 @@
 					<real>19.45173018594474</real>
 				</dict>
 				<key>main_pic</key>
-				<string>bici_entrenate.jpg</string>
+				<string>tlatelolco-explanada.jpg</string>
 				<key>details</key>
-				<string>El monumento a la Revolución</string>
+				<string>Ubicada al centro del conjunto habitacional de Tlatelolco, enmarca tres etapas históricas de México.</string>
 				<key>title</key>
 				<string>Plaza de las tres culturas</string>
 			</dict>
 			<dict>
+				<key>category</key>
+				<string>aztec</string>
 				<key>listed</key>
 				<true/>
 				<key>sponsored</key>
 				<false/>
 				<key>kind</key>
-				<string>landmark</string>
+				<string>pyramid</string>
 				<key>location</key>
 				<dict>
 					<key>lon</key>
-					<real>-99.13759282785058</real>
+					<real>-99.137968</real>
 					<key>lat</key>
-					<real>19.45124965340185</real>
+					<real>19.451017</real>
 				</dict>
 				<key>main_pic</key>
-				<string>bici_entrenate.jpg</string>
+				<string>tlatelolco-explanada.jpg</string>
 				<key>details</key>
-				<string></string>
+				<string>México–Tlatelolco fue fundada en 1338, trece años más tarde que México-Tenochtitlan, por disidentes mexicas.</string>
 				<key>title</key>
-				<string>Tlatelolco Altépetl</string>
+				<string>Tlatelolco Altepetl </string>
 			</dict>
 			<dict>
+				<key>category</key>
+				<string>catholic</string>
 				<key>listed</key>
 				<true/>
 				<key>sponsored</key>
 				<false/>
 				<key>kind</key>
-				<string>landmark</string>
+				<string>historical_building</string>
 				<key>location</key>
 				<dict>
 					<key>lon</key>
@@ -607,19 +635,21 @@
 					<real>19.48483292048974</real>
 				</dict>
 				<key>main_pic</key>
-				<string>bici_entrenate.jpg</string>
+				<string>basilica.jpg</string>
 				<key>details</key>
-				<string></string>
+				<string>La Basilica de Guadalupe es el recinto religioso más importante para los creyentes católicos en latinoamérica.</string>
 				<key>title</key>
 				<string>Basílica de Guadalupe</string>
 			</dict>
 			<dict>
+				<key>category</key>
+				<string>flag</string>
 				<key>listed</key>
 				<true/>
 				<key>sponsored</key>
 				<false/>
 				<key>kind</key>
-				<string>public_space</string>
+				<string>star</string>
 				<key>location</key>
 				<dict>
 					<key>lon</key>
@@ -628,19 +658,21 @@
 					<real>19.43257859823429</real>
 				</dict>
 				<key>main_pic</key>
-				<string>bici_entrenate.jpg</string>
+				<string>zocalo.jpg</string>
 				<key>details</key>
-				<string></string>
+				<string>Con una superficie de aproximadamente 46,800 metros cuadrados, es la plaza principal de la México.</string>
 				<key>title</key>
 				<string>Zócalo</string>
 			</dict>
 			<dict>
+				<key>category</key>
+				<string>aztec</string>
 				<key>listed</key>
 				<true/>
 				<key>sponsored</key>
 				<false/>
 				<key>kind</key>
-				<string>museum</string>
+				<string>pyramid</string>
 				<key>location</key>
 				<dict>
 					<key>lon</key>
@@ -649,9 +681,9 @@
 					<real>19.43492587683494</real>
 				</dict>
 				<key>main_pic</key>
-				<string>bici_entrenate.jpg</string>
+				<string>templo-mayor.jpg</string>
 				<key>details</key>
-				<string></string>
+				<string>Fué el centro absoluto de la vida religiosa, política y económica de los aztecas de México-Tenochtitlan.</string>
 				<key>title</key>
 				<string>Templo Mayor</string>
 			</dict>
@@ -742,6 +774,8 @@
 				<string>Plaza Loreto</string>
 			</dict>
 			<dict>
+				<key>category</key>
+				<string>shopping</string>
 				<key>listed</key>
 				<false/>
 				<key>sponsored</key>
@@ -756,11 +790,57 @@
 					<real>19.42908923522653</real>
 				</dict>
 				<key>main_pic</key>
-				<string>bici_entrenate.jpg</string>
+				<string>reforma-222.jpg</string>
 				<key>details</key>
-				<string></string>
+				<string>El centro comercial más completo y con mejor estilo arquitectónico de la avenida más importante de México. </string>
 				<key>title</key>
 				<string>Reforma 222</string>
+			</dict>
+			<dict>
+				<key>category</key>
+				<string>artistical</string>
+				<key>listed</key>
+				<true/>
+				<key>sponsored</key>
+				<false/>
+				<key>kind</key>
+				<string>historical_building</string>
+				<key>location</key>
+				<dict>
+					<key>lon</key>
+					<real>-99.14117400000001</real>
+					<key>lat</key>
+					<real>19.435452</real>
+				</dict>
+				<key>main_pic</key>
+				<string>bellas-artes.jpg</string>
+				<key>details</key>
+				<string>Declarado por la Unesco como monumento artístico, es la casa máxima de la expresión de la cultura del país.</string>
+				<key>title</key>
+				<string>Palacio de Bellas Artes</string>
+			</dict>
+			<dict>
+				<key>category</key>
+				<string>artistic-gem</string>
+				<key>listed</key>
+				<true/>
+				<key>sponsored</key>
+				<true/>
+				<key>kind</key>
+				<string>historical_building</string>
+				<key>location</key>
+				<dict>
+					<key>lon</key>
+					<real>-99.140163</real>
+					<key>lat</key>
+					<real>19.434329</real>
+				</dict>
+				<key>main_pic</key>
+				<string>azulejos-sanborns.jpg</string>
+				<key>details</key>
+				<string>Es un palacio cubierto de azulejos de talavera poblana, convirtiéndolo en una joya del arte barroco novohispano.</string>
+				<key>title</key>
+				<string>Casa de los Azulejos</string>
 			</dict>
 		</array>
 		<key>route</key>

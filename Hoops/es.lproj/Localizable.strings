@@ -13,17 +13,36 @@
 "route_start" = "Inicio de Ruta";
 "route_end" = "Fin de Ruta";
 
+"trip_pois" = "Puntos de Interés";
+
+// Kinds
 "bike_sharing_spots" = "Préstamo de bicis";
 "bike_service_spots" = "Estación de servicios";
 "bike_school" = "Aprende a andar en bici";
 
-"trip_pois" = "Puntos de Interés";
-
-// Categories
 "food" = "Para comer";
 "breakfast" = "Para desayunar";
-"museum" = "Lugar cultural";
-"landmark" = "Lugar importante";
+"museum" = "Museo";
+"star" = "Sitio de Interés";
 "public_space" = "Para descansar";
 "shop" = "De compras";
 "bakery" = "Para el antojo";
+"historical_building" = "Edificio Histórico";
+"pyramid" = "Sitio Arqueológico";
+
+// Categories
+"aztec" = "Azteca";
+"catholic" = "Templo Católico";
+"pancakes-food" = "Dulce y salado";
+"mexican-food" = "Comida mexicana";
+"japanese-food" = "Comida japonesa";
+"sweetie-food" = "Pastelitos y Malteadas";
+"artistical" = "Arte y cultura";
+"artistic-gem" = "Joya arquitectónica";
+"revolution" = "Cambio social";
+"wreath" = "Memorial";
+"park" = "Parque";
+"learn" = "Clases";
+"handmade" = "Artesanías";
+"shopping" = "Plaza comercial";
+"monument" = "Monumento";

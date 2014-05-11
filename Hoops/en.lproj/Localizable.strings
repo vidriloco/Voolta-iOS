@@ -16,16 +16,35 @@
 
 "trip_pois" = "Puntos de Interés";
 
-// Categories
+// Kinds
 "bike_sharing_spots" = "Préstamo de bicis";
 "bike_service_spots" = "Estación de servicios";
 "bike_school" = "Aprende a andar en bici";
 
-
 "food" = "Eating";
 "breakfast" = "For breakfast";
-"museum" = "Visiting a museum";
-"landmark" = "Landmark";
+"museum" = "Museum";
+"star" = "Landmark";
 "public_space" = "For having a rest";
 "shop" = "Go shopping";
-"bakery" = "A little whim";
+"bakery" = "Go for a little whim";
+"historical_building" = "Historical building";
+"pyramid" = "Archaeological Site";
+
+// Categories
+"aztec" = "Aztec";
+"catholic" = "Catholic Temple";
+"pancakes-food" = "Sweet and salted";
+"mexican-food" = "Mexican food";
+"japanese-food" = "Japanese food";
+"sweetie-food" = "Cakes & milkshakes";
+"artistical" = "Culture & art";
+"artistic-gem" = "Architectural gem";
+"revolution" = "Social change";
+"wreath" = "Memorial";
+"park" = "Park";
+"learn" = "Lessons";
+"handmade" = "Handcrafts";
+"shopping" = "Mall";
+"monument" = "Monument";
+

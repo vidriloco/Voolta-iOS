@@ -61,7 +61,7 @@
         if ([element isMainSlide]) {
             [imageView setImage:[UIImage imageNamed:poi.mainPic]];
             [self drawMainSlideWithTitle:poi.theTitle
-                            withSubtitle:poi.subtitle
+                            withSubtitle:poi.details
                             withIconName:poi.iconName
                  withContrastViewEnabled:[element contrasted]
                        andBackgroundView:imageView];
@@ -160,6 +160,7 @@
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, self.frame.size.height-95, self.frame.size.width-40, 40)];
     [titleLabel setMinimumScaleFactor:0.5];
+    [titleLabel setAdjustsFontSizeToFitWidth:YES];
     [titleLabel setFont:[LookAndFeel defaultFontBoldWithSize:19]];
     [titleLabel setTextColor:[UIColor whiteColor]];
     [titleLabel setText:title];
@@ -172,6 +173,7 @@
     
     UILabel *subtitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, self.frame.size.height-75, self.frame.size.width-40, 40)];
     [subtitleLabel setMinimumScaleFactor:0.3];
+    [subtitleLabel setAdjustsFontSizeToFitWidth:YES];
     [subtitleLabel setFont:[LookAndFeel defaultFontLightWithSize:15]];
     [subtitleLabel setTextColor:[UIColor whiteColor]];
     [subtitleLabel setText:subtitle];

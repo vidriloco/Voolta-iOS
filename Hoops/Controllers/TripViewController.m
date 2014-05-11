@@ -335,7 +335,9 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
 
 - (BOOL) mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker
 {
-    [_poiDetailsManager showDetailsViewForPoi:(Poi*) marker];
+    if ([marker isKindOfClass:[Poi class]]) {
+        [_poiDetailsManager showDetailsViewForPoi:(Poi*) marker];
+    }
     return NO;
 }
 

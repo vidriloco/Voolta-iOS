@@ -386,7 +386,7 @@ forCellReuseIdentifier:kCellViewIdentifier];
     UIImage *img = [UIImage imageNamed:poi.mainPic];
     [[cardView imageBackground] setImage:img];
     [[cardView titleLabel] setText:poi.theTitle];
-    [[cardView subtitleLabel] setText:poi.subtitle];
+    [[cardView subtitleLabel] setText:poi.localizedCategory];
     [cardView stylize];
 
     return (UITableViewCell*) cardView;

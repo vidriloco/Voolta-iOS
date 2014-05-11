@@ -18,13 +18,14 @@
 @property (nonatomic, strong) NSString *theTitle;
 @property (nonatomic, strong) NSString *details;
 @property (nonatomic, strong) NSString *mainPic;
-@property (nonatomic, strong) NSString *categoryBackgroundIcon;
+@property (nonatomic, strong) NSString *category;
 
 @property (nonatomic, strong) NSArray *slideElements;
 
 + (Poi*) initWithDictionary:(NSDictionary*)dictionary;
 
 - (NSString*) subtitle;
+- (NSString*) localizedCategory;
 
 - (BOOL) isAPlaceToEat;
 - (BOOL) isAPlaceToInteract;
