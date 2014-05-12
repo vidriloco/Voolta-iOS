@@ -158,6 +158,8 @@
 		3A1E1629192037B200281822 /* new-ribbon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E15AD192037B200281822 /* new-ribbon@2x.png */; };
 		3A1E162A192037B200281822 /* soon-ribbon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E15AE192037B200281822 /* soon-ribbon.png */; };
 		3A1E162B192037B200281822 /* soon-ribbon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E15AF192037B200281822 /* soon-ribbon@2x.png */; };
+		3A1E162E1920452B00281822 /* tlatelolco-altepetl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E162C1920452B00281822 /* tlatelolco-altepetl.jpg */; };
+		3A1E162F1920452B00281822 /* tlatelolco-altepetl@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E162D1920452B00281822 /* tlatelolco-altepetl@2x.jpg */; };
 		3A1FA86018E15BC20000BAFC /* Path.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1FA85F18E15BC20000BAFC /* Path.m */; };
 		3A215084191FE4E200EB19D2 /* basilica.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A21507C191FE4E200EB19D2 /* basilica.jpg */; };
 		3A215085191FE4E200EB19D2 /* basilica@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A21507D191FE4E200EB19D2 /* basilica@2x.jpg */; };
@@ -209,6 +211,7 @@
 		3A4F0F2D18EDCBB100F2BEC8 /* MainCardButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F0F2C18EDCBB100F2BEC8 /* MainCardButton.m */; };
 		3A594BCF18E7174A00220D61 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A594BCE18E7174A00220D61 /* GoogleMaps.framework */; };
 		3A594BD118E7175300220D61 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3A594BD018E7175300220D61 /* GoogleMaps.bundle */; };
+		3A596B641920845A0033FC1C /* tlatelolco.html in Resources */ = {isa = PBXBuildFile; fileRef = 3A596B631920845A0033FC1C /* tlatelolco.html */; };
 		3A5B5B371913F5A100546B92 /* POITableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A5B5B361913F5A100546B92 /* POITableHeaderView.xib */; };
 		3A5B5B3A1913F5CF00546B92 /* POITableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5B5B391913F5CF00546B92 /* POITableHeaderView.m */; };
 		3A5B5B3E1913FADC00546B92 /* POITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5B5B3C1913FADC00546B92 /* POITableViewCell.m */; };
@@ -488,6 +491,8 @@
 		3A1E15AD192037B200281822 /* new-ribbon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new-ribbon@2x.png"; sourceTree = "<group>"; };
 		3A1E15AE192037B200281822 /* soon-ribbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soon-ribbon.png"; sourceTree = "<group>"; };
 		3A1E15AF192037B200281822 /* soon-ribbon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soon-ribbon@2x.png"; sourceTree = "<group>"; };
+		3A1E162C1920452B00281822 /* tlatelolco-altepetl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "tlatelolco-altepetl.jpg"; sourceTree = "<group>"; };
+		3A1E162D1920452B00281822 /* tlatelolco-altepetl@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "tlatelolco-altepetl@2x.jpg"; sourceTree = "<group>"; };
 		3A1FA85E18E15BC20000BAFC /* Path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Path.h; sourceTree = "<group>"; };
 		3A1FA85F18E15BC20000BAFC /* Path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Path.m; sourceTree = "<group>"; };
 		3A21507C191FE4E200EB19D2 /* basilica.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = basilica.jpg; sourceTree = "<group>"; };
@@ -545,6 +550,7 @@
 		3A4F0F2C18EDCBB100F2BEC8 /* MainCardButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCardButton.m; sourceTree = "<group>"; };
 		3A594BCE18E7174A00220D61 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		3A594BD018E7175300220D61 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		3A596B631920845A0033FC1C /* tlatelolco.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = tlatelolco.html; sourceTree = "<group>"; };
 		3A5B5B361913F5A100546B92 /* POITableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POITableHeaderView.xib; sourceTree = "<group>"; };
 		3A5B5B381913F5CF00546B92 /* POITableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POITableHeaderView.h; sourceTree = "<group>"; };
 		3A5B5B391913F5CF00546B92 /* POITableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POITableHeaderView.m; sourceTree = "<group>"; };
@@ -1473,10 +1479,13 @@
 		3A99BFA1191F6059006198C1 /* tlatelolco */ = {
 			isa = PBXGroup;
 			children = (
+				3A1E162C1920452B00281822 /* tlatelolco-altepetl.jpg */,
+				3A1E162D1920452B00281822 /* tlatelolco-altepetl@2x.jpg */,
 				3A99BFA4191F6059006198C1 /* centro-universitario.jpg */,
 				3A99BFA5191F6059006198C1 /* centro-universitario@2x.jpg */,
 				3A99BFA6191F6059006198C1 /* tlatelolco-explanada.jpg */,
 				3A99BFA7191F6059006198C1 /* tlatelolco-explanada@2x.jpg */,
+				3A596B631920845A0033FC1C /* tlatelolco.html */,
 			);
 			path = tlatelolco;
 			sourceTree = "<group>";
@@ -1612,6 +1621,7 @@
 				3A3B8F4F18F4A1080010067E /* estacion-servicio-lavilla-front.png in Resources */,
 				3A1E1621192037B200281822 /* service_hub-marker@2x.png in Resources */,
 				3A918BC5191D994C0057A18E /* alameda-central@2x.jpg in Resources */,
+				3A1E162E1920452B00281822 /* tlatelolco-altepetl.jpg in Resources */,
 				3A1E15F7192037B200281822 /* breakfast-icon@2x.png in Resources */,
 				3A215086191FE4E200EB19D2 /* templo-mayor.jpg in Resources */,
 				3A0513FD18E74E6C00C25512 /* bluesky_bg.jpg in Resources */,
@@ -1747,6 +1757,7 @@
 				3A0513FF18E74E6C00C25512 /* aquamarine_bg.jpg in Resources */,
 				3A1E1620192037B200281822 /* service_hub-marker.png in Resources */,
 				3A215085191FE4E200EB19D2 /* basilica@2x.jpg in Resources */,
+				3A596B641920845A0033FC1C /* tlatelolco.html in Resources */,
 				3A1E15EE192037B200281822 /* sweetie-food.png in Resources */,
 				3A1E1604192037B200281822 /* service_hub-icon.png in Resources */,
 				3A7D566F18FF16CC005BD5CA /* LegendElementView.xib in Resources */,
@@ -1790,6 +1801,7 @@
 				3A1E15C6192037B200281822 /* next_icon.png in Resources */,
 				3A1E161A192037B200281822 /* museum-marker.png in Resources */,
 				3A43651418DF5BC000205EA3 /* OpenSans-LightItalic.ttf in Resources */,
+				3A1E162F1920452B00281822 /* tlatelolco-altepetl@2x.jpg in Resources */,
 				3A1E162A192037B200281822 /* soon-ribbon.png in Resources */,
 				3A3B8F4C18F4A1080010067E /* estacion-servicio-cuauhtemoc-front@2x.png in Resources */,
 				3A1E15FB192037B200281822 /* historical_building-icon.png in Resources */,

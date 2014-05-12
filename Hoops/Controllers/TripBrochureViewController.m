@@ -269,7 +269,6 @@ forCellReuseIdentifier:kCellViewIdentifier];
 
 - (CGPoint) drawRouteControlsOnContainer:(UIView*)container startingAtPosition:(CGPoint)position {
     float horizontalMargin = 40;
-    // START: Load route start and route end buttons
     MainCardButton *leftCardButton = [[[NSBundle mainBundle]
                                        loadNibNamed:@"MainCardButton" owner:self options:nil] objectAtIndex:0];
     [leftCardButton setFrame:CGRectMake(horizontalMargin, position.y, leftCardButton.frame.size.width, leftCardButton.frame.size.height)];
@@ -289,7 +288,6 @@ forCellReuseIdentifier:kCellViewIdentifier];
     [[rightCardButton iconView] setImage:[UIImage imageNamed:@"flag-end-icon.png"]];
     [rightCardButton stylizeView];
     [container addSubview:rightCardButton];
-    // END: Load route start and route end buttons
     return CGPointMake(0, rightCardButton.frame.origin.y+rightCardButton.frame.size.height);
 }
 
@@ -378,18 +376,22 @@ forCellReuseIdentifier:kCellViewIdentifier];
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    POITableViewCell *cardView = [tableView dequeueReusableCellWithIdentifier:kCellViewIdentifier];
+    POITableViewCell *poiViewCell = [tableView dequeueReusableCellWithIdentifier:kCellViewIdentifier];
     NSString *sectionKey = [_sectionsOnTable objectAtIndex:[indexPath section]];
     
     Poi *poi = [[_currentTrip.categorizedPois objectForKey:sectionKey] objectAtIndex:[indexPath row]];
     
     UIImage *img = [UIImage imageNamed:poi.mainPic];
-    [[cardView imageBackground] setImage:img];
-    [[cardView titleLabel] setText:poi.theTitle];
-    [[cardView subtitleLabel] setText:poi.localizedCategory];
-    [cardView stylize];
+    [[poiViewCell imageBackground] setImage:img];
+    [[poiViewCell titleLabel] setText:poi.theTitle];
+    if ([poi isSlideBased]) {
+        [[poiViewCell subtitleLabel] setText:poi.details];
+    } else {
+        [[poiViewCell subtitleLabel] setText:poi.localizedCategory];
+    }
+    [poiViewCell stylize];
 
-    return (UITableViewCell*) cardView;
+    return (UITableViewCell*) poiViewCell;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

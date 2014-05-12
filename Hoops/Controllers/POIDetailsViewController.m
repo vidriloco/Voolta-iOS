@@ -34,7 +34,7 @@
     [super viewDidLoad];
     [self resizeMainView];
     
-    if ([_poi isAMuseum]) {
+    if ([_poi isSlideBased]) {
         _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
         [_scrollView setBounces:YES];
         [_scrollView setScrollEnabled:YES];

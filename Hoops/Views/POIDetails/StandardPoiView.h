@@ -10,15 +10,16 @@
 #import "LookAndFeel.h"
 
 @class POIDetailsView;
-@interface StandardPoiView : UIView
+@interface StandardPoiView : UIView<UIWebViewDelegate>
 
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) IBOutlet UIImageView *mainImageView;
-@property (nonatomic, strong) IBOutlet UILabel *titleLabel;
-@property (nonatomic, strong) IBOutlet UILabel *subtitleLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *iconView;
-@property (nonatomic, strong) IBOutlet UITextView *textView;
-@property (nonatomic, strong) IBOutlet UIImageView *categoryImageView;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UIImageView *mainImageView;
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *subtitleLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *iconView;
+@property (nonatomic, weak) IBOutlet UITextView *textView;
+@property (nonatomic, weak) IBOutlet UIImageView *categoryImageView;
+@property (nonatomic, weak) IBOutlet UIWebView *webView;
 
 - (void) stylize;
 - (void) setDetailsViewWithText:(NSString*)text;

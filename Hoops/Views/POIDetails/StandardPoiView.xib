@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -11,81 +11,53 @@
             <rect key="frame" x="0.0" y="0.0" width="280" height="340"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7xB-0Y-jDF">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="7xB-0Y-jDF">
                     <rect key="frame" x="132" y="211" width="150" height="150"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sub-eZ-9GS">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" id="Sub-eZ-9GS">
                     <rect key="frame" x="0.0" y="0.0" width="280" height="340"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W2l-7v-MzJ">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="W2l-7v-MzJ">
                             <rect key="frame" x="0.0" y="0.0" width="280" height="193"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="193" id="22a-8i-m5c"/>
-                                <constraint firstAttribute="width" constant="280" id="3yv-sN-3Ad"/>
-                            </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Ha-Sq-PTM">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="3Ha-Sq-PTM">
                             <rect key="frame" x="105" y="146" width="70" height="70"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="70" id="JYa-Tz-C69"/>
-                                <constraint firstAttribute="width" constant="70" id="WUy-me-iIH"/>
-                            </constraints>
                         </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="POI Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jF2-Jf-5VN">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POI Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jF2-Jf-5VN">
                             <rect key="frame" x="20" y="40" width="240" height="26"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="POI Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulj-ve-hTC">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POI Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ulj-ve-hTC">
                             <rect key="frame" x="20" y="61" width="240" height="26"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWa-Hv-m3c">
-                            <rect key="frame" x="20" y="224" width="240" height="110"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BWa-Hv-m3c">
+                            <rect key="frame" x="20" y="224" width="240" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="110" id="FCI-VD-hCr"/>
-                            </constraints>
                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
+                        <webView contentMode="scaleToFill" id="UDO-K6-cq5">
+                            <rect key="frame" x="14" y="219" width="252" height="385"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </webView>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="3Ha-Sq-PTM" firstAttribute="top" secondItem="Sub-eZ-9GS" secondAttribute="top" constant="146" id="023-LA-ej0"/>
-                        <constraint firstItem="BWa-Hv-m3c" firstAttribute="leading" secondItem="jF2-Jf-5VN" secondAttribute="leading" id="1vo-gA-kyv"/>
-                        <constraint firstItem="BWa-Hv-m3c" firstAttribute="centerX" secondItem="3Ha-Sq-PTM" secondAttribute="centerX" id="604-IS-qyM"/>
-                        <constraint firstItem="BWa-Hv-m3c" firstAttribute="trailing" secondItem="ulj-ve-hTC" secondAttribute="trailing" id="A5c-z1-GXb"/>
-                        <constraint firstItem="3Ha-Sq-PTM" firstAttribute="leading" secondItem="Sub-eZ-9GS" secondAttribute="leading" constant="105" id="Kmz-lb-Eu1"/>
-                        <constraint firstItem="BWa-Hv-m3c" firstAttribute="centerX" secondItem="W2l-7v-MzJ" secondAttribute="centerX" id="L9M-bF-ZqC"/>
-                        <constraint firstItem="BWa-Hv-m3c" firstAttribute="leading" secondItem="Sub-eZ-9GS" secondAttribute="leading" constant="20" symbolic="YES" id="T5g-BE-bzz"/>
-                        <constraint firstAttribute="trailing" secondItem="3Ha-Sq-PTM" secondAttribute="trailing" constant="105" id="VXb-dR-H0x"/>
-                        <constraint firstItem="W2l-7v-MzJ" firstAttribute="top" secondItem="Sub-eZ-9GS" secondAttribute="top" id="bOC-E8-hxE"/>
-                        <constraint firstAttribute="bottom" secondItem="BWa-Hv-m3c" secondAttribute="bottom" constant="6" id="edN-ut-D53"/>
-                        <constraint firstItem="BWa-Hv-m3c" firstAttribute="top" secondItem="3Ha-Sq-PTM" secondAttribute="bottom" constant="8" symbolic="YES" id="mlf-yR-Uh2"/>
-                        <constraint firstItem="BWa-Hv-m3c" firstAttribute="trailing" secondItem="jF2-Jf-5VN" secondAttribute="trailing" id="ndp-vC-l8g"/>
-                        <constraint firstItem="BWa-Hv-m3c" firstAttribute="leading" secondItem="ulj-ve-hTC" secondAttribute="leading" id="v2s-Hw-xwQ"/>
-                    </constraints>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="Sub-eZ-9GS" secondAttribute="trailing" id="8K4-g9-8mY"/>
-                <constraint firstAttribute="bottom" secondItem="7xB-0Y-jDF" secondAttribute="bottom" constant="-21" id="AC7-1Z-qy1"/>
-                <constraint firstItem="Sub-eZ-9GS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HKK-i5-h4m"/>
-                <constraint firstItem="Sub-eZ-9GS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="c8o-tO-EWU"/>
-                <constraint firstAttribute="bottom" secondItem="Sub-eZ-9GS" secondAttribute="bottom" id="vg6-ax-C87"/>
-            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="categoryImageView" destination="7xB-0Y-jDF" id="bjk-oJ-5OX"/>
@@ -95,6 +67,7 @@
                 <outlet property="subtitleLabel" destination="ulj-ve-hTC" id="yEm-vZ-4cb"/>
                 <outlet property="textView" destination="BWa-Hv-m3c" id="hX5-Ue-1Ks"/>
                 <outlet property="titleLabel" destination="jF2-Jf-5VN" id="tKk-tq-MDU"/>
+                <outlet property="webView" destination="UDO-K6-cq5" id="mQV-zU-URK"/>
             </connections>
         </view>
     </objects>

@@ -36,7 +36,7 @@
 - (BOOL) isABikeSchool;
 - (BOOL) isABikeLending;
 
-- (BOOL) isAMuseum;
+- (BOOL) isSlideBased;
 
 - (NSString*) iconName;
 

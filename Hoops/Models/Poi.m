@@ -27,7 +27,7 @@
     poi.icon = [UIImage imageNamed:[[poi kind] stringByAppendingString:@"-marker.png"]];
     poi.snippet = nil;
     
-    if ([poi isAMuseum]) {
+    if ([poi isSlideBased]) {
         if([dictionary objectForKey:@"slides"]) {
             NSMutableArray *slideList = [NSMutableArray array];
 
@@ -53,7 +53,7 @@
     return NSLocalizedString(self.category, nil);
 }
 
-- (BOOL) isAMuseum
+- (BOOL) isSlideBased
 {
     return [self.kind isEqualToString:@"museum"];
 }

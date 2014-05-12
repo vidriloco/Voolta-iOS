@@ -505,7 +505,7 @@
 				</dict>
 				<key>main_pic</key>
 				<string>franz-mayer.jpg</string>
-				<key>subtitle</key>
+				<key>details</key>
 				<string>Abierto de 8 AM a 6 PM</string>
 				<key>title</key>
 				<string>Museo Franz Mayer</string>
@@ -612,7 +612,7 @@
 					<real>19.451017</real>
 				</dict>
 				<key>main_pic</key>
-				<string>tlatelolco-explanada.jpg</string>
+				<string>tlatelolco-altepetl.jpg</string>
 				<key>details</key>
 				<string>México–Tlatelolco fue fundada en 1338, trece años más tarde que México-Tenochtitlan, por disidentes mexicas.</string>
 				<key>title</key>

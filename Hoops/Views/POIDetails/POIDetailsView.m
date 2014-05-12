@@ -55,7 +55,7 @@
 
 - (void) loadDetailsForPoi:(Poi *)poi
 {
-    if ([poi isAMuseum]) {
+    if ([poi isSlideBased]) {
         HorizontalSlidesBasedPoiView *horizontalSlide = [[HorizontalSlidesBasedPoiView alloc] initWithContainerView:_mainView];
 
         [horizontalSlide drawSlidesForPoi:poi];

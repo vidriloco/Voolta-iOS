@@ -55,8 +55,22 @@
     [_textView setScrollEnabled:NO];
     [_textView setMinimumZoomScale:0.5];
     [_textView setBackgroundColor:[UIColor clearColor]];
+    [_textView setHidden:YES];
     [_categoryImageView setAlpha:0.1];
     [_categoryImageView setContentMode:UIViewContentModeScaleAspectFill];
+
+    [_webView setBackgroundColor:[UIColor clearColor]];
+    [_webView setOpaque:NO];
+    [_webView setUserInteractionEnabled:NO];
+    [_webView setDelegate:self];
+    
+    NSString *path = [[NSBundle mainBundle] bundlePath];
+    NSURL *baseURL = [NSURL fileURLWithPath:path];
+
+    NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"tlatelolco" ofType:@"html"];
+    NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
+    [_webView loadHTMLString:htmlString baseURL:baseURL];
+    [_webView setAlpha:0];
 }
 
 - (void) setDetailsViewWithText:(NSString *)text
@@ -74,6 +88,17 @@
     
     NSAttributedString *repString = [[NSAttributedString alloc] initWithString:text attributes:attributeDic];
     [_textView setAttributedText:repString];
+}
+
+- (void) webViewDidFinishLoad:(UIWebView *)webView
+{
+
+    float viewHeight = [[_webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.scrollHeight"] floatValue];
+    [_scrollView setContentSize:CGSizeMake(_scrollView.frame.size.width, _scrollView.frame.size.height+viewHeight)];
+    [_webView setFrame:CGRectMake(_webView.frame.origin.x, _webView.frame.origin.y, _webView.frame.size.width, viewHeight)];
+    [UIView animateWithDuration:0.5 animations:^{
+        [_webView setAlpha:1];
+    }];
 }
 
 @end
