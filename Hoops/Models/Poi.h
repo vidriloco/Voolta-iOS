@@ -10,6 +10,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "SlideElement.h"
 #import "App.h"
+#import "BrochureElement.h"
 
 @interface Poi : GMSMarker
 
@@ -21,6 +22,8 @@
 @property (nonatomic, strong) NSString *category;
 
 @property (nonatomic, strong) NSArray *slideElements;
+
+@property (nonatomic, strong) NSArray *brochureElements;
 
 + (Poi*) initWithDictionary:(NSDictionary*)dictionary;
 

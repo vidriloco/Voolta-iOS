@@ -30,8 +30,8 @@
     [_rightMainTitleLabel setTextColor:[UIColor grayColor]];
     [_rightMainTitleLabel setFont:[LookAndFeel defaultFontBoldWithSize:17]];
     
-    [_titleLabel setTextColor:[UIColor grayColor]];
-    [_titleLabel setFont:[LookAndFeel defaultFontBookWithSize:15]];
+    [_subtitleLabel setTextColor:[UIColor grayColor]];
+    [_subtitleLabel setFont:[LookAndFeel defaultFontBookWithSize:15]];
 
     [_descriptionLabel setTextColor:[UIColor grayColor]];
     [_descriptionLabel setFont:[LookAndFeel defaultFontLightWithSize:13]];

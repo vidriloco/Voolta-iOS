@@ -266,6 +266,7 @@
 		3A9AA07318E3532300F075D3 /* TripShowcaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A9AA07118E3532300F075D3 /* TripShowcaseViewController.xib */; };
 		3A9AA07918E3835700F075D3 /* TripCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A9AA07818E3835400F075D3 /* TripCardView.xib */; };
 		3A9AA08018E385FB00F075D3 /* TripCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AA07F18E385FB00F075D3 /* TripCardView.m */; };
+		3A9CB69A192134B5000B2F10 /* ContentBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9CB699192134B5000B2F10 /* ContentBuilder.m */; };
 		3A9D7F3718E0174F00174C19 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A9D7F3518E0174F00174C19 /* Localizable.strings */; };
 		3A9D7F3A18E018EE00174C19 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A9D7F3918E018EE00174C19 /* InfoPlist.strings */; };
 		3A9D7F4018E01E7400174C19 /* TripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9D7F3E18E01E7400174C19 /* TripViewController.m */; };
@@ -617,6 +618,9 @@
 		3A9AA07818E3835400F075D3 /* TripCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TripCardView.xib; sourceTree = "<group>"; };
 		3A9AA07E18E385FB00F075D3 /* TripCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripCardView.h; sourceTree = "<group>"; };
 		3A9AA07F18E385FB00F075D3 /* TripCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripCardView.m; sourceTree = "<group>"; };
+		3A9CB698192134B5000B2F10 /* ContentBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentBuilder.h; sourceTree = "<group>"; };
+		3A9CB699192134B5000B2F10 /* ContentBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentBuilder.m; sourceTree = "<group>"; };
+		3A9CB69B19213882000B2F10 /* ContentBuilderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentBuilderDelegate.h; sourceTree = "<group>"; };
 		3A9D7F3618E0174F00174C19 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A9D7F3818E0175700174C19 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A9D7F3918E018EE00174C19 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -1183,6 +1187,8 @@
 			children = (
 				3A43651918DF67EF00205EA3 /* UIViewController+Helpers.h */,
 				3A43651A18DF67EF00205EA3 /* UIViewController+Helpers.m */,
+				3A9CB698192134B5000B2F10 /* ContentBuilder.h */,
+				3A9CB699192134B5000B2F10 /* ContentBuilder.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1518,6 +1524,7 @@
 			children = (
 				3AFA7B8018EFD122009E0EE6 /* TripSelectedDelegate.h */,
 				3A181E8E18F3CB920075CF84 /* TripPoisDelegate.h */,
+				3A9CB69B19213882000B2F10 /* ContentBuilderDelegate.h */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -1861,6 +1868,7 @@
 				3A1BA7F018DED3E50002F958 /* SBJsonStreamParserAccumulator.m in Sources */,
 				3A1BA7F518DED3E50002F958 /* SBJsonStreamWriterState.m in Sources */,
 				3A1BA7FA18DED3E50002F958 /* IISideController.m in Sources */,
+				3A9CB69A192134B5000B2F10 /* ContentBuilder.m in Sources */,
 				3A4F0F2D18EDCBB100F2BEC8 /* MainCardButton.m in Sources */,
 				3A9AA07218E3532300F075D3 /* TripShowcaseViewController.m in Sources */,
 				3ACF578818E6156D00EE4E5A /* LandingView.m in Sources */,

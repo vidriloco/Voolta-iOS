@@ -14,23 +14,36 @@
 + (BrochureElement*) initWithDictionary:(NSDictionary*)dictionary
 {
     BrochureElement *element = [[BrochureElement alloc] init];
+    [element setType:[dictionary objectForKey:@"type"]];
     
-    if (element) {
-        [element setType:[dictionary objectForKey:@"type"]];
-        if ([element isParagraph]) {
-            [element setValueAsString:[dictionary objectForKey:@"value"]];
-        } else if ([element isLegend]) {
-            [element setTitle:[dictionary objectForKey:@"title"]];
-            [element setValueAsDictionary:[dictionary objectForKey:@"value"]];
-        }
+    if ([element isParagraph]) {
+        [element setParagraphContent:[dictionary objectForKey:@"content"]];
+    } else if ([element isLegend]) {
+        [element setLegendTitle:[dictionary objectForKey:@"title"]];
+        [element setLegendSubtitle:[dictionary objectForKey:@"subtitle"]];
+        [element setLegendDetails:[dictionary objectForKey:@"details"]];
+        [element setLegendImageName:[dictionary objectForKey:@"icon"]];
+    } else if ([element isPhoto]) {
+        [element setPhotoFilename:[dictionary objectForKey:@"filename"]];
+        [element setPhotoCaption:[dictionary objectForKey:@"caption"]];
+        [element setPhotoIsFullWidth:[[dictionary objectForKey:@"full_width"] boolValue]];
+    } else if ([element isWeb]) {
+        [element setWebFilename:[dictionary objectForKey:@"filename"]];
+    } else if ([element isPOITable]) {
+        [element setTableName:[dictionary objectForKey:@"table_title"]];
     }
     
     return element;
 }
 
+- (BOOL) isPhoto
+{
+    return [_type isEqualToString:@"photograph"];
+}
+
 - (BOOL) isLegend
 {
-    return [_type isEqualToString:@"map_item_description"];
+    return [_type isEqualToString:@"legend"];
 }
 
 - (BOOL) isParagraph
@@ -43,25 +56,14 @@
     return [_type isEqualToString:@"route_controls"];
 }
 
-- (NSString*) legendTitle {
-    if ([self isLegend]) {
-        return [_valueAsDictionary objectForKey:@"title"];
-    }
-    return nil;
+- (BOOL) isWeb
+{
+    return [_type isEqualToString:@"webview"];
 }
 
-- (NSString*) legendImageName {
-    if ([self isLegend]) {
-        return [_valueAsDictionary objectForKey:@"icon"];
-    }
-    return nil;
-}
-
-- (NSString*) legendDetails {
-    if ([self isLegend]) {
-        return [_valueAsDictionary objectForKey:@"details"];
-    }
-    return nil;
+- (BOOL) isPOITable
+{
+    return [_type isEqualToString:@"poi_table"];
 }
 
 @end

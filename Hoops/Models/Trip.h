@@ -34,9 +34,6 @@
 @property (nonatomic, strong) NSArray *paths;
 @property (nonatomic, strong) NSArray *directionMarkers;
 
-@property (nonatomic, strong) NSString *introEs;
-@property (nonatomic, strong) NSString *introEn;
-
 @property (nonatomic, strong) NSString *complexity;
 @property (nonatomic, strong) NSString *distance;
 

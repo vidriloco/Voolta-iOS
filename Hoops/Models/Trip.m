@@ -29,8 +29,6 @@ static NSArray *list;
         trip.isAvailable = [[dictionary objectForKey:@"available"] boolValue];
         trip.cost = [[dictionary objectForKey:@"cost"] floatValue];
         
-        trip.introEs = [dictionary objectForKey:@"intro_es"];
-        trip.introEn = [dictionary objectForKey:@"intro_en"];
         trip.complexity = [dictionary objectForKey:@"complexity"];
         trip.distance = [dictionary objectForKey:@"distance"];
 

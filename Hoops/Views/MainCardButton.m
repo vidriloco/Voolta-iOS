@@ -34,22 +34,19 @@
     [_legendLabel setTextColor:[UIColor grayColor]];
     
     [self.layer setCornerRadius:8];
+    [self.layer setMasksToBounds:YES];
     [self addTarget:self action:@selector(onTap) forControlEvents:UIControlEventTouchDown];
     [self addTarget:self action:@selector(onUntap) forControlEvents:(UIControlEventTouchUpInside|UIControlEventTouchUpOutside)];
 }
 
 - (void) onTap
 {
-    [UIView animateWithDuration:0.2 animations:^{
-        [self.layer setBackgroundColor:[LookAndFeel highlightColor].CGColor];
-    }];
+
 }
 
 - (void) onUntap
 {
-    [UIView animateWithDuration:0.2 animations:^{
-        [self.layer setBackgroundColor:[UIColor clearColor].CGColor];
-    }];
+
 }
 
 @end

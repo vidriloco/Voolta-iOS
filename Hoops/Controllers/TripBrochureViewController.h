@@ -13,10 +13,11 @@
 #import "Trip.h"
 #import "Poi.h"
 #import "TripKeyDetailsView.h"
-#import "MainCardButton.h"
-#import "LegendElementView.h"
 #import "POITableHeaderView.h"
 #import "POITableViewCell.h"
+
+#import "ContentBuilder.h"
+#import "ContentBuilderDelegate.h"
 
 #define kTopYOffset                 90
 #define kBottomMargin               30
@@ -29,7 +30,7 @@
 
 @class TripViewController;
 
-@interface TripBrochureViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+@interface TripBrochureViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, ContentBuilderDelegate>
 
 @property (nonatomic, strong) Trip *currentTrip;
 

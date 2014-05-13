@@ -16,7 +16,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *rightMainTitleLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *rightLegendImageView;
 
-@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *subtitleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, weak) IBOutlet UIView *containerView;
 

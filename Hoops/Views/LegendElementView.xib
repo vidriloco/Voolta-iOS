@@ -60,7 +60,7 @@
                 <outlet property="leftMainTitleLabel" destination="h3I-g9-5FE" id="AwW-O7-rEs"/>
                 <outlet property="rightLegendImageView" destination="zi8-C4-gl5" id="hR8-w4-L86"/>
                 <outlet property="rightMainTitleLabel" destination="g9s-mc-aUL" id="GsO-bA-nrg"/>
-                <outlet property="titleLabel" destination="BiU-kw-gjk" id="7HT-g0-kIr"/>
+                <outlet property="subtitleLabel" destination="BiU-kw-gjk" id="QVI-z7-6ae"/>
             </connections>
         </view>
     </objects>

@@ -47,58 +47,25 @@
     [_mainImageView setContentMode:UIViewContentModeScaleAspectFill];
     [self setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     
-    [_textView setFont:[LookAndFeel defaultFontBookWithSize:15]];
-    [_textView setTextColor:[UIColor grayColor]];
-    
-    [_textView setSelectable:NO];
-    [_textView setEditable:NO];
-    [_textView setScrollEnabled:NO];
-    [_textView setMinimumZoomScale:0.5];
-    [_textView setBackgroundColor:[UIColor clearColor]];
-    [_textView setHidden:YES];
     [_categoryImageView setAlpha:0.1];
     [_categoryImageView setContentMode:UIViewContentModeScaleAspectFill];
 
-    [_webView setBackgroundColor:[UIColor clearColor]];
-    [_webView setOpaque:NO];
-    [_webView setUserInteractionEnabled:NO];
-    [_webView setDelegate:self];
-    
-    NSString *path = [[NSBundle mainBundle] bundlePath];
-    NSURL *baseURL = [NSURL fileURLWithPath:path];
-
-    NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"tlatelolco" ofType:@"html"];
-    NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
-    [_webView loadHTMLString:htmlString baseURL:baseURL];
-    [_webView setAlpha:0];
+    CGPoint point = CGPointMake(0, _mainImageView.frame.size.height+_mainImageView.frame.origin.y+20);
+    _contentBuilder = [[ContentBuilder alloc] initWithDelegate:self withOffset:point];
 }
 
-- (void) setDetailsViewWithText:(NSString *)text
+- (void) contentBuilderFinishedAddingElementToView
 {
-    //  paragraphSetting
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.paragraphSpacing = 8.f;
-    paragraphStyle.alignment = NSTextAlignmentJustified;
-    
-    UIColor *color = [UIColor grayColor];
-    
-    NSDictionary *attributeDic = @{ NSFontAttributeName:[LookAndFeel defaultFontBookWithSize:15],
-                                    NSForegroundColorAttributeName:color,
-                                    NSParagraphStyleAttributeName:paragraphStyle};
-    
-    NSAttributedString *repString = [[NSAttributedString alloc] initWithString:text attributes:attributeDic];
-    [_textView setAttributedText:repString];
+    [self drawNextContentElement];
 }
 
-- (void) webViewDidFinishLoad:(UIWebView *)webView
-{
-
-    float viewHeight = [[_webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.scrollHeight"] floatValue];
-    [_scrollView setContentSize:CGSizeMake(_scrollView.frame.size.width, _scrollView.frame.size.height+viewHeight)];
-    [_webView setFrame:CGRectMake(_webView.frame.origin.x, _webView.frame.origin.y, _webView.frame.size.width, viewHeight)];
-    [UIView animateWithDuration:0.5 animations:^{
-        [_webView setAlpha:1];
-    }];
+- (void) drawNextContentElement {
+    if (_contentBuilder.contentElementIdx > [_contentElements count]-1) {
+        [_scrollView setContentSize:CGSizeMake(self.frame.size.width, _contentBuilder.lastOffset.y)];
+    } else {
+        BrochureElement *element = [_contentElements objectAtIndex:_contentBuilder.contentElementIdx];
+        [_contentBuilder buildContentForElement:element onContainer:_scrollView];
+    }
 }
 
 @end

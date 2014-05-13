@@ -16,7 +16,7 @@
 				<string>route_controls</string>
 			</dict>
 			<dict>
-				<key>value</key>
+				<key>content</key>
 				<string>El gobierno de la Ciudad de México ha habilitado diversos servicios en esta ruta, los cuales te pueden ser de utilidad al recorrerla.</string>
 				<key>type</key>
 				<string>paragraph</string>
@@ -24,57 +24,56 @@
 			<dict>
 				<key>title</key>
 				<string>bike_sharing_spots</string>
-				<key>value</key>
-				<dict>
-					<key>details</key>
-					<string>Busca en el mapa los iconos y encuentra información sobre el mecanismo de préstamo.</string>
-					<key>title</key>
-					<string>A través de Bicigratis®</string>
-					<key>icon</key>
-					<string>bicycle_sharing-icon.png</string>
-				</dict>
+				<key>subtitle</key>
+				<string>A través de Bicigratis®</string>
+				<key>icon</key>
+				<string>bicycle_sharing-icon.png</string>
+				<key>details</key>
+				<string>Busca en el mapa los iconos y encuentra información sobre el mecanismo de préstamo.</string>
 				<key>type</key>
-				<string>map_item_description</string>
+				<string>legend</string>
 			</dict>
 			<dict>
 				<key>title</key>
 				<string>bike_service_spots</string>
-				<key>value</key>
-				<dict>
-					<key>details</key>
-					<string>En estos puntos hay de todo para todos: taller y tienda de accesorios para tu bici, baño, yoga, baile.</string>
-					<key>title</key>
-					<string>Desde reparaciones hasta clases de yoga</string>
-					<key>icon</key>
-					<string>service_hub-icon.png</string>
-				</dict>
+				<key>subtitle</key>
+				<string>Desde reparaciones hasta clases de yoga</string>
+				<key>details</key>
+				<string>En estos puntos hay de todo para todos: taller y tienda de accesorios para tu bici, baño, yoga, baile.</string>
+				<key>icon</key>
+				<string>service_hub-icon.png</string>
 				<key>type</key>
-				<string>map_item_description</string>
+				<string>legend</string>
 			</dict>
 			<dict>
 				<key>title</key>
 				<string>bike_school</string>
-				<key>value</key>
-				<dict>
-					<key>details</key>
-					<string>Aquí te enseñarán a como usar la bici para transportarte por la ciudad, no importa si eres niño, joven, adulto o adulto mayor.</string>
-					<key>title</key>
-					<string>Bicientrénate</string>
-					<key>icon</key>
-					<string>bike_school-icon.png</string>
-				</dict>
+				<key>details</key>
+				<string>Aquí te enseñarán a como usar la bici para transportarte por la ciudad, no importa si eres niño, joven, adulto o adulto mayor.</string>
+				<key>icon</key>
+				<string>bike_school-icon.png</string>
+				<key>subtitle</key>
+				<string>Bicientrénate</string>
 				<key>type</key>
-				<string>map_item_description</string>
+				<string>legend</string>
+			</dict>
+			<dict>
+				<key>table_title</key>
+				<string>trip_pois</string>
+				<key>type</key>
+				<string>poi_table</string>
+			</dict>
+			<dict>
+				<key>filename</key>
+				<string>tlatelolco</string>
+				<key>type</key>
+				<string>webview</string>
 			</dict>
 		</array>
 		<key>distance</key>
 		<string>3.3 km</string>
 		<key>complexity</key>
 		<string>complexity_easy</string>
-		<key>intro_es</key>
-		<string>Cada domingo, Reforma vuelve a ser un espacio para todos al cerrar el paso a los autos y abrirlo únicamente a peatones y bicicletas.</string>
-		<key>intro_en</key>
-		<string></string>
 		<key>kind</key>
 		<string>route</string>
 		<key>pois</key>
@@ -311,6 +310,41 @@
 				<string>Daikoku Río Pánuco</string>
 			</dict>
 			<dict>
+				<key>contents</key>
+				<array>
+					<dict>
+						<key>filename</key>
+						<string>tlatelolco</string>
+						<key>type</key>
+						<string>webview</string>
+					</dict>
+					<dict>
+						<key>full_width</key>
+						<true/>
+						<key>caption</key>
+						<string>Galletitas</string>
+						<key>filename</key>
+						<string>cookies</string>
+						<key>type</key>
+						<string>photograph</string>
+					</dict>
+					<dict>
+						<key>content</key>
+						<string>Si eres fan de los postres, en este lugar los encontrarás y podrás saborear las mejores malteadas del rumbo.</string>
+						<key>type</key>
+						<string>paragraph</string>
+					</dict>
+					<dict>
+						<key>full_width</key>
+						<false/>
+						<key>caption</key>
+						<string></string>
+						<key>filename</key>
+						<string>cookies</string>
+						<key>type</key>
+						<string>photograph</string>
+					</dict>
+				</array>
 				<key>category</key>
 				<string>sweetie-food</string>
 				<key>listed</key>
@@ -329,7 +363,7 @@
 				<key>main_pic</key>
 				<string>chomp-chomp-front.png</string>
 				<key>details</key>
-				<string>Si eres fan de los postres, en este lugar los encontrarás y podrás saborear las mejores malteadas del rumbo.</string>
+				<string></string>
 				<key>title</key>
 				<string>Chomp Chomp</string>
 			</dict>
@@ -979,10 +1013,6 @@
 		<string>complexity_hard</string>
 		<key>distance</key>
 		<string>15 km</string>
-		<key>intro_en</key>
-		<string></string>
-		<key>intro_es</key>
-		<string>En el sur de la Ciudad de México, solo faltan las bicicletas para que sus canales luzcan como los canales holandeses.</string>
 		<key>kind</key>
 		<string>route</string>
 		<key>pois</key>
@@ -1258,10 +1288,6 @@
 		<string>10 km</string>
 		<key>complexity</key>
 		<string>complexity_medium</string>
-		<key>intro_en</key>
-		<string></string>
-		<key>intro_es</key>
-		<string>Al norte de la Ciudad de México, aún se pueden encontrar parajes con vías por donde de pronto se escucha y ve pasar el tren.</string>
 		<key>kind</key>
 		<string>route</string>
 		<key>pois</key>
@@ -1537,10 +1563,6 @@
 		<string>3.3 km</string>
 		<key>complexity</key>
 		<string>complexity_easy</string>
-		<key>intro_es</key>
-		<string>En este recorrido, te llevaremos a descubrir los sitios que dan vida a una de las colonias más pintorescas y antiguas de la ciudad.</string>
-		<key>intro_en</key>
-		<string></string>
 		<key>kind</key>
 		<string>route</string>
 		<key>pois</key>
@@ -1695,8 +1717,6 @@
 		<string>4 km</string>
 		<key>complexity</key>
 		<string>complexity_easy</string>
-		<key>intro_es</key>
-		<string>Coyoacán, uno de los pueblos originarios de la Ciudad de México se despliega a si mismo en este recorrido, solo para quienes vamos en bici.</string>
 		<key>kind</key>
 		<string>route</string>
 		<key>pois</key>

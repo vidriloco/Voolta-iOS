@@ -62,16 +62,19 @@
         [_mainView addSubview:horizontalSlide];
     } else {
         StandardPoiView *poiView = [[[NSBundle mainBundle] loadNibNamed:@"StandardPoiView" owner:self options:nil] objectAtIndex:0];
-        [[poiView mainImageView] setImage:[UIImage imageNamed:poi.mainPic]];        
+        [poiView setContentElements:poi.brochureElements];
+        [poiView stylize];
+        [_mainView addSubview:poiView];
+
+        [[poiView mainImageView] setImage:[UIImage imageNamed:poi.mainPic]];
         [[poiView iconView] setImage:[UIImage imageNamed:poi.iconName]];
         [[poiView titleLabel] setText:poi.theTitle];
         [[poiView subtitleLabel] setText:
          [[poi.localizedCategory stringByAppendingString:@" - "] stringByAppendingString:poi.subtitle]];
         
-        [poiView setDetailsViewWithText:poi.details];
         [[poiView categoryImageView] setImage:[UIImage imageNamed:poi.category]];
-        [poiView stylize];
-        [_mainView addSubview:poiView];
+        [poiView drawNextContentElement];
+        
     }
 
 }

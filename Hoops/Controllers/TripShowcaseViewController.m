@@ -108,7 +108,6 @@
         
         [[cardView mainImage] setImage:[UIImage imageNamed:trip.mainPic]];
         [[cardView tripNameLabel] setText:trip.title];
-        [[cardView tripDetailsTextView] setText:trip.introEs];
         [[cardView tripComplexityLabel] setText:NSLocalizedString([trip complexity], nil)];
         [[cardView tripDistanceLabel] setText:[trip distance]];
 

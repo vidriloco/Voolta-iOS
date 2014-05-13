@@ -15,7 +15,6 @@
     Poi *poi = [[Poi alloc] init];
     
     poi.theTitle = [dictionary objectForKey:@"title"];
-    poi.details = [dictionary objectForKey:@"details"];
     poi.kind = [dictionary objectForKey:@"kind"];
     poi.sponsored = [[dictionary objectForKey:@"sponsored"] boolValue];
     poi.category = [dictionary objectForKey:@"category"];
@@ -28,6 +27,8 @@
     poi.snippet = nil;
     
     if ([poi isSlideBased]) {
+        poi.details = [dictionary objectForKey:@"details"];
+
         if([dictionary objectForKey:@"slides"]) {
             NSMutableArray *slideList = [NSMutableArray array];
 
@@ -37,6 +38,16 @@
             }
             [poi setSlideElements:slideList];
             
+        }
+    } else {
+        if([dictionary objectForKey:@"contents"]) {
+            NSMutableArray *brochureElements = [NSMutableArray array];
+            
+            for (NSDictionary *content in [dictionary objectForKey:@"contents"]) {
+                BrochureElement *brochureElement = [BrochureElement initWithDictionary:content];
+                [brochureElements addObject:brochureElement];
+            }
+            [poi setBrochureElements:brochureElements];
         }
     }
     

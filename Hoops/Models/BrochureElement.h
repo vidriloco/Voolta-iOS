@@ -10,20 +10,37 @@
 
 @interface BrochureElement : NSObject
 
-@property (nonatomic, strong) NSString* type;
-@property (nonatomic, strong) NSString* title;
-@property (nonatomic, strong) NSDictionary* valueAsDictionary;
-@property (nonatomic, strong) NSString* valueAsString;
+@property (nonatomic, strong) NSString*     type;
+
+// Fields for paragraph elements
+@property (nonatomic, strong) NSString*     paragraphContent;
+
+// Fields for photo elements
+@property (nonatomic, strong) NSString*     photoCaption;
+@property (nonatomic, strong) NSString*     photoFilename;
+@property (nonatomic, assign) BOOL          photoIsFullWidth;
+
+// Fields for legend elements
+@property (nonatomic, strong) NSString*     legendTitle;
+@property (nonatomic, strong) NSString*     legendSubtitle;
+@property (nonatomic, strong) NSString*     legendImageName;
+@property (nonatomic, strong) NSString*     legendDetails;
+
+// Fields for web elements
+@property (nonatomic, strong) NSString*     webFilename;
+
+// Fields for table elements
+@property (nonatomic, strong) NSString*     tableName;
+
 
 + (BrochureElement*) initWithDictionary:(NSDictionary*)dictionary;
 
+- (BOOL) isPhoto;
 - (BOOL) isPlain;
 - (BOOL) isParagraph;
 - (BOOL) isLegend;
-
-- (NSString*) legendTitle;
-- (NSString*) legendImageName;
-- (NSString*) legendDetails;
+- (BOOL) isWeb;
+- (BOOL) isPOITable;
 
 
 @end
