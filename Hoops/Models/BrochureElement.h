@@ -27,7 +27,7 @@
 @property (nonatomic, strong) NSString*     legendDetails;
 
 // Fields for web elements
-@property (nonatomic, strong) NSString*     webFilename;
+@property (nonatomic, strong) NSString*     htmlString;
 
 // Fields for table elements
 @property (nonatomic, strong) NSString*     tableName;
@@ -41,6 +41,6 @@
 - (BOOL) isLegend;
 - (BOOL) isWeb;
 - (BOOL) isPOITable;
-
+- (BOOL) photoHasCaption;
 
 @end

@@ -11,8 +11,7 @@
 #import "MainCardButton.h"
 #import "LegendElementView.h"
 #import "ContentBuilderDelegate.h"
-
-#define kSidesMargin 30
+#import "BrochurePictureView.h"
 
 @interface ContentBuilder : NSObject<UIWebViewDelegate>
 
@@ -30,7 +29,10 @@
                   withBrochureElement:(BrochureElement*)element;
 
 - (void) drawWebViewElementOnContainer:(UIView*)container
-                          withHTMLFile:(NSString*)fileName;
+                        withHTMLString:(NSString*)fileName;
+
+- (void) drawImageViewElementOnContainer:(UIView*)container
+                     withBrochureElement:(BrochureElement*)element;
 
 - (void) setText:(NSString*)text withNSAlignment:(NSTextAlignment)alignment onLabel:(id)label;
 

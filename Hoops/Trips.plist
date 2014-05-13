@@ -46,6 +46,16 @@
 				<string>legend</string>
 			</dict>
 			<dict>
+				<key>full_width</key>
+				<false/>
+				<key>caption</key>
+				<string>Nuestras Malteadas</string>
+				<key>filename</key>
+				<string>milkshake.jpg</string>
+				<key>type</key>
+				<string>photograph</string>
+			</dict>
+			<dict>
 				<key>title</key>
 				<string>bike_school</string>
 				<key>details</key>
@@ -64,8 +74,50 @@
 				<string>poi_table</string>
 			</dict>
 			<dict>
-				<key>filename</key>
-				<string>tlatelolco</string>
+				<key>html_string</key>
+				<string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Prueba&lt;/title&gt;
+        
+        
+        &lt;style&gt;
+            body, html {
+                font-family: &quot;Open Sans&quot;;
+                background-color: none !important;
+                text-align: justify;
+                color: grey;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        
+            .intro {
+                font-size: 14px;
+                font-weight: bold;
+            }
+        
+            .simple {
+                font-size: 16px;
+            }
+        &lt;/style&gt;
+        
+    &lt;/head&gt;
+    
+    &lt;body&gt;
+        &lt;p class=&quot;intro&quot;&gt;Es el conjunto habitacional más grande de México y el segundo más grande de América solo detrás del Co-Op City en el Bronx de Nueva York, diseñado bajo los preceptos del Movimiento Moderno.&lt;/p&gt;
+        
+        &lt;p class=&quot;simple&quot;&gt;La tarde del 2 de octubre de 1968, días después de la salida del ejército de los campus de la UNAM y del IPN, miles de personas se reunieron en la Plaza de las Tres Culturas en Tlatelolco ante la vigilancia del Ejército. Por su parte, miembros del Batallón Olimpia (cuyos integrantes iban vestidos de civiles con un pañuelo o guante blanco en la mano izquierda) se infiltraban en la manifestación hasta llegar al edificio Chihuahua, donde se encontraban los oradores del movimiento y varios periodistas.&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;La matanza de Tlatelolco&lt;/li&gt;
+            &lt;li&gt;Terremoto del 85&lt;/li&gt;
+            &lt;li&gt;Guerra entre Mexicas y Tlatelolcas&lt;/li&gt;
+        &lt;/ul&gt;
+        
+        &lt;p class=&quot;simple&quot;&lt;&gt;Es el conjunto habitacional más grande de México y el segundo más grande de América solo detrás del Co-Op City en el Bronx de Nueva York, diseñado bajo los preceptos del Movimiento Moderno.&lt;/p&gt;
+        &lt;image src=&quot;templo-mayor.jpg&quot;&gt;&lt;/image&gt;
+    &lt;/body&gt;
+    
+&lt;/html&gt;</string>
 				<key>type</key>
 				<string>webview</string>
 			</dict>
@@ -313,22 +365,6 @@
 				<key>contents</key>
 				<array>
 					<dict>
-						<key>filename</key>
-						<string>tlatelolco</string>
-						<key>type</key>
-						<string>webview</string>
-					</dict>
-					<dict>
-						<key>full_width</key>
-						<true/>
-						<key>caption</key>
-						<string>Galletitas</string>
-						<key>filename</key>
-						<string>cookies</string>
-						<key>type</key>
-						<string>photograph</string>
-					</dict>
-					<dict>
 						<key>content</key>
 						<string>Si eres fan de los postres, en este lugar los encontrarás y podrás saborear las mejores malteadas del rumbo.</string>
 						<key>type</key>
@@ -336,11 +372,69 @@
 					</dict>
 					<dict>
 						<key>full_width</key>
-						<false/>
+						<true/>
 						<key>caption</key>
 						<string></string>
 						<key>filename</key>
-						<string>cookies</string>
+						<string>cookies.jpg</string>
+						<key>type</key>
+						<string>photograph</string>
+					</dict>
+					<dict>
+						<key>html_string</key>
+						<string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Prueba&lt;/title&gt;
+        
+        
+        &lt;style&gt;
+            body, html {
+                font-family: &quot;Open Sans&quot;;
+                background-color: none !important;
+                text-align: justify;
+                color: grey;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        
+            .intro {
+                font-size: 14px;
+                font-weight: bold;
+            }
+        
+            .simple {
+                font-size: 16px;
+            }
+        &lt;/style&gt;
+        
+    &lt;/head&gt;
+    
+    &lt;body&gt;
+        &lt;p class=&quot;intro&quot;&gt;Es el conjunto habitacional más grande de México y el segundo más grande de América solo detrás del Co-Op City en el Bronx de Nueva York, diseñado bajo los preceptos del Movimiento Moderno.&lt;/p&gt;
+        
+        &lt;p class=&quot;simple&quot;&gt;La tarde del 2 de octubre de 1968, días después de la salida del ejército de los campus de la UNAM y del IPN, miles de personas se reunieron en la Plaza de las Tres Culturas en Tlatelolco ante la vigilancia del Ejército. Por su parte, miembros del Batallón Olimpia (cuyos integrantes iban vestidos de civiles con un pañuelo o guante blanco en la mano izquierda) se infiltraban en la manifestación hasta llegar al edificio Chihuahua, donde se encontraban los oradores del movimiento y varios periodistas.&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;La matanza de Tlatelolco&lt;/li&gt;
+            &lt;li&gt;Terremoto del 85&lt;/li&gt;
+            &lt;li&gt;Guerra entre Mexicas y Tlatelolcas&lt;/li&gt;
+        &lt;/ul&gt;
+        
+        &lt;p class=&quot;simple&quot;&lt;&gt;Es el conjunto habitacional más grande de México y el segundo más grande de América solo detrás del Co-Op City en el Bronx de Nueva York, diseñado bajo los preceptos del Movimiento Moderno.&lt;/p&gt;
+        &lt;image src=&quot;templo-mayor.jpg&quot;&gt;&lt;/image&gt;
+    &lt;/body&gt;
+    
+&lt;/html&gt;</string>
+						<key>type</key>
+						<string>webview</string>
+					</dict>
+					<dict>
+						<key>full_width</key>
+						<false/>
+						<key>caption</key>
+						<string>Nuestras Malteadas</string>
+						<key>filename</key>
+						<string>milkshake.jpg</string>
 						<key>type</key>
 						<string>photograph</string>
 					</dict>

@@ -35,7 +35,9 @@
     } else if ([element isLegend]) {
         [self drawLegendElementOnContainer:container withBrochureElement:element];
     } else if ([element isWeb]) {
-        [self drawWebViewElementOnContainer:container withHTMLFile:element.webFilename];
+        [self drawWebViewElementOnContainer:container withHTMLString:element.htmlString];
+    } else if ([element isPhoto]) {
+        [self drawImageViewElementOnContainer:container withBrochureElement:element];
     }
 }
 
@@ -79,7 +81,6 @@
     _lastOffset = CGPointMake(0, blockIntroTextView.frame.origin.y+blockIntroTextView.frame.size.height);
     _contentElementIdx ++;
     [_builderDelegate contentBuilderFinishedAddingElementToView];
-    
 }
 
 - (void) drawLegendElementOnContainer:(UIView*)container
@@ -108,7 +109,28 @@
     [_builderDelegate contentBuilderFinishedAddingElementToView];
 }
 
-- (void) drawWebViewElementOnContainer:(UIView *)container withHTMLFile:(NSString *)fileName
+- (void) drawImageViewElementOnContainer:(UIView *)container withBrochureElement:(BrochureElement *)element
+{
+    CGRect newFrame = CGRectMake(0,  _lastOffset.y, container.frame.size.width, 200);
+    BrochurePictureView *pictureView;
+    if ([element photoHasCaption]) {
+        pictureView = [[BrochurePictureView alloc] initWithFrame:newFrame
+                                             withFullWidthStatus:element.photoIsFullWidth
+                                                  withImageNamed:element.photoFilename
+                                                      andCaption:element.photoCaption];
+    } else {
+        pictureView = [[BrochurePictureView alloc] initWithFrame:newFrame
+                                             withFullWidthStatus:element.photoIsFullWidth
+                                                  withImageNamed:element.photoFilename];
+    }
+    [container addSubview:pictureView];
+    
+    _lastOffset = CGPointMake(0, pictureView.frame.origin.y+pictureView.frame.size.height);
+    _contentElementIdx ++;
+    [_builderDelegate contentBuilderFinishedAddingElementToView];
+}
+
+- (void) drawWebViewElementOnContainer:(UIView *)container withHTMLString:(NSString *)htmlString
 {
     float startingHeight = 200;
     
@@ -120,8 +142,6 @@
     NSString *path = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:path];
     
-    NSString *htmlFile = [[NSBundle mainBundle] pathForResource:fileName ofType:@"html"];
-    NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
     [webView loadHTMLString:htmlString baseURL:baseURL];
     [container addSubview:webView];
 }

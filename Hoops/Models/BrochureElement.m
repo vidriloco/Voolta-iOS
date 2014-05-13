@@ -28,10 +28,10 @@
         [element setPhotoCaption:[dictionary objectForKey:@"caption"]];
         [element setPhotoIsFullWidth:[[dictionary objectForKey:@"full_width"] boolValue]];
     } else if ([element isWeb]) {
-        [element setWebFilename:[dictionary objectForKey:@"filename"]];
+        [element setHtmlString:[dictionary objectForKey:@"html_string"]];
     } else if ([element isPOITable]) {
         [element setTableName:[dictionary objectForKey:@"table_title"]];
-    }
+    } 
     
     return element;
 }
@@ -64,6 +64,11 @@
 - (BOOL) isPOITable
 {
     return [_type isEqualToString:@"poi_table"];
+}
+
+- (BOOL) photoHasCaption
+{
+    return [_photoCaption length] > 0;
 }
 
 @end

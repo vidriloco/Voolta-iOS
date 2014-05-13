@@ -209,6 +209,11 @@
 		3A44DE03191EDAC4009A6573 /* hemiciclo-juarez@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A44DE01191EDAC4009A6573 /* hemiciclo-juarez@2x.jpg */; };
 		3A4F0F2A18EDCB3D00F2BEC8 /* MainCardButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A4F0F2918EDCB3D00F2BEC8 /* MainCardButton.xib */; };
 		3A4F0F2D18EDCBB100F2BEC8 /* MainCardButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F0F2C18EDCBB100F2BEC8 /* MainCardButton.m */; };
+		3A52C8FE1922767E001F74A3 /* BrochurePictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A52C8FD1922767E001F74A3 /* BrochurePictureView.m */; };
+		3A52C9031922862E001F74A3 /* cookies.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A52C8FF1922862E001F74A3 /* cookies.jpg */; };
+		3A52C9041922862E001F74A3 /* cookies@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A52C9001922862E001F74A3 /* cookies@2x.jpg */; };
+		3A52C9051922862E001F74A3 /* milkshake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A52C9011922862E001F74A3 /* milkshake.jpg */; };
+		3A52C9061922862E001F74A3 /* milkshake@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A52C9021922862E001F74A3 /* milkshake@2x.jpg */; };
 		3A594BCF18E7174A00220D61 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A594BCE18E7174A00220D61 /* GoogleMaps.framework */; };
 		3A594BD118E7175300220D61 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3A594BD018E7175300220D61 /* GoogleMaps.bundle */; };
 		3A596B641920845A0033FC1C /* tlatelolco.html in Resources */ = {isa = PBXBuildFile; fileRef = 3A596B631920845A0033FC1C /* tlatelolco.html */; };
@@ -549,6 +554,12 @@
 		3A4F0F2918EDCB3D00F2BEC8 /* MainCardButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCardButton.xib; sourceTree = "<group>"; };
 		3A4F0F2B18EDCBB100F2BEC8 /* MainCardButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCardButton.h; sourceTree = "<group>"; };
 		3A4F0F2C18EDCBB100F2BEC8 /* MainCardButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCardButton.m; sourceTree = "<group>"; };
+		3A52C8FC1922767E001F74A3 /* BrochurePictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrochurePictureView.h; sourceTree = "<group>"; };
+		3A52C8FD1922767E001F74A3 /* BrochurePictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrochurePictureView.m; sourceTree = "<group>"; };
+		3A52C8FF1922862E001F74A3 /* cookies.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cookies.jpg; sourceTree = "<group>"; };
+		3A52C9001922862E001F74A3 /* cookies@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cookies@2x.jpg"; sourceTree = "<group>"; };
+		3A52C9011922862E001F74A3 /* milkshake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = milkshake.jpg; sourceTree = "<group>"; };
+		3A52C9021922862E001F74A3 /* milkshake@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "milkshake@2x.jpg"; sourceTree = "<group>"; };
 		3A594BCE18E7174A00220D61 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		3A594BD018E7175300220D61 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		3A596B631920845A0033FC1C /* tlatelolco.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = tlatelolco.html; sourceTree = "<group>"; };
@@ -1150,6 +1161,10 @@
 		3A3B8F6218F4E91F0010067E /* chomp-chomp */ = {
 			isa = PBXGroup;
 			children = (
+				3A52C8FF1922862E001F74A3 /* cookies.jpg */,
+				3A52C9001922862E001F74A3 /* cookies@2x.jpg */,
+				3A52C9011922862E001F74A3 /* milkshake.jpg */,
+				3A52C9021922862E001F74A3 /* milkshake@2x.jpg */,
 				3A3B8F6318F4E91F0010067E /* chomp-chomp-front.png */,
 				3A3B8F6418F4E91F0010067E /* chomp-chomp-front@2x.png */,
 			);
@@ -1451,6 +1466,8 @@
 				3A5B5B3B1913FADC00546B92 /* POITableViewCell.h */,
 				3A5B5B3C1913FADC00546B92 /* POITableViewCell.m */,
 				3A5B5B3D1913FADC00546B92 /* POITableViewCell.xib */,
+				3A52C8FC1922767E001F74A3 /* BrochurePictureView.h */,
+				3A52C8FD1922767E001F74A3 /* BrochurePictureView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1639,6 +1656,7 @@
 				3A1E15BF192037B200281822 /* hoop-mini@2x.png in Resources */,
 				3A1E1605192037B200281822 /* service_hub-icon@2x.png in Resources */,
 				3A1E15CC192037B200281822 /* pois-list-icon.png in Resources */,
+				3A52C9041922862E001F74A3 /* cookies@2x.jpg in Resources */,
 				3A1E15CE192037B200281822 /* sprocket-icon.png in Resources */,
 				3A1E160B192037B200281822 /* bakery-marker@2x.png in Resources */,
 				3A1E15EC192037B200281822 /* shopping.png in Resources */,
@@ -1706,6 +1724,7 @@
 				3A1E15F3192037B200281822 /* bakery-icon@2x.png in Resources */,
 				3A1E15D8192037B200281822 /* flag.png in Resources */,
 				3A43651318DF5BC000205EA3 /* OpenSans-Light.ttf in Resources */,
+				3A52C9061922862E001F74A3 /* milkshake@2x.jpg in Resources */,
 				3A1E160D192037B200281822 /* bicycle_sharing-marker@2x.png in Resources */,
 				3A1E1628192037B200281822 /* new-ribbon.png in Resources */,
 				3A1E15B9192037B200281822 /* flag-end-icon@2x.png in Resources */,
@@ -1769,9 +1788,11 @@
 				3A1E1604192037B200281822 /* service_hub-icon.png in Resources */,
 				3A7D566F18FF16CC005BD5CA /* LegendElementView.xib in Resources */,
 				3A43650F18DF5BC000205EA3 /* OpenSans-BoldItalic.ttf in Resources */,
+				3A52C9051922862E001F74A3 /* milkshake.jpg in Resources */,
 				3A3B8F5818F4A3440010067E /* estacion-servicio-loreto-front@2x.png in Resources */,
 				3A3B8F4E18F4A1080010067E /* estacion-servicio-diana-front@2x.png in Resources */,
 				3A1E1617192037B200281822 /* historical_building-marker@2x.png in Resources */,
+				3A52C9031922862E001F74A3 /* cookies.jpg in Resources */,
 				3A5B5B3F1913FADC00546B92 /* POITableViewCell.xib in Resources */,
 				3A1E161E192037B200281822 /* pyramid-marker.png in Resources */,
 				3A1E1608192037B200281822 /* star-icon.png in Resources */,
@@ -1855,6 +1876,7 @@
 				3A1BA7FB18DED3E50002F958 /* IIViewDeckController.m in Sources */,
 				3A1BA7F618DED3E50002F958 /* SBJsonTokeniser.m in Sources */,
 				3A05141118E8C16200C25512 /* MJPopupBackgroundView.m in Sources */,
+				3A52C8FE1922767E001F74A3 /* BrochurePictureView.m in Sources */,
 				3A1BA7F418DED3E50002F958 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				3A9AA06E18E350AF00F075D3 /* iCarousel.m in Sources */,
 				3ACF577F18E5EFB100EE4E5A /* POIOnCardView.m in Sources */,
