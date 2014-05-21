@@ -13,7 +13,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a2L-I6-r53">
-                    <rect key="frame" x="3" y="14" width="263" height="394"/>
+                    <rect key="frame" x="4" y="14" width="263" height="394"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OyJ-xu-xc3">
@@ -37,8 +37,8 @@
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wha-j9-d7x">
-                            <rect key="frame" x="6" y="233" width="251" height="76"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wha-j9-d7x">
+                            <rect key="frame" x="14" y="234" width="235" height="76"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -107,16 +107,16 @@
                         <constraint firstItem="OyJ-xu-xc3" firstAttribute="width" secondItem="a2L-I6-r53" secondAttribute="height" multiplier="263:394" id="Ce2-Qu-9eS"/>
                         <constraint firstAttribute="centerX" secondItem="jmH-0m-9nS" secondAttribute="centerX" constant="1" id="KZ2-FQ-BHS"/>
                         <constraint firstAttribute="trailing" secondItem="OyJ-xu-xc3" secondAttribute="trailing" id="M58-dV-b6e"/>
-                        <constraint firstItem="6bg-4T-JoS" firstAttribute="top" secondItem="wha-j9-d7x" secondAttribute="bottom" constant="-3" id="Mqw-M1-Vzo"/>
+                        <constraint firstItem="6bg-4T-JoS" firstAttribute="top" secondItem="wha-j9-d7x" secondAttribute="bottom" constant="-4" id="Mqw-M1-Vzo"/>
                         <constraint firstItem="OyJ-xu-xc3" firstAttribute="centerX" secondItem="nix-5u-1Oc" secondAttribute="centerX" constant="0.5" id="cdr-6L-wha"/>
                         <constraint firstItem="OyJ-xu-xc3" firstAttribute="top" secondItem="a2L-I6-r53" secondAttribute="top" id="dy8-Mi-Mue"/>
                         <constraint firstItem="nix-5u-1Oc" firstAttribute="top" secondItem="a2L-I6-r53" secondAttribute="top" constant="104" id="eZb-7G-Tpg"/>
-                        <constraint firstItem="wha-j9-d7x" firstAttribute="top" secondItem="OyJ-xu-xc3" secondAttribute="bottom" constant="3" id="oBf-cV-JAx"/>
+                        <constraint firstItem="wha-j9-d7x" firstAttribute="top" secondItem="OyJ-xu-xc3" secondAttribute="bottom" constant="4" id="oBf-cV-JAx"/>
                         <constraint firstItem="jmH-0m-9nS" firstAttribute="top" secondItem="a2L-I6-r53" secondAttribute="top" constant="171" id="uaC-bK-gxd"/>
                     </constraints>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="new-ribbon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z0K-Dc-Igf">
-                    <rect key="frame" x="0.0" y="10" width="90" height="90"/>
+                    <rect key="frame" x="-1" y="9" width="90" height="90"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>

@@ -33,4 +33,6 @@
 
 + (void) loadURLSet;
 + (UIImage*)takeScreenshot:(CALayer*)layer;
++ (NSString*) currentLang;
+
 @end

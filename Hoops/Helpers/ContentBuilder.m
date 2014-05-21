@@ -75,7 +75,7 @@
     [blockIntroTextView setEditable:NO];
     [blockIntroTextView setBackgroundColor:[UIColor clearColor]];
     [blockIntroTextView setOpaque:NO];
-    [self setText:element.paragraphContent withNSAlignment:NSTextAlignmentJustified onLabel:blockIntroTextView];
+    [ContentBuilder setText:element.paragraphContent withNSAlignment:NSTextAlignmentJustified onLabel:blockIntroTextView];
     [blockIntroTextView setScrollEnabled:NO];
     [container addSubview:blockIntroTextView];
     _lastOffset = CGPointMake(0, blockIntroTextView.frame.origin.y+blockIntroTextView.frame.size.height);
@@ -91,11 +91,11 @@
     [[legendElementView descriptionLabel] setText:element.legendDetails];
     if (_switchLegendSide) {
         [[legendElementView rightMainTitleLabel] setText:element.legendTitle];
-        [[legendElementView rightLegendImageView] setImage:[UIImage imageNamed:element.legendImageName]];
+        [[legendElementView rightLegendImageView] setImage:[UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:element.legendImageName]]];
         [legendElementView toggleSide:UIRightSide];
     } else {
         [[legendElementView leftMainTitleLabel] setText:element.legendTitle];
-        [[legendElementView leftLegendImageView] setImage:[UIImage imageNamed:element.legendImageName]];
+        [[legendElementView leftLegendImageView] setImage:[UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:element.legendImageName]]];
         [legendElementView toggleSide:UILeftSide];
     }
     
@@ -159,7 +159,7 @@
     [_builderDelegate contentBuilderFinishedAddingElementToView];
 }
 
-- (void) setText:(NSString *)text withNSAlignment:(NSTextAlignment)alignment onLabel:(id)label
++ (void) setText:(NSString *)text withNSAlignment:(NSTextAlignment)alignment onLabel:(id)label
 {
     //  paragraphSetting
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];

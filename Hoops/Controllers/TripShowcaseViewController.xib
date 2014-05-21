@@ -18,9 +18,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main-background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Xqf-FZ-Ag1">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xqf-FZ-Ag1">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </imageView>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZYR-3W-S4S" userLabel="iCarousel" customClass="iCarousel">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -43,6 +44,5 @@
     </objects>
     <resources>
         <image name="hoop-mini.png" width="100" height="100"/>
-        <image name="main-background.jpg" width="400" height="619"/>
     </resources>
 </document>

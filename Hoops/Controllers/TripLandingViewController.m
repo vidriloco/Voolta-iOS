@@ -32,7 +32,7 @@
     [self resizeMainView];
     
     UIImageView *headImageView = [[UIImageView alloc] initWithImage:
-                                  [UIImage imageNamed:[[_tripSelectedDelegate currentTrip] detailsPic]]];
+                                  [UIImage imageNamed:[[_tripSelectedDelegate currentTrip] mainPic]]];
     [headImageView setClipsToBounds:YES];
     [headImageView setFrame:CGRectMake(0, 0, kCardWidth, headImageView.frame.size.height)];
     [headImageView setContentMode:UIViewContentModeScaleAspectFill];

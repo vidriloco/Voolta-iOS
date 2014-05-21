@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LookAndFeel.h"
+#import "OperationHelpers.h"
 
 #define kImageHeight        250
 #define kCaptionTopMargin   0

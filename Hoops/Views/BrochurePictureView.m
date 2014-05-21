@@ -59,7 +59,7 @@
 
 - (void) buildImageViewWithName:(NSString *)name
 {
-    _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:name]];
+    _imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:name]]];
 
     if (_isImageFullWidth) {
         [_imageView setFrame:CGRectMake(0, 0, self.frame.size.width, _imageView.frame.size.height)];

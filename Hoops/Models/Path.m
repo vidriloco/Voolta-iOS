@@ -20,7 +20,7 @@ static NSArray* list;
     path.color = [dictionary objectForKey:@"color"];
     path.thickness = [[dictionary objectForKey:@"thickness"] floatValue];
     
-    NSString *stringPath = [dictionary objectForKey:@"path"];
+    NSString *stringPath = [dictionary objectForKey:@"coordinates_vector"];
     for (NSString *pair in [stringPath componentsSeparatedByString:@","]) {
         NSArray *coordinate = [[pair stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] componentsSeparatedByString:@" "];
         [path.coordinateList addLatitude:[[coordinate objectAtIndex:1] floatValue] longitude:[[coordinate objectAtIndex:0] floatValue]];

@@ -12,7 +12,6 @@
 #import "LookAndFeel.h"
 #import "MainCardButton.h"
 #import "TripSelectedDelegate.h"
-#import "UIViewController+MJPopupViewController.h"
 #import "Trip.h"
 
 @interface TripLandingViewController : UIViewController

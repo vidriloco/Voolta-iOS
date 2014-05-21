@@ -9,8 +9,8 @@
 #import "TripShowcaseViewController.h"
 
 @interface TripShowcaseViewController ()
-    @property (nonatomic, strong) NSArray *items;
-    @property (nonatomic, assign) Trip *currentItem;
+@property (nonatomic, strong) NSArray* slides;
+@property (nonatomic, strong) LandingScreen *landingScreen;
 
 - (void) jumpToFirstPage;
 - (void) jumpToLandingPage;
@@ -18,15 +18,16 @@
 
 @implementation TripShowcaseViewController
 
+
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.items = [Trip loadAll];
+        _landingScreen = [[LandingScreen alloc] init];
+        _slides = [NSArray arrayWithObject:_landingScreen];
     }
     return self;
 }
-
 
 - (void)dealloc
 {
@@ -60,12 +61,6 @@
     self.carousel = nil;
 }
 
-- (void) viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return NO;
@@ -81,38 +76,40 @@
     [self.carousel setCurrentItemIndex:0];
 }
 
+#pragma TripStoreDelegate methods
+
+- (void) newTripFetched
+{
+    NSMutableArray *array = [NSMutableArray arrayWithObject:_landingScreen];
+    [array addObjectsFromArray:[DataStore current].trips];
+    _slides = array;
+    [self.carousel reloadData];
+}
+
 #pragma mark -
 #pragma mark iCarousel methods
 
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
     //return the total number of items in the carousel
-    return [_items count];
+    return [_slides count];
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
 {
-    Trip *trip = [_items objectAtIndex:(int) index];
-    if ([trip isLandingView]) {
-        LandingView *landingView = [[[NSBundle mainBundle] loadNibNamed:@"LandingView" owner:self options:nil] objectAtIndex:0];
-        [landingView stylizeView];
-        
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToFirstPage)];
-        [tapGesture setNumberOfTapsRequired:1];
-        [landingView.nextIconView addGestureRecognizer:tapGesture];
-        [landingView.nextIconView setUserInteractionEnabled:YES];
-        
-        return landingView;
-    } else {
+    if ([[_slides objectAtIndex:(int) index] isKindOfClass:[Trip class]]) {
+        Trip *trip = [_slides objectAtIndex:(int) index];
+
         TripCardView *cardView = [[[NSBundle mainBundle] loadNibNamed:@"TripCardView" owner:self options:nil] objectAtIndex:0];
-        
-        [[cardView mainImage] setImage:[UIImage imageNamed:trip.mainPic]];
+
+        [[cardView mainImage] setImage:[UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:trip.mainPic]]];
         [[cardView tripNameLabel] setText:trip.title];
-        [[cardView tripComplexityLabel] setText:NSLocalizedString([trip complexity], nil)];
+        [[cardView tripComplexityLabel] setText:[trip complexity]];
         [[cardView tripDistanceLabel] setText:[trip distance]];
-
+        [ContentBuilder setText:[trip details] withNSAlignment:NSTextAlignmentJustified onLabel:[cardView tripDetailsTextView]];
+        
         [cardView stylize];
-
+        
         // Show sponsored pois (can be any of listed or unlisted)
         [cardView buildPoiFragmentsFor:trip.allPois];
         
@@ -123,12 +120,22 @@
         }
         
         return cardView;
+    } else {
+        LandingView *landingView = [[[NSBundle mainBundle] loadNibNamed:@"LandingView" owner:self options:nil] objectAtIndex:0];
+        [landingView stylizeView];
+        
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToFirstPage)];
+        [tapGesture setNumberOfTapsRequired:1];
+        [landingView.nextIconView addGestureRecognizer:tapGesture];
+        [landingView.nextIconView setUserInteractionEnabled:YES];
+        
+        return landingView;
     }
 }
 
 - (void) carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
 {
-    Trip *trip = [_items objectAtIndex:(int) index];
+    Trip *trip = [_slides objectAtIndex:(int) index];
     
     if ([trip isAvailable] && ![trip isLandingView]) {
         TripViewController *tripController = [[TripViewController alloc] initWithTrip:trip];
@@ -143,7 +150,7 @@
              [self presentViewController:tripController animated:NO completion:nil];
          }];
     }
-
+    
 }
 
 - (void) carouselCurrentItemIndexDidChange:(iCarousel *)carousel
@@ -166,31 +173,27 @@
         [self.logoView setHidden:NO];
     }
     
-    Trip *trip = [_items objectAtIndex:(int) [carousel currentItemIndex]];
     
-    if (self.currentItem == trip) {
-        return;
-    }
+    id<CarouselProtocol> carouselItem = [_slides objectAtIndex:(int) [carousel currentItemIndex]];
     
     [UIView animateWithDuration:0.5 animations:^{
         [self.background setAlpha:0.4];
     } completion:^(BOOL finished) {
         @synchronized(self.background) {
-            [self.background setImage:[UIImage imageNamed:trip.background]];
+            [self.background setImage:[UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:carouselItem.background]]];
         }
         [UIView animateWithDuration:1 animations:^{
             [self.background setAlpha:1];
         } completion:nil];
     }];
     
-    self.currentItem = trip;
 }
 
 
 - (void) carouselDidEndScrollingAnimation:(iCarousel *)carousel
 {
-    Trip *trip = [_items objectAtIndex:(int) [carousel currentItemIndex]];
-    [self.background setImage:[UIImage imageNamed:trip.background]];
+    id<CarouselProtocol> carouselItem = [_slides objectAtIndex:(int) [carousel currentItemIndex]];
+    [self.background setImage:[UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:carouselItem.background]]];
 }
 
 - (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value

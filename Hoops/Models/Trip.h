@@ -12,17 +12,22 @@
 #import "Poi.h"
 #import "DirectionMarker.h"
 #import "BrochureElement.h"
+#import "CarouselProtocol.h"
 
 #define kListedKey @"listed"
+#define kTripPrefix @"trip_%ld_%@"
 
-@interface Trip : NSObject
+@interface Trip : NSObject<CarouselProtocol>
+
+@property (nonatomic, assign) long remoteId;
 
 @property (nonatomic, strong) NSString *kind;
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *details;
+
 @property (nonatomic, assign) float cost;
 @property (nonatomic, assign) BOOL isAvailable;
 
-@property (nonatomic, strong) NSString *detailsPic;
 @property (nonatomic, strong) NSString *mainPic;
 @property (nonatomic, strong) NSString *background;
 
@@ -43,7 +48,9 @@
 @property (nonatomic, strong) NSArray *allPois;
 @property (nonatomic, assign) int numberOfPOIsListed;
 
-+ (Trip*) initWithDictionary:(NSDictionary*)dictionary;
++ (Trip*) initWithPlistDictionary:(NSDictionary*)dictionary;
++ (Trip*) initWithJsonDictionary:(NSDictionary*)dictionary;
+
 + (int) count;
 + (NSArray*) all;
 + (NSArray*) loadAll;

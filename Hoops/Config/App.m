@@ -95,4 +95,9 @@ static int environment;
     return image;
 }
 
++ (NSString*) currentLang
+{
+    return [[NSLocale preferredLanguages] objectAtIndex:0];
+}
+
 @end

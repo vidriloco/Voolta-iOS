@@ -44,7 +44,7 @@
             NSMutableArray *brochureElements = [NSMutableArray array];
             
             for (NSDictionary *content in [dictionary objectForKey:@"contents"]) {
-                BrochureElement *brochureElement = [BrochureElement initWithDictionary:content];
+                BrochureElement *brochureElement = [BrochureElement initWithDictionary:content andTripId:0];
                 [brochureElements addObject:brochureElement];
             }
             [poi setBrochureElements:brochureElements];

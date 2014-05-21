@@ -12,6 +12,7 @@
 #import "LegendElementView.h"
 #import "ContentBuilderDelegate.h"
 #import "BrochurePictureView.h"
+#import "OperationHelpers.h"
 
 @interface ContentBuilder : NSObject<UIWebViewDelegate>
 
@@ -34,7 +35,7 @@
 - (void) drawImageViewElementOnContainer:(UIView*)container
                      withBrochureElement:(BrochureElement*)element;
 
-- (void) setText:(NSString*)text withNSAlignment:(NSTextAlignment)alignment onLabel:(id)label;
++ (void) setText:(NSString*)text withNSAlignment:(NSTextAlignment)alignment onLabel:(id)label;
 
 - (void) buildContentForElement:(BrochureElement*)element onContainer:(UIView*)container;
 

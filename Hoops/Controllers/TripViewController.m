@@ -23,7 +23,6 @@
 - (void) drawTripMarkers;
 
 - (void) switchCameraFollowPositionMode;
-- (void) presentCustomPopupViewController:(UIViewController*)controller;
 
 typedef NS_ENUM(NSInteger, FollowMode) {FollowLocation, FollowHeading, FollowNone};
 typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
@@ -236,23 +235,6 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
     
 }
 
-- (void) presentCustomPopupViewController:(UIViewController*)controller
-{
-    [_centerBottomButton setHidden:YES];
-    [_rightButton setHidden:YES];
-    [_centerTopButton setHidden:YES];
-    [_closeButton setHidden:NO];
-    
-    [self presentPopupViewController:controller
-                       animationType:MJPopupViewAnimationSlideBottomBottom dismissed:^{
-                           
-                           [_centerBottomButton setHidden:NO];
-                           [_rightButton setHidden:NO];
-                           [_centerTopButton setHidden:NO];
-                           [_closeButton setHidden:YES];
-    }];
-}
-
 - (void) dismissController {
     UIViewController *sourceViewController = self;
     TripShowcaseViewController *destinationViewController = (TripShowcaseViewController*) self.presentingViewController;
@@ -385,6 +367,7 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
 - (void) locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading
 {
     if (_currentFollowMode == FollowHeading) {
+        //_lastLocation = [[CLLocation alloc] initWithLatitude:19.429197 longitude:-99.161418];
         [_mapView animateToCameraPosition:[GMSCameraPosition cameraWithLatitude:_lastLocation.coordinate.latitude
                                                                       longitude:_lastLocation.coordinate.longitude
                                                                            zoom:defaultZoomInLevel bearing:newHeading.trueHeading viewingAngle:45]];
@@ -395,6 +378,7 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
 - (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     _lastLocation = [locations firstObject];
+    //_lastLocation = [[CLLocation alloc] initWithLatitude:19.429197 longitude:-99.161418];
     if (_currentFollowMode == FollowLocation) {
         [_mapView animateToCameraPosition:[GMSCameraPosition cameraWithLatitude:_lastLocation.coordinate.latitude
                                                                       longitude:_lastLocation.coordinate.longitude

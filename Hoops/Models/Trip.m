@@ -17,7 +17,7 @@
 @implementation Trip
 static NSArray *list;
 
-+ (Trip*) initWithDictionary:(NSDictionary*)dictionary
++ (Trip*) initWithPlistDictionary:(NSDictionary*)dictionary
 {
     Trip *trip = [[Trip alloc] init];
     trip.kind = [dictionary objectForKey:@"kind"];
@@ -57,8 +57,6 @@ static NSArray *list;
                 [directionTmp addObject:directionMarker];
             }
             [trip setDirectionMarkers:directionTmp];
-            
-            trip.detailsPic = [route objectForKey:@"detailed_pic"];
         }
         
         // Load POIs
@@ -67,11 +65,49 @@ static NSArray *list;
         
         NSMutableArray *brochureList = [NSMutableArray array];
         for (NSDictionary *brochureContent in [dictionary objectForKey:@"contents"]) {
-            [brochureList addObject:[BrochureElement initWithDictionary:brochureContent]];
+            [brochureList addObject:[BrochureElement initWithDictionary:brochureContent andTripId:trip.remoteId]];
         }
         [trip setBrochureList:brochureList];
         
     }
+    
+    return trip;
+}
+
++ (Trip*) initWithJsonDictionary:(NSDictionary *)dictionary
+{
+    Trip *trip = [[Trip alloc] init];
+    [trip setRemoteId:[[dictionary objectForKey:@"id"] longValue]];
+    [trip setTitle:[dictionary objectForKey:@"title"]];
+    [trip setDetails:[dictionary objectForKey:@"details"]];
+    [trip setDistance:[dictionary objectForKey:@"distance"]];
+    [trip setComplexity:[dictionary objectForKey:@"complexity"]];
+    [trip setIsAvailable:([[dictionary objectForKey:@"available"] intValue] == 1)];
+    [trip setCost:[[dictionary objectForKey:@"name"] floatValue]];
+    
+    NSString *backgroundImage = [[dictionary objectForKey:@"background_image"] objectForKey:@"filename"];
+    NSString *mainImage = [[[[dictionary objectForKey:@"main_image"] objectForKey:@"url"] componentsSeparatedByString:@"/"] lastObject];
+
+    [trip setBackground:backgroundImage];
+    [trip setMainPic:[NSString stringWithFormat:kTripPrefix, [trip remoteId], mainImage]];
+    
+    [trip setOriginCoordinate:CLLocationCoordinate2DMake([[[dictionary objectForKey:@"start"] objectForKey:@"lat"] floatValue],
+                                                         [[[dictionary objectForKey:@"start"] objectForKey:@"lon"] floatValue])];
+    [trip setEndCoordinate:CLLocationCoordinate2DMake([[[dictionary objectForKey:@"final"] objectForKey:@"lat"] floatValue],
+                                                         [[[dictionary objectForKey:@"final"] objectForKey:@"lon"] floatValue])];
+    // Paths loading
+    NSMutableArray *pathsTmp = [NSMutableArray array];
+    for (NSDictionary *path in [dictionary objectForKey:@"paths"]) {
+        [pathsTmp addObject:[Path initWithDictionary:path]];
+    }
+    trip.paths = pathsTmp;
+    
+    // Brochure list loading
+    NSMutableArray *brochureList = [NSMutableArray array];
+    for (NSDictionary *brochureContent in [dictionary objectForKey:@"contents"]) {
+        [brochureList addObject:[BrochureElement initWithDictionary:brochureContent andTripId:trip.remoteId]];
+    }
+    [trip setBrochureList:brochureList];
     
     return trip;
 }
@@ -81,7 +117,7 @@ static NSArray *list;
     NSArray *listOfTrips = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Trips" ofType:@"plist"]];
     NSMutableArray *tripsTmp = [NSMutableArray array];
     for (NSDictionary *dict in listOfTrips) {
-        [tripsTmp addObject:[Trip initWithDictionary:dict]];
+        [tripsTmp addObject:[Trip initWithPlistDictionary:dict]];
     }
     
     list = [NSArray arrayWithArray:tripsTmp];

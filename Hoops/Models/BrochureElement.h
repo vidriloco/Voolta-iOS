@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OperationHelpers.h"
 
+@class Trip;
 @interface BrochureElement : NSObject
 
 @property (nonatomic, strong) NSString*     type;
@@ -33,7 +35,7 @@
 @property (nonatomic, strong) NSString*     tableName;
 
 
-+ (BrochureElement*) initWithDictionary:(NSDictionary*)dictionary;
++ (BrochureElement*) initWithDictionary:(NSDictionary*)dictionary andTripId:(long)tripId;
 
 - (BOOL) isPhoto;
 - (BOOL) isPlain;

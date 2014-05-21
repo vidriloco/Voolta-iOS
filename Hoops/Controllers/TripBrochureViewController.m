@@ -130,7 +130,7 @@ static TripBrochureViewController* instance;
 - (void) buildPhotoElementView
 {
     // The route main pic
-    _mainImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[_currentTrip mainPic]]];
+    _mainImageView = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:[_currentTrip mainPic]]]];
     [_mainImageView setContentMode:UIViewContentModeScaleAspectFill];
     [_mainImageView setClipsToBounds:YES];
     [_mainImageView setFrame:CGRectMake(0, kTopYOffset, [App viewBounds].size.width, 280)];

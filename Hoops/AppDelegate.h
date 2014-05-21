@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "TripShowcaseViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import "DataStore.h"
+#import <iActiveRecord/ActiveRecord.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

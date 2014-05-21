@@ -13,8 +13,13 @@
 #import "Trip.h"
 #import "App.h"
 #import "TripViewController.h"
+#import "DataStoreDelegate.h"
+#import "DataStore.h"
+#import "LandingScreen.h"
+#import "ContentBuilder.h"
+#import "OperationHelpers.h"
 
-@interface TripShowcaseViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
+@interface TripShowcaseViewController : UIViewController <iCarouselDataSource, iCarouselDelegate, DataStoreDelegate>
 
 @property (nonatomic, strong) IBOutlet iCarousel *carousel;
 @property (nonatomic, weak) IBOutlet UIImageView *background;
