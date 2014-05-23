@@ -13,6 +13,7 @@
 @interface BrochureElement : NSObject
 
 @property (nonatomic, strong) NSString*     type;
+@property (nonatomic, assign) int           order;
 
 // Fields for paragraph elements
 @property (nonatomic, strong) NSString*     paragraphContent;

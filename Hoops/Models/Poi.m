@@ -66,6 +66,11 @@
                 BrochureElement *brochureElement = [BrochureElement initWithDictionary:content andTripId:0];
                 [brochureElements addObject:brochureElement];
             }
+            
+            [brochureElements sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+                return [obj1 order] > [obj2 order];
+            }];
+    
             [poi setBrochureElements:brochureElements];
         }
     }

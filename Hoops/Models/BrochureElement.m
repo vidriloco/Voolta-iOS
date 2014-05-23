@@ -16,7 +16,7 @@
 {
     BrochureElement *element = [[BrochureElement alloc] init];
     [element setType:[dictionary objectForKey:@"type"]];
-    
+    [element setOrder:[[dictionary objectForKey:@"order"] intValue]];
     if ([element isParagraph]) {
         [element setParagraphContent:[dictionary objectForKey:@"content"]];
     } else if ([element isLegend]) {

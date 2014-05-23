@@ -110,6 +110,11 @@ static NSArray *list;
     for (NSDictionary *brochureContent in [dictionary objectForKey:@"contents"]) {
         [brochureList addObject:[BrochureElement initWithDictionary:brochureContent andTripId:trip.remoteId]];
     }
+    
+    [brochureList sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [obj1 order] > [obj2 order];
+    }];
+    
     [trip setBrochureList:brochureList];
     
     return trip;
