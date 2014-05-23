@@ -18,8 +18,9 @@
 
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *captionLabel;
+@property (nonatomic, assign) float height;
 
-- (id) initWithFrame:(CGRect)frame withFullWidthStatus:(BOOL)status withImageNamed:(NSString*)imageName andCaption:(NSString*)caption;
-- (id) initWithFrame:(CGRect)frame withFullWidthStatus:(BOOL)status withImageNamed:(NSString*)imageName;
+- (id) initWithFrame:(CGRect)frame withFullWidthStatus:(BOOL)status withImageNamed:(NSString*)imageName withHeight:(float)height andCaption:(NSString*)caption;
+- (id) initWithFrame:(CGRect)frame withFullWidthStatus:(BOOL)status withImageNamed:(NSString*)imageName withHeight:(float)height;
 
 @end

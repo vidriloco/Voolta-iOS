@@ -62,7 +62,7 @@
             [imageView setImage:[UIImage imageNamed:poi.mainPic]];
             [self drawMainSlideWithTitle:poi.theTitle
                             withSubtitle:poi.details
-                            withIconName:poi.iconName
+                            withIconName:poi.kindImage
                  withContrastViewEnabled:[element contrasted]
                        andBackgroundView:imageView];
         } else {
@@ -184,7 +184,7 @@
     subtitleLabel.layer.shouldRasterize = YES;
     [view addSubview:subtitleLabel];
     
-    UIImageView *poiIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:iconName]];
+    UIImageView *poiIcon = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:iconName]]];
     [poiIcon setTag:99];
     [poiIcon setFrame:CGRectMake(self.frame.size.width/2-80/2, self.frame.size.height-170, 80, 80)];
     [view addSubview:poiIcon];

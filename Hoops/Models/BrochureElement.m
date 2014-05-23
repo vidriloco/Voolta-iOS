@@ -34,6 +34,7 @@
         
         [element setPhotoCaption:[dictionary objectForKey:@"caption"]];
         [element setPhotoIsFullWidth:[[dictionary objectForKey:@"full_width"] boolValue]];
+        [element setPhotoHeight:[[dictionary objectForKey:@"image_height"] floatValue]];
     } else if ([element isWeb]) {
         NSError* error = nil;
         NSString *path = [[NSBundle mainBundle] pathForResource: @"html_view" ofType: @"html"];

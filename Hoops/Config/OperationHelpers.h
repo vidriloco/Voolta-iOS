@@ -17,4 +17,7 @@
 + (NSString*) filePathForImage:(NSString*)imageNamed;
 + (void) removeImageWithFilename:(NSString*)filename;
 + (void) removeFilesForTripWithId:(long)remoteId;
+
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
+
 @end

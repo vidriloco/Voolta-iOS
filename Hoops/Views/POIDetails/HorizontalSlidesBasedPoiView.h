@@ -10,6 +10,7 @@
 #import "SlideElement.h"
 #import "Poi.h"
 #import "POIDetailsManager.h"
+#import "OperationHelpers.h"
 
 @class POIDetailsView;
 

@@ -97,7 +97,7 @@ static int environment;
 
 + (NSString*) currentLang
 {
-    return [[NSLocale preferredLanguages] objectAtIndex:0];
+    return [[[NSLocale preferredLanguages] objectAtIndex:0] componentsSeparatedByString:@"-"].firstObject;
 }
 
 @end

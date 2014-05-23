@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSString*     photoCaption;
 @property (nonatomic, strong) NSString*     photoFilename;
 @property (nonatomic, assign) BOOL          photoIsFullWidth;
+@property (nonatomic, assign) float         photoHeight;
 
 // Fields for legend elements
 @property (nonatomic, strong) NSString*     legendTitle;

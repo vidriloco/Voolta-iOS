@@ -137,7 +137,7 @@
 {
     Trip *trip = [_slides objectAtIndex:(int) index];
     
-    if ([trip isAvailable] && ![trip isLandingView]) {
+    if ([trip isAvailable]) {
         TripViewController *tripController = [[TripViewController alloc] initWithTrip:trip];
         
         [UIView

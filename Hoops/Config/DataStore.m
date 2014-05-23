@@ -84,7 +84,6 @@ static DataStore *instance;
     [fetcher whereField:@"lastSeenAlive" between:lastMonth and:lastTwoMinutes];
     NSLog(@"PRUNNING");
     for (ImageOnInventory *img in [fetcher fetchRecords]) {
-        NSLog([img url]);
         [OperationHelpers removeImageWithFilename:[img.url componentsSeparatedByString:@"/"].lastObject];
         [img dropRecord];
     }
@@ -123,6 +122,7 @@ static DataStore *instance;
     if ([[inventoredImg url] isEqualToString:[dictionary objectForKey:@"url"]]) {
         [inventoredImg setLastSeenAlive:[NSDate new]];
     }
+
     [inventoredImg save];
     
     if ([inventoredImg shouldUpdateBasedOnDateString:[dictionary objectForKey:@"updated_at"]] || newRecord) {

@@ -222,7 +222,7 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
 {
     TripBrochureViewController *brochureViewController = [TripBrochureViewController instance];
     
-    if (brochureViewController == nil) {
+    if (brochureViewController == nil || brochureViewController.currentTrip != _currentTrip) {
         brochureViewController = [TripBrochureViewController buildNew];
     }
     
@@ -389,7 +389,7 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
 
 - (BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager
 {
-    return YES;
+    return NO;
 }
 
 @end

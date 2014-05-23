@@ -17,15 +17,6 @@
 
 @implementation ImageOnInventory
 
-- (id) init
-{
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
-
 + (id) initWithDictionary:(NSDictionary *)dictionary
 {
     ImageOnInventory *inventoredImage = [ImageOnInventory newRecord];
@@ -55,8 +46,13 @@
 {
     [self setUrl:[dictionary objectForKey:@"url"]];
     [self setUpdateDate:[dictionary objectForKey:@"updated_at"]];
-    [self setAttributionURL:[dictionary objectForKey:@"attribution_url"]];
-    [self setAttributionInfo:[dictionary objectForKey:@"attribution_info"]];
+    if ([dictionary objectForKey:@"attribution_url"] != [NSNull null]) {
+        [self setAttributionURL:[[dictionary objectForKey:@"attribution_url"] stringValue]];
+    }
+    
+    if ([dictionary objectForKey:@"attribution_info"] != [NSNull null]) {
+        [self setAttributionInfo:[[dictionary objectForKey:@"attribution_info"] stringValue]];
+    }
 }
 
 @end

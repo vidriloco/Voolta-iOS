@@ -102,6 +102,9 @@ static NSArray *list;
     }
     trip.paths = pathsTmp;
     
+    // Loading POIs
+    [trip readPoisFromDictionary:dictionary];
+    
     // Brochure list loading
     NSMutableArray *brochureList = [NSMutableArray array];
     for (NSDictionary *brochureContent in [dictionary objectForKey:@"contents"]) {
@@ -142,11 +145,11 @@ static NSArray *list;
     NSMutableArray *poisList = [NSMutableArray array];
     
     for (NSDictionary *dict in [dictionary objectForKey:@"pois"]) {
-        Poi *poi = [Poi initWithDictionary:dict];
+        Poi *poi = [Poi initWithDictionary:dict andTripId:[self remoteId]];
         
         // Separate listed from unlisted
         if ([[dict objectForKey:kListedKey] boolValue]) {
-            NSString *poiCategory = [dict objectForKey:@"kind"];
+            NSString *poiCategory = [[dict objectForKey:@"poi_kind"] objectForKey:@"keyword"];
             
             if (![poisDict objectForKey:poiCategory]) {
                 [poisDict setObject:[NSMutableArray array] forKey:poiCategory];
@@ -160,7 +163,6 @@ static NSArray *list;
     }
     [self setCategorizedPois:poisDict];
     [self setAllPois:poisList];
-
 }
 
 - (BOOL) isLandingView

@@ -20,21 +20,23 @@
 
 @implementation BrochurePictureView
 
-- (id) initWithFrame:(CGRect)frame withFullWidthStatus:(BOOL)status withImageNamed:(NSString *)imageName
+- (id) initWithFrame:(CGRect)frame withFullWidthStatus:(BOOL)status withImageNamed:(NSString *)imageName withHeight:(float)height
 {
     self = [super initWithFrame:frame];
     if (self) {
+        _height = height;
         [self setIsImageFullWidth:status];
         [self buildImageViewWithName:imageName];
         [self adjustFinalSize];
         [self setClipsToBounds:YES];
+        [self.layer setMasksToBounds:YES];
     }
     return self;
 }
 
-- (id) initWithFrame:(CGRect)frame withFullWidthStatus:(BOOL)status withImageNamed:(NSString *)imageName andCaption:(NSString *)caption
+- (id) initWithFrame:(CGRect)frame withFullWidthStatus:(BOOL)status withImageNamed:(NSString *)imageName withHeight:(float)height andCaption:(NSString *)caption
 {
-    self = [self initWithFrame:frame withFullWidthStatus:status withImageNamed:imageName];
+    self = [self initWithFrame:frame withFullWidthStatus:status withImageNamed:imageName withHeight:height];
     if (self) {
         [self buildCaptionLabelWithText:caption];
         [self adjustFinalSize];
@@ -62,9 +64,9 @@
     _imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:name]]];
 
     if (_isImageFullWidth) {
-        [_imageView setFrame:CGRectMake(0, 0, self.frame.size.width, _imageView.frame.size.height)];
+        [_imageView setFrame:CGRectMake(0, 0, self.frame.size.width, _height)];
     } else {
-        [_imageView setFrame:CGRectMake(kSidesMargin, 0, self.frame.size.width-(kSidesMargin*2),  _imageView.frame.size.height)];
+        [_imageView setFrame:CGRectMake(kSidesMargin, 0, self.frame.size.width-(kSidesMargin*2),  _height)];
     }
     [_imageView setContentMode:UIViewContentModeScaleAspectFill];
     [self addSubview:_imageView];
@@ -73,9 +75,9 @@
 - (void) adjustFinalSize
 {    
     if (_isImageFullWidth) {
-        [self setFrame:CGRectMake(0, self.frame.origin.y, self.frame.size.width, _imageView.frame.size.height)];
+        [self setFrame:CGRectMake(0, self.frame.origin.y, self.frame.size.width, _height)];
     } else {
-        [self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, _captionLabel.frame.size.height+_imageView.frame.size.height+kCaptionTopMargin)];
+        [self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, _captionLabel.frame.size.height+_height+kCaptionTopMargin)];
     }
 
 }

@@ -54,18 +54,6 @@ static TripBrochureViewController* instance;
     [self buildTitleElementView];
 }
 
-- (void) viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    /*_placesTableView.frame = (CGRect){
-        _placesTableView.frame.origin,
-        _placesTableView.contentSize
-    };
-    
-    _tableHeightConstraint.constant = [_currentTrip pois].count*63;
-    [_placesTableView needsUpdateConstraints];*/
-}
-
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -197,6 +185,10 @@ static TripBrochureViewController* instance;
 }
 
 - (void) drawNextContentElement {
+    if ([_currentTrip.brochureList count] == 0) {
+        return;
+    }
+    
     if (_contentBuilder.contentElementIdx > [_currentTrip.brochureList count]-1) {
         [_container setFrame:CGRectMake(_container.frame.origin.x,
                                         _container.frame.origin.y,
@@ -284,8 +276,10 @@ static TripBrochureViewController* instance;
     NSString *sectionName = [_sectionsOnTable objectAtIndex:section];
     POITableHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:kHeaderIdentifier];
     [header stylize];
-    [[header imageView] setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@-icon.png", sectionName]]];
-    [[header sectionLabel] setText:NSLocalizedString(sectionName, nil)];
+    
+    Poi *poi = [[_currentTrip.categorizedPois objectForKey:sectionName] objectAtIndex:0];
+    [[header imageView] setImage:[UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:poi.kindImage]]];
+    [[header sectionLabel] setText:sectionName];
     return header;
 }
 
@@ -296,7 +290,7 @@ static TripBrochureViewController* instance;
     
     Poi *poi = [[_currentTrip.categorizedPois objectForKey:sectionKey] objectAtIndex:[indexPath row]];
     
-    UIImage *img = [UIImage imageNamed:poi.mainPic];
+    UIImage *img = [UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:poi.mainPic]];
     [[poiViewCell imageBackground] setImage:img];
     [[poiViewCell titleLabel] setText:poi.theTitle];
     if ([poi isSlideBased]) {

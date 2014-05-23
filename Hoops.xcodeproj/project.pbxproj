@@ -228,6 +228,9 @@
 		3A5ED533191883170055CB44 /* peon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A5ED52F191883170055CB44 /* peon.jpg */; };
 		3A5ED534191883170055CB44 /* peon@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A5ED530191883170055CB44 /* peon@2x.jpg */; };
 		3A5ED536191883170055CB44 /* radio-pic@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A5ED532191883170055CB44 /* radio-pic@2x.jpg */; };
+		3A658E60192F21B900AB9D8C /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A658E5B192F21B900AB9D8C /* UIImage+Alpha.m */; };
+		3A658E61192F21B900AB9D8C /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A658E5D192F21B900AB9D8C /* UIImage+Resize.m */; };
+		3A658E62192F21B900AB9D8C /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A658E5F192F21B900AB9D8C /* UIImage+RoundedCorner.m */; };
 		3A7D566D18FEFF14005BD5CA /* BrochureElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D566C18FEFF14005BD5CA /* BrochureElement.m */; };
 		3A7D566F18FF16CC005BD5CA /* LegendElementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D566E18FF16CC005BD5CA /* LegendElementView.xib */; };
 		3A7D567218FF17D8005BD5CA /* LegendElementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D567118FF17D8005BD5CA /* LegendElementView.m */; };
@@ -575,6 +578,12 @@
 		3A5ED52F191883170055CB44 /* peon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = peon.jpg; sourceTree = "<group>"; };
 		3A5ED530191883170055CB44 /* peon@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "peon@2x.jpg"; sourceTree = "<group>"; };
 		3A5ED532191883170055CB44 /* radio-pic@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "radio-pic@2x.jpg"; sourceTree = "<group>"; };
+		3A658E5A192F21B900AB9D8C /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
+		3A658E5B192F21B900AB9D8C /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
+		3A658E5C192F21B900AB9D8C /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		3A658E5D192F21B900AB9D8C /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		3A658E5E192F21B900AB9D8C /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		3A658E5F192F21B900AB9D8C /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		3A7D566B18FEFF14005BD5CA /* BrochureElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrochureElement.h; sourceTree = "<group>"; };
 		3A7D566C18FEFF14005BD5CA /* BrochureElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrochureElement.m; sourceTree = "<group>"; };
 		3A7D566E18FF16CC005BD5CA /* LegendElementView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LegendElementView.xib; sourceTree = "<group>"; };
@@ -788,6 +797,7 @@
 		3A1BA7B918DED3E50002F958 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				3A658E59192F21B900AB9D8C /* UIImage-categories */,
 				3A594BD018E7175300220D61 /* GoogleMaps.bundle */,
 				3A594BCE18E7174A00220D61 /* GoogleMaps.framework */,
 				3A9AA06B18E350AF00F075D3 /* iCarousel */,
@@ -1236,6 +1246,20 @@
 				3AE7897718F72F7100E46085 /* stamaria-empty@2x.png */,
 			);
 			path = stamaria;
+			sourceTree = "<group>";
+		};
+		3A658E59192F21B900AB9D8C /* UIImage-categories */ = {
+			isa = PBXGroup;
+			children = (
+				3A658E5A192F21B900AB9D8C /* UIImage+Alpha.h */,
+				3A658E5B192F21B900AB9D8C /* UIImage+Alpha.m */,
+				3A658E5C192F21B900AB9D8C /* UIImage+Resize.h */,
+				3A658E5D192F21B900AB9D8C /* UIImage+Resize.m */,
+				3A658E5E192F21B900AB9D8C /* UIImage+RoundedCorner.h */,
+				3A658E5F192F21B900AB9D8C /* UIImage+RoundedCorner.m */,
+			);
+			name = "UIImage-categories";
+			path = "../../../../Downloads/UIImage-categories";
 			sourceTree = "<group>";
 		};
 		3A7FC544191C152F000B312A /* Managers */ = {
@@ -1877,6 +1901,7 @@
 				3A1BA7F318DED3E50002F958 /* SBJsonStreamWriter.m in Sources */,
 				3AB7CBBA191A941C001EFD53 /* POIDetailsView.m in Sources */,
 				3A181E8D18F3CA4A0075CF84 /* POIDetailsViewController.m in Sources */,
+				3A658E61192F21B900AB9D8C /* UIImage+Resize.m in Sources */,
 				3A1BA7F618DED3E50002F958 /* SBJsonTokeniser.m in Sources */,
 				3A52C8FE1922767E001F74A3 /* BrochurePictureView.m in Sources */,
 				3A1BA7F418DED3E50002F958 /* SBJsonStreamWriterAccumulator.m in Sources */,
@@ -1886,6 +1911,8 @@
 				3A471F481925A69500E25598 /* DataStore.m in Sources */,
 				3A1FA86018E15BC20000BAFC /* Path.m in Sources */,
 				3A1BA7F918DED3E50002F958 /* UIColor-Expanded.m in Sources */,
+				3A658E60192F21B900AB9D8C /* UIImage+Alpha.m in Sources */,
+				3A658E62192F21B900AB9D8C /* UIImage+RoundedCorner.m in Sources */,
 				3A37CFE818FCFE68003CD1FB /* TripCardCentralView.m in Sources */,
 				3A471F4D1925B9AA00E25598 /* TripOnInventory.m in Sources */,
 				3ADB298B191CC95600BD3D7C /* StandardPoiView.m in Sources */,

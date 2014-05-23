@@ -117,11 +117,13 @@
         pictureView = [[BrochurePictureView alloc] initWithFrame:newFrame
                                              withFullWidthStatus:element.photoIsFullWidth
                                                   withImageNamed:element.photoFilename
+                                                      withHeight:element.photoHeight
                                                       andCaption:element.photoCaption];
     } else {
         pictureView = [[BrochurePictureView alloc] initWithFrame:newFrame
                                              withFullWidthStatus:element.photoIsFullWidth
-                                                  withImageNamed:element.photoFilename];
+                                                  withImageNamed:element.photoFilename
+                                                      withHeight:element.photoHeight];
     }
     [container addSubview:pictureView];
     

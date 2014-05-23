@@ -15,6 +15,7 @@
 #import "TripKeyDetailsView.h"
 #import "POITableHeaderView.h"
 #import "POITableViewCell.h"
+#import "OperationHelpers.h"
 
 #import "ContentBuilder.h"
 #import "ContentBuilderDelegate.h"

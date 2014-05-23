@@ -47,10 +47,10 @@ DEPENDENCIES:
   - Mixpanel
 
 SPEC CHECKSUMS:
-  AFNetworking: 01aa7c3aa9a200b94943e54072a4373f14b3d219
-  FormatterKit: 612f56cb00bcda20d8559a2b9a9e6ed9251b9752
-  iActiveRecord: eef04610c75db1d7a84fbda8e398976f4a2da200
-  MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
-  Mixpanel: b1c61efa748193777889dfe8b7f80471ceb95e97
+  AFNetworking: ab63e259fe91eef4519b371ef0a4955af0e73e64
+  FormatterKit: f744aa7928003eba8317d6fd6998414fbc78f7a5
+  iActiveRecord: 0b6ef07f4aa26c943454c28c2bbdf179dcf98def
+  MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
+  Mixpanel: 9aba38257fc4d2777ab5db1afc55e22bdfd57a4a
 
 COCOAPODS: 0.32.1
