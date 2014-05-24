@@ -13,11 +13,13 @@
 #import "BrochureElement.h"
 #import "UIImage+Resize.h"
 
-#define kPoiPrefix @"trip_%ld_poi%@"
+#define kPoiPrefix @"trip_%ld_poi_%@"
 
 @interface Poi : GMSMarker
 
 @property (nonatomic, assign) BOOL sponsored;
+
+@property (nonatomic, assign) long remoteId;
 
 @property (nonatomic, strong) NSString *kindKeyword;
 @property (nonatomic, strong) NSString *kindCode;
@@ -31,6 +33,7 @@
 @property (nonatomic, strong) NSString *details;
 @property (nonatomic, strong) NSString *mainPic;
 
+@property (nonatomic, assign) BOOL isSlideBased;
 @property (nonatomic, strong) NSArray *slideElements;
 
 @property (nonatomic, strong) NSArray *brochureElements;
@@ -39,7 +42,5 @@
 
 - (NSString*) subtitle;
 - (NSString*) localizedCategory;
-
-- (BOOL) isSlideBased;
 
 @end

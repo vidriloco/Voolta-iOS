@@ -77,6 +77,7 @@ static NSArray *list;
 + (Trip*) initWithJsonDictionary:(NSDictionary *)dictionary
 {
     Trip *trip = [[Trip alloc] init];
+    
     [trip setRemoteId:[[dictionary objectForKey:@"id"] longValue]];
     [trip setTitle:[dictionary objectForKey:@"title"]];
     [trip setDetails:[dictionary objectForKey:@"details"]];

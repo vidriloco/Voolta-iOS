@@ -59,14 +59,14 @@
                                   CGRectMake(xPos, 0, self.frame.size.width, self.frame.size.height)];
         
         if ([element isMainSlide]) {
-            [imageView setImage:[UIImage imageNamed:poi.mainPic]];
+            [imageView setImage:[UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:poi.mainPic]]];
             [self drawMainSlideWithTitle:poi.theTitle
                             withSubtitle:poi.details
                             withIconName:poi.kindImage
                  withContrastViewEnabled:[element contrasted]
                        andBackgroundView:imageView];
         } else {
-            [imageView setImage:[UIImage imageNamed:element.image]];
+            [imageView setImage:[UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:element.imageFilename]]];
             [self drawSlideForSlideElement:element
                          andBackgroundView:imageView
                                    atIndex:idx];

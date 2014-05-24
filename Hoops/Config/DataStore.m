@@ -112,6 +112,7 @@ static DataStore *instance;
     NSArray *fetched = [[[ImageOnInventory lazyFetcher] whereField:@"remoteId" equalToValue:[dictionary objectForKey:@"id"]] fetchRecords];
     ImageOnInventory *inventoredImg;
     BOOL newRecord = NO;
+
     if ([fetched count] > 0) {
         inventoredImg = [fetched objectAtIndex:0];
     } else {
@@ -147,6 +148,7 @@ static DataStore *instance;
 {
     _graphicsOnStore++;
     if (_graphicsOnStore == _graphicsToBeFetched) {
+        NSLog(@"Fetched All Images");
         [self pruneTrashedGraphics];
         [self updateTripsInventory];
     }

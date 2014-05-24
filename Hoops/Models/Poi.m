@@ -13,21 +13,28 @@
 + (Poi*) initWithDictionary:(NSDictionary*)dictionary andTripId:(long)tripId
 {
     Poi *poi = [[Poi alloc] init];
+
+    poi.remoteId = [[dictionary objectForKey:@"id"] longValue];
     
     poi.theTitle = [dictionary objectForKey:@"title"];
     poi.details = [dictionary objectForKey:@"details"];
-
+    poi.isSlideBased = [[dictionary objectForKey:@"slide_based"] boolValue];
     NSDictionary *kind = [dictionary objectForKey:@"poi_kind"];
-    poi.kindKeyword = [kind objectForKey:@"keyword"];
-    poi.kindCode = [kind objectForKey:@"content"];
-    poi.kindImage = [kind objectForKey:@"filename"];
+    if ([[kind allKeys] count] > 0) {
+        poi.kindKeyword = [kind objectForKey:@"keyword"];
+        poi.kindCode = [kind objectForKey:@"content"];
+        poi.kindImage = [kind objectForKey:@"filename"];
+    }
+
 
     poi.snippet = nil;
     
     NSDictionary *category = [dictionary objectForKey:@"poi_category"];
-    poi.categoryKeyword = [category objectForKey:@"keyword"];
-    poi.categoryCode = [category objectForKey:@"content"];
-    poi.categoryImage = [category objectForKey:@"filename"];
+    if ([[category allKeys] count] > 0) {
+        poi.categoryKeyword = [category objectForKey:@"keyword"];
+        poi.categoryCode = [category objectForKey:@"content"];
+        poi.categoryImage = [category objectForKey:@"filename"];
+    }
 
     poi.sponsored = [[dictionary objectForKey:@"sponsored"] boolValue];
     
@@ -52,7 +59,7 @@
             NSMutableArray *slideList = [NSMutableArray array];
 
             for (NSDictionary *slide in [dictionary objectForKey:@"slides"]) {
-                SlideElement *slideElement = [[SlideElement alloc] initWithDictionary:slide];
+                SlideElement *slideElement = [[SlideElement alloc] initWithDictionary:slide withTripId:tripId withPoiId:[poi remoteId]];
                 [slideList addObject:slideElement];
             }
             [poi setSlideElements:slideList];
@@ -86,11 +93,6 @@
 - (NSString*) localizedCategory
 {
     return _categoryKeyword;
-}
-
-- (BOOL) isSlideBased
-{
-    return [self.kindCode isEqualToString:@"museum"];
 }
 
 @end

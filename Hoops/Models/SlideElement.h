@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OperationHelpers.h"
 
 @interface SlideElement : NSObject
 
 #define kTopRightAlignment       @"TR"
 #define kBottomLeftAlignment     @"BL"
+#define kSlideElementPrefix      @"trip_%ld_poi_%ld_slide_%@"
 
 typedef NS_ENUM(NSUInteger, SlideContentAlignment)
 {
@@ -21,14 +23,15 @@ typedef NS_ENUM(NSUInteger, SlideContentAlignment)
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *subtitle;
-@property (nonatomic, strong) NSString *image;
+@property (nonatomic, strong) NSString *imageFilename;
 @property (nonatomic, strong) NSString *url;
+@property (nonatomic, assign) int order;
 
 @property (nonatomic, assign) BOOL contrasted;
 @property (nonatomic, assign) BOOL isMainSlide;
 @property (nonatomic, assign) SlideContentAlignment contentAlignment;
 
 
-- (id) initWithDictionary:(NSDictionary*)dictionary;
+- (id) initWithDictionary:(NSDictionary*)dictionary withTripId:(long)tripId withPoiId:(long)poiId;
 
 @end

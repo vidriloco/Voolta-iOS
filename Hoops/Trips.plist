@@ -626,9 +626,9 @@
 				<key>location</key>
 				<dict>
 					<key>lon</key>
-					<real>-99.14336225944349</real>
+					<real>-99.14336225944351</real>
 					<key>lat</key>
-					<real>19.43727328974084</real>
+					<real>19.4372732897408</real>
 				</dict>
 				<key>main_pic</key>
 				<string>franz-mayer.jpg</string>

@@ -47,11 +47,11 @@
     [self setUrl:[dictionary objectForKey:@"url"]];
     [self setUpdateDate:[dictionary objectForKey:@"updated_at"]];
     if ([dictionary objectForKey:@"attribution_url"] != [NSNull null]) {
-        [self setAttributionURL:[[dictionary objectForKey:@"attribution_url"] stringValue]];
+        [self setAttributionURL:[dictionary objectForKey:@"attribution_url"]];
     }
     
     if ([dictionary objectForKey:@"attribution_info"] != [NSNull null]) {
-        [self setAttributionInfo:[[dictionary objectForKey:@"attribution_info"] stringValue]];
+        [self setAttributionInfo:[dictionary objectForKey:@"attribution_info"]];
     }
 }
 

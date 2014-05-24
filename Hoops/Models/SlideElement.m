@@ -10,20 +10,28 @@
 
 @implementation SlideElement
 
-- (id) initWithDictionary:(NSDictionary *)dictionary
+- (id) initWithDictionary:(NSDictionary *)dictionary withTripId:(long)tripId withPoiId:(long)poiId
 {
     self = [super init];
     if (self) {
         _contrasted = [[dictionary objectForKey:@"contrasted"] boolValue];
-        _isMainSlide = [[dictionary objectForKey:@"front"] boolValue];
-        
+        _isMainSlide = [[dictionary objectForKey:@"main_slide"] boolValue];
+        _order = [[dictionary objectForKey:@"order"] intValue];
         if (!_isMainSlide) {
             _title = [dictionary objectForKey:@"title"];
             _subtitle = [dictionary objectForKey:@"subtitle"];
-            _image = [dictionary objectForKey:@"picture"];
+            
+            NSString *url = [[dictionary objectForKey:@"image"] objectForKey:@"url"];
+            
+            _imageFilename = [NSString stringWithFormat:kSlideElementPrefix, tripId, poiId, [url componentsSeparatedByString:@"/"].lastObject];
+            
+            [OperationHelpers fetchImage:url withResponseBlock:^(UIImage *image) {
+                [OperationHelpers storeImage:image withFilename:_imageFilename];
+            }];
+            
             _url = [dictionary objectForKey:@"url"];
 
-            if ([[dictionary objectForKey:@"alignment"] isEqualToString:kTopRightAlignment]) {
+            if ([[dictionary objectForKey:@"aligned_to_right"] boolValue]) {
                 _contentAlignment = SlideAlignRightTop;
             } else {
                 _contentAlignment = SlideAlignBottomLeft;
