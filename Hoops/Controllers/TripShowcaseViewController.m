@@ -162,7 +162,7 @@
     Trip *trip = [_slides objectAtIndex:(int) index];
     
     if ([trip isAvailable]) {
-        TripViewController *tripController = [[TripViewController alloc] initWithTrip:trip];
+        TripViewController *tripController = [TripViewController newWithTrip:trip];
         
         [UIView
          animateWithDuration:0.3

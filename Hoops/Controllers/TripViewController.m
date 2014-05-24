@@ -52,27 +52,29 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
 
 @end
 
+static TripViewController *current;
+
 @implementation TripViewController
 
-- (id) initWithTrip:(Trip *)trip
++ (TripViewController*) current
 {
-    self = [super init];
-    if (self) {
-        self.currentTrip = trip;
-        self.currentFollowMode = FollowNone;
-        _poiDetailsManager = [POIDetailsManager newWithController:self];
+    return current;
+}
+
++ (id) newWithTrip:(Trip *)trip
+{
+    if ([TripViewController current] != nil && [TripViewController current].currentTrip == trip) {
+        [[current view] setAlpha:1];
+        return current;
+    } else {
+        TripViewController* tripViewController = [[TripViewController alloc] init];
+        [tripViewController setCurrentTrip:trip];
+        [tripViewController setCurrentFollowMode:FollowNone];
+        [tripViewController setPoiDetailsManager:[POIDetailsManager newWithController:tripViewController]];
+        current = tripViewController;
     }
-    return self;
-}
-
-- (void) viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void) viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
+    
+    return current;
 }
 
 - (void) viewDidLoad
@@ -91,12 +93,15 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
     _markerCenter = [[GMSMarker alloc] init];
     [_markerCenter setIcon: [UIImage imageNamed:@"my-location.png"]];
     
-    // Loading location manager
-    self.locationManager = [[CLLocationManager alloc] init];
-    [self.locationManager setDelegate:self];
-    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
-    [self.locationManager startUpdatingHeading];
-    [self.locationManager startUpdatingLocation];
+    [self loadTopControls];
+    [self loadBottomControls];
+    [self centerMapOnTripStart];
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self drawTripMarkers];
     
     // Loading trip paths
     for(Path *path in self.currentTrip.paths) {
@@ -107,11 +112,21 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
         [polyline setMap:_mapView];
     }
     
-    [self loadTopControls];
-    [self loadBottomControls];
-    [self drawTripMarkers];
-    [self centerMapOnTripStart];
+    // Loading location manager
+    self.locationManager = [[CLLocationManager alloc] init];
+    [self.locationManager setDelegate:self];
+    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
+    [self.locationManager startUpdatingHeading];
+    [self.locationManager startUpdatingLocation];
+}
 
+- (void) viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [_mapView clear];
+    [self.locationManager stopUpdatingHeading];
+    [self.locationManager stopUpdatingLocation];
+    self.locationManager = nil;
 }
 
 - (void) loadTopControls

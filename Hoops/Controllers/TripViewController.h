@@ -31,7 +31,9 @@
 
 @property (nonatomic, strong) Trip *currentTrip;
 
-- (id) initWithTrip:(Trip*)trip;
++ (TripViewController*) current;
+
++ (id) newWithTrip:(Trip*)trip;
 - (void) toggleMapControlsOff:(BOOL)state;
 
 @end

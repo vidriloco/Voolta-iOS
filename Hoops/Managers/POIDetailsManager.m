@@ -28,10 +28,8 @@ static POIDetailsManager *local;
 
 + (POIDetailsManager*) newWithController:(TripViewController*) controller
 {
-    if ([self current] == nil) {
-        local = [[POIDetailsManager alloc] init];
-        local.associatedController = controller;
-    }
+    local = [[POIDetailsManager alloc] init];
+    local.associatedController = controller;
     return local;
 }
 
