@@ -87,6 +87,7 @@ static TripBrochureViewController* instance;
     [titleLabel setFont:[LookAndFeel defaultFontBoldWithSize:19]];
     [titleLabel setTextAlignment:NSTextAlignmentCenter];
     [titleLabel setMinimumScaleFactor:0.5];
+    [titleLabel setAdjustsFontSizeToFitWidth:YES];
     [_titleContainerView addSubview:titleLabel];
     
     // The hidden-pleca view which gets visible past a defined Y scroll-offset
@@ -125,12 +126,14 @@ static TripBrochureViewController* instance;
     [self.view addSubview:_mainImageView];
     
     // The route title infront of the image view
-    UILabel *tripNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, _mainImageView.frame.size.height/2-20, [App viewBounds].size.width-60, 40)];
+    UILabel *tripNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, _mainImageView.frame.size.height/2-50, [App viewBounds].size.width-60, 100)];
     [tripNameLabel setTextColor:[UIColor whiteColor]];
     [tripNameLabel setFont:[LookAndFeel defaultFontBoldWithSize:23]];
     [[tripNameLabel layer] setShadowOffset:CGSizeMake(3, 4)];
     [[tripNameLabel layer] setShadowOpacity:0.8];
     [[tripNameLabel layer] setShadowColor:[UIColor blackColor].CGColor];
+    [tripNameLabel setNumberOfLines:2];
+    [tripNameLabel setLineBreakMode:NSLineBreakByWordWrapping];
     [tripNameLabel setText:_currentTrip.title];
     [tripNameLabel setTextAlignment:NSTextAlignmentCenter];
     [_mainImageView addSubview:tripNameLabel];
@@ -138,7 +141,7 @@ static TripBrochureViewController* instance;
     // This element contains the basic information about a route such as distance and complexity
     TripKeyDetailsView *tripDetails = [[[NSBundle mainBundle]
                                         loadNibNamed:@"TripKeyDetailsView" owner:self options:nil] objectAtIndex:0];
-    [tripDetails setFrame:CGRectMake([App viewBounds].size.width/2-tripDetails.frame.size.width/2, tripNameLabel.frame.origin.y+tripNameLabel.frame.size.height-10, tripDetails.frame.size.width, tripDetails.frame.size.height)];
+    [tripDetails setFrame:CGRectMake([App viewBounds].size.width/2-tripDetails.frame.size.width/2+10, tripNameLabel.frame.origin.y+tripNameLabel.frame.size.height-10, tripDetails.frame.size.width, tripDetails.frame.size.height)];
     [tripDetails stylize];
     
     [[tripDetails leftLabel] setText:_currentTrip.distance];

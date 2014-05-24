@@ -57,7 +57,7 @@
     [[_tripComplexityLabel layer] setShadowColor:[UIColor blackColor].CGColor];
     
     [_tripDetailsTextView setTextColor:[UIColor grayColor]];
-    [_tripDetailsTextView setFont:[LookAndFeel defaultFontLightWithSize:12]];
+    [_tripDetailsTextView setFont:[LookAndFeel defaultFontLightWithSize:13]];
 }
 
 - (void) cardTapped {
@@ -95,7 +95,7 @@
             
             [[card iconView] setImage:poi.icon];
             
-            [card setFrame:CGRectMake(0, self.subpanel.frame.size.height-card.frame.size.height-5, card.frame.size.width, card.frame.size.height)];
+            [card setFrame:CGRectMake(0, self.subpanel.frame.size.height-card.frame.size.height, card.frame.size.width, card.frame.size.height)];
             [tmpCardsHolder addObject:card];
             
             [self.subpanel addSubview:card];
