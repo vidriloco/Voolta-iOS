@@ -44,6 +44,7 @@
     //configure carousel
     _carousel.type = iCarouselTypeCoverFlow2;
     _carousel.pagingEnabled = YES;
+    [_carousel setCenterItemWhenSelected:NO];
     
     // Add gestures for logo-icon
     [self.logoView setHidden:YES];
@@ -156,6 +157,8 @@
 
 - (void) carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
 {
+    [_carousel setCurrentItemIndex:index];
+
     Trip *trip = [_slides objectAtIndex:(int) index];
     
     if ([trip isAvailable]) {
