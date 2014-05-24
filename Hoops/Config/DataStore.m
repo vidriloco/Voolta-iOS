@@ -82,7 +82,6 @@ static DataStore *instance;
     
     ARLazyFetcher *fetcher = [ImageOnInventory lazyFetcher];
     [fetcher whereField:@"lastSeenAlive" between:lastMonth and:lastTwoMinutes];
-    NSLog(@"PRUNNING");
     for (ImageOnInventory *img in [fetcher fetchRecords]) {
         [OperationHelpers removeImageWithFilename:[img.url componentsSeparatedByString:@"/"].lastObject];
         [img dropRecord];
@@ -148,8 +147,9 @@ static DataStore *instance;
 {
     _graphicsOnStore++;
     if (_graphicsOnStore == _graphicsToBeFetched) {
-        NSLog(@"Fetched All Images");
+        [_delegate imageLoadingPhaseCompleted];
         [self pruneTrashedGraphics];
+        [_delegate prunePhaseCompleted];
         [self updateTripsInventory];
     }
 }
@@ -202,9 +202,10 @@ static DataStore *instance;
     NSArray *inventoryList = [[[TripOnInventory lazyFetcher] whereField:@"lang" equalToValue:[App currentLang]] fetchRecords];
     
     for (TripOnInventory *tripOnInventory in inventoryList) {
+
         if ([tripOnInventory shouldUpdate]) {
+            [_delegate startedFetchingTrip];
             [OperationHelpers removeFilesForTripWithId:[tripOnInventory.remoteId longValue]];
-            NSLog(@"UPDATE");
             NSString *finalTripURL = [_tripURL stringByReplacingOccurrencesOfString:@"<id>"
                                                                          withString:[NSString stringWithFormat:@"%d", [[tripOnInventory remoteId] intValue]]];
             AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -219,10 +220,10 @@ static DataStore *instance;
                 [tripOnInventory save];
                 [self processTripPayload:data];
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                NSLog(@"FAILURE");
+                [_delegate failedFetchingTrip];
             }];
         } else {
-            NSLog(@"LOAD");
+            [_delegate startedLoadingTrip];
             [self reconstructTripFromData:[tripOnInventory tripData]];
         }
     }
@@ -242,7 +243,7 @@ static DataStore *instance;
         [OperationHelpers storeImage:image withFilename:[trip mainPic]];
         
         [_trips addObject:trip];
-        [_delegate newTripFetched];
+        [_delegate finishedFetchingTrip];
     }];
 }
 
@@ -256,7 +257,7 @@ static DataStore *instance;
     Trip *trip = [Trip initWithJsonDictionary:object];
     [_trips addObject:trip];
     
-    [_delegate newTripFetched];
+    [_delegate finishedFetchingTrip];
 }
 
 @end

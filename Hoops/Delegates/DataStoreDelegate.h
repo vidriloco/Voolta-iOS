@@ -10,8 +10,14 @@
 
 @protocol DataStoreDelegate <NSObject>
 
-@required
+@optional
+- (void) imageLoadingPhaseCompleted;
+- (void) prunePhaseCompleted;
+- (void) failedFetchingTrip;
 
-- (void) newTripFetched;
+@required
+- (void) startedFetchingTrip;
+- (void) startedLoadingTrip;
+- (void) finishedFetchingTrip;
 
 @end

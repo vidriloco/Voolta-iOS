@@ -76,14 +76,35 @@
     [self.carousel setCurrentItemIndex:0];
 }
 
-#pragma TripStoreDelegate methods
+#pragma DataDelegate methods
 
-- (void) newTripFetched
+- (void) finishedFetchingTrip
 {
+    NSLog(@"Finished with trip");
     NSMutableArray *array = [NSMutableArray arrayWithObject:_landingScreen];
     [array addObjectsFromArray:[DataStore current].trips];
     _slides = array;
     [self.carousel reloadData];
+}
+
+- (void) startedFetchingTrip
+{
+    NSLog(@"Fetching trip");
+}
+
+- (void) startedLoadingTrip
+{
+    NSLog(@"Loading trip");
+}
+
+- (void) prunePhaseCompleted
+{
+    NSLog(@"PRUNE finished");
+}
+
+- (void) imageLoadingPhaseCompleted
+{
+    NSLog(@"LOADING images done");
 }
 
 #pragma mark -
