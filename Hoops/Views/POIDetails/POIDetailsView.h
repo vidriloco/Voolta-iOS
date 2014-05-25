@@ -12,6 +12,8 @@
 #import "LookAndFeel.h"
 #import "HorizontalSlidesBasedPoiView.h"
 #import "StandardPoiView.h"
+#import "MiniPOIDetailsView.h"
+#import "ContentBuilder.h"
 
 #define kCardWidth      280
 #define kCardHeight     340

@@ -18,14 +18,13 @@
     
     poi.theTitle = [dictionary objectForKey:@"title"];
     poi.details = [dictionary objectForKey:@"details"];
-    poi.isSlideBased = [[dictionary objectForKey:@"slide_based"] boolValue];
+    poi.mode = [dictionary objectForKey:@"mode"];
     NSDictionary *kind = [dictionary objectForKey:@"poi_kind"];
     if ([[kind allKeys] count] > 0) {
         poi.kindKeyword = [kind objectForKey:@"keyword"];
         poi.kindCode = [kind objectForKey:@"content"];
         poi.kindImage = [kind objectForKey:@"filename"];
     }
-
 
     poi.snippet = nil;
     
@@ -42,18 +41,19 @@
     float lon = [[[dictionary objectForKey:@"coordinates"] objectForKey:@"lon"] floatValue];
     poi.position = CLLocationCoordinate2DMake(lat, lon);
     
-    NSString *url = [[dictionary objectForKey:@"image"] objectForKey:@"url"];
-    poi.mainPic = [NSString stringWithFormat:kPoiPrefix, tripId, [url componentsSeparatedByString:@"/"].lastObject];
-    
     UIImage *imageMarker = [UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:[kind objectForKey:@"filename"]]];
     
     poi.icon = [OperationHelpers imageWithImage:imageMarker scaledToSize:CGSizeMake(40, 40)];
     
-    [OperationHelpers fetchImage:url withResponseBlock:^(UIImage *image) {
-        [OperationHelpers storeImage:image withFilename:poi.mainPic];
-    }];
+    if (![poi isMiniUIBased]) {
+        NSString *url = [[dictionary objectForKey:@"image"] objectForKey:@"url"];
+        poi.mainPic = [NSString stringWithFormat:kPoiPrefix, tripId, [url componentsSeparatedByString:@"/"].lastObject];
+        [OperationHelpers fetchImage:url withResponseBlock:^(UIImage *image) {
+            [OperationHelpers storeImage:image withFilename:poi.mainPic];
+        }];
+    }
     
-    if ([poi isSlideBased]) {
+    if ([poi isSlideUIBased]) {
 
         if([dictionary objectForKey:@"slides"]) {
             NSMutableArray *slideList = [NSMutableArray array];
@@ -65,7 +65,7 @@
             [poi setSlideElements:slideList];
             
         }
-    } else {
+    } else if([poi isNormalUIBased]) {
         if([dictionary objectForKey:@"contents"]) {
             NSMutableArray *brochureElements = [NSMutableArray array];
             
@@ -90,9 +90,19 @@
     return _kindKeyword;
 }
 
-- (NSString*) localizedCategory
+- (BOOL) isSlideUIBased
 {
-    return _categoryKeyword;
+    return [_mode isEqualToString:@"slide_based"];
+}
+
+- (BOOL) isMiniUIBased
+{
+    return [_mode isEqualToString:@"small"];
+}
+
+- (BOOL) isNormalUIBased
+{
+    return [_mode isEqualToString:@"normal"];
 }
 
 @end

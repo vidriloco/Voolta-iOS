@@ -14,7 +14,6 @@
 		3A0513FF18E74E6C00C25512 /* aquamarine_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A0513FA18E74E6C00C25512 /* aquamarine_bg.jpg */; };
 		3A05140318E74E7900C25512 /* main-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A05140218E74E7900C25512 /* main-background.jpg */; };
 		3A05140618E7B04000C25512 /* Poi.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A05140518E7B04000C25512 /* Poi.m */; };
-		3A181E8D18F3CA4A0075CF84 /* POIDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A181E8C18F3CA4A0075CF84 /* POIDetailsViewController.m */; };
 		3A1BA79F18DEBC150002F958 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1BA79E18DEBC150002F958 /* Trip.m */; };
 		3A1BA7B618DED3610002F958 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1BA7B118DED3610002F958 /* App.m */; };
 		3A1BA7B818DED3610002F958 /* LookAndFeel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1BA7B518DED3610002F958 /* LookAndFeel.m */; };
@@ -275,6 +274,8 @@
 		3A9CB69A192134B5000B2F10 /* ContentBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9CB699192134B5000B2F10 /* ContentBuilder.m */; };
 		3A9D5BB319317B3A003DFE6E /* my-location-simple.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A9D5BB119317B3A003DFE6E /* my-location-simple.png */; };
 		3A9D5BB419317B3A003DFE6E /* my-location-simple@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A9D5BB219317B3A003DFE6E /* my-location-simple@2x.png */; };
+		3A9D5BB71931BCE5003DFE6E /* MiniPOIDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9D5BB61931BCE5003DFE6E /* MiniPOIDetailsView.m */; };
+		3A9D5BB91931C0CC003DFE6E /* MiniPOIDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A9D5BB81931C0CC003DFE6E /* MiniPOIDetailsView.xib */; };
 		3A9D7F3718E0174F00174C19 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A9D7F3518E0174F00174C19 /* Localizable.strings */; };
 		3A9D7F3A18E018EE00174C19 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A9D7F3918E018EE00174C19 /* InfoPlist.strings */; };
 		3A9D7F4018E01E7400174C19 /* TripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9D7F3E18E01E7400174C19 /* TripViewController.m */; };
@@ -332,8 +333,6 @@
 		3A05140218E74E7900C25512 /* main-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "main-background.jpg"; sourceTree = "<group>"; };
 		3A05140418E7B04000C25512 /* Poi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Poi.h; sourceTree = "<group>"; };
 		3A05140518E7B04000C25512 /* Poi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Poi.m; sourceTree = "<group>"; };
-		3A181E8B18F3CA4A0075CF84 /* POIDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POIDetailsViewController.h; sourceTree = "<group>"; };
-		3A181E8C18F3CA4A0075CF84 /* POIDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POIDetailsViewController.m; sourceTree = "<group>"; };
 		3A181E8E18F3CB920075CF84 /* TripPoisDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripPoisDelegate.h; sourceTree = "<group>"; };
 		3A1BA79D18DEBC150002F958 /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
 		3A1BA79E18DEBC150002F958 /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
@@ -643,6 +642,9 @@
 		3A9CB69B19213882000B2F10 /* ContentBuilderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentBuilderDelegate.h; sourceTree = "<group>"; };
 		3A9D5BB119317B3A003DFE6E /* my-location-simple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my-location-simple.png"; sourceTree = "<group>"; };
 		3A9D5BB219317B3A003DFE6E /* my-location-simple@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my-location-simple@2x.png"; sourceTree = "<group>"; };
+		3A9D5BB51931BCE5003DFE6E /* MiniPOIDetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniPOIDetailsView.h; sourceTree = "<group>"; };
+		3A9D5BB61931BCE5003DFE6E /* MiniPOIDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniPOIDetailsView.m; sourceTree = "<group>"; };
+		3A9D5BB81931C0CC003DFE6E /* MiniPOIDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MiniPOIDetailsView.xib; sourceTree = "<group>"; };
 		3A9D7F3618E0174F00174C19 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A9D7F3818E0175700174C19 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A9D7F3918E018EE00174C19 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -1406,8 +1408,6 @@
 				3A42500018ECA5AB00BDADAB /* TripLandingViewController.m */,
 				3A42500218ECBFB600BDADAB /* UIViewController+CardSized.h */,
 				3A42500318ECBFB600BDADAB /* UIViewController+CardSized.m */,
-				3A181E8B18F3CA4A0075CF84 /* POIDetailsViewController.h */,
-				3A181E8C18F3CA4A0075CF84 /* POIDetailsViewController.m */,
 				3AF072A318F66DF0009017A5 /* TripBrochureViewController.h */,
 				3AF072A418F66DF0009017A5 /* TripBrochureViewController.m */,
 			);
@@ -1535,6 +1535,9 @@
 				3ADB2989191CC95600BD3D7C /* StandardPoiView.h */,
 				3ADB298A191CC95600BD3D7C /* StandardPoiView.m */,
 				3ADB298C191CCA0200BD3D7C /* StandardPoiView.xib */,
+				3A9D5BB51931BCE5003DFE6E /* MiniPOIDetailsView.h */,
+				3A9D5BB61931BCE5003DFE6E /* MiniPOIDetailsView.m */,
+				3A9D5BB81931C0CC003DFE6E /* MiniPOIDetailsView.xib */,
 			);
 			path = POIDetails;
 			sourceTree = "<group>";
@@ -1636,6 +1639,7 @@
 				3A3B8F3618F460F60010067E /* jardin-arte-front@2x.png in Resources */,
 				3A9D5BB319317B3A003DFE6E /* my-location-simple.png in Resources */,
 				3A1E15EA192037B200281822 /* revolution.png in Resources */,
+				3A9D5BB91931C0CC003DFE6E /* MiniPOIDetailsView.xib in Resources */,
 				3A4364FD18DF463100205EA3 /* Trips.plist in Resources */,
 				3A1E15C0192037B200281822 /* logo-map.png in Resources */,
 				3A1E15E0192037B200281822 /* mexican-food.png in Resources */,
@@ -1908,7 +1912,6 @@
 				3A1BA7F818DED3E50002F958 /* SBJsonWriter.m in Sources */,
 				3A1BA7F318DED3E50002F958 /* SBJsonStreamWriter.m in Sources */,
 				3AB7CBBA191A941C001EFD53 /* POIDetailsView.m in Sources */,
-				3A181E8D18F3CA4A0075CF84 /* POIDetailsViewController.m in Sources */,
 				3A658E61192F21B900AB9D8C /* UIImage+Resize.m in Sources */,
 				3A1BA7F618DED3E50002F958 /* SBJsonTokeniser.m in Sources */,
 				3A52C8FE1922767E001F74A3 /* BrochurePictureView.m in Sources */,
@@ -1937,6 +1940,7 @@
 				3A7D567218FF17D8005BD5CA /* LegendElementView.m in Sources */,
 				3A42500118ECA5AB00BDADAB /* TripLandingViewController.m in Sources */,
 				3A1BA7B818DED3610002F958 /* LookAndFeel.m in Sources */,
+				3A9D5BB71931BCE5003DFE6E /* MiniPOIDetailsView.m in Sources */,
 				3A1BA79F18DEBC150002F958 /* Trip.m in Sources */,
 				3A42500418ECBFB600BDADAB /* UIViewController+CardSized.m in Sources */,
 				3A91C17218DE8BC000E30CBF /* AppDelegate.m in Sources */,

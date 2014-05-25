@@ -60,6 +60,10 @@
 }
 
 - (void) drawNextContentElement {
+    if ([_contentElements count] == 0) {
+        return;
+    }
+    
     if (_contentBuilder.contentElementIdx > [_contentElements count]-1) {
         [_scrollView setContentSize:CGSizeMake(self.frame.size.width, _contentBuilder.lastOffset.y)];
     } else {

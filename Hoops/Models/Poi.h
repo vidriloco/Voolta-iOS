@@ -21,6 +21,8 @@
 
 @property (nonatomic, assign) long remoteId;
 
+@property (nonatomic, strong) NSString *mode;
+
 @property (nonatomic, strong) NSString *kindKeyword;
 @property (nonatomic, strong) NSString *kindCode;
 @property (nonatomic, strong) NSString *kindImage;
@@ -33,7 +35,6 @@
 @property (nonatomic, strong) NSString *details;
 @property (nonatomic, strong) NSString *mainPic;
 
-@property (nonatomic, assign) BOOL isSlideBased;
 @property (nonatomic, strong) NSArray *slideElements;
 
 @property (nonatomic, strong) NSArray *brochureElements;
@@ -41,6 +42,8 @@
 + (Poi*) initWithDictionary:(NSDictionary*)dictionary andTripId:(long)tripId;
 
 - (NSString*) subtitle;
-- (NSString*) localizedCategory;
 
+- (BOOL) isSlideUIBased;
+- (BOOL) isMiniUIBased;
+- (BOOL) isNormalUIBased;
 @end

@@ -17,12 +17,12 @@
         _contrasted = [[dictionary objectForKey:@"contrasted"] boolValue];
         _isMainSlide = [[dictionary objectForKey:@"main_slide"] boolValue];
         _order = [[dictionary objectForKey:@"order"] intValue];
+        
         if (!_isMainSlide) {
             _title = [dictionary objectForKey:@"title"];
             _subtitle = [dictionary objectForKey:@"subtitle"];
             
             NSString *url = [[dictionary objectForKey:@"image"] objectForKey:@"url"];
-            
             _imageFilename = [NSString stringWithFormat:kSlideElementPrefix, tripId, poiId, [url componentsSeparatedByString:@"/"].lastObject];
             
             [OperationHelpers fetchImage:url withResponseBlock:^(UIImage *image) {

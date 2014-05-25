@@ -296,10 +296,10 @@ static TripBrochureViewController* instance;
     UIImage *img = [UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:poi.mainPic]];
     [[poiViewCell imageBackground] setImage:img];
     [[poiViewCell titleLabel] setText:poi.theTitle];
-    if ([poi isSlideBased]) {
+    if ([poi isSlideUIBased]) {
         [[poiViewCell subtitleLabel] setText:poi.details];
     } else {
-        [[poiViewCell subtitleLabel] setText:poi.localizedCategory];
+        [[poiViewCell subtitleLabel] setText:poi.categoryKeyword];
     }
     [poiViewCell stylize];
 
