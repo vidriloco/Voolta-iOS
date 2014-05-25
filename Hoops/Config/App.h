@@ -9,6 +9,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "Reachability.h"
 
 #define kURLsFile   @"urls.plist"
 #define kDev        0
@@ -34,5 +35,7 @@
 + (void) loadURLSet;
 + (UIImage*)takeScreenshot:(CALayer*)layer;
 + (NSString*) currentLang;
+
++ (BOOL) isNetworkReachable;
 
 @end

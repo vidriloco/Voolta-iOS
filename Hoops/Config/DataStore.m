@@ -17,6 +17,7 @@
 - (void) reconstructTripFromData:(NSString*)stringData;
 - (void) graphicsImageFetched;
 - (void) pruneTrashedGraphics;
+- (void) loadLocallyStoredTrips;
 
 @property (nonatomic, strong) NSString *tripsInventoryURL;
 @property (nonatomic, strong) NSString *imagesInventoryURL;
@@ -57,7 +58,12 @@ static DataStore *instance;
         self.trashesInventoryURL = [App urlForResource:@"inventory" withSubresource:@"trashes"];
         self.tripURL = [App urlForResource:@"trips" withSubresource:@"show"];
         self.parser = [[SBJsonParser alloc] init];
-        [self updateInventory];
+        
+        if ([App isNetworkReachable]) {
+            [self updateInventory];
+        } else {
+            [self loadLocallyStoredTrips];
+        }
     }
     return self;
 }
@@ -102,7 +108,7 @@ static DataStore *instance;
             [self checkUpdateStatusForImage:imageDictionary];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+        [self loadLocallyStoredTrips];
     }];
 }
 
@@ -258,6 +264,16 @@ static DataStore *instance;
     [_trips addObject:trip];
     
     [_delegate finishedFetchingTrip];
+}
+
+- (void) loadLocallyStoredTrips
+{
+    NSArray *inventoryList = [[[TripOnInventory lazyFetcher] whereField:@"lang" equalToValue:[App currentLang]] fetchRecords];
+    
+    for (TripOnInventory *tripOnInventory in inventoryList) {
+        [_delegate startedLoadingTrip];
+        [self reconstructTripFromData:[tripOnInventory tripData]];
+    }
 }
 
 @end

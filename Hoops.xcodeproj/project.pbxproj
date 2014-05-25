@@ -211,6 +211,7 @@
 		3A52C9041922862E001F74A3 /* cookies@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A52C9001922862E001F74A3 /* cookies@2x.jpg */; };
 		3A52C9051922862E001F74A3 /* milkshake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A52C9011922862E001F74A3 /* milkshake.jpg */; };
 		3A52C9061922862E001F74A3 /* milkshake@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A52C9021922862E001F74A3 /* milkshake@2x.jpg */; };
+		3A554864193243A500C22783 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A554863193243A500C22783 /* Reachability.m */; };
 		3A56C65319292290002853E9 /* OperationHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A56C65219292290002853E9 /* OperationHelpers.m */; };
 		3A594BCF18E7174A00220D61 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A594BCE18E7174A00220D61 /* GoogleMaps.framework */; };
 		3A594BD118E7175300220D61 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3A594BD018E7175300220D61 /* GoogleMaps.bundle */; };
@@ -560,6 +561,8 @@
 		3A52C9001922862E001F74A3 /* cookies@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cookies@2x.jpg"; sourceTree = "<group>"; };
 		3A52C9011922862E001F74A3 /* milkshake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = milkshake.jpg; sourceTree = "<group>"; };
 		3A52C9021922862E001F74A3 /* milkshake@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "milkshake@2x.jpg"; sourceTree = "<group>"; };
+		3A554862193243A500C22783 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		3A554863193243A500C22783 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		3A56C65119292290002853E9 /* OperationHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationHelpers.h; sourceTree = "<group>"; };
 		3A56C65219292290002853E9 /* OperationHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationHelpers.m; sourceTree = "<group>"; };
 		3A594BCE18E7174A00220D61 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
@@ -803,6 +806,7 @@
 		3A1BA7B918DED3E50002F958 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				3A554861193243A500C22783 /* Reachability */,
 				3A658E59192F21B900AB9D8C /* UIImage-categories */,
 				3A594BD018E7175300220D61 /* GoogleMaps.bundle */,
 				3A594BCE18E7174A00220D61 /* GoogleMaps.framework */,
@@ -1206,6 +1210,15 @@
 				3A918BC3191D994C0057A18E /* alameda-central@2x.jpg */,
 			);
 			path = "alameda-central";
+			sourceTree = "<group>";
+		};
+		3A554861193243A500C22783 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				3A554862193243A500C22783 /* Reachability.h */,
+				3A554863193243A500C22783 /* Reachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		3A56C6501929128A002853E9 /* Files */ = {
@@ -1918,6 +1931,7 @@
 				3A1BA7F418DED3E50002F958 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				3A9AA06E18E350AF00F075D3 /* iCarousel.m in Sources */,
 				3ACF577F18E5EFB100EE4E5A /* POIOnCardView.m in Sources */,
+				3A554864193243A500C22783 /* Reachability.m in Sources */,
 				3A1BA7B618DED3610002F958 /* App.m in Sources */,
 				3A471F481925A69500E25598 /* DataStore.m in Sources */,
 				3A1FA86018E15BC20000BAFC /* Path.m in Sources */,

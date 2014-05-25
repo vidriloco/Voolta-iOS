@@ -100,4 +100,11 @@ static int environment;
     return [[[NSLocale preferredLanguages] objectAtIndex:0] componentsSeparatedByString:@"-"].firstObject;
 }
 
++ (BOOL) isNetworkReachable
+{
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    return (networkStatus != NotReachable);
+}
+
 @end
