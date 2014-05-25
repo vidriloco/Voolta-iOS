@@ -273,6 +273,8 @@
 		3A9AA07918E3835700F075D3 /* TripCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A9AA07818E3835400F075D3 /* TripCardView.xib */; };
 		3A9AA08018E385FB00F075D3 /* TripCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AA07F18E385FB00F075D3 /* TripCardView.m */; };
 		3A9CB69A192134B5000B2F10 /* ContentBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9CB699192134B5000B2F10 /* ContentBuilder.m */; };
+		3A9D5BB319317B3A003DFE6E /* my-location-simple.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A9D5BB119317B3A003DFE6E /* my-location-simple.png */; };
+		3A9D5BB419317B3A003DFE6E /* my-location-simple@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A9D5BB219317B3A003DFE6E /* my-location-simple@2x.png */; };
 		3A9D7F3718E0174F00174C19 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A9D7F3518E0174F00174C19 /* Localizable.strings */; };
 		3A9D7F3A18E018EE00174C19 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A9D7F3918E018EE00174C19 /* InfoPlist.strings */; };
 		3A9D7F4018E01E7400174C19 /* TripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9D7F3E18E01E7400174C19 /* TripViewController.m */; };
@@ -639,6 +641,8 @@
 		3A9CB698192134B5000B2F10 /* ContentBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentBuilder.h; sourceTree = "<group>"; };
 		3A9CB699192134B5000B2F10 /* ContentBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentBuilder.m; sourceTree = "<group>"; };
 		3A9CB69B19213882000B2F10 /* ContentBuilderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentBuilderDelegate.h; sourceTree = "<group>"; };
+		3A9D5BB119317B3A003DFE6E /* my-location-simple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my-location-simple.png"; sourceTree = "<group>"; };
+		3A9D5BB219317B3A003DFE6E /* my-location-simple@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my-location-simple@2x.png"; sourceTree = "<group>"; };
 		3A9D7F3618E0174F00174C19 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A9D7F3818E0175700174C19 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A9D7F3918E018EE00174C19 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -862,6 +866,8 @@
 		3A1E152E192037B200281822 /* fragments */ = {
 			isa = PBXGroup;
 			children = (
+				3A9D5BB119317B3A003DFE6E /* my-location-simple.png */,
+				3A9D5BB219317B3A003DFE6E /* my-location-simple@2x.png */,
 				3A1E152F192037B200281822 /* close-icon.png */,
 				3A1E1530192037B200281822 /* close-icon@2x.png */,
 				3A1E1531192037B200281822 /* compass-3d-icon.png */,
@@ -1628,6 +1634,7 @@
 				3A1E15B1192037B200281822 /* close-icon@2x.png in Resources */,
 				3A3B8F5318F4A1080010067E /* estacion-servicio-peralvillo-front.png in Resources */,
 				3A3B8F3618F460F60010067E /* jardin-arte-front@2x.png in Resources */,
+				3A9D5BB319317B3A003DFE6E /* my-location-simple.png in Resources */,
 				3A1E15EA192037B200281822 /* revolution.png in Resources */,
 				3A4364FD18DF463100205EA3 /* Trips.plist in Resources */,
 				3A1E15C0192037B200281822 /* logo-map.png in Resources */,
@@ -1839,6 +1846,7 @@
 				3A1E1606192037B200281822 /* shop-icon.png in Resources */,
 				3A1E162B192037B200281822 /* soon-ribbon@2x.png in Resources */,
 				3A1E15E9192037B200281822 /* peace@2x.png in Resources */,
+				3A9D5BB419317B3A003DFE6E /* my-location-simple@2x.png in Resources */,
 				3A1E15C9192037B200281822 /* panflet-icon@2x.png in Resources */,
 				3A43651018DF5BC000205EA3 /* OpenSans-ExtraBold.ttf in Resources */,
 				3A1E15BB192037B200281822 /* flag-start-icon@2x.png in Resources */,

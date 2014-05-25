@@ -50,6 +50,8 @@ typedef NS_ENUM(NSInteger, MapControlsMode) {ControlsShown, ControlsHidden};
 
 @property (nonatomic, strong) POIDetailsManager *poiDetailsManager;
 
+@property (nonatomic, assign) BOOL shouldChangeCameraPositionOnFollowModeChange;
+
 @end
 
 static TripViewController *current;
@@ -91,7 +93,7 @@ static TripViewController *current;
     [self.view addSubview:_mapView];
 
     _markerCenter = [[GMSMarker alloc] init];
-    [_markerCenter setIcon: [UIImage imageNamed:@"my-location.png"]];
+    [_markerCenter setIcon: [UIImage imageNamed:@"my-location-simple.png"]];
     
     [self loadTopControls];
     [self loadBottomControls];
@@ -144,8 +146,9 @@ static TripViewController *current;
 
 - (void) loadBottomControls
 {
-    _rightButton = [[UIButton alloc] initWithFrame:CGRectMake([App viewBounds].size.width-55, [App viewBounds].size.height-55, 45, 45)];
+    _rightButton = [[UIButton alloc] initWithFrame:CGRectMake([App viewBounds].size.width-75, [App viewBounds].size.height-70, 50, 50)];
     [_rightButton setBackgroundImage:[UIImage imageNamed:@"compass-disabled-icon.png"] forState:UIControlStateNormal];
+    [_rightButton setAlpha:0];
     [_rightButton addTarget:self action:@selector(switchCameraFollowPositionMode) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_rightButton];
     
@@ -157,6 +160,7 @@ static TripViewController *current;
     
     [UIView animateWithDuration:1 animations:^{
         [_centerBottomButton setAlpha:0.6];
+        [_rightButton setAlpha:0.6];
     }];
     
     _closeButton = [[UIButton alloc] initWithFrame:CGRectMake([App viewBounds].size.width/2-25, [App viewBounds].size.height-90, 50, 50)];
@@ -206,25 +210,37 @@ static TripViewController *current;
         [_locationManager startUpdatingLocation];
         [_locationManager startUpdatingHeading];
         [_rightButton setBackgroundImage:[UIImage imageNamed:@"compass-icon.png"] forState:UIControlStateNormal];
+        [_markerCenter setIcon: [UIImage imageNamed:@"my-location-simple.png"]];
     } else if (_currentFollowMode == FollowLocation) {
         _currentFollowMode = FollowHeading;
-        [_mapView animateToCameraPosition:[GMSCameraPosition cameraWithLatitude:_lastLocation.coordinate.latitude
-                                                                      longitude:_lastLocation.coordinate.longitude
-                                                                           zoom:defaultZoomInLevel bearing:0 viewingAngle:45]];
+        if ([self shouldChangeCameraPositionOnFollowModeChange]) {
+            [_mapView animateToCameraPosition:[GMSCameraPosition cameraWithLatitude:_lastLocation.coordinate.latitude
+                                                                          longitude:_lastLocation.coordinate.longitude
+                                                                               zoom:defaultZoomInLevel bearing:0 viewingAngle:45]];
+            [_markerCenter setIcon: [UIImage imageNamed:@"my-location.png"]];
+
+        }
         [_rightButton setBackgroundImage:[UIImage imageNamed:@"compass-3d-icon.png"] forState:UIControlStateNormal];
+
     } else {
         _currentFollowMode = FollowNone;
-        [_mapView animateToCameraPosition:[GMSCameraPosition cameraWithLatitude:_lastLocation.coordinate.latitude
-                                                                      longitude:_lastLocation.coordinate.longitude
-                                                                           zoom:defaultZoomOutLevel bearing:0 viewingAngle:0]];
+        if ([self shouldChangeCameraPositionOnFollowModeChange]) {
+            [_mapView animateToCameraPosition:[GMSCameraPosition cameraWithLatitude:_lastLocation.coordinate.latitude
+                                                                          longitude:_lastLocation.coordinate.longitude
+                                                                               zoom:defaultZoomOutLevel bearing:0 viewingAngle:0]];
+            [_markerCenter setIcon: [UIImage imageNamed:@"my-location-simple.png"]];
 
+        }
         [_rightButton setBackgroundImage:[UIImage imageNamed:@"compass-disabled-icon.png"] forState:UIControlStateNormal];
+
     }
     
     if (_currentFollowMode != FollowNone) {
         [_markerCenter setMap:_mapView];
     } else {
-        [_markerCenter setMap:nil];
+        if (_shouldChangeCameraPositionOnFollowModeChange) {
+            [_markerCenter setMap:nil];
+        }
     }
 }
 
@@ -251,6 +267,9 @@ static TripViewController *current;
 }
 
 - (void) dismissController {
+    _currentFollowMode = -1;
+    [self switchCameraFollowPositionMode];
+    
     UIViewController *sourceViewController = self;
     TripShowcaseViewController *destinationViewController = (TripShowcaseViewController*) self.presentingViewController;
     
@@ -336,6 +355,16 @@ static TripViewController *current;
         [_poiDetailsManager showDetailsViewForPoi:(Poi*) marker];
     }
     return NO;
+}
+
+- (void) mapView:(GMSMapView *)mapView willMove:(BOOL)gesture
+{
+    if (gesture) {
+        _currentFollowMode = -1;
+        _shouldChangeCameraPositionOnFollowModeChange = NO;
+        [self switchCameraFollowPositionMode];
+        _shouldChangeCameraPositionOnFollowModeChange = YES;
+    }
 }
 
 
