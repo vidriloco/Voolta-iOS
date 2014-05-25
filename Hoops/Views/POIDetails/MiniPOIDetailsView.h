@@ -12,11 +12,11 @@
 @class POIDetailsView;
 @interface MiniPOIDetailsView : UIView
 
-@property (nonatomic, strong) IBOutlet UILabel *titleLabel;
-@property (nonatomic, strong) IBOutlet UILabel *detailsLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *kindImageView;
-@property (nonatomic, strong) IBOutlet UIImageView *categoryImageView;
-@property (nonatomic, strong) IBOutlet UIView *containerView;
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *detailsLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *kindImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *categoryImageView;
+@property (nonatomic, weak) IBOutlet UIView *containerView;
 
 - (void) stylize;
 

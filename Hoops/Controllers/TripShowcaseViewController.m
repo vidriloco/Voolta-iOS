@@ -11,9 +11,12 @@
 @interface TripShowcaseViewController ()
 @property (nonatomic, strong) NSArray* slides;
 @property (nonatomic, strong) LandingScreen *landingScreen;
+@property (nonatomic, assign) BOOL finishedLoading;
 
 - (void) jumpToFirstPage;
 - (void) jumpToLandingPage;
+- (void) animateBackgroundTransition;
+
 @end
 
 @implementation TripShowcaseViewController
@@ -25,6 +28,11 @@
     if (self) {
         _landingScreen = [[LandingScreen alloc] init];
         _slides = [NSArray arrayWithObject:_landingScreen];
+        
+        UIColor *backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.6];
+        
+        [self.background setBackgroundColor:backgroundColor];
+        [self.view setBackgroundColor:backgroundColor];
     }
     return self;
 }
@@ -70,11 +78,13 @@
 - (void) jumpToFirstPage
 {
     [self.carousel setCurrentItemIndex:1];
+    [self animateBackgroundTransition];
 }
 
 - (void) jumpToLandingPage
 {
     [self.carousel setCurrentItemIndex:0];
+    [self animateBackgroundTransition];
 }
 
 #pragma DataDelegate methods
@@ -85,6 +95,9 @@
     NSMutableArray *array = [NSMutableArray arrayWithObject:_landingScreen];
     [array addObjectsFromArray:[DataStore current].trips];
     _slides = array;
+    
+    NSArray *inventoryList = [[[TripOnInventory lazyFetcher] whereField:@"lang" equalToValue:[App currentLang]] fetchRecords];
+    _finishedLoading = [inventoryList count] == [_slides count]-1;
     [self.carousel reloadData];
 }
 
@@ -145,11 +158,14 @@
     } else {
         LandingView *landingView = [[[NSBundle mainBundle] loadNibNamed:@"LandingView" owner:self options:nil] objectAtIndex:0];
         [landingView stylizeView];
-        
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToFirstPage)];
         [tapGesture setNumberOfTapsRequired:1];
         [landingView.nextIconView addGestureRecognizer:tapGesture];
         [landingView.nextIconView setUserInteractionEnabled:YES];
+
+        if (_finishedLoading) {
+            [landingView finishedLoading];
+        }
         
         return landingView;
     }
@@ -158,23 +174,23 @@
 - (void) carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
 {
     [_carousel setCurrentItemIndex:index];
-
-    Trip *trip = [_slides objectAtIndex:(int) index];
-    
-    if ([trip isAvailable]) {
-        TripViewController *tripController = [TripViewController newWithTrip:trip];
+    if ([[_slides objectAtIndex:(int) index] isKindOfClass:[Trip class]]) {
+        Trip *trip = [_slides objectAtIndex:(int) index];
         
-        [UIView
-         animateWithDuration:0.3
-         animations:^{
-             CGAffineTransform transform = CGAffineTransformScale(CGAffineTransformIdentity, 2, 2);;
-             [carousel currentItemView].transform = transform;
-             [self.view setAlpha:0];
-         } completion:^(BOOL finished) {
-             [self presentViewController:tripController animated:NO completion:nil];
-         }];
+        if ([trip isAvailable]) {
+            TripViewController *tripController = [TripViewController newWithTrip:trip];
+            
+            [UIView
+             animateWithDuration:0.3
+             animations:^{
+                 CGAffineTransform transform = CGAffineTransformScale(CGAffineTransformIdentity, 2, 2);;
+                 [carousel currentItemView].transform = transform;
+                 [self.view setAlpha:0];
+             } completion:^(BOOL finished) {
+                 [self presentViewController:tripController animated:NO completion:nil];
+             }];
+        }
     }
-    
 }
 
 - (void) carouselCurrentItemIndexDidChange:(iCarousel *)carousel
@@ -196,28 +212,28 @@
     } else {
         [self.logoView setHidden:NO];
     }
-    
-    
-    id<CarouselProtocol> carouselItem = [_slides objectAtIndex:(int) [carousel currentItemIndex]];
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        [self.background setAlpha:0.4];
-    } completion:^(BOOL finished) {
-        @synchronized(self.background) {
-            [self.background setImage:[UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:carouselItem.background]]];
-        }
-        [UIView animateWithDuration:1 animations:^{
-            [self.background setAlpha:1];
-        } completion:nil];
-    }];
-    
 }
 
 
 - (void) carouselDidEndScrollingAnimation:(iCarousel *)carousel
 {
-    id<CarouselProtocol> carouselItem = [_slides objectAtIndex:(int) [carousel currentItemIndex]];
-    [self.background setImage:[UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:carouselItem.background]]];
+    [self animateBackgroundTransition];
+}
+
+- (void) animateBackgroundTransition
+{
+    id<CarouselProtocol> carouselItem = [_slides objectAtIndex:(int) [_carousel currentItemIndex]];
+    
+    UIImage *image = [UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:carouselItem.background]];
+    
+    if (image != nil && image != [self.background image]) {
+        [self.background setAlpha:0.5];
+        [self.background setImage:image];
+        
+        [UIView animateWithDuration:1 animations:^{
+            [self.background setAlpha:1];
+        }];
+    }
 }
 
 - (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value

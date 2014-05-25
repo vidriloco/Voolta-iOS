@@ -102,8 +102,6 @@
 		3A1E15F5192037B200281822 /* bike_school-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E1577192037B200281822 /* bike_school-icon@2x.png */; };
 		3A1E15F6192037B200281822 /* breakfast-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E1578192037B200281822 /* breakfast-icon.png */; };
 		3A1E15F7192037B200281822 /* breakfast-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E1579192037B200281822 /* breakfast-icon@2x.png */; };
-		3A1E15F8192037B200281822 /* food-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E157A192037B200281822 /* food-icon.png */; };
-		3A1E15F9192037B200281822 /* food-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E157B192037B200281822 /* food-icon@2x.png */; };
 		3A1E15FA192037B200281822 /* historic-building-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E157C192037B200281822 /* historic-building-icon@2x.png */; };
 		3A1E15FB192037B200281822 /* historical_building-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E157D192037B200281822 /* historical_building-icon.png */; };
 		3A1E15FE192037B200281822 /* museum-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E1580192037B200281822 /* museum-icon.png */; };
@@ -440,8 +438,6 @@
 		3A1E1577192037B200281822 /* bike_school-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bike_school-icon@2x.png"; sourceTree = "<group>"; };
 		3A1E1578192037B200281822 /* breakfast-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "breakfast-icon.png"; sourceTree = "<group>"; };
 		3A1E1579192037B200281822 /* breakfast-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "breakfast-icon@2x.png"; sourceTree = "<group>"; };
-		3A1E157A192037B200281822 /* food-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "food-icon.png"; sourceTree = "<group>"; };
-		3A1E157B192037B200281822 /* food-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "food-icon@2x.png"; sourceTree = "<group>"; };
 		3A1E157C192037B200281822 /* historic-building-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "historic-building-icon@2x.png"; sourceTree = "<group>"; };
 		3A1E157D192037B200281822 /* historical_building-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "historical_building-icon.png"; sourceTree = "<group>"; };
 		3A1E1580192037B200281822 /* museum-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "museum-icon.png"; sourceTree = "<group>"; };
@@ -969,8 +965,6 @@
 				3A1E1577192037B200281822 /* bike_school-icon@2x.png */,
 				3A1E1578192037B200281822 /* breakfast-icon.png */,
 				3A1E1579192037B200281822 /* breakfast-icon@2x.png */,
-				3A1E157A192037B200281822 /* food-icon.png */,
-				3A1E157B192037B200281822 /* food-icon@2x.png */,
 				3A1E157C192037B200281822 /* historic-building-icon@2x.png */,
 				3A1E157D192037B200281822 /* historical_building-icon.png */,
 				3A1E1580192037B200281822 /* museum-icon.png */,
@@ -1770,7 +1764,6 @@
 				3A1E15CA192037B200281822 /* pin-icon.png in Resources */,
 				3A9D7F3718E0174F00174C19 /* Localizable.strings in Resources */,
 				3A918BC9191D99560057A18E /* plaza-republica@2x.jpg in Resources */,
-				3A1E15F9192037B200281822 /* food-icon@2x.png in Resources */,
 				3A5ED533191883170055CB44 /* peon.jpg in Resources */,
 				3A43651718DF5BC000205EA3 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				3A99BF9C191F4AE3006198C1 /* azulejos-sanborns@2x.jpg in Resources */,
@@ -1786,7 +1779,6 @@
 				3A5B5B371913F5A100546B92 /* POITableHeaderView.xib in Resources */,
 				3A1E15E8192037B200281822 /* peace.png in Resources */,
 				3A1E15F6192037B200281822 /* breakfast-icon.png in Resources */,
-				3A1E15F8192037B200281822 /* food-icon.png in Resources */,
 				3A5B5B591914734300546B92 /* daikoku-panuco.png in Resources */,
 				3A1E15FA192037B200281822 /* historic-building-icon@2x.png in Resources */,
 				3A1E15BE192037B200281822 /* hoop-mini.png in Resources */,

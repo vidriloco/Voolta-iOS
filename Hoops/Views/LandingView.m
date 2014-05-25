@@ -22,7 +22,21 @@
 - (void) stylizeView
 {
     [self.legendLabel setFont:[LookAndFeel defaultFontLightWithSize:16]];
-    self.nextIconView.alpha = 0.8;
+    [self.nextIconView setHidden:YES];
+    [self setBackgroundColor:[UIColor clearColor]];
+}
+
+- (void) finishedLoading
+{
+    [self.nextIconView setHidden:NO];
+    [self.nextIconView setAlpha:0];
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.nextIconView setAlpha:1];
+        [self.activityIndicatorView setAlpha:0];
+        
+    } completion:^(BOOL finished) {
+        [self.activityIndicatorView setHidden:YES];
+    }];
 }
 
 @end

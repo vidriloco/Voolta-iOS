@@ -26,10 +26,15 @@
                     <rect key="frame" x="109" y="321" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="KCw-xp-RPs">
+                    <rect key="frame" x="116" y="327" width="37" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="activityIndicatorView" destination="KCw-xp-RPs" id="D5r-cf-lMM"/>
                 <outlet property="iconImageView" destination="PJY-am-rTI" id="VQg-lG-oUS"/>
                 <outlet property="legendLabel" destination="qtE-G1-95f" id="kvH-1B-YgJ"/>
                 <outlet property="nextIconView" destination="42M-8C-tIt" id="bfH-Yk-9Dn"/>
