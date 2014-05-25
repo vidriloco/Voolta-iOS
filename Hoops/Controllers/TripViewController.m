@@ -337,6 +337,15 @@ static TripViewController *current;
     [_centerTopButton setHidden:state];
 }
 
+- (void) toggleMapCompass
+{
+    if ([_rightButton isHidden]) {
+        [_rightButton setHidden:NO];
+    } else {
+        [_rightButton setHidden:YES];
+    }
+}
+
 #pragma GMSMapDelegate
 
 - (void) mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate

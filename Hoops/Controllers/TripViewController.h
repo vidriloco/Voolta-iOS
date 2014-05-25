@@ -35,5 +35,6 @@
 
 + (id) newWithTrip:(Trip*)trip;
 - (void) toggleMapControlsOff:(BOOL)state;
+- (void) toggleMapCompass;
 
 @end

@@ -36,6 +36,7 @@ static POIDetailsManager *local;
 - (void) showDetailsViewForPoi:(Poi*)poi
 {
     [_associatedController toggleMapControlsOff:YES];
+    [_associatedController toggleMapCompass];
     _currentDetailsView =  [[POIDetailsView alloc] initWithPoi:poi];
     
     [_associatedController.view addSubview:_currentDetailsView];
@@ -52,6 +53,7 @@ static POIDetailsManager *local;
         _currentDetailsView = nil;
     }
     [_associatedController toggleMapControlsOff:NO];
+    [_associatedController toggleMapCompass];
     _activePoi = nil;
 }
 
