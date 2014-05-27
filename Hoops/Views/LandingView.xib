@@ -11,11 +11,11 @@
             <rect key="frame" x="0.0" y="0.0" width="268" height="408"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="PJY-am-rTI">
-                    <rect key="frame" x="49" y="86" width="170" height="158"/>
+                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="PJY-am-rTI">
+                    <rect key="frame" x="47" y="50" width="175" height="162"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="La nueva forma de explorar tu ciudad" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="185" translatesAutoresizingMaskIntoConstraints="NO" id="qtE-G1-95f">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="La nueva forma de conocer la ciudad" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="185" translatesAutoresizingMaskIntoConstraints="NO" id="qtE-G1-95f">
                     <rect key="frame" x="42" y="204" width="185" height="61"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -23,7 +23,11 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="next_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="42M-8C-tIt">
-                    <rect key="frame" x="109" y="321" width="50" height="50"/>
+                    <rect key="frame" x="161" y="321" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="info-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="HkQ-ZE-ThS">
+                    <rect key="frame" x="58" y="321" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="KCw-xp-RPs">
@@ -36,13 +40,15 @@
             <connections>
                 <outlet property="activityIndicatorView" destination="KCw-xp-RPs" id="D5r-cf-lMM"/>
                 <outlet property="iconImageView" destination="PJY-am-rTI" id="VQg-lG-oUS"/>
+                <outlet property="infoIconView" destination="HkQ-ZE-ThS" id="QLj-22-Z71"/>
                 <outlet property="legendLabel" destination="qtE-G1-95f" id="kvH-1B-YgJ"/>
                 <outlet property="nextIconView" destination="42M-8C-tIt" id="bfH-Yk-9Dn"/>
             </connections>
         </view>
     </objects>
     <resources>
-        <image name="logo_white.png" width="400" height="376"/>
+        <image name="info-icon.png" width="100" height="100"/>
+        <image name="main-logo.png" width="338" height="150"/>
         <image name="next_icon.png" width="100" height="100"/>
     </resources>
 </document>

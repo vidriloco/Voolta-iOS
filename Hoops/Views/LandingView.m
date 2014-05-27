@@ -23,6 +23,7 @@
 {
     [self.legendLabel setFont:[LookAndFeel defaultFontLightWithSize:16]];
     [self.nextIconView setHidden:YES];
+    [self.infoIconView setHidden:YES];
     [self setBackgroundColor:[UIColor clearColor]];
 }
 
@@ -30,10 +31,13 @@
 {
     [self.nextIconView setHidden:NO];
     [self.nextIconView setAlpha:0];
+    [self.infoIconView setHidden:NO];
+    [self.infoIconView setAlpha:0];
     [UIView animateWithDuration:0.5 animations:^{
         [self.nextIconView setAlpha:1];
         [self.activityIndicatorView setAlpha:0];
-        
+        [self.infoIconView setAlpha:1];
+
     } completion:^(BOOL finished) {
         [self.activityIndicatorView setHidden:YES];
     }];

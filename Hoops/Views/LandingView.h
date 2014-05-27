@@ -14,6 +14,7 @@
 @property (nonatomic, weak) IBOutlet UIImageView *iconImageView;
 @property (nonatomic, weak) IBOutlet UILabel *legendLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *nextIconView;
+@property (nonatomic, weak) IBOutlet UIImageView *infoIconView;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 
 - (void) stylizeView;

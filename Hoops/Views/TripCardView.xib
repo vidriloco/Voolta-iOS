@@ -38,7 +38,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wha-j9-d7x">
-                            <rect key="frame" x="13" y="230" width="235" height="76"/>
+                            <rect key="frame" x="13" y="242" width="235" height="62"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -107,13 +107,13 @@
                         <constraint firstItem="OyJ-xu-xc3" firstAttribute="width" secondItem="a2L-I6-r53" secondAttribute="height" multiplier="263:394" id="Ce2-Qu-9eS"/>
                         <constraint firstAttribute="centerX" secondItem="jmH-0m-9nS" secondAttribute="centerX" constant="1" id="KZ2-FQ-BHS"/>
                         <constraint firstAttribute="trailing" secondItem="OyJ-xu-xc3" secondAttribute="trailing" id="M58-dV-b6e"/>
-                        <constraint firstItem="6bg-4T-JoS" firstAttribute="top" secondItem="wha-j9-d7x" secondAttribute="bottom" constant="6" id="Mqw-M1-Vzo"/>
+                        <constraint firstItem="6bg-4T-JoS" firstAttribute="top" secondItem="wha-j9-d7x" secondAttribute="bottom" constant="8" id="Mqw-M1-Vzo"/>
                         <constraint firstAttribute="trailing" secondItem="nix-5u-1Oc" secondAttribute="trailing" constant="13" id="Wme-mN-gju"/>
                         <constraint firstItem="OyJ-xu-xc3" firstAttribute="centerX" secondItem="nix-5u-1Oc" secondAttribute="centerX" constant="0.5" id="cdr-6L-wha"/>
                         <constraint firstItem="OyJ-xu-xc3" firstAttribute="top" secondItem="a2L-I6-r53" secondAttribute="top" id="dy8-Mi-Mue"/>
                         <constraint firstItem="nix-5u-1Oc" firstAttribute="top" secondItem="a2L-I6-r53" secondAttribute="top" constant="89" id="eZb-7G-Tpg"/>
                         <constraint firstItem="nix-5u-1Oc" firstAttribute="leading" secondItem="a2L-I6-r53" secondAttribute="leading" constant="12" id="o4S-LF-UKl"/>
-                        <constraint firstItem="wha-j9-d7x" firstAttribute="top" secondItem="OyJ-xu-xc3" secondAttribute="bottom" id="oBf-cV-JAx"/>
+                        <constraint firstItem="wha-j9-d7x" firstAttribute="top" secondItem="OyJ-xu-xc3" secondAttribute="bottom" constant="12" id="oBf-cV-JAx"/>
                         <constraint firstItem="jmH-0m-9nS" firstAttribute="top" secondItem="a2L-I6-r53" secondAttribute="top" constant="171" id="uaC-bK-gxd"/>
                     </constraints>
                 </view>
