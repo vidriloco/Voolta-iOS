@@ -25,5 +25,6 @@
 @property (nonatomic, strong) IBOutlet iCarousel *carousel;
 @property (nonatomic, weak) IBOutlet UIImageView *background;
 @property (nonatomic, weak) IBOutlet UIImageView *logoView;
+@property (nonatomic, weak) IBOutlet UIImageView *betaView;
 
 @end

@@ -225,8 +225,10 @@
     // Hide top logo when user is on landing page
     if ([carousel currentItemIndex] == 0) {
         [self.logoView setHidden:YES];
+        [self.betaView setHidden:NO];
     } else {
         [self.logoView setHidden:NO];
+        [self.betaView setHidden:YES];
     }
 }
 

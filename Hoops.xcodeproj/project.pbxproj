@@ -237,6 +237,8 @@
 		3A5ED533191883170055CB44 /* peon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A5ED52F191883170055CB44 /* peon.jpg */; };
 		3A5ED534191883170055CB44 /* peon@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A5ED530191883170055CB44 /* peon@2x.jpg */; };
 		3A5ED536191883170055CB44 /* radio-pic@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A5ED532191883170055CB44 /* radio-pic@2x.jpg */; };
+		3A7206471936D4F90046EDE5 /* beta-ribbon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7206451936D4F90046EDE5 /* beta-ribbon.png */; };
+		3A7206481936D4F90046EDE5 /* beta-ribbon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7206461936D4F90046EDE5 /* beta-ribbon@2x.png */; };
 		3A7D566D18FEFF14005BD5CA /* BrochureElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D566C18FEFF14005BD5CA /* BrochureElement.m */; };
 		3A7D566F18FF16CC005BD5CA /* LegendElementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D566E18FF16CC005BD5CA /* LegendElementView.xib */; };
 		3A7D567218FF17D8005BD5CA /* LegendElementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D567118FF17D8005BD5CA /* LegendElementView.m */; };
@@ -598,6 +600,8 @@
 		3A5ED52F191883170055CB44 /* peon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = peon.jpg; sourceTree = "<group>"; };
 		3A5ED530191883170055CB44 /* peon@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "peon@2x.jpg"; sourceTree = "<group>"; };
 		3A5ED532191883170055CB44 /* radio-pic@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "radio-pic@2x.jpg"; sourceTree = "<group>"; };
+		3A7206451936D4F90046EDE5 /* beta-ribbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beta-ribbon.png"; sourceTree = "<group>"; };
+		3A7206461936D4F90046EDE5 /* beta-ribbon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beta-ribbon@2x.png"; sourceTree = "<group>"; };
 		3A7D566B18FEFF14005BD5CA /* BrochureElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrochureElement.h; sourceTree = "<group>"; };
 		3A7D566C18FEFF14005BD5CA /* BrochureElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrochureElement.m; sourceTree = "<group>"; };
 		3A7D566E18FF16CC005BD5CA /* LegendElementView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LegendElementView.xib; sourceTree = "<group>"; };
@@ -882,6 +886,8 @@
 		3A1E152E192037B200281822 /* fragments */ = {
 			isa = PBXGroup;
 			children = (
+				3A7206451936D4F90046EDE5 /* beta-ribbon.png */,
+				3A7206461936D4F90046EDE5 /* beta-ribbon@2x.png */,
 				3A3C4E881935254200064B3E /* main-logo.png */,
 				3A3C4E891935254200064B3E /* main-logo@2x.png */,
 				3A55486B193270DE00C22783 /* info-icon.png */,
@@ -1678,6 +1684,7 @@
 				3A1E161B192037B200281822 /* museum-marker@2x.png in Resources */,
 				3AC1B63C18FE1AD60019CCC7 /* TripKeyDetailsView.xib in Resources */,
 				3A1E15CB192037B200281822 /* pin-icon@2x.png in Resources */,
+				3A7206471936D4F90046EDE5 /* beta-ribbon.png in Resources */,
 				3A1E15F4192037B200281822 /* bike_school-icon.png in Resources */,
 				3A1E15B0192037B200281822 /* close-icon.png in Resources */,
 				3A5B5B5519146CE200546B92 /* salon-corona-front@2x.png in Resources */,
@@ -1712,6 +1719,7 @@
 				3A9D7F3A18E018EE00174C19 /* InfoPlist.strings in Resources */,
 				3A5ED534191883170055CB44 /* peon@2x.jpg in Resources */,
 				3A1E15BD192037B200281822 /* gradient-bg@2x.png in Resources */,
+				3A7206481936D4F90046EDE5 /* beta-ribbon@2x.png in Resources */,
 				3A44DE03191EDAC4009A6573 /* hemiciclo-juarez@2x.jpg in Resources */,
 				3A3B8F4A18F4A1080010067E /* estacion-servicio-angel-front@2x.png in Resources */,
 				3A215087191FE4E200EB19D2 /* templo-mayor@2x.jpg in Resources */,
