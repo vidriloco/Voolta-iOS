@@ -22,27 +22,33 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="next_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="42M-8C-tIt">
-                    <rect key="frame" x="161" y="321" width="50" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="info-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="HkQ-ZE-ThS">
-                    <rect key="frame" x="58" y="321" width="50" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="KCw-xp-RPs">
                     <rect key="frame" x="116" y="327" width="37" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nm9-gY-RI9">
+                    <rect key="frame" x="53" y="316" width="55" height="55"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="info-icon.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWz-Oa-vCg">
+                    <rect key="frame" x="161" y="316" width="55" height="55"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="next_icon.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="activityIndicatorView" destination="KCw-xp-RPs" id="D5r-cf-lMM"/>
                 <outlet property="iconImageView" destination="PJY-am-rTI" id="VQg-lG-oUS"/>
-                <outlet property="infoIconView" destination="HkQ-ZE-ThS" id="QLj-22-Z71"/>
+                <outlet property="infoIconView" destination="Nm9-gY-RI9" id="SXu-SQ-0Ed"/>
                 <outlet property="legendLabel" destination="qtE-G1-95f" id="kvH-1B-YgJ"/>
-                <outlet property="nextIconView" destination="42M-8C-tIt" id="bfH-Yk-9Dn"/>
+                <outlet property="nextIconView" destination="WWz-Oa-vCg" id="q8Y-UD-u2U"/>
             </connections>
         </view>
     </objects>

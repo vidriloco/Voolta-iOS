@@ -107,4 +107,15 @@ static int environment;
     return (networkStatus != NotReachable);
 }
 
++ (BOOL) hasShownHowTo
+{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"shown-how-to"];
+}
+
++ (void) markHowToAsShown
+{
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"shown-how-to"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 @end

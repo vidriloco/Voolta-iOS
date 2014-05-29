@@ -17,6 +17,8 @@
 - (void) jumpToLandingPage;
 - (void) animateBackgroundTransition;
 
+- (void) showInfoView;
+
 @end
 
 @implementation TripShowcaseViewController
@@ -60,6 +62,11 @@
     [tapGesture setNumberOfTapsRequired:1];
     [self.logoView setUserInteractionEnabled:YES];
     [self.logoView addGestureRecognizer:tapGesture];
+    
+    if (![App hasShownHowTo]) {
+        [App markHowToAsShown];
+        [self showInfoView];
+    }
 }
 
 - (void)viewDidUnload
@@ -85,6 +92,13 @@
 {
     [self.carousel setCurrentItemIndex:0];
     [self animateBackgroundTransition];
+}
+
+- (void) showInfoView
+{
+    AppInfoView *infoView = [[AppInfoView alloc] initSimple];
+    [self.view addSubview:infoView];
+    [infoView show];
 }
 
 #pragma DataDelegate methods
@@ -158,10 +172,12 @@
     } else {
         LandingView *landingView = [[[NSBundle mainBundle] loadNibNamed:@"LandingView" owner:self options:nil] objectAtIndex:0];
         [landingView stylizeView];
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToFirstPage)];
-        [tapGesture setNumberOfTapsRequired:1];
-        [landingView.nextIconView addGestureRecognizer:tapGesture];
+        
+        [[landingView nextIconView] addTarget:self action:@selector(jumpToFirstPage) forControlEvents:UIControlEventTouchUpInside];
         [landingView.nextIconView setUserInteractionEnabled:YES];
+        
+        [[landingView infoIconView] addTarget:self action:@selector(showInfoView) forControlEvents:UIControlEventTouchUpInside];
+        [landingView.infoIconView setUserInteractionEnabled:YES];
 
         if (_finishedLoading) {
             [landingView finishedLoading];

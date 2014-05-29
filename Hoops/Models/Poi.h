@@ -11,7 +11,6 @@
 #import "SlideElement.h"
 #import "App.h"
 #import "BrochureElement.h"
-#import "UIImage+Resize.h"
 
 #define kPoiPrefix @"trip_%ld_poi_%@"
 

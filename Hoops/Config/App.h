@@ -38,4 +38,6 @@
 
 + (BOOL) isNetworkReachable;
 
++ (BOOL) hasShownHowTo;
++ (void) markHowToAsShown;
 @end

@@ -18,6 +18,7 @@
 #import "LandingScreen.h"
 #import "ContentBuilder.h"
 #import "OperationHelpers.h"
+#import "AppInfoView.h"
 
 @interface TripShowcaseViewController : UIViewController <iCarouselDataSource, iCarouselDelegate, DataStoreDelegate>
 
