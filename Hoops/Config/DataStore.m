@@ -183,14 +183,15 @@ static DataStore *instance;
     NSNumber *identifier = [NSNumber numberWithLong:[[dictionary objectForKey:@"id"] longValue]];
     NSString *checksum = [dictionary objectForKey:@"checksum"];
     NSString *lang = [dictionary objectForKey:@"lang"];
-    
+    NSString *resourceId = [dictionary objectForKey:@"trip_resource"];
+
     if ([lang isEqualToString:[App currentLang]]) {
         NSArray *trips = [[[TripOnInventory lazyFetcher] whereField:@"remoteId" equalToValue:identifier] fetchRecords];
         
         TripOnInventory *inventory = nil;
         if ([trips count] == 0) {
             // A freshly added trip
-            inventory = [TripOnInventory initWithRemoteId:identifier checksumString:checksum langString:lang];
+            inventory = [TripOnInventory initWithRemoteId:identifier checksumString:checksum langString:lang andResourceId:resourceId];
             [inventory markForUpdate];
         } else {
             inventory = [trips objectAtIndex:0];
@@ -211,7 +212,7 @@ static DataStore *instance;
 
         if ([tripOnInventory shouldUpdate]) {
             [_delegate startedFetchingTrip];
-            [OperationHelpers removeFilesForTripWithId:[tripOnInventory.remoteId longValue]];
+            [OperationHelpers removeFilesForTripWithResourceId:[tripOnInventory resourceId]];
             NSString *finalTripURL = [_tripURL stringByReplacingOccurrencesOfString:@"<id>"
                                                                          withString:[NSString stringWithFormat:@"%d", [[tripOnInventory remoteId] intValue]]];
             AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];

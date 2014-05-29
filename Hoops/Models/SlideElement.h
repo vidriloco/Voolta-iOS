@@ -13,7 +13,7 @@
 
 #define kTopRightAlignment       @"TR"
 #define kBottomLeftAlignment     @"BL"
-#define kSlideElementPrefix      @"trip_%ld_poi_%ld_slide_%@"
+#define kSlideElementPrefix      @"trip_%@_poi_slide_%@"
 
 typedef NS_ENUM(NSUInteger, SlideContentAlignment)
 {
@@ -32,6 +32,6 @@ typedef NS_ENUM(NSUInteger, SlideContentAlignment)
 @property (nonatomic, assign) SlideContentAlignment contentAlignment;
 
 
-- (id) initWithDictionary:(NSDictionary*)dictionary withTripId:(long)tripId withPoiId:(long)poiId;
+- (id) initWithDictionary:(NSDictionary*)dictionary withTripResourceId:(NSString*)resourceId;
 
 @end

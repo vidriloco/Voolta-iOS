@@ -10,7 +10,7 @@
 
 @implementation Poi
 
-+ (Poi*) initWithDictionary:(NSDictionary*)dictionary andTripId:(long)tripId
++ (Poi*) initWithDictionary:(NSDictionary*)dictionary andTripResourceId:(NSString*)tripResourceId
 {
     Poi *poi = [[Poi alloc] init];
 
@@ -47,7 +47,7 @@
     
     if (![poi isMiniUIBased]) {
         NSString *url = [[dictionary objectForKey:@"image"] objectForKey:@"url"];
-        poi.mainPic = [NSString stringWithFormat:kPoiPrefix, tripId, [url componentsSeparatedByString:@"/"].lastObject];
+        poi.mainPic = [NSString stringWithFormat:kPoiPrefix, tripResourceId, [url componentsSeparatedByString:@"/"].lastObject];
         [OperationHelpers fetchImage:url withResponseBlock:^(UIImage *image) {
             [OperationHelpers storeImage:image withFilename:poi.mainPic];
         }];
@@ -59,7 +59,7 @@
             NSMutableArray *slideList = [NSMutableArray array];
 
             for (NSDictionary *slide in [dictionary objectForKey:@"slides"]) {
-                SlideElement *slideElement = [[SlideElement alloc] initWithDictionary:slide withTripId:tripId withPoiId:[poi remoteId]];
+                SlideElement *slideElement = [[SlideElement alloc] initWithDictionary:slide withTripResourceId:tripResourceId];
                 [slideList addObject:slideElement];
             }
             [poi setSlideElements:slideList];
@@ -70,7 +70,7 @@
             NSMutableArray *brochureElements = [NSMutableArray array];
             
             for (NSDictionary *content in [dictionary objectForKey:@"contents"]) {
-                BrochureElement *brochureElement = [BrochureElement initWithDictionary:content andTripId:0];
+                BrochureElement *brochureElement = [BrochureElement initWithDictionary:content andTripResourceId:tripResourceId];
                 [brochureElements addObject:brochureElement];
             }
             

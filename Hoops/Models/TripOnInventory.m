@@ -16,12 +16,13 @@
 
 @implementation TripOnInventory
 
-+ (id) initWithRemoteId:(NSNumber*)remoteId checksumString:(NSString *)checksum langString:(NSString *)lang
++ (id) initWithRemoteId:(NSNumber*)remoteId checksumString:(NSString *)checksum langString:(NSString *)lang andResourceId:(NSString *)resourceId
 {
     TripOnInventory *tripInv = [TripOnInventory newRecord];
     tripInv.remoteId = remoteId;
     tripInv.checksum = checksum;
     tripInv.lang = lang;
+    tripInv.resourceId = resourceId;
     tripInv.needsUpdate = @0;
     return tripInv;
 }

@@ -10,7 +10,7 @@
 
 @implementation SlideElement
 
-- (id) initWithDictionary:(NSDictionary *)dictionary withTripId:(long)tripId withPoiId:(long)poiId
+- (id) initWithDictionary:(NSDictionary *)dictionary withTripResourceId:(NSString *)resourceId
 {
     self = [super init];
     if (self) {
@@ -23,7 +23,7 @@
             _subtitle = [dictionary objectForKey:@"subtitle"];
             
             NSString *url = [[dictionary objectForKey:@"image"] objectForKey:@"url"];
-            _imageFilename = [NSString stringWithFormat:kSlideElementPrefix, tripId, poiId, [url componentsSeparatedByString:@"/"].lastObject];
+            _imageFilename = [NSString stringWithFormat:kSlideElementPrefix, resourceId, [url componentsSeparatedByString:@"/"].lastObject];
             
             [OperationHelpers fetchImage:url withResponseBlock:^(UIImage *image) {
                 [OperationHelpers storeImage:image withFilename:_imageFilename];

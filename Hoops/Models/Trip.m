@@ -65,7 +65,7 @@ static NSArray *list;
         
         NSMutableArray *brochureList = [NSMutableArray array];
         for (NSDictionary *brochureContent in [dictionary objectForKey:@"contents"]) {
-            [brochureList addObject:[BrochureElement initWithDictionary:brochureContent andTripId:trip.remoteId]];
+            [brochureList addObject:[BrochureElement initWithDictionary:brochureContent andTripResourceId:[trip resourceId]]];
         }
         [trip setBrochureList:brochureList];
         
@@ -79,6 +79,7 @@ static NSArray *list;
     Trip *trip = [[Trip alloc] init];
     
     [trip setRemoteId:[[dictionary objectForKey:@"id"] longValue]];
+    [trip setResourceId:[dictionary objectForKey:@"trip_resource"]];
     [trip setTitle:[dictionary objectForKey:@"title"]];
     [trip setDetails:[dictionary objectForKey:@"details"]];
     [trip setDistance:[dictionary objectForKey:@"distance"]];
@@ -90,7 +91,7 @@ static NSArray *list;
     NSString *mainImage = [[[[dictionary objectForKey:@"main_image"] objectForKey:@"url"] componentsSeparatedByString:@"/"] lastObject];
 
     [trip setBackground:backgroundImage];
-    [trip setMainPic:[NSString stringWithFormat:kTripPrefix, [trip remoteId], mainImage]];
+    [trip setMainPic:[NSString stringWithFormat:kTripPrefix, [trip resourceId], mainImage]];
     
     [trip setOriginCoordinate:CLLocationCoordinate2DMake([[[dictionary objectForKey:@"start"] objectForKey:@"lat"] floatValue],
                                                          [[[dictionary objectForKey:@"start"] objectForKey:@"lon"] floatValue])];
@@ -109,7 +110,7 @@ static NSArray *list;
     // Brochure list loading
     NSMutableArray *brochureList = [NSMutableArray array];
     for (NSDictionary *brochureContent in [dictionary objectForKey:@"contents"]) {
-        [brochureList addObject:[BrochureElement initWithDictionary:brochureContent andTripId:trip.remoteId]];
+        [brochureList addObject:[BrochureElement initWithDictionary:brochureContent andTripResourceId:[trip resourceId]]];
     }
     
     [brochureList sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
@@ -151,7 +152,7 @@ static NSArray *list;
     NSMutableArray *poisList = [NSMutableArray array];
     
     for (NSDictionary *dict in [dictionary objectForKey:@"pois"]) {
-        Poi *poi = [Poi initWithDictionary:dict andTripId:[self remoteId]];
+        Poi *poi = [Poi initWithDictionary:dict andTripResourceId:[self resourceId]];
         
         // Separate listed from unlisted
         if ([[dict objectForKey:kListedKey] boolValue]) {

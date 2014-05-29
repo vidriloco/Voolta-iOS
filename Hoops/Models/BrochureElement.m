@@ -12,7 +12,7 @@
 @implementation BrochureElement
 
 
-+ (BrochureElement*) initWithDictionary:(NSDictionary*)dictionary andTripId:(long)tripId
++ (BrochureElement*) initWithDictionary:(NSDictionary*)dictionary andTripResourceId:(NSString *)resourceId
 {
     BrochureElement *element = [[BrochureElement alloc] init];
     [element setType:[dictionary objectForKey:@"type"]];
@@ -25,7 +25,7 @@
         [element setLegendDetails:[dictionary objectForKey:@"details"]];
         [element setLegendImageName:[dictionary objectForKey:@"icon"]];
     } else if ([element isPhoto]) {
-        NSString *filename = [NSString stringWithFormat:kTripPrefix, tripId, [[dictionary objectForKey:@"url"] componentsSeparatedByString:@"/"].lastObject];
+        NSString *filename = [NSString stringWithFormat:kTripPrefix, resourceId, [[dictionary objectForKey:@"url"] componentsSeparatedByString:@"/"].lastObject];
 
         [element setPhotoFilename:filename];
         [OperationHelpers fetchImage:[dictionary objectForKey:@"url"] withResponseBlock:^(UIImage *image) {

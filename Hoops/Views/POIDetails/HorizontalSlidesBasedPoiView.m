@@ -40,7 +40,6 @@
         [self addSubview:_scrollView];
         
         _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(self.frame.size.width/2-100/2, self.frame.size.height-35, 100, 20)];
-        [_pageControl setNumberOfPages:3];
         [_pageControl setPageIndicatorTintColor:[[UIColor whiteColor] colorWithAlphaComponent:0.5]];
         [_pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_pageControl];
@@ -51,6 +50,7 @@
 - (void) drawSlidesForPoi:(Poi *)poi
 {
     [_scrollView setContentSize:CGSizeMake(self.frame.size.width*poi.slideElements.count, self.frame.size.height)];
+    [_pageControl setNumberOfPages:poi.slideElements.count];
     [poi.slideElements enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         float xPos = self.frame.size.width*idx;
         

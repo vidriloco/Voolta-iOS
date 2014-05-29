@@ -64,13 +64,13 @@
     [fileManager removeItemAtPath:[self filePathForImage:filename] error:nil];
 }
 
-+ (void) removeFilesForTripWithId:(long)remoteId
++ (void) removeFilesForTripWithResourceId:(NSString *)resourceId
 {
     NSString *fileDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
     NSDirectoryEnumerator* en = [fileManager enumeratorAtPath:fileDir];
-    NSString *pattern = [@"^" stringByAppendingString:[NSString stringWithFormat:kTripPrefix, remoteId, @""]];
+    NSString *pattern = [@"^" stringByAppendingString:[NSString stringWithFormat:kTripPrefix, resourceId, @""]];
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:nil];
     
     NSString* file;

@@ -15,11 +15,12 @@
 #import "CarouselProtocol.h"
 
 #define kListedKey @"listed"
-#define kTripPrefix @"trip_%ld_%@"
+#define kTripPrefix @"trip_%@_%@"
 
 @interface Trip : NSObject<CarouselProtocol>
 
 @property (nonatomic, assign) long remoteId;
+@property (nonatomic, strong) NSString *resourceId;
 
 @property (nonatomic, strong) NSString *kind;
 @property (nonatomic, strong) NSString *title;

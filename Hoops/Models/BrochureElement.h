@@ -37,7 +37,7 @@
 @property (nonatomic, strong) NSString*     tableName;
 
 
-+ (BrochureElement*) initWithDictionary:(NSDictionary*)dictionary andTripId:(long)tripId;
++ (BrochureElement*) initWithDictionary:(NSDictionary*)dictionary andTripResourceId:(NSString*)resourceId;
 
 - (BOOL) isPhoto;
 - (BOOL) isPlain;

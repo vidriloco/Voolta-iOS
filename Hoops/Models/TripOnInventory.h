@@ -15,8 +15,9 @@
 @property (nonatomic, strong) NSString *checksum;
 @property (nonatomic, strong) NSString *lang;
 @property (nonatomic, strong) NSString *tripData;
+@property (nonatomic, strong) NSString *resourceId;
 
-+ (id) initWithRemoteId:(NSNumber*)remoteId checksumString:(NSString*)checksum langString:(NSString*)lang;
++ (id) initWithRemoteId:(NSNumber*)remoteId checksumString:(NSString*)checksum langString:(NSString*)lang andResourceId:(NSString*)resourceId;
 - (void) markForUpdate;
 - (void) markAsUpdated;
 - (BOOL) shouldUpdate;

@@ -12,7 +12,7 @@
 #import "App.h"
 #import "BrochureElement.h"
 
-#define kPoiPrefix @"trip_%ld_poi_%@"
+#define kPoiPrefix @"trip_%@_poi_%@"
 
 @interface Poi : GMSMarker
 
@@ -38,7 +38,7 @@
 
 @property (nonatomic, strong) NSArray *brochureElements;
 
-+ (Poi*) initWithDictionary:(NSDictionary*)dictionary andTripId:(long)tripId;
++ (Poi*) initWithDictionary:(NSDictionary*)dictionary andTripResourceId:(NSString *)resourceId;
 
 - (NSString*) subtitle;
 
