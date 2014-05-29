@@ -1,52 +1,8 @@
-"distance_unit" = "km";
-"trip_complexity_medium" = "Difficulty: Medium";
-"trip_complexity_easy" = "Difficulty: Easy";
-"trip_complexity_hard" = "Difficulty: Hard";
-"trip_available_soon" = "Coming Soon";
+"app_tag_line" = "The best cycling guide to discover the city.";
 
-"details_main_noche_museos" = "The meeting is at 6:30 PM at Museo del Chopo. We recommend the use of lights and helmet.";
-
-
-"complexity_easy" = "Easy";
-"complexity_medium" = "Regular";
-"complexity_hard" = "Hard";
-
-"route_start" = "Trip Start";
-"route_end" = "Trip End";
-
-"trip_pois" = "Puntos de Interés";
-
-// Kinds
-"bike_sharing_spots" = "Préstamo de bicis";
-"bike_service_spots" = "Estación de servicios";
-"bike_school" = "Aprende a andar en bici";
-
-"food" = "Eating";
-"breakfast" = "For breakfast";
-"museum" = "Museum";
-"star" = "Landmark";
-"public_space" = "For having a rest";
-"shop" = "Go shopping";
-"bakery" = "Go for a little whim";
-"historical_building" = "Historical building";
-"pyramid" = "Archaeological Site";
-
-// Categories
-"aztec" = "Aztec";
-"catholic" = "Catholic Temple";
-"pancakes-food" = "Sweet and salted";
-"mexican-food" = "Mexican food";
-"japanese-food" = "Japanese food";
-"sweetie-food" = "Cakes & milkshakes";
-"artistical" = "Culture & art";
-"artistic-gem" = "Architectural gem";
-"revolution" = "Social change";
-"wreath" = "Memorial";
-"park" = "Park";
-"learn" = "Lessons";
-"handmade" = "Handcrafts";
-"shopping" = "Mall";
-"monument" = "Monument";
-"flag" = "Esplanade";
-
-"intro-slide-one" = "Always a new ride that will take you through the city";
+// Intro
+"info-page-one" = "The guide with the best cycle tours for city discovery.";
+"info-page-two" = "Always a new route, just choose the one you feel more attracted to.";
+"info-page-three" = "We include a brief review on what you will find on each route.";
+"info-page-four" = "Locate points of interest and tips along the route.";
+"info-page-five" = "Where will you ride today?";

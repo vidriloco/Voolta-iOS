@@ -25,6 +25,7 @@
     [self.nextIconView setHidden:YES];
     [self.infoIconView setHidden:YES];
     [self setBackgroundColor:[UIColor clearColor]];
+    [self.legendLabel setText:NSLocalizedString(@"app_tag_line", nil)];
 }
 
 - (void) finishedLoading

@@ -1,58 +1,9 @@
-"distance_unit" = "km";
-"trip_complexity_medium" = "Dificultad: Media";
-"trip_complexity_easy" = "Dificultad: Fácil";
-"trip_complexity_hard" = "Dificultad: Dura";
-"trip_available_soon" = "Próximamente";
-
-"details_main_noche_museos" = "La reunión es a las 6:30 PM en el Museo del Chopo. Recomendamos llevar luces y preferentemente usar casco.";
-
-"complexity_easy" = "Ruta Fácil";
-"complexity_medium" = "Ruta Regular";
-"complexity_hard" = "Ruta Difícil";
-
-"route_start" = "Inicio de Ruta";
-"route_end" = "Fin de Ruta";
-
-"trip_pois" = "Puntos de Interés";
-
-// Kinds
-"bike_sharing_spots" = "Préstamo de bicis";
-"bike_service_spots" = "Estación de servicios";
-"bike_school" = "Aprende a andar en bici";
-
-"food" = "Para comer";
-"breakfast" = "Para desayunar";
-"museum" = "Museo";
-"star" = "Sitio de Interés";
-"public_space" = "Para descansar";
-"shop" = "De compras";
-"bakery" = "Para el antojo";
-"historical_building" = "Edificio Histórico";
-"pyramid" = "Sitio Arqueológico";
-
-// Categories
-"aztec" = "Azteca";
-"catholic" = "Templo Católico";
-"pancakes-food" = "Dulce y salado";
-"mexican-food" = "Comida mexicana";
-"japanese-food" = "Comida japonesa";
-"sweetie-food" = "Pastelitos y Malteadas";
-"artistical" = "Arte y cultura";
-"artistic-gem" = "Joya arquitectónica";
-"revolution" = "Cambio social";
-"wreath" = "Memorial";
-"park" = "Parque";
-"learn" = "Clases";
-"handmade" = "Artesanías";
-"shopping" = "Plaza comercial";
-"monument" = "Monumento";
-"flag" = "Plaza";
+"app_tag_line" = "La mejor guía para conocer la ciudad en bicicleta";
 
 // Intro
 "info-page-one" = "La guía con las mejores rutas para conocer la ciudad en bicicleta.";
 "info-page-two" = "Siempre hay una nueva ruta, selecciona la que más te guste.";
 "info-page-three" = "En cada ruta incluímos una breve reseña de lo que verás al hacer la ruta";
 "info-page-four" = "Ubica los puntos de interés y recomendaciones a lo largo de la ruta.";
-"info-page-five" = "¿Hacia dónde quieres rodar hoy?";
-"info-page-button" = "Comenzar";
+"info-page-five" = "¿Hacia dónde rodarás hoy?";
 
