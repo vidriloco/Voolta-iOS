@@ -101,11 +101,8 @@
     [infoView show];
 }
 
-#pragma DataDelegate methods
-
-- (void) finishedFetchingTrip
+- (void) reloadTripsOnCarousel
 {
-    NSLog(@"Finished with trip");
     NSMutableArray *array = [NSMutableArray arrayWithObject:_landingScreen];
     [array addObjectsFromArray:[DataStore current].trips];
     _slides = array;
@@ -113,6 +110,14 @@
     NSArray *inventoryList = [[[TripOnInventory lazyFetcher] whereField:@"lang" equalToValue:[App currentLang]] fetchRecords];
     _finishedLoading = [inventoryList count] == [_slides count]-1;
     [self.carousel reloadData];
+}
+
+#pragma DataDelegate methods
+
+- (void) finishedFetchingTrip
+{
+    NSLog(@"Finished with trip");
+    [self reloadTripsOnCarousel];
 }
 
 - (void) startedFetchingTrip
@@ -133,6 +138,12 @@
 - (void) imageLoadingPhaseCompleted
 {
     NSLog(@"LOADING images done");
+}
+
+- (void) failedFetchingTrip
+{
+    NSLog(@"FAILED fetching trip");
+    [self reloadTripsOnCarousel];
 }
 
 #pragma mark -

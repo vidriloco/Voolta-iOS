@@ -103,7 +103,7 @@ static DataStore *instance;
     
     [manager GET:_imagesInventoryURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *fetchedImages = [_parser objectWithString:[operation responseString] error:nil];
-        _graphicsToBeFetched = [fetchedImages count];
+        _graphicsToBeFetched = (int) [fetchedImages count];
         for (NSDictionary *imageDictionary in fetchedImages) {
             [self checkUpdateStatusForImage:imageDictionary];
         }
@@ -193,14 +193,15 @@ static DataStore *instance;
             // A freshly added trip
             inventory = [TripOnInventory initWithRemoteId:identifier checksumString:checksum langString:lang andResourceId:resourceId];
             [inventory markForUpdate];
+            [inventory save];
         } else {
             inventory = [trips objectAtIndex:0];
             if (![[inventory checksum] isEqualToString:checksum]) {
                 [inventory setChecksum:checksum];
                 [inventory markForUpdate];
+                [inventory update];
             }
         }
-        [inventory save];
     }
 }
 
@@ -209,7 +210,6 @@ static DataStore *instance;
     NSArray *inventoryList = [[[TripOnInventory lazyFetcher] whereField:@"lang" equalToValue:[App currentLang]] fetchRecords];
     
     for (TripOnInventory *tripOnInventory in inventoryList) {
-
         if ([tripOnInventory shouldUpdate]) {
             [_delegate startedFetchingTrip];
             [OperationHelpers removeFilesForTripWithResourceId:[tripOnInventory resourceId]];
@@ -224,9 +224,14 @@ static DataStore *instance;
                 NSString *data = [operation responseString];
                 [tripOnInventory setTripData:data];
                 [tripOnInventory markAsUpdated];
-                [tripOnInventory save];
+                [tripOnInventory update];
                 [self processTripPayload:data];
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                if ([operation.response statusCode] == 404) {
+                    [OperationHelpers removeFilesForTripWithResourceId:[tripOnInventory resourceId]];
+                    [tripOnInventory dropRecord];
+                }
+                
                 [_delegate failedFetchingTrip];
             }];
         } else {

@@ -39,7 +39,12 @@
 
 - (BOOL) shouldUpdate
 {
-    return [self.needsUpdate isEqualToNumber:@1];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *comps = [NSDateComponents new];
+    comps.day = -1;
+    NSDate *twoDaysAgo = [calendar dateByAddingComponents:comps toDate:[NSDate date] options:0];
+    return [self.needsUpdate isEqualToNumber:@1] || [self.updatedAt compare:twoDaysAgo] == NSOrderedAscending;
 }
+
 
 @end

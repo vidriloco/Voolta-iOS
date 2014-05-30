@@ -13,11 +13,11 @@
 @optional
 - (void) imageLoadingPhaseCompleted;
 - (void) prunePhaseCompleted;
-- (void) failedFetchingTrip;
 
 @required
 - (void) startedFetchingTrip;
 - (void) startedLoadingTrip;
 - (void) finishedFetchingTrip;
+- (void) failedFetchingTrip;
 
 @end
