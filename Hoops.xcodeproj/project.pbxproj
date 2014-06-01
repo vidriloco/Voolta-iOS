@@ -55,10 +55,6 @@
 		3A1E1613192037B200281822 /* final_flag-marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E1596192037B200281822 /* final_flag-marker@2x.png */; };
 		3A1E1626192037B200281822 /* start_flag-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E15A9192037B200281822 /* start_flag-marker.png */; };
 		3A1E1627192037B200281822 /* start_flag-marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E15AA192037B200281822 /* start_flag-marker@2x.png */; };
-		3A1E1628192037B200281822 /* new-ribbon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E15AC192037B200281822 /* new-ribbon.png */; };
-		3A1E1629192037B200281822 /* new-ribbon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E15AD192037B200281822 /* new-ribbon@2x.png */; };
-		3A1E162A192037B200281822 /* soon-ribbon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E15AE192037B200281822 /* soon-ribbon.png */; };
-		3A1E162B192037B200281822 /* soon-ribbon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E15AF192037B200281822 /* soon-ribbon@2x.png */; };
 		3A1FA86018E15BC20000BAFC /* Path.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1FA85F18E15BC20000BAFC /* Path.m */; };
 		3A37CFE518FCFDEC003CD1FB /* TripCardCentralView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A37CFE418FCFDEC003CD1FB /* TripCardCentralView.xib */; };
 		3A37CFE818FCFE68003CD1FB /* TripCardCentralView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A37CFE718FCFE68003CD1FB /* TripCardCentralView.m */; };
@@ -90,7 +86,6 @@
 		3A3E7D301939CEA900FFF1DB /* spotlight-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3E7D2E1939CEA900FFF1DB /* spotlight-icon@2x.png */; };
 		3A42500118ECA5AB00BDADAB /* TripLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A42500018ECA5AB00BDADAB /* TripLandingViewController.m */; };
 		3A42500418ECBFB600BDADAB /* UIViewController+CardSized.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A42500318ECBFB600BDADAB /* UIViewController+CardSized.m */; };
-		3A4364FD18DF463100205EA3 /* Trips.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A4364FC18DF463100205EA3 /* Trips.plist */; };
 		3A43650E18DF5BC000205EA3 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A43650418DF5BC000205EA3 /* OpenSans-Bold.ttf */; };
 		3A43650F18DF5BC000205EA3 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A43650518DF5BC000205EA3 /* OpenSans-BoldItalic.ttf */; };
 		3A43651018DF5BC000205EA3 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A43650618DF5BC000205EA3 /* OpenSans-ExtraBold.ttf */; };
@@ -184,6 +179,18 @@
 		3ACF578818E6156D00EE4E5A /* LandingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACF578718E6156D00EE4E5A /* LandingView.m */; };
 		3ADB298B191CC95600BD3D7C /* StandardPoiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB298A191CC95600BD3D7C /* StandardPoiView.m */; };
 		3ADB298D191CCA0200BD3D7C /* StandardPoiView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB298C191CCA0200BD3D7C /* StandardPoiView.xib */; };
+		3ADE41F7193B9D6F002CFC7B /* new-ribbon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE41EF193B9D6F002CFC7B /* new-ribbon.png */; };
+		3ADE41F8193B9D6F002CFC7B /* new-ribbon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE41F0193B9D6F002CFC7B /* new-ribbon@2x.png */; };
+		3ADE41F9193B9D6F002CFC7B /* nuevo-ribbon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE41F1193B9D6F002CFC7B /* nuevo-ribbon.png */; };
+		3ADE41FA193B9D6F002CFC7B /* nuevo-ribbon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE41F2193B9D6F002CFC7B /* nuevo-ribbon@2x.png */; };
+		3ADE41FB193B9D6F002CFC7B /* pronto-ribbon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE41F3193B9D6F002CFC7B /* pronto-ribbon.png */; };
+		3ADE41FC193B9D6F002CFC7B /* pronto-ribbon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE41F4193B9D6F002CFC7B /* pronto-ribbon@2x.png */; };
+		3ADE41FD193B9D6F002CFC7B /* soon-ribbon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE41F5193B9D6F002CFC7B /* soon-ribbon.png */; };
+		3ADE41FE193B9D6F002CFC7B /* soon-ribbon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE41F6193B9D6F002CFC7B /* soon-ribbon@2x.png */; };
+		3ADE4203193BA17A002CFC7B /* bike-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE41FF193BA17A002CFC7B /* bike-bg.jpg */; };
+		3ADE4204193BA17A002CFC7B /* bike-bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE4200193BA17A002CFC7B /* bike-bg@2x.jpg */; };
+		3ADE4205193BA17A002CFC7B /* joseph.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE4201193BA17A002CFC7B /* joseph.png */; };
+		3ADE4206193BA17A002CFC7B /* joseph@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE4202193BA17A002CFC7B /* joseph@2x.png */; };
 		3AF072A618F66DF0009017A5 /* TripBrochureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF072A418F66DF0009017A5 /* TripBrochureViewController.m */; };
 		DA557F768A4249CEBC5D18BB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 321DA49714D2429EBFF704D4 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -267,10 +274,6 @@
 		3A1E1596192037B200281822 /* final_flag-marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "final_flag-marker@2x.png"; sourceTree = "<group>"; };
 		3A1E15A9192037B200281822 /* start_flag-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start_flag-marker.png"; sourceTree = "<group>"; };
 		3A1E15AA192037B200281822 /* start_flag-marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start_flag-marker@2x.png"; sourceTree = "<group>"; };
-		3A1E15AC192037B200281822 /* new-ribbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new-ribbon.png"; sourceTree = "<group>"; };
-		3A1E15AD192037B200281822 /* new-ribbon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new-ribbon@2x.png"; sourceTree = "<group>"; };
-		3A1E15AE192037B200281822 /* soon-ribbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soon-ribbon.png"; sourceTree = "<group>"; };
-		3A1E15AF192037B200281822 /* soon-ribbon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soon-ribbon@2x.png"; sourceTree = "<group>"; };
 		3A1FA85E18E15BC20000BAFC /* Path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Path.h; sourceTree = "<group>"; };
 		3A1FA85F18E15BC20000BAFC /* Path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Path.m; sourceTree = "<group>"; };
 		3A37CFE418FCFDEC003CD1FB /* TripCardCentralView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TripCardCentralView.xib; sourceTree = "<group>"; };
@@ -307,7 +310,6 @@
 		3A42500018ECA5AB00BDADAB /* TripLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripLandingViewController.m; sourceTree = "<group>"; };
 		3A42500218ECBFB600BDADAB /* UIViewController+CardSized.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CardSized.h"; sourceTree = "<group>"; };
 		3A42500318ECBFB600BDADAB /* UIViewController+CardSized.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CardSized.m"; sourceTree = "<group>"; };
-		3A4364FC18DF463100205EA3 /* Trips.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Trips.plist; sourceTree = "<group>"; };
 		3A43650418DF5BC000205EA3 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		3A43650518DF5BC000205EA3 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		3A43650618DF5BC000205EA3 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -436,6 +438,18 @@
 		3ADB2989191CC95600BD3D7C /* StandardPoiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardPoiView.h; sourceTree = "<group>"; };
 		3ADB298A191CC95600BD3D7C /* StandardPoiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardPoiView.m; sourceTree = "<group>"; };
 		3ADB298C191CCA0200BD3D7C /* StandardPoiView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StandardPoiView.xib; sourceTree = "<group>"; };
+		3ADE41EF193B9D6F002CFC7B /* new-ribbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new-ribbon.png"; sourceTree = "<group>"; };
+		3ADE41F0193B9D6F002CFC7B /* new-ribbon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new-ribbon@2x.png"; sourceTree = "<group>"; };
+		3ADE41F1193B9D6F002CFC7B /* nuevo-ribbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nuevo-ribbon.png"; sourceTree = "<group>"; };
+		3ADE41F2193B9D6F002CFC7B /* nuevo-ribbon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nuevo-ribbon@2x.png"; sourceTree = "<group>"; };
+		3ADE41F3193B9D6F002CFC7B /* pronto-ribbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pronto-ribbon.png"; sourceTree = "<group>"; };
+		3ADE41F4193B9D6F002CFC7B /* pronto-ribbon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pronto-ribbon@2x.png"; sourceTree = "<group>"; };
+		3ADE41F5193B9D6F002CFC7B /* soon-ribbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soon-ribbon.png"; sourceTree = "<group>"; };
+		3ADE41F6193B9D6F002CFC7B /* soon-ribbon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soon-ribbon@2x.png"; sourceTree = "<group>"; };
+		3ADE41FF193BA17A002CFC7B /* bike-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bike-bg.jpg"; sourceTree = "<group>"; };
+		3ADE4200193BA17A002CFC7B /* bike-bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bike-bg@2x.jpg"; sourceTree = "<group>"; };
+		3ADE4201193BA17A002CFC7B /* joseph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joseph.png; sourceTree = "<group>"; };
+		3ADE4202193BA17A002CFC7B /* joseph@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "joseph@2x.png"; sourceTree = "<group>"; };
 		3AF072A318F66DF0009017A5 /* TripBrochureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripBrochureViewController.h; sourceTree = "<group>"; };
 		3AF072A418F66DF0009017A5 /* TripBrochureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripBrochureViewController.m; sourceTree = "<group>"; };
 		3AFA7B8018EFD122009E0EE6 /* TripSelectedDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripSelectedDelegate.h; sourceTree = "<group>"; };
@@ -485,6 +499,10 @@
 		3A05140118E74E7900C25512 /* portadas */ = {
 			isa = PBXGroup;
 			children = (
+				3ADE41FF193BA17A002CFC7B /* bike-bg.jpg */,
+				3ADE4200193BA17A002CFC7B /* bike-bg@2x.jpg */,
+				3ADE4201193BA17A002CFC7B /* joseph.png */,
+				3ADE4202193BA17A002CFC7B /* joseph@2x.png */,
 				3A9FFCAF193B19D300BB0747 /* aaron.png */,
 				3A9FFCB0193B19D300BB0747 /* aaron@2x.png */,
 				3A9FFCB1193B19D300BB0747 /* greenie.png */,
@@ -649,10 +667,14 @@
 		3A1E15AB192037B200281822 /* ribbons */ = {
 			isa = PBXGroup;
 			children = (
-				3A1E15AC192037B200281822 /* new-ribbon.png */,
-				3A1E15AD192037B200281822 /* new-ribbon@2x.png */,
-				3A1E15AE192037B200281822 /* soon-ribbon.png */,
-				3A1E15AF192037B200281822 /* soon-ribbon@2x.png */,
+				3ADE41EF193B9D6F002CFC7B /* new-ribbon.png */,
+				3ADE41F0193B9D6F002CFC7B /* new-ribbon@2x.png */,
+				3ADE41F1193B9D6F002CFC7B /* nuevo-ribbon.png */,
+				3ADE41F2193B9D6F002CFC7B /* nuevo-ribbon@2x.png */,
+				3ADE41F3193B9D6F002CFC7B /* pronto-ribbon.png */,
+				3ADE41F4193B9D6F002CFC7B /* pronto-ribbon@2x.png */,
+				3ADE41F5193B9D6F002CFC7B /* soon-ribbon.png */,
+				3ADE41F6193B9D6F002CFC7B /* soon-ribbon@2x.png */,
 			);
 			path = ribbons;
 			sourceTree = "<group>";
@@ -804,7 +826,6 @@
 				3A9D7F3518E0174F00174C19 /* Localizable.strings */,
 				3A91C17318DE8BC000E30CBF /* Hoops.xcdatamodeld */,
 				3A91C16818DE8BC000E30CBF /* Supporting Files */,
-				3A4364FC18DF463100205EA3 /* Trips.plist */,
 			);
 			path = Hoops;
 			sourceTree = "<group>";
@@ -1053,7 +1074,6 @@
 				3A1E15B1192037B200281822 /* close-icon@2x.png in Resources */,
 				3A9D5BB319317B3A003DFE6E /* my-location-simple.png in Resources */,
 				3A9D5BB91931C0CC003DFE6E /* MiniPOIDetailsView.xib in Resources */,
-				3A4364FD18DF463100205EA3 /* Trips.plist in Resources */,
 				3A3E7D2B1939CE6900FFF1DB /* app-icon.png in Resources */,
 				3A1E15C0192037B200281822 /* logo-map.png in Resources */,
 				3AC1B63C18FE1AD60019CCC7 /* TripKeyDetailsView.xib in Resources */,
@@ -1061,6 +1081,8 @@
 				3A7206471936D4F90046EDE5 /* beta-ribbon.png in Resources */,
 				3A9FFCB6193B19D300BB0747 /* aaron@2x.png in Resources */,
 				3A1E15B0192037B200281822 /* close-icon.png in Resources */,
+				3ADE41F9193B9D6F002CFC7B /* nuevo-ribbon.png in Resources */,
+				3ADE4205193BA17A002CFC7B /* joseph.png in Resources */,
 				3A3C4E99193594B100064B3E /* info-page-three@2x.png in Resources */,
 				3A3E7D301939CEA900FFF1DB /* spotlight-icon@2x.png in Resources */,
 				3A3E7D2F1939CEA900FFF1DB /* spotlight-icon.png in Resources */,
@@ -1075,13 +1097,14 @@
 				3A1E15CE192037B200281822 /* sprocket-icon.png in Resources */,
 				3A1E1626192037B200281822 /* start_flag-marker.png in Resources */,
 				3A1E15B4192037B200281822 /* compass-disabled-icon.png in Resources */,
+				3ADE4204193BA17A002CFC7B /* bike-bg@2x.jpg in Resources */,
 				3A9D7F3A18E018EE00174C19 /* InfoPlist.strings in Resources */,
 				3A7206481936D4F90046EDE5 /* beta-ribbon@2x.png in Resources */,
 				3A55486E193270DE00C22783 /* info-icon@2x.png in Resources */,
 				3ACF578118E608B100EE4E5A /* LandingView.xib in Resources */,
 				3A9FFCB5193B19D300BB0747 /* aaron.png in Resources */,
-				3A1E1629192037B200281822 /* new-ribbon@2x.png in Resources */,
 				3ADB298D191CCA0200BD3D7C /* StandardPoiView.xib in Resources */,
+				3ADE4203193BA17A002CFC7B /* bike-bg.jpg in Resources */,
 				3A1E1627192037B200281822 /* start_flag-marker@2x.png in Resources */,
 				3A1E15CF192037B200281822 /* sprocket-icon@2x.png in Resources */,
 				3A1E15C7192037B200281822 /* next_icon@2x.png in Resources */,
@@ -1096,15 +1119,16 @@
 				3A1E1612192037B200281822 /* final_flag-marker.png in Resources */,
 				3A1E15B5192037B200281822 /* compass-disabled-icon@2x.png in Resources */,
 				3A594BD118E7175300220D61 /* GoogleMaps.bundle in Resources */,
+				3ADE41FC193B9D6F002CFC7B /* pronto-ribbon@2x.png in Resources */,
 				3A3E7D1F19399BC800FFF1DB /* another-background@2x.jpg in Resources */,
 				3A1E1613192037B200281822 /* final_flag-marker@2x.png in Resources */,
 				3A37CFE518FCFDEC003CD1FB /* TripCardCentralView.xib in Resources */,
 				3A55486D193270DE00C22783 /* info-icon.png in Resources */,
 				3A43651318DF5BC000205EA3 /* OpenSans-Light.ttf in Resources */,
 				3A9FFCB9193B19D300BB0747 /* melanie.jpg in Resources */,
-				3A1E1628192037B200281822 /* new-ribbon.png in Resources */,
 				3A3E7D1A1939983400FFF1DB /* other-background.jpg in Resources */,
 				3A1E15B9192037B200281822 /* flag-end-icon@2x.png in Resources */,
+				3ADE41F8193B9D6F002CFC7B /* new-ribbon@2x.png in Resources */,
 				3A1E15B2192037B200281822 /* compass-3d-icon.png in Resources */,
 				3A3E7D2719399DFF00FFF1DB /* arrow-up@2x.png in Resources */,
 				3A91C17718DE8BC000E30CBF /* Images.xcassets in Resources */,
@@ -1112,9 +1136,12 @@
 				3A4F0F2A18EDCB3D00F2BEC8 /* MainCardButton.xib in Resources */,
 				3A1E15CA192037B200281822 /* pin-icon.png in Resources */,
 				3A9D7F3718E0174F00174C19 /* Localizable.strings in Resources */,
+				3ADE41FA193B9D6F002CFC7B /* nuevo-ribbon@2x.png in Resources */,
 				3A3C4EA21935B46000064B3E /* info-page-five.png in Resources */,
 				3A43651718DF5BC000205EA3 /* OpenSans-SemiboldItalic.ttf in Resources */,
+				3ADE41F7193B9D6F002CFC7B /* new-ribbon.png in Resources */,
 				3A9AA07918E3835700F075D3 /* TripCardView.xib in Resources */,
+				3ADE4206193BA17A002CFC7B /* joseph@2x.png in Resources */,
 				3A43651518DF5BC000205EA3 /* OpenSans-Regular.ttf in Resources */,
 				3A9AA07318E3532300F075D3 /* TripShowcaseViewController.xib in Resources */,
 				3A3C4E8A1935254200064B3E /* main-logo.png in Resources */,
@@ -1124,6 +1151,7 @@
 				3A1E15BE192037B200281822 /* hoop-mini.png in Resources */,
 				3A1E15C4192037B200281822 /* my-location.png in Resources */,
 				3A1E15BA192037B200281822 /* flag-start-icon.png in Resources */,
+				3ADE41FB193B9D6F002CFC7B /* pronto-ribbon.png in Resources */,
 				3A3E7D2C1939CE6900FFF1DB /* app-icon@2x.png in Resources */,
 				3A3C4E8B1935254200064B3E /* main-logo@2x.png in Resources */,
 				3A43651618DF5BC000205EA3 /* OpenSans-Semibold.ttf in Resources */,
@@ -1132,6 +1160,8 @@
 				3A7D566F18FF16CC005BD5CA /* LegendElementView.xib in Resources */,
 				3A43650F18DF5BC000205EA3 /* OpenSans-BoldItalic.ttf in Resources */,
 				3A3C4E9E1935AF1400064B3E /* info-page-four.png in Resources */,
+				3ADE41FD193B9D6F002CFC7B /* soon-ribbon.png in Resources */,
+				3ADE41FE193B9D6F002CFC7B /* soon-ribbon@2x.png in Resources */,
 				3A5B5B3F1913FADC00546B92 /* POITableViewCell.xib in Resources */,
 				3A1E15C5192037B200281822 /* my-location@2x.png in Resources */,
 				3A1E15B3192037B200281822 /* compass-3d-icon@2x.png in Resources */,
@@ -1144,8 +1174,6 @@
 				3A43651218DF5BC000205EA3 /* OpenSans-Italic.ttf in Resources */,
 				3A1E15C6192037B200281822 /* next_icon.png in Resources */,
 				3A43651418DF5BC000205EA3 /* OpenSans-LightItalic.ttf in Resources */,
-				3A1E162A192037B200281822 /* soon-ribbon.png in Resources */,
-				3A1E162B192037B200281822 /* soon-ribbon@2x.png in Resources */,
 				3A9D5BB419317B3A003DFE6E /* my-location-simple@2x.png in Resources */,
 				3A1E15C9192037B200281822 /* panflet-icon@2x.png in Resources */,
 				3A43651018DF5BC000205EA3 /* OpenSans-ExtraBold.ttf in Resources */,

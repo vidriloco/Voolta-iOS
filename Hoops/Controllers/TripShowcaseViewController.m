@@ -219,9 +219,17 @@
         [cardView buildPoiFragmentsFor:trip.allPois];
         
         if ([trip isAvailable]) {
-            [[cardView ribbonImage] setImage:[UIImage imageNamed:@"new-ribbon.png"]];
+            if ([[App currentLang] isEqualToString:@"en"]) {
+                [[cardView ribbonImage] setImage:[UIImage imageNamed:@"new-ribbon.png"]];
+            } else {
+                [[cardView ribbonImage] setImage:[UIImage imageNamed:@"nuevo-ribbon.png"]];
+            }
         } else {
-            [[cardView ribbonImage] setImage:[UIImage imageNamed:@"soon-ribbon.png"]];
+            if ([[App currentLang] isEqualToString:@"en"]) {
+                [[cardView ribbonImage] setImage:[UIImage imageNamed:@"soon-ribbon.png"]];
+            } else {
+                [[cardView ribbonImage] setImage:[UIImage imageNamed:@"pronto-ribbon.png"]];
+            }
         }
         
         return cardView;

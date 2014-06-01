@@ -9,7 +9,6 @@
 #import "LandingScreen.h"
 
 @interface LandingScreen ()
-@property (nonatomic, strong) NSArray *backgroundNames;
 @property (nonatomic, strong) NSArray *users;
 @property (nonatomic, assign) int index;
 @end
@@ -20,23 +19,23 @@
 {
     self = [super init];
     if (self) {
-        _backgroundNames = [NSMutableArray arrayWithObjects:@"main-background.jpg", @"other-background.jpg", @"another-background.jpg", nil];
         _users = [NSMutableArray arrayWithObjects:
-                  @{@"name": @"Aarón Borras", @"tw": @"@avientensetodos", @"pic" : @"aaron.png" },
-                  @{@"name": @"Melanie Mechelen", @"tw": @"@mechelenma", @"pic" : @"melanie.jpg" },
-                  @{@"name": @"Bici Verde", @"tw": @"@verdecito", @"pic" : @"greenie.png" }, nil];
+                  @{@"bg": @"main-background.jpg", @"name": @"Aarón Borras", @"tw": @"@avientensetodos", @"pic" : @"aaron.png" },
+                  @{@"bg": @"other-background.jpg", @"name": @"Melanie Mechelen", @"tw": @"@mechelenma", @"pic" : @"melanie.jpg" },
+                  @{@"bg": @"bike-bg.jpg", @"name": @"Joseph Args", @"tw": @"@joseargs", @"pic" : @"joseph.png" },
+                  @{@"bg": @"another-background.jpg", @"name": @"Bici Verde", @"tw": @"@verdecito", @"pic" : @"greenie.png" }, nil];
     }
     return self;
 }
 
 - (NSString*) background
 {
-    return [_backgroundNames objectAtIndex:_index];
+    return [[_users objectAtIndex:_index] objectForKey:@"bg"];
 }
 
 - (UIImage*) image
 {
-    _index = arc4random() % [_backgroundNames count];
+    _index = arc4random() % [_users count];
     return [UIImage imageNamed:[self background]];
 }
 
