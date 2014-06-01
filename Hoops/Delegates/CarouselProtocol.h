@@ -10,6 +10,8 @@
 
 @protocol CarouselProtocol <NSObject>
 
+@required
 - (NSString*) background;
+- (UIImage*) image;
 
 @end

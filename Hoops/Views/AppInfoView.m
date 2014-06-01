@@ -54,6 +54,7 @@
     [infoPageOneLabel setText:NSLocalizedString(text, nil)];
     [infoPageOneLabel setTextColor:[UIColor whiteColor]];
     [infoPageOneLabel setNumberOfLines:3];
+    [infoPageOneLabel setBackgroundColor:[UIColor clearColor]];
 
     if (index == 4) {
         [infoPageOneLabel setFrame:CGRectMake(40, yPosition, self.container.frame.size.width-80, 70)];

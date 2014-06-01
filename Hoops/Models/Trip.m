@@ -177,4 +177,9 @@ static NSArray *list;
     return [self.kind isEqualToString:@"landing"];
 }
 
+- (UIImage*) image
+{
+    return [UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:_background]];
+}
+
 @end

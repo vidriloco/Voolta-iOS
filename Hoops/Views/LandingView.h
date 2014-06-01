@@ -9,15 +9,29 @@
 #import <UIKit/UIKit.h>
 #import "LookAndFeel.h"
 
+#define DegreesToRadians(angle) (angle / 180.0 * M_PI)
+
 @interface LandingView : UIView
 
 @property (nonatomic, weak) IBOutlet UIImageView *iconImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *logoImageView;
+
 @property (nonatomic, weak) IBOutlet UILabel *legendLabel;
-@property (nonatomic, weak) IBOutlet UIButton *nextIconView;
-@property (nonatomic, weak) IBOutlet UIButton *infoIconView;
+@property (nonatomic, weak) IBOutlet UIButton *nextIconButton;
+@property (nonatomic, weak) IBOutlet UIButton *infoIconButton;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic, weak) IBOutlet UIButton *creditsButton;
+@property (nonatomic, assign) BOOL creditsAreVisible;
+
+@property (nonatomic, weak) IBOutlet UIView *personCardView;
+@property (nonatomic, weak) IBOutlet UILabel *personCreditTitleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *personNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *personContactLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *personPicView;
+
 
 - (void) stylizeView;
 - (void) finishedLoading;
+- (void) toggleCredits;
 
 @end

@@ -84,7 +84,6 @@ static DataStore *instance;
     comps = [NSDateComponents new];
     comps.minute   = -2;
     NSDate *lastTwoMinutes = [calendar dateByAddingComponents:comps toDate:[NSDate date] options:0];
-
     
     ARLazyFetcher *fetcher = [ImageOnInventory lazyFetcher];
     [fetcher whereField:@"lastSeenAlive" between:lastMonth and:lastTwoMinutes];

@@ -11,4 +11,8 @@
 
 @interface LandingScreen : NSObject<CarouselProtocol>
 
+- (UIImage*) userImage;
+- (NSString*) userFullName;
+- (NSString*) userContact;
+
 @end

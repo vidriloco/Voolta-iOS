@@ -12,13 +12,19 @@
 @property (nonatomic, strong) NSArray* slides;
 @property (nonatomic, strong) LandingScreen *landingScreen;
 @property (nonatomic, assign) BOOL finishedLoading;
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) LandingView *landingView;
 
 - (void) jumpToFirstPage;
 - (void) jumpToLandingPage;
 - (void) animateBackgroundTransition;
 
 - (void) showInfoView;
-
+- (void) startLandingPictureSwitcher;
+- (void) stopLandingPictureSwitcher;
+- (void) switchLandingPicture;
+- (void) showCreditsForCurrentLanding;
+- (void) setCurrentLandingPageCredits;
 @end
 
 @implementation TripShowcaseViewController
@@ -29,12 +35,15 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _landingScreen = [[LandingScreen alloc] init];
+        _landingView = [[[NSBundle mainBundle] loadNibNamed:@"LandingView" owner:self options:nil] objectAtIndex:0];
+
         _slides = [NSArray arrayWithObject:_landingScreen];
         
         UIColor *backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.6];
         
         [self.background setBackgroundColor:backgroundColor];
         [self.view setBackgroundColor:backgroundColor];
+        [self startLandingPictureSwitcher];
     }
     return self;
 }
@@ -43,6 +52,28 @@
 {
     _carousel.delegate = nil;
     _carousel.dataSource = nil;
+}
+
+- (void) startLandingPictureSwitcher
+{
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(switchLandingPicture) userInfo:nil repeats:YES];
+}
+
+- (void) stopLandingPictureSwitcher
+{
+    [self.timer invalidate];
+}
+
+- (void) switchLandingPicture
+{
+    [self animateBackgroundTransition];
+}
+
+- (void) setCurrentLandingPageCredits
+{
+    [[_landingView personNameLabel] setText:_landingScreen.userFullName];
+    [[_landingView personContactLabel] setText:_landingScreen.userContact];
+    [[_landingView personPicView] setImage:_landingScreen.userImage];
 }
 
 #pragma mark -
@@ -110,6 +141,20 @@
     NSArray *inventoryList = [[[TripOnInventory lazyFetcher] whereField:@"lang" equalToValue:[App currentLang]] fetchRecords];
     _finishedLoading = [inventoryList count] == [_slides count]-1;
     [self.carousel reloadData];
+}
+
+- (void) showCreditsForCurrentLanding
+{
+    [_landingView toggleCredits];
+
+    if ([_landingView creditsAreVisible]) {
+        [self stopLandingPictureSwitcher];
+        [self.background setAlpha:0.8];
+    } else {
+        [self startLandingPictureSwitcher];
+        [self.background setAlpha:1];
+    }
+
 }
 
 #pragma DataDelegate methods
@@ -181,20 +226,21 @@
         
         return cardView;
     } else {
-        LandingView *landingView = [[[NSBundle mainBundle] loadNibNamed:@"LandingView" owner:self options:nil] objectAtIndex:0];
-        [landingView stylizeView];
+        [_landingView stylizeView];
         
-        [[landingView nextIconView] addTarget:self action:@selector(jumpToFirstPage) forControlEvents:UIControlEventTouchUpInside];
-        [landingView.nextIconView setUserInteractionEnabled:YES];
+        [[_landingView nextIconButton] addTarget:self action:@selector(jumpToFirstPage) forControlEvents:UIControlEventTouchUpInside];
+        [_landingView.nextIconButton setUserInteractionEnabled:YES];
         
-        [[landingView infoIconView] addTarget:self action:@selector(showInfoView) forControlEvents:UIControlEventTouchUpInside];
-        [landingView.infoIconView setUserInteractionEnabled:YES];
+        [[_landingView infoIconButton] addTarget:self action:@selector(showInfoView) forControlEvents:UIControlEventTouchUpInside];
+        [_landingView.infoIconButton setUserInteractionEnabled:YES];
 
+        [_landingView.creditsButton addTarget:self action:@selector(showCreditsForCurrentLanding) forControlEvents:UIControlEventTouchUpInside];
+        
         if (_finishedLoading) {
-            [landingView finishedLoading];
+            [_landingView finishedLoading];
         }
         
-        return landingView;
+        return _landingView;
     }
 }
 
@@ -237,9 +283,14 @@
     if ([carousel currentItemIndex] == 0) {
         [self.logoView setHidden:YES];
         [self.betaView setHidden:NO];
+        [self startLandingPictureSwitcher];
     } else {
         [self.logoView setHidden:NO];
         [self.betaView setHidden:YES];
+        [self stopLandingPictureSwitcher];
+        if ([_landingView creditsAreVisible]) {
+            [_landingView toggleCredits];
+        } 
     }
 }
 
@@ -253,7 +304,7 @@
 {
     id<CarouselProtocol> carouselItem = [_slides objectAtIndex:(int) [_carousel currentItemIndex]];
     
-    UIImage *image = [UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:carouselItem.background]];
+    UIImage *image = [carouselItem image];
     
     if (image != nil && image != [self.background image]) {
         [self.background setAlpha:0.5];
@@ -262,6 +313,10 @@
         [UIView animateWithDuration:1 animations:^{
             [self.background setAlpha:1];
         }];
+    }
+    
+    if ([carouselItem isKindOfClass:[LandingScreen class]]) {
+        [self setCurrentLandingPageCredits];
     }
 }
 
