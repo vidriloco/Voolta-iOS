@@ -107,6 +107,19 @@ static int environment;
     return (networkStatus != NotReachable);
 }
 
++ (void) initializeUID
+{
+    if ([App currentUID].length == 0) {
+        [[NSUserDefaults standardUserDefaults] setObject:[[NSUUID UUID] UUIDString] forKey:@"UID"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
++ (NSString*) currentUID
+{
+    return [[NSUserDefaults standardUserDefaults] stringForKey:@"UID"];
+}
+
 + (BOOL) hasShownHowTo
 {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"shown-how-to"];

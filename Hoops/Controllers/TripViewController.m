@@ -211,6 +211,7 @@ static TripViewController *current;
         [_locationManager startUpdatingHeading];
         [_rightButton setBackgroundImage:[UIImage imageNamed:@"compass-icon.png"] forState:UIControlStateNormal];
         [_markerCenter setIcon: [UIImage imageNamed:@"my-location-simple.png"]];
+        [Analytics registerActionWithString:@"FOLLOW-LOCATION mode" withProperties:@{@"date": [NSDate date] }];
     } else if (_currentFollowMode == FollowLocation) {
         _currentFollowMode = FollowHeading;
         if ([self shouldChangeCameraPositionOnFollowModeChange]) {
@@ -221,6 +222,7 @@ static TripViewController *current;
 
         }
         [_rightButton setBackgroundImage:[UIImage imageNamed:@"compass-3d-icon.png"] forState:UIControlStateNormal];
+        [Analytics registerActionWithString:@"FOLLOW-LOCATION-3D mode" withProperties:@{@"date": [NSDate date] }];
 
     } else {
         _currentFollowMode = FollowNone;
@@ -232,7 +234,7 @@ static TripViewController *current;
 
         }
         [_rightButton setBackgroundImage:[UIImage imageNamed:@"compass-disabled-icon.png"] forState:UIControlStateNormal];
-
+        [Analytics registerActionWithString:@"DISABLED-LOCATION mode" withProperties:@{@"date": [NSDate date] }];
     }
     
     if (_currentFollowMode != FollowNone) {
@@ -251,6 +253,9 @@ static TripViewController *current;
 
 - (void) onLeftButtonClicked
 {
+    [Analytics registerActionWithString:@"BROCHURE shown for trip"
+                         withProperties:@{@"trip": [_currentTrip title], @"cost": [NSString stringWithFormat:@"%2f", [_currentTrip cost]] }];
+    
     TripBrochureViewController *brochureViewController = [TripBrochureViewController instance];
     
     if (brochureViewController == nil || brochureViewController.currentTrip != _currentTrip) {
@@ -291,6 +296,9 @@ static TripViewController *current;
                      completion:^(BOOL finished){
                          [destinationViewController.view removeFromSuperview]; // remove from temp super view
                          [sourceViewController dismissViewControllerAnimated:NO completion:NULL]; // dismiss VC
+                         [Analytics registerActionWithString:@"DISMISS trip details"
+                                              withProperties:@{@"trip": [_currentTrip title], @"cost": [NSString stringWithFormat:@"%2f", [_currentTrip cost]] }];
+                         
                      }];
 }
 
@@ -361,6 +369,7 @@ static TripViewController *current;
 - (BOOL) mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker
 {
     if ([marker isKindOfClass:[Poi class]]) {
+        [Analytics incrementBy:1 property:[(Poi*) marker theTitle]];
         [_poiDetailsManager showDetailsViewForPoi:(Poi*) marker];
     }
     return NO;

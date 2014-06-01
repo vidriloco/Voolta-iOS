@@ -40,7 +40,7 @@ static NSArray* list;
 
 + (int) count
 {
-    return [list count];
+    return (int) [list count];
 }
 
 + (NSArray*) all

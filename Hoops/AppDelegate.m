@@ -11,14 +11,23 @@
 
 #import "AppDelegate.h"
 
+#define MIXPANEL_TOKEN @"9fc75b960ae568369b6e1d04f1cb5ad3"
+
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Initialize the library with your
+    // Mixpanel project token, MIXPANEL_TOKEN
+    [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
+    [App initializeUID];
+    
+    [[Mixpanel sharedInstance] identify:[App currentUID]];
     [GMSServices provideAPIKey:@"AIzaSyDMKDw8oVSqOMBMat2P4O2_g1OqZzYbl9Q"];
     [App initializeWithEnv:kDev];
     [ActiveRecord registerDatabaseName:@"hirooDB" useDirectory:ARStorageDocuments];

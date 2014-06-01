@@ -311,6 +311,11 @@ static TripBrochureViewController* instance;
     NSString *sectionKey = [_sectionsOnTable objectAtIndex:[indexPath section]];
     Poi *poi = [[_currentTrip.categorizedPois objectForKey:sectionKey] objectAtIndex:[indexPath row]];
     [(TripViewController*) self.presentingViewController centerMapOnPoi:poi];
+    
+    [Analytics registerActionWithString:@"POI centered on map from list"
+                         withProperties:@{@"poi": [poi theTitle], @"date": [NSDate date] }];
+
+    
     [self dismissViewController];
 }
 

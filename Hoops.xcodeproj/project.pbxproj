@@ -84,7 +84,6 @@
 		3A3E7D2C1939CE6900FFF1DB /* app-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3E7D2A1939CE6900FFF1DB /* app-icon@2x.png */; };
 		3A3E7D2F1939CEA900FFF1DB /* spotlight-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3E7D2D1939CEA900FFF1DB /* spotlight-icon.png */; };
 		3A3E7D301939CEA900FFF1DB /* spotlight-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3E7D2E1939CEA900FFF1DB /* spotlight-icon@2x.png */; };
-		3A42500118ECA5AB00BDADAB /* TripLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A42500018ECA5AB00BDADAB /* TripLandingViewController.m */; };
 		3A42500418ECBFB600BDADAB /* UIViewController+CardSized.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A42500318ECBFB600BDADAB /* UIViewController+CardSized.m */; };
 		3A43650E18DF5BC000205EA3 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A43650418DF5BC000205EA3 /* OpenSans-Bold.ttf */; };
 		3A43650F18DF5BC000205EA3 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A43650518DF5BC000205EA3 /* OpenSans-BoldItalic.ttf */; };
@@ -191,6 +190,7 @@
 		3ADE4204193BA17A002CFC7B /* bike-bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE4200193BA17A002CFC7B /* bike-bg@2x.jpg */; };
 		3ADE4205193BA17A002CFC7B /* joseph.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE4201193BA17A002CFC7B /* joseph.png */; };
 		3ADE4206193BA17A002CFC7B /* joseph@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE4202193BA17A002CFC7B /* joseph@2x.png */; };
+		3ADE420C193BAB29002CFC7B /* Analytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADE420B193BAB29002CFC7B /* Analytics.m */; };
 		3AF072A618F66DF0009017A5 /* TripBrochureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF072A418F66DF0009017A5 /* TripBrochureViewController.m */; };
 		DA557F768A4249CEBC5D18BB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 321DA49714D2429EBFF704D4 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -306,8 +306,6 @@
 		3A3E7D2A1939CE6900FFF1DB /* app-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon@2x.png"; sourceTree = "<group>"; };
 		3A3E7D2D1939CEA900FFF1DB /* spotlight-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spotlight-icon.png"; sourceTree = "<group>"; };
 		3A3E7D2E1939CEA900FFF1DB /* spotlight-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spotlight-icon@2x.png"; sourceTree = "<group>"; };
-		3A424FFF18ECA5AB00BDADAB /* TripLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripLandingViewController.h; sourceTree = "<group>"; };
-		3A42500018ECA5AB00BDADAB /* TripLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripLandingViewController.m; sourceTree = "<group>"; };
 		3A42500218ECBFB600BDADAB /* UIViewController+CardSized.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CardSized.h"; sourceTree = "<group>"; };
 		3A42500318ECBFB600BDADAB /* UIViewController+CardSized.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CardSized.m"; sourceTree = "<group>"; };
 		3A43650418DF5BC000205EA3 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -450,6 +448,9 @@
 		3ADE4200193BA17A002CFC7B /* bike-bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bike-bg@2x.jpg"; sourceTree = "<group>"; };
 		3ADE4201193BA17A002CFC7B /* joseph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joseph.png; sourceTree = "<group>"; };
 		3ADE4202193BA17A002CFC7B /* joseph@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "joseph@2x.png"; sourceTree = "<group>"; };
+		3ADE420A193BAB29002CFC7B /* Analytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Analytics.h; sourceTree = "<group>"; };
+		3ADE420B193BAB29002CFC7B /* Analytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Analytics.m; sourceTree = "<group>"; };
+		3ADE420D193BAC28002CFC7B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		3AF072A318F66DF0009017A5 /* TripBrochureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripBrochureViewController.h; sourceTree = "<group>"; };
 		3AF072A418F66DF0009017A5 /* TripBrochureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripBrochureViewController.m; sourceTree = "<group>"; };
 		3AFA7B8018EFD122009E0EE6 /* TripSelectedDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripSelectedDelegate.h; sourceTree = "<group>"; };
@@ -533,6 +534,8 @@
 		3A1BA7AF18DED3610002F958 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				3ADE420A193BAB29002CFC7B /* Analytics.h */,
+				3ADE420B193BAB29002CFC7B /* Analytics.m */,
 				3A1BA7B018DED3610002F958 /* App.h */,
 				3A1BA7B118DED3610002F958 /* App.m */,
 				3A1BA7B418DED3610002F958 /* LookAndFeel.h */,
@@ -785,6 +788,7 @@
 		3A91C15E18DE8BC000E30CBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3ADE420D193BAC28002CFC7B /* AdSupport.framework */,
 				3A471F491925B56000E25598 /* libsqlite3.dylib */,
 				3A9D7F5818E027DA00174C19 /* SystemConfiguration.framework */,
 				3A9D7F5618E027D000174C19 /* QuartzCore.framework */,
@@ -877,8 +881,6 @@
 				3A9AA06F18E3532300F075D3 /* TripShowcaseViewController.h */,
 				3A9AA07018E3532300F075D3 /* TripShowcaseViewController.m */,
 				3A9AA07118E3532300F075D3 /* TripShowcaseViewController.xib */,
-				3A424FFF18ECA5AB00BDADAB /* TripLandingViewController.h */,
-				3A42500018ECA5AB00BDADAB /* TripLandingViewController.m */,
 				3A42500218ECBFB600BDADAB /* UIViewController+CardSized.h */,
 				3A42500318ECBFB600BDADAB /* UIViewController+CardSized.m */,
 				3AF072A318F66DF0009017A5 /* TripBrochureViewController.h */,
@@ -1258,8 +1260,8 @@
 				3ACF578818E6156D00EE4E5A /* LandingView.m in Sources */,
 				3AB7CBC0191A94C3001EFD53 /* HorizontalSlidesBasedPoiView.m in Sources */,
 				3A7D567218FF17D8005BD5CA /* LegendElementView.m in Sources */,
-				3A42500118ECA5AB00BDADAB /* TripLandingViewController.m in Sources */,
 				3A1BA7B818DED3610002F958 /* LookAndFeel.m in Sources */,
+				3ADE420C193BAB29002CFC7B /* Analytics.m in Sources */,
 				3A9D5BB71931BCE5003DFE6E /* MiniPOIDetailsView.m in Sources */,
 				3A1BA79F18DEBC150002F958 /* Trip.m in Sources */,
 				3A42500418ECBFB600BDADAB /* UIViewController+CardSized.m in Sources */,

@@ -44,10 +44,15 @@ static POIDetailsManager *local;
     [tapRecognizer setNumberOfTapsRequired:1];
     [[_currentDetailsView backgroundView]  addGestureRecognizer:tapRecognizer];
     _activePoi = poi;
+    
+    [Analytics registerActionWithString:@"POI details show"
+                         withProperties:@{@"poi": [_activePoi theTitle], @"date": [NSDate date] }];
 }
 
 - (void) hideDetailsView
 {
+    [Analytics registerActionWithString:@"POI details hide"
+                         withProperties:@{@"poi": [_activePoi theTitle], @"date": [NSDate date] }];
     if (_currentDetailsView != nil) {
         [_currentDetailsView removeFromSuperview];
         _currentDetailsView = nil;
@@ -61,6 +66,8 @@ static POIDetailsManager *local;
 {
     SlideElement *slideElement = [[_activePoi slideElements] objectAtIndex:index];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:slideElement.url]];
+    [Analytics registerActionWithString:@"Open POI url"
+                         withProperties:@{@"poi": [_activePoi theTitle], @"date": [NSDate date] }];
 }
 
 @end

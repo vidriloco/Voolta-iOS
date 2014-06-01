@@ -38,6 +38,9 @@
 
 + (BOOL) isNetworkReachable;
 
++ (NSString*) currentUID;
++ (void) initializeUID;
+
 + (BOOL) hasShownHowTo;
 + (void) markHowToAsShown;
 @end

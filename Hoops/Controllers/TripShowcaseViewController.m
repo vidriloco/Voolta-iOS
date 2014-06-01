@@ -130,6 +130,9 @@
     AppInfoView *infoView = [[AppInfoView alloc] initSimple];
     [self.view addSubview:infoView];
     [infoView show];
+    
+    [Analytics registerActionWithString:@"INFO HOW-TO VIEW shown"
+                         withProperties:@{}];
 }
 
 - (void) reloadTripsOnCarousel
@@ -150,6 +153,8 @@
     if ([_landingView creditsAreVisible]) {
         [self stopLandingPictureSwitcher];
         [self.background setAlpha:0.8];
+        [Analytics registerActionWithString:@"LANDING PICTURE credits shown"
+                             withProperties:@{@"user": [_landingScreen userFullName], @"pic": [_landingScreen background] }];
     } else {
         [self startLandingPictureSwitcher];
         [self.background setAlpha:1];
@@ -232,6 +237,9 @@
             }
         }
         
+        [Analytics registerActionWithString:@"SEEN trip"
+                             withProperties:@{@"trip": [trip title], @"cost": [NSString stringWithFormat:@"%2f", [trip cost]] }];
+        
         return cardView;
     } else {
         [_landingView stylizeView];
@@ -260,7 +268,11 @@
         
         if ([trip isAvailable]) {
             TripViewController *tripController = [TripViewController newWithTrip:trip];
-            
+            [Analytics registerActionWithString:@"AVAILABLE trip tapped"
+                                 withProperties:@{
+                                                  @"trip": [trip title],
+                                                  @"cost": [NSString stringWithFormat:@"%2f", [trip cost]],
+                                                  @"date": [NSDate date] }];
             [UIView
              animateWithDuration:0.3
              animations:^{
@@ -269,7 +281,11 @@
                  [self.view setAlpha:0];
              } completion:^(BOOL finished) {
                  [self presentViewController:tripController animated:NO completion:nil];
+                 
              }];
+        } else {
+            [Analytics registerActionWithString:@"NOT AVAILABLE trip tapped"
+                                 withProperties:@{@"trip": [trip title], @"cost": [NSString stringWithFormat:@"%2f", [trip cost]] }];
         }
     }
 }
