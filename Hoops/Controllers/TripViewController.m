@@ -75,7 +75,7 @@ static TripViewController *current;
         [tripViewController setPoiDetailsManager:[POIDetailsManager newWithController:tripViewController]];
         current = tripViewController;
     }
-    
+
     return current;
 }
 
@@ -98,11 +98,13 @@ static TripViewController *current;
     [self loadTopControls];
     [self loadBottomControls];
     [self centerMapOnTripStart];
+
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+
     [self drawTripMarkers];
     
     // Loading trip paths
@@ -146,13 +148,18 @@ static TripViewController *current;
 
 - (void) loadBottomControls
 {
-    _rightButton = [[UIButton alloc] initWithFrame:CGRectMake([App viewBounds].size.width-75, [App viewBounds].size.height-70, 50, 50)];
+    float bottomLine = [App viewBounds].size.height-70;
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        bottomLine -= 20;
+    }
+    
+    _rightButton = [[UIButton alloc] initWithFrame:CGRectMake([App viewBounds].size.width-75, bottomLine, 50, 50)];
     [_rightButton setBackgroundImage:[UIImage imageNamed:@"compass-disabled-icon.png"] forState:UIControlStateNormal];
     [_rightButton setAlpha:0];
     [_rightButton addTarget:self action:@selector(switchCameraFollowPositionMode) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_rightButton];
     
-    _centerBottomButton = [[UIButton alloc] initWithFrame:CGRectMake([App viewBounds].size.width/2-25, [App viewBounds].size.height-70, 50, 50)];
+    _centerBottomButton = [[UIButton alloc] initWithFrame:CGRectMake([App viewBounds].size.width/2-25, bottomLine, 50, 50)];
     [_centerBottomButton setBackgroundImage:[UIImage imageNamed:@"panflet-icon.png"] forState:UIControlStateNormal];
     [_centerBottomButton setAlpha:0];
     [self.view addSubview:_centerBottomButton];
@@ -163,7 +170,7 @@ static TripViewController *current;
         [_rightButton setAlpha:0.6];
     }];
     
-    _closeButton = [[UIButton alloc] initWithFrame:CGRectMake([App viewBounds].size.width/2-25, [App viewBounds].size.height-90, 50, 50)];
+    _closeButton = [[UIButton alloc] initWithFrame:CGRectMake([App viewBounds].size.width/2-25, bottomLine, 50, 50)];
     [_closeButton setBackgroundImage:[UIImage imageNamed:@"close-icon.png"] forState:UIControlStateNormal];
     [_closeButton setAlpha:0.5];
     [_closeButton setHidden:YES];

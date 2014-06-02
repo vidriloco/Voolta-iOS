@@ -55,9 +55,6 @@
     [[_tripComplexityLabel layer] setShadowOffset:CGSizeMake(3, 4)];
     [[_tripComplexityLabel layer] setShadowOpacity:0.8];
     [[_tripComplexityLabel layer] setShadowColor:[UIColor blackColor].CGColor];
-    
-    [_tripDetailsTextView setTextColor:[UIColor grayColor]];
-    [_tripDetailsTextView setFont:[LookAndFeel defaultFontLightWithSize:13]];
 }
 
 - (void) cardTapped {

@@ -25,6 +25,7 @@
 @property (nonatomic, strong) UIView *backgroundView;
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIButton *closeButton;
 
 - (id) initWithPoi:(Poi*)poi;
 

@@ -87,6 +87,7 @@ static TripBrochureViewController* instance;
     [titleLabel setFont:[LookAndFeel defaultFontBoldWithSize:19]];
     [titleLabel setTextAlignment:NSTextAlignmentCenter];
     [titleLabel setMinimumScaleFactor:0.5];
+    [titleLabel setBackgroundColor:[UIColor clearColor]];
     [titleLabel setAdjustsFontSizeToFitWidth:YES];
     [_titleContainerView addSubview:titleLabel];
     
@@ -132,6 +133,7 @@ static TripBrochureViewController* instance;
     [[tripNameLabel layer] setShadowOffset:CGSizeMake(3, 4)];
     [[tripNameLabel layer] setShadowOpacity:0.8];
     [[tripNameLabel layer] setShadowColor:[UIColor blackColor].CGColor];
+    [tripNameLabel setBackgroundColor:[UIColor clearColor]];
     [tripNameLabel setNumberOfLines:2];
     [tripNameLabel setLineBreakMode:NSLineBreakByWordWrapping];
     [tripNameLabel setText:_currentTrip.title];

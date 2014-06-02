@@ -40,9 +40,8 @@ static POIDetailsManager *local;
     _currentDetailsView =  [[POIDetailsView alloc] initWithPoi:poi];
     
     [_associatedController.view addSubview:_currentDetailsView];
-    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideDetailsView)];
-    [tapRecognizer setNumberOfTapsRequired:1];
-    [[_currentDetailsView backgroundView]  addGestureRecognizer:tapRecognizer];
+
+    [[_currentDetailsView closeButton] addTarget:self action:@selector(hideDetailsView) forControlEvents:UIControlEventTouchUpInside];
     _activePoi = poi;
     
     [Analytics registerActionWithString:@"POI details show"

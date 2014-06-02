@@ -122,6 +122,7 @@
     [titleLabel setFont:[LookAndFeel defaultFontBoldWithSize:15]];
     [titleLabel setTextColor:[UIColor whiteColor]];
     [titleLabel setText:element.title];
+    [titleLabel setBackgroundColor:[UIColor clearColor]];
     titleLabel.layer.shadowOffset = CGSizeMake(3, 3);
     titleLabel.layer.shadowRadius = 3;
     titleLabel.layer.shadowOpacity = 0.4;
@@ -132,6 +133,7 @@
     [subtitleLabel setFont:[LookAndFeel defaultFontBookWithSize:13]];
     [subtitleLabel setTextColor:[UIColor whiteColor]];
     [subtitleLabel setText:element.subtitle];
+    [subtitleLabel setBackgroundColor:[UIColor clearColor]];
     subtitleLabel.layer.shadowOffset = CGSizeMake(3, 3);
     subtitleLabel.layer.shadowRadius = 3;
     subtitleLabel.layer.shadowOpacity = 0.4;
@@ -164,6 +166,7 @@
     [titleLabel setFont:[LookAndFeel defaultFontBoldWithSize:19]];
     [titleLabel setTextColor:[UIColor whiteColor]];
     [titleLabel setText:title];
+    [titleLabel setBackgroundColor:[UIColor clearColor]];
     [titleLabel setTextAlignment:NSTextAlignmentCenter];
     titleLabel.layer.shadowOffset = CGSizeMake(3, 3);
     titleLabel.layer.shadowRadius = 3;
@@ -177,6 +180,7 @@
     [subtitleLabel setFont:[LookAndFeel defaultFontLightWithSize:15]];
     [subtitleLabel setTextColor:[UIColor whiteColor]];
     [subtitleLabel setText:subtitle];
+    [subtitleLabel setBackgroundColor:[UIColor clearColor]];
     [subtitleLabel setTextAlignment:NSTextAlignmentCenter];
     subtitleLabel.layer.shadowOffset = CGSizeMake(3, 3);
     subtitleLabel.layer.shadowRadius = 3;

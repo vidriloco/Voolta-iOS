@@ -170,7 +170,9 @@
     
     UIColor *color = [UIColor grayColor];
     
-    NSDictionary *attributeDic = @{ NSFontAttributeName:[LookAndFeel defaultFontBookWithSize:15],
+    float fontSize = 15;
+    
+    NSDictionary *attributeDic = @{ NSFontAttributeName:[LookAndFeel defaultFontBookWithSize:fontSize],
                                     NSForegroundColorAttributeName:color,
                                     NSParagraphStyleAttributeName:paragraphStyle};
     

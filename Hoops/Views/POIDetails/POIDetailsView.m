@@ -34,9 +34,18 @@
         [self addSubview:_mainView];
         [self setUserInteractionEnabled:YES];
         
-        UIImageView *dismissImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"close-icon.png"]];
-        [dismissImage setFrame:CGRectMake([App viewBounds].size.width/2-dismissImage.frame.size.width/2, [App viewBounds].size.height-dismissImage.frame.size.height-20, dismissImage.frame.size.width, dismissImage.frame.size.height)];
-        [self addSubview:dismissImage];
+        
+        float bottomLine = [App viewBounds].size.height-70;
+        if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+            bottomLine -= 20;
+        }
+        
+        UIImage *closeButtonImg = [UIImage imageNamed:@"close-icon.png"];
+        
+        _closeButton = [[UIButton alloc] initWithFrame:CGRectMake([App viewBounds].size.width/2-closeButtonImg.size.width/2
+                                                                  , bottomLine, closeButtonImg.size.width, closeButtonImg.size.height)];
+        [_closeButton setBackgroundImage:[UIImage imageNamed:@"close-icon.png"] forState:UIControlStateNormal];
+        [self addSubview:_closeButton];
         
         [self loadDetailsForPoi:poi];
         
