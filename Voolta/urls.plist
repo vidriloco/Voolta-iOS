@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>inventory</key>
+	<dict>
+		<key>trashes</key>
+		<string>/api/inventory/trashes.json</string>
+		<key>images</key>
+		<string>/api/inventory/images.json</string>
+		<key>trips</key>
+		<string>/api/inventory/trips.json</string>
+	</dict>
+	<key>trips</key>
+	<dict>
+		<key>show</key>
+		<string>/api/trips/&lt;id&gt;.json</string>
+	</dict>
+	<key>backendURLDev</key>
+	<string>http://192.168.1.65:3000</string>
+	<key>backendURL</key>
+	<string>http://voolta.co</string>
+</dict>
+</plist>
