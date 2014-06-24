@@ -37,6 +37,8 @@
     [self.subpanel.layer setMasksToBounds:YES];
     [self.poisAlongRouteLabel setFont:[LookAndFeel defaultFontBoldWithSize:10]];
     
+    [self.poisAlongRouteLabel setText:[NSLocalizedString(@"trip_card_title_pois", nil) uppercaseString]];
+    
     [_tripNameLabel setTextColor:[UIColor whiteColor]];
     [_tripNameLabel setFont:[LookAndFeel defaultFontBoldWithSize:20]];
     [[_tripNameLabel layer] setShadowOffset:CGSizeMake(1, 2)];

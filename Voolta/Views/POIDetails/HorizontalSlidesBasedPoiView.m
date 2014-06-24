@@ -130,6 +130,7 @@
     [view addSubview:titleLabel];
     
     [subtitleLabel setMinimumScaleFactor:0.3];
+    [subtitleLabel setAdjustsFontSizeToFitWidth:YES];
     [subtitleLabel setFont:[LookAndFeel defaultFontBookWithSize:13]];
     [subtitleLabel setTextColor:[UIColor whiteColor]];
     [subtitleLabel setText:element.subtitle];

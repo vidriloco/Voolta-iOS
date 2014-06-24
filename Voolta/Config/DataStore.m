@@ -132,7 +132,7 @@ static DataStore *instance;
     
     if ([inventoredImg shouldUpdateBasedOnDateString:[dictionary objectForKey:@"updated_at"]] || newRecord) {
         NSString *filename = [inventoredImg.url componentsSeparatedByString:@"/"].lastObject;
-        
+
         [OperationHelpers fetchImage:inventoredImg.url withResponseBlock:^(UIImage *image) {
             [OperationHelpers storeImage:image withFilename:filename];
             
@@ -151,6 +151,7 @@ static DataStore *instance;
 - (void) graphicsImageFetched
 {
     _graphicsOnStore++;
+    //NSLog([NSString stringWithFormat:@"Fetched image %d from %d", _graphicsOnStore, _graphicsToBeFetched]);
     if (_graphicsOnStore == _graphicsToBeFetched) {
         [_delegate imageLoadingPhaseCompleted];
         [self pruneTrashedGraphics];

@@ -11,3 +11,6 @@
 "info-page-five" = "Where will you ride today?";
 
 "landing_credits_title" = "Photo by:";
+
+// Trip Card View
+"trip_card_title_pois" = "Some spots along the trip";

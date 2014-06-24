@@ -72,7 +72,7 @@
         [[miniPOIDetailsView categoryImageView] setImage:[UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:poi.categoryImage]]];
         
         [_mainView addSubview:miniPOIDetailsView];
-        [ContentBuilder setText:poi.details withNSAlignment:NSTextAlignmentJustified onLabel:[miniPOIDetailsView detailsLabel] andFontSize:13];
+        [ContentBuilder setText:poi.details withNSAlignment:NSTextAlignmentCenter onLabel:[miniPOIDetailsView detailsLabel] andFontSize:13];
 
     } else {
         

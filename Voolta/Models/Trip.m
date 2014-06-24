@@ -78,9 +78,9 @@ static NSArray *list;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
-    
+
     [trip setUpdatedAt:[dateFormatter dateFromString:[dictionary objectForKey:@"updated_at"]]];
-    
+
     [trip setRemoteId:[[dictionary objectForKey:@"id"] longValue]];
     [trip setResourceId:[dictionary objectForKey:@"trip_resource"]];
     [trip setTitle:[dictionary objectForKey:@"title"]];
@@ -100,30 +100,26 @@ static NSArray *list;
                                                          [[[dictionary objectForKey:@"start"] objectForKey:@"lon"] floatValue])];
     [trip setEndCoordinate:CLLocationCoordinate2DMake([[[dictionary objectForKey:@"final"] objectForKey:@"lat"] floatValue],
                                                          [[[dictionary objectForKey:@"final"] objectForKey:@"lon"] floatValue])];
-    NSLog(@"First fields set");
     // Paths loading
     NSMutableArray *pathsTmp = [NSMutableArray array];
     for (NSDictionary *path in [dictionary objectForKey:@"paths"]) {
         [pathsTmp addObject:[Path initWithDictionary:path]];
     }
     trip.paths = pathsTmp;
-    NSLog(@"Paths set");
     // Loading POIs
     [trip readPoisFromDictionary:dictionary];
-    NSLog(@"POIs loaded");
     // Brochure list loading
     NSMutableArray *brochureList = [NSMutableArray array];
     for (NSDictionary *brochureContent in [dictionary objectForKey:@"contents"]) {
         [brochureList addObject:[BrochureElement initWithDictionary:brochureContent andTripResourceId:[trip resourceId]]];
     }
     
-    [brochureList sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+    NSArray *sortedArray = [brochureList sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         return [obj1 order] > [obj2 order];
     }];
     
-    [trip setBrochureList:brochureList];
-    NSLog(@"Brochure list loaded");
-    NSLog(@"===== CLEARED =====");
+    [trip setBrochureList:sortedArray];
+
     return trip;
 }
 

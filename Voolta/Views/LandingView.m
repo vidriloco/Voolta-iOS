@@ -28,6 +28,7 @@
     [self.legendLabel setFont:[LookAndFeel defaultFontLightWithSize:16]];
     [self.nextIconButton setHidden:YES];
     [self.infoIconButton setHidden:NO];
+    [self.creditsButton setHidden:YES];
     [self setBackgroundColor:[UIColor clearColor]];
     [self.legendLabel setText:NSLocalizedString(@"app_tag_line", nil)];
     [self.logoImageView setAlpha:0];
@@ -52,6 +53,7 @@
 {
     [self.nextIconButton setHidden:NO];
     [self.nextIconButton setAlpha:0];
+    [self.creditsButton setHidden:NO];
     [UIView animateWithDuration:0.5 animations:^{
         [self.nextIconButton setAlpha:1];
         [self.activityIndicatorView setAlpha:0];

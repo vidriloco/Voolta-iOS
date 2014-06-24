@@ -45,11 +45,15 @@
         [_rightLegendImageView setHidden:NO];
         [_leftMainTitleLabel setHidden:YES];
         [_leftLegendImageView setHidden:YES];
+        [_descriptionLabel setTextAlignment:NSTextAlignmentRight];
+        [_subtitleLabel setTextAlignment:NSTextAlignmentRight];
     } else if (side == UILeftSide) {
         [_rightMainTitleLabel setHidden:YES];
         [_rightLegendImageView setHidden:YES];
         [_leftMainTitleLabel setHidden:NO];
         [_leftLegendImageView setHidden:NO];
+        [_descriptionLabel setTextAlignment:NSTextAlignmentLeft];
+        [_subtitleLabel setTextAlignment:NSTextAlignmentLeft];
     }
 }
 

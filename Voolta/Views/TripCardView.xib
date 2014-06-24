@@ -31,7 +31,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="ALGUNOS LUGARES EN ESTA RUTA:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bg-4T-JoS">
-                            <rect key="frame" x="20" y="306" width="177" height="27"/>
+                            <rect key="frame" x="20" y="307" width="177" height="27"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -107,7 +107,7 @@
                         <constraint firstItem="OyJ-xu-xc3" firstAttribute="width" secondItem="a2L-I6-r53" secondAttribute="height" multiplier="263:394" id="Ce2-Qu-9eS"/>
                         <constraint firstAttribute="centerX" secondItem="jmH-0m-9nS" secondAttribute="centerX" constant="1" id="KZ2-FQ-BHS"/>
                         <constraint firstAttribute="trailing" secondItem="OyJ-xu-xc3" secondAttribute="trailing" id="M58-dV-b6e"/>
-                        <constraint firstItem="6bg-4T-JoS" firstAttribute="top" secondItem="wha-j9-d7x" secondAttribute="bottom" constant="-3" id="Mqw-M1-Vzo"/>
+                        <constraint firstItem="6bg-4T-JoS" firstAttribute="top" secondItem="wha-j9-d7x" secondAttribute="bottom" constant="-2" id="Mqw-M1-Vzo"/>
                         <constraint firstAttribute="trailing" secondItem="nix-5u-1Oc" secondAttribute="trailing" constant="13" id="Wme-mN-gju"/>
                         <constraint firstItem="OyJ-xu-xc3" firstAttribute="centerX" secondItem="nix-5u-1Oc" secondAttribute="centerX" constant="0.5" id="cdr-6L-wha"/>
                         <constraint firstItem="OyJ-xu-xc3" firstAttribute="top" secondItem="a2L-I6-r53" secondAttribute="top" id="dy8-Mi-Mue"/>

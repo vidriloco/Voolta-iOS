@@ -138,7 +138,12 @@
 - (void) reloadTripsOnCarousel
 {
     NSMutableArray *array = [NSMutableArray arrayWithObject:_landingScreen];
-    [array addObjectsFromArray:[[DataStore current].trips sortedArrayUsingSelector:@selector(updatedAt)]];
+    
+    NSArray *sortedArray = [[DataStore current].trips sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [[obj1 updatedAt] timeIntervalSince1970] < [[obj2 updatedAt] timeIntervalSince1970];
+    }];
+    
+    [array addObjectsFromArray:sortedArray];
     
     _slides = array;
     
@@ -168,7 +173,9 @@
 - (void) finishedFetchingTrip
 {
     NSLog(@"Finished with trip");
-    [self reloadTripsOnCarousel];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self reloadTripsOnCarousel];
+    });
 }
 
 - (void) startedFetchingTrip
@@ -194,7 +201,9 @@
 - (void) failedFetchingTrip
 {
     NSLog(@"FAILED fetching trip");
-    [self reloadTripsOnCarousel];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self reloadTripsOnCarousel];
+    });
 }
 
 #pragma mark -

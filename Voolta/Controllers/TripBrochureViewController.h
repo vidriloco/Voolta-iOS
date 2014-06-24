@@ -23,7 +23,7 @@
 #define kTopYOffset                 90
 #define kBottomMargin               30
 
-#define kTableRowHeight             120
+#define kTableRowHeight             155
 #define kTableSectionHeight         51
 
 #define kHeaderIdentifier           @"POIHeader"

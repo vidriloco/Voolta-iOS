@@ -88,13 +88,13 @@
             <connections>
                 <outlet property="categoryImageView" destination="qht-Gd-Qbe" id="uB4-jh-5Hh"/>
                 <outlet property="containerView" destination="bGh-xF-1DN" id="39M-oR-tbr"/>
-                <outlet property="detailsLabel" destination="rby-9F-vIb" id="hBb-ZB-kmC"/>
+                <outlet property="detailsLabel" destination="rby-9F-vIb" id="cOu-Eo-dne"/>
                 <outlet property="kindImageView" destination="GfI-Hv-sEf" id="8R0-Ia-c1S"/>
                 <outlet property="titleLabel" destination="mrZ-o8-OKC" id="22J-yP-k52"/>
             </connections>
         </view>
     </objects>
     <resources>
-        <image name="small-pleck.png" width="500" height="136"/>
+        <image name="small-pleck.png" width="438" height="136"/>
     </resources>
 </document>

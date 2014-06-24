@@ -1,13 +1,16 @@
-"app_tag_line" = "La mejor guía para pedalear en la ciudad.";
+"app_tag_line" = "Los mejores recorridos en la ciudad están aquí.";
 
 "route_start" = "Inicio";
 "route_end" = "Fin";
 
 // Intro
-"info-page-one" = "La guía con las mejores rutas para conocer la ciudad en bicicleta.";
-"info-page-two" = "Siempre hay una nueva ruta, selecciona la que más te guste.";
-"info-page-three" = "En cada ruta incluímos una breve reseña de lo que verás al recorrerla";
-"info-page-four" = "Ubica los puntos de interés y recomendaciones a lo largo de la ruta.";
+"info-page-one" = "La guía con los mejores recorridos para conocer la ciudad en bicicleta.";
+"info-page-two" = "Siempre hay un nuevo recorrido, selecciona el que más te guste.";
+"info-page-three" = "En cada recorrido incluímos una breve reseña de lo que verás en él";
+"info-page-four" = "Ubica los puntos de interés y recomendaciones a lo largo del recorrido.";
 "info-page-five" = "¿Hacia dónde rodarás hoy?";
 
 "landing_credits_title" = "Fotografía por:";
+
+// Trip Card View
+"trip_card_title_pois" = "Algunos lugares en el recorrido";

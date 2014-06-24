@@ -17,7 +17,7 @@
 		<string>/api/trips/&lt;id&gt;.json</string>
 	</dict>
 	<key>backendURLDev</key>
-	<string>http://192.168.1.65:3000</string>
+	<string>http://192.168.1.67:3000</string>
 	<key>backendURL</key>
 	<string>http://voolta.co</string>
 </dict>

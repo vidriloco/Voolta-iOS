@@ -43,10 +43,15 @@
     
     UIImage *imageMarker = [UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:[kind objectForKey:@"filename"]]];
     
-    poi.icon = [OperationHelpers imageWithImage:imageMarker scaledToSize:CGSizeMake(40, 40)];
+    if ([poi isMiniUIBased]) {
+        poi.icon = [OperationHelpers imageWithImage:imageMarker scaledToSize:CGSizeMake(33, 33)];
+    } else {
+        poi.icon = [OperationHelpers imageWithImage:imageMarker scaledToSize:CGSizeMake(40, 40)];
+    }
     
     if (![poi isMiniUIBased]) {
         NSString *url = [[dictionary objectForKey:@"image"] objectForKey:@"url"];
+        
         poi.mainPic = [NSString stringWithFormat:kPoiPrefix, tripResourceId, [url componentsSeparatedByString:@"/"].lastObject];
         [OperationHelpers fetchImage:url withResponseBlock:^(UIImage *image) {
             [OperationHelpers storeImage:image withFilename:poi.mainPic];
@@ -62,7 +67,12 @@
                 SlideElement *slideElement = [[SlideElement alloc] initWithDictionary:slide withTripResourceId:tripResourceId];
                 [slideList addObject:slideElement];
             }
-            [poi setSlideElements:slideList];
+            
+            NSArray *sortedArray = [slideList sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+                return [obj1 order] > [obj2 order];
+            }];
+            
+            [poi setSlideElements:sortedArray];
             
         }
     } else if([poi isNormalUIBased]) {
