@@ -11,6 +11,17 @@
 
 @implementation OperationHelpers
 
+static NSOperationQueue *operationQueue;
+
++ (NSOperationQueue*) operationQueue
+{
+    if (operationQueue == NULL) {
+        operationQueue = [[NSOperationQueue alloc] init];
+        [operationQueue setName:@"Default operation queue"];
+    }
+    return operationQueue;
+}
+
 + (void) fetchImage:(NSString *)imageURL withResponseBlock:(void (^)(UIImage *))block
 {
     AFHTTPRequestOperationManager *imageFetcherManager = [AFHTTPRequestOperationManager manager];
@@ -37,19 +48,24 @@
     [operation start];*/
 }
 
-+ (void) storeImage:(UIImage *)image withFilename:(NSString *)filename
-{
-    NSString *filePath = [self filePathForImage:filename];
-    
-    //CGDataProviderRef provider = CGImageGetDataProvider(image.CGImage);
-    //NSData* data = (id)CFBridgingRelease(CGDataProviderCopyData(provider));
-    //[data writeToFile:filePath atomically:YES];
-    
-    if ([[filename componentsSeparatedByString:@"."].lastObject isEqualToString:@"png"]) {
-        [UIImagePNGRepresentation(image) writeToFile:filePath atomically:YES];
-    } else {
-        [UIImageJPEGRepresentation(image, 1.0) writeToFile:filePath atomically:YES];
-    }
++ (void) storeImage:(UIImage *)image withFilename:(NSString *)filename withResponseBlock:(void (^)(void))block {
+    [[OperationHelpers operationQueue] addOperationWithBlock:^{
+        NSString *filePath = [self filePathForImage:filename];
+        
+        //CGDataProviderRef provider = CGImageGetDataProvider(image.CGImage);
+        //NSData* data = (id)CFBridgingRelease(CGDataProviderCopyData(provider));
+        //[data writeToFile:filePath atomically:YES];
+        
+        if ([[filename componentsSeparatedByString:@"."].lastObject isEqualToString:@"png"]) {
+            [UIImagePNGRepresentation(image) writeToFile:filePath atomically:YES];
+        } else {
+            [UIImageJPEGRepresentation(image, 1.0) writeToFile:filePath atomically:YES];
+        }
+        
+        if (block != NULL) {
+            block();
+        }
+    }];
 }
 
 + (NSString*) filePathForImage:(NSString *)imageNamed
@@ -66,24 +82,25 @@
 
 + (void) removeFilesForTripWithResourceId:(NSString *)resourceId
 {
-    NSString *fileDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-    NSDirectoryEnumerator* en = [fileManager enumeratorAtPath:fileDir];
-    NSString *pattern = [@"^" stringByAppendingString:[NSString stringWithFormat:kTripPrefix, resourceId, @""]];
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:nil];
-    
-    NSString* file;
-    while (file = [en nextObject]) {
-        NSRange range = NSMakeRange(0, [file length]);
-        if ([[regex matchesInString:file options:0 range:range] count] > 0) {
-            [fileManager removeItemAtPath:[fileDir stringByAppendingPathComponent:file] error:nil];
+    [[OperationHelpers operationQueue] addOperationWithBlock:^{
+        NSString *fileDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        
+        NSDirectoryEnumerator* en = [fileManager enumeratorAtPath:fileDir];
+        NSString *pattern = [@"^" stringByAppendingString:[NSString stringWithFormat:kTripPrefix, resourceId, @""]];
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:nil];
+        
+        NSString* file;
+        while (file = [en nextObject]) {
+            NSRange range = NSMakeRange(0, [file length]);
+            if ([[regex matchesInString:file options:0 range:range] count] > 0) {
+                [fileManager removeItemAtPath:[fileDir stringByAppendingPathComponent:file] error:nil];
+            }
         }
-    }
-    
+    }];
 }
 
-+ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
++ (UIImage *) imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
     double ratio;
     double delta;
     CGPoint offset;

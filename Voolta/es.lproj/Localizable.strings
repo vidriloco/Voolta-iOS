@@ -3,6 +3,11 @@
 "route_start" = "Inicio";
 "route_end" = "Fin";
 
+"reload_title" = "Restaurar";
+"reload_message" = "Todos los recorridos, así como también los datos de la aplicación serán descargados de nuevo.";
+"reload_accept" = "Continuar";
+"reload_reject" = "Cancelar";
+
 // Intro
 "info-page-one" = "La guía con los mejores recorridos para conocer la ciudad en bicicleta.";
 "info-page-two" = "Siempre hay un nuevo recorrido, selecciona el que más te guste.";

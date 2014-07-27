@@ -26,7 +26,7 @@
             _imageFilename = [NSString stringWithFormat:kSlideElementPrefix, resourceId, [url componentsSeparatedByString:@"/"].lastObject];
             
             [OperationHelpers fetchImage:url withResponseBlock:^(UIImage *image) {
-                [OperationHelpers storeImage:image withFilename:_imageFilename];
+                [OperationHelpers storeImage:image withFilename:_imageFilename withResponseBlock:NULL];
             }];
             
             _url = [dictionary objectForKey:@"url"];

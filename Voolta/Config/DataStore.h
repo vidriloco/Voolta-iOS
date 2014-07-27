@@ -20,11 +20,14 @@
 @property (nonatomic, strong) NSMutableArray *trips;
 @property (nonatomic, assign) id<DataStoreDelegate> delegate;
 
+
 + (id) initializeStoreWithDelegate:(id<DataStoreDelegate>) delegate;
 + (DataStore*) current;
+
+- (id) initWithDelegate:(id<DataStoreDelegate>) delegate;
 - (void) updateInventory;
 - (void) updateGeneralImages;
 - (void) updateTripsInventory;
-
+- (void) resetDB;
 
 @end

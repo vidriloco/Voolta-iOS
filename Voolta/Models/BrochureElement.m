@@ -30,7 +30,7 @@
 
         [element setPhotoFilename:filename];
         [OperationHelpers fetchImage:[dictionary objectForKey:@"url"] withResponseBlock:^(UIImage *image) {
-            [OperationHelpers storeImage:image withFilename:[element photoFilename]];
+            [OperationHelpers storeImage:image withFilename:[element photoFilename] withResponseBlock:NULL];
         }];
         
         [element setPhotoCaption:[dictionary objectForKey:@"caption"]];

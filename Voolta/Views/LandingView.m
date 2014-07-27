@@ -46,7 +46,6 @@
     [self.personCreditTitleLabel setFont:[LookAndFeel defaultFontBoldWithSize:8]];
     [self.personCreditTitleLabel setTextColor:[UIColor whiteColor]];
     [self.personCreditTitleLabel setText:[NSLocalizedString(@"landing_credits_title", nil) uppercaseString]];
-
 }
 
 - (void) finishedLoading
@@ -60,6 +59,20 @@
 
     } completion:^(BOOL finished) {
         [self.activityIndicatorView setHidden:YES];
+    }];
+}
+
+- (void) restartedLoading
+{
+    [self.nextIconButton setHidden:YES];
+    [self.nextIconButton setAlpha:1];
+    [self.creditsButton setHidden:YES];
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.nextIconButton setAlpha:0];
+        [self.activityIndicatorView setAlpha:1];
+        
+    } completion:^(BOOL finished) {
+        [self.activityIndicatorView setHidden:NO];
     }];
 }
 

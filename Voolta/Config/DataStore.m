@@ -38,8 +38,7 @@ static DataStore *instance;
 + (id) initializeStoreWithDelegate:(id<DataStoreDelegate>)delegate
 {
     if (instance == nil) {
-        instance = [[DataStore alloc] init];
-        [instance setDelegate:delegate];
+        instance = [[DataStore alloc] initWithDelegate:delegate];
     }
     return instance;
 }
@@ -49,7 +48,7 @@ static DataStore *instance;
     return instance;
 }
 
-- (id) init
+- (id) initWithDelegate:(id<DataStoreDelegate>)delegate
 {
     self = [super init];
     if (self) {
@@ -58,9 +57,10 @@ static DataStore *instance;
         self.trashesInventoryURL = [App urlForResource:@"inventory" withSubresource:@"trashes"];
         self.tripURL = [App urlForResource:@"trips" withSubresource:@"show"];
         self.parser = [[SBJsonParser alloc] init];
+        self.delegate = delegate;
         
         if ([App isNetworkReachable]) {
-            [self updateInventory];
+                [self updateInventory];
         } else {
             [self loadLocallyStoredTrips];
         }
@@ -99,7 +99,6 @@ static DataStore *instance;
     AFHTTPRequestSerializer *requestSerializer = [AFHTTPRequestSerializer serializer];
     [requestSerializer setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
     [manager setRequestSerializer:requestSerializer];
-    
     [manager GET:_imagesInventoryURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *fetchedImages = [_parser objectWithString:[operation responseString] error:nil];
         _graphicsToBeFetched = (int)[fetchedImages count]-1;
@@ -113,6 +112,7 @@ static DataStore *instance;
 
 - (void) checkUpdateStatusForImage:(NSDictionary *)dictionary
 {
+
     NSArray *fetched = [[[ImageOnInventory lazyFetcher] whereField:@"remoteId" equalToValue:[dictionary objectForKey:@"id"]] fetchRecords];
     ImageOnInventory *inventoredImg;
     BOOL newRecord = NO;
@@ -132,9 +132,8 @@ static DataStore *instance;
     
     if ([inventoredImg shouldUpdateBasedOnDateString:[dictionary objectForKey:@"updated_at"]] || newRecord) {
         NSString *filename = [inventoredImg.url componentsSeparatedByString:@"/"].lastObject;
-
         [OperationHelpers fetchImage:inventoredImg.url withResponseBlock:^(UIImage *image) {
-            [OperationHelpers storeImage:image withFilename:filename];
+            [OperationHelpers storeImage:image withFilename:filename withResponseBlock:NULL];
             
             if (!newRecord) {
                 [inventoredImg updateFieldsFromDictionary:dictionary];
@@ -151,13 +150,14 @@ static DataStore *instance;
 - (void) graphicsImageFetched
 {
     _graphicsOnStore++;
-    //NSLog([NSString stringWithFormat:@"Fetched image %d from %d", _graphicsOnStore, _graphicsToBeFetched]);
     if (_graphicsOnStore == _graphicsToBeFetched) {
         [_delegate imageLoadingPhaseCompleted];
         [self pruneTrashedGraphics];
         [_delegate prunePhaseCompleted];
         [self updateTripsInventory];
+        _graphicsOnStore = 0;
     }
+    
 }
 
 - (void) updateTripsInventory
@@ -166,7 +166,6 @@ static DataStore *instance;
     AFHTTPRequestSerializer *requestSerializer = [AFHTTPRequestSerializer serializer];
     [requestSerializer setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
     [manager setRequestSerializer:requestSerializer];
-    
     [manager GET:_tripsInventoryURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *fetchedTrips = [_parser objectWithString:[operation responseString] error:nil];
         for (NSDictionary *tripDictionary in fetchedTrips) {
@@ -219,7 +218,6 @@ static DataStore *instance;
             AFHTTPRequestSerializer *requestSerializer = [AFHTTPRequestSerializer serializer];
             [requestSerializer setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
             [manager setRequestSerializer:requestSerializer];
-            
             [manager GET:finalTripURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 NSString *data = [operation responseString];
                 [tripOnInventory setTripData:data];
@@ -227,9 +225,12 @@ static DataStore *instance;
                 [tripOnInventory update];
                 [self processTripPayload:data];
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                //NSLog([NSString stringWithFormat:@"%d", [operation.response statusCode]]);
                 if ([operation.response statusCode] == 404) {
                     [OperationHelpers removeFilesForTripWithResourceId:[tripOnInventory resourceId]];
                     [tripOnInventory dropRecord];
+                } else {
+                    // SHOW RELOAD BUTTON AND MESSAGE
                 }
                 
                 [_delegate failedFetchingTrip];
@@ -252,10 +253,13 @@ static DataStore *instance;
     
     NSDictionary *imageObject = [dictionary objectForKey:@"main_image"];
     [OperationHelpers fetchImage:[imageObject objectForKey:@"url"] withResponseBlock:^(UIImage *image) {
-        [OperationHelpers storeImage:image withFilename:[trip mainPic]];
-        
-        [_trips addObject:trip];
-        [_delegate finishedFetchingTrip];
+        [OperationHelpers storeImage:image withFilename:[trip mainPic] withResponseBlock:^{
+            [_trips addObject:trip];
+            
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [_delegate finishedFetchingTrip];
+            }];
+        }];
     }];
 }
 
@@ -280,6 +284,20 @@ static DataStore *instance;
         [_delegate startedLoadingTrip];
         [self reconstructTripFromData:[tripOnInventory tripData]];
     }
+}
+
+- (void) resetDB
+{
+    for (TripOnInventory *inventoredTrip in [TripOnInventory allRecords]) {
+        [inventoredTrip dropRecord];
+    }
+    
+    for (ImageOnInventory *inventoredImage in [ImageOnInventory allRecords]) {
+        [inventoredImage dropRecord];
+    }
+    
+    [[DataStore current].trips removeAllObjects];
+    [self updateInventory];
 }
 
 @end

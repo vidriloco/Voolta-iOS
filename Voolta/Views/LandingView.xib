@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -37,6 +37,13 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHD-UZ-RXA">
+                    <rect key="frame" x="0.0" y="0.0" width="29" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="reload_icon.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWz-Oa-vCg">
                     <rect key="frame" x="107" y="329" width="55" height="55"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -67,6 +74,7 @@
                 <outlet property="personCreditTitleLabel" destination="rJK-Yc-Hwn" id="wp3-Kc-EHU"/>
                 <outlet property="personNameLabel" destination="5xk-OG-33X" id="J6h-Pc-NIp"/>
                 <outlet property="personPicView" destination="htb-FG-Ad7" id="xKS-uh-mUg"/>
+                <outlet property="reloadIconButton" destination="qHD-UZ-RXA" id="rvV-8o-30R"/>
             </connections>
         </view>
         <view contentMode="scaleToFill" id="yVv-i1-I31">
@@ -109,5 +117,6 @@
         <image name="info-icon.png" width="100" height="100"/>
         <image name="main-logo.png" width="338" height="150"/>
         <image name="next_icon.png" width="100" height="100"/>
+        <image name="reload_icon.png" width="100" height="100"/>
     </resources>
 </document>

@@ -36,7 +36,8 @@
     if (self) {
         _landingScreen = [[LandingScreen alloc] init];
         _landingView = [[[NSBundle mainBundle] loadNibNamed:@"LandingView" owner:self options:nil] objectAtIndex:0];
-
+        [_landingView.reloadIconButton addTarget:self action:@selector(presentReloadDialog) forControlEvents:UIControlEventTouchUpInside];
+        
         _slides = [NSArray arrayWithObject:_landingScreen];
         
         UIColor *backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.6];
@@ -149,6 +150,7 @@
     
     NSArray *inventoryList = [[[TripOnInventory lazyFetcher] whereField:@"lang" equalToValue:[App currentLang]] fetchRecords];
     _finishedLoading = [inventoryList count] == [_slides count]-1;
+
     [self.carousel reloadData];
 }
 
@@ -173,9 +175,7 @@
 - (void) finishedFetchingTrip
 {
     NSLog(@"Finished with trip");
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self reloadTripsOnCarousel];
-    });
+    [self reloadTripsOnCarousel];
 }
 
 - (void) startedFetchingTrip
@@ -201,9 +201,7 @@
 - (void) failedFetchingTrip
 {
     NSLog(@"FAILED fetching trip");
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self reloadTripsOnCarousel];
-    });
+    [self reloadTripsOnCarousel];
 }
 
 #pragma mark -
@@ -362,6 +360,27 @@
     }
     return value;
 }
+
+- (void) presentReloadDialog
+{
+    UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"reload_title", nil)
+                                                     message:NSLocalizedString(@"reload_message", nil)
+                                                    delegate:self
+                                           cancelButtonTitle:NSLocalizedString(@"reload_reject", nil)
+                                           otherButtonTitles:NSLocalizedString(@"reload_accept", nil), nil];
+    [dialog show];
+}
+
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    // Continue button selected
+    if(buttonIndex == 1) {
+        [_landingView restartedLoading];
+        [[DataStore current] resetDB];
+    }
+    
+}
+
 
 
 @end

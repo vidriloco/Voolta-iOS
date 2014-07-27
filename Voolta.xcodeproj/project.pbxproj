@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A13624119733C7B007E73CD /* reload_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A13623F19733C7B007E73CD /* reload_icon.png */; };
+		3A13624219733C7B007E73CD /* reload_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A13624019733C7B007E73CD /* reload_icon@2x.png */; };
 		3A28A6AF1940C2F000DBEDF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A28A5AE1940C2F000DBEDF7 /* AppDelegate.m */; };
 		3A28A6B01940C2F000DBEDF7 /* html_view.html in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5B11940C2F000DBEDF7 /* html_view.html */; };
 		3A28A6B11940C2F000DBEDF7 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5B31940C2F000DBEDF7 /* OpenSans-Bold.ttf */; };
@@ -208,6 +210,8 @@
 
 /* Begin PBXFileReference section */
 		321DA49714D2429EBFF704D4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A13623F19733C7B007E73CD /* reload_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload_icon.png; sourceTree = "<group>"; };
+		3A13624019733C7B007E73CD /* reload_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload_icon@2x.png"; sourceTree = "<group>"; };
 		3A28A5AD1940C2F000DBEDF7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3A28A5AE1940C2F000DBEDF7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3A28A5B11940C2F000DBEDF7 /* html_view.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = html_view.html; sourceTree = "<group>"; };
@@ -636,6 +640,8 @@
 		3A28A5E11940C2F000DBEDF7 /* fragments */ = {
 			isa = PBXGroup;
 			children = (
+				3A13623F19733C7B007E73CD /* reload_icon.png */,
+				3A13624019733C7B007E73CD /* reload_icon@2x.png */,
 				3A57E5881942113F00AD9F25 /* small-pleck.png */,
 				3A57E5891942113F00AD9F25 /* small-pleck@2x.png */,
 				3A28A5E21940C2F000DBEDF7 /* arrow-up.png */,
@@ -1114,6 +1120,7 @@
 				3A28A6B51940C2F000DBEDF7 /* OpenSans-Italic.ttf in Resources */,
 				3A28A7191940C2F000DBEDF7 /* Images.xcassets in Resources */,
 				3A28A6BD1940C2F000DBEDF7 /* info-page-four.png in Resources */,
+				3A13624119733C7B007E73CD /* reload_icon.png in Resources */,
 				3A28A73E1940C2F000DBEDF7 /* MainCardButton.xib in Resources */,
 				3A28A6FC1940C2F000DBEDF7 /* pin-icon@2x.png in Resources */,
 				3A28A6DE1940C2F000DBEDF7 /* close-icon.png in Resources */,
@@ -1143,6 +1150,7 @@
 				3A28A7061940C2F000DBEDF7 /* nuevo-ribbon@2x.png in Resources */,
 				3A28A6F61940C2F000DBEDF7 /* my-location@2x.png in Resources */,
 				3A28A6F01940C2F000DBEDF7 /* logo-map@2x.png in Resources */,
+				3A13624219733C7B007E73CD /* reload_icon@2x.png in Resources */,
 				3A28A6ED1940C2F000DBEDF7 /* info-icon.png in Resources */,
 				3A28A6F21940C2F000DBEDF7 /* main-logo@2x.png in Resources */,
 				3A28A7411940C2F000DBEDF7 /* MiniPOIDetailsView.xib in Resources */,

@@ -12,7 +12,6 @@
 #import "AppDelegate.h"
 
 #define MIXPANEL_TOKEN @"9fc75b960ae568369b6e1d04f1cb5ad3"
-
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -29,9 +28,8 @@
     
     [[Mixpanel sharedInstance] identify:[App currentUID]];
     [GMSServices provideAPIKey:@"AIzaSyDMKDw8oVSqOMBMat2P4O2_g1OqZzYbl9Q"];
-    [App initializeWithEnv:kProd];
+    [App initializeWithEnv:kDev];
     [ActiveRecord registerDatabaseName:@"hirooDB" useDirectory:ARStorageDocuments];
-
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     //TripsListViewController *simple = [[TripsListViewController alloc] initWithNibName:nil bundle:nil];

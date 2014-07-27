@@ -12,8 +12,9 @@
 @class Trip;
 @interface OperationHelpers : NSObject
 
++ (NSOperationQueue*) operationQueue;
 + (void) fetchImage:(NSString*)imageURL withResponseBlock:(void(^)(UIImage* image))block;
-+ (void) storeImage:(UIImage*)image withFilename:(NSString*)filename;
++ (void) storeImage:(UIImage*)image withFilename:(NSString*)filename withResponseBlock:(void (^)(void))block;
 + (NSString*) filePathForImage:(NSString*)imageNamed;
 + (void) removeImageWithFilename:(NSString*)filename;
 + (void) removeFilesForTripWithResourceId:(NSString*)resourceId;

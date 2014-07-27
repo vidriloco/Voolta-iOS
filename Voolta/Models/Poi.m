@@ -44,9 +44,19 @@
     UIImage *imageMarker = [UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:[kind objectForKey:@"filename"]]];
     
     if ([poi isMiniUIBased]) {
-        poi.icon = [OperationHelpers imageWithImage:imageMarker scaledToSize:CGSizeMake(33, 33)];
+        [[OperationHelpers operationQueue] addOperationWithBlock:^{
+            UIImage *icon = [OperationHelpers imageWithImage:imageMarker scaledToSize:CGSizeMake(33, 33)];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                poi.icon = icon;
+            }];
+        }];
     } else {
-        poi.icon = [OperationHelpers imageWithImage:imageMarker scaledToSize:CGSizeMake(40, 40)];
+        [[OperationHelpers operationQueue] addOperationWithBlock:^{
+            UIImage *icon = [OperationHelpers imageWithImage:imageMarker scaledToSize:CGSizeMake(40, 40)];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                poi.icon = icon;
+            }];
+        }];
     }
     
     if (![poi isMiniUIBased]) {
@@ -54,7 +64,7 @@
         
         poi.mainPic = [NSString stringWithFormat:kPoiPrefix, tripResourceId, [url componentsSeparatedByString:@"/"].lastObject];
         [OperationHelpers fetchImage:url withResponseBlock:^(UIImage *image) {
-            [OperationHelpers storeImage:image withFilename:poi.mainPic];
+            [OperationHelpers storeImage:image withFilename:poi.mainPic withResponseBlock:NULL];
         }];
     }
     
@@ -76,6 +86,7 @@
             
         }
     } else if([poi isNormalUIBased]) {
+        
         if([dictionary objectForKey:@"contents"]) {
             NSMutableArray *brochureElements = [NSMutableArray array];
             
