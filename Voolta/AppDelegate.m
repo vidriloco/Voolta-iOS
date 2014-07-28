@@ -32,15 +32,12 @@
     [ActiveRecord registerDatabaseName:@"hirooDB" useDirectory:ARStorageDocuments];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    //TripsListViewController *simple = [[TripsListViewController alloc] initWithNibName:nil bundle:nil];
-    TripShowcaseViewController *showcase = [[TripShowcaseViewController alloc] initWithNibName:nil bundle:nil];
     
-    [DataStore initializeStoreWithDelegate:showcase];
-    [self.window setRootViewController:showcase];
-    
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window setRootViewController:[BaseViewController instance]];
     [self.window makeKeyAndVisible];
+    
+    [BaseViewController reloadAndPresentViewController];
+    
     return YES;
 }
 

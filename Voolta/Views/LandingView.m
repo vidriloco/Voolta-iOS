@@ -52,7 +52,7 @@
 {
     [self.nextIconButton setHidden:NO];
     [self.nextIconButton setAlpha:0];
-    [self.creditsButton setHidden:NO];
+    [self.creditsButton setHidden:YES];
     [UIView animateWithDuration:0.5 animations:^{
         [self.nextIconButton setAlpha:1];
         [self.activityIndicatorView setAlpha:0];

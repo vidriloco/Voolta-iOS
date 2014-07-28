@@ -68,6 +68,37 @@ static NSOperationQueue *operationQueue;
     }];
 }
 
++ (void) removeImgFiles
+{
+    NSError *error;
+    
+    // get the documents folder of your sandbox
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    NSArray *dirFiles;
+    if ((dirFiles = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsDirectory error:&error]) == nil) {
+        // handle the error
+    };
+    
+    // find the files with the extensions you want
+    NSArray *jpgFiles = [dirFiles filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self ENDSWITH '.jpg'"]];
+    NSArray *pngFiles = [dirFiles filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self ENDSWITH '.png'"]];
+    
+    
+    // loop on arrays and delete every file corresponds to specific filename
+    for (NSString *fileName in jpgFiles) {
+        if (![[NSFileManager defaultManager] removeItemAtPath:[documentsDirectory stringByAppendingPathComponent:fileName] error:&error]) {
+            // handle the error
+        }
+    }
+    for (NSString *fileName in pngFiles) {
+        if (![[NSFileManager defaultManager] removeItemAtPath:[documentsDirectory stringByAppendingPathComponent:fileName] error:&error]) {
+            // handle the error
+        }
+    }
+}
+
 + (NSString*) filePathForImage:(NSString *)imageNamed
 {
     NSString *fileDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];

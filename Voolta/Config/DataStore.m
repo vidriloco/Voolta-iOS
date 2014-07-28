@@ -58,14 +58,18 @@ static DataStore *instance;
         self.tripURL = [App urlForResource:@"trips" withSubresource:@"show"];
         self.parser = [[SBJsonParser alloc] init];
         self.delegate = delegate;
-        
-        if ([App isNetworkReachable]) {
-                [self updateInventory];
-        } else {
-            [self loadLocallyStoredTrips];
-        }
+        [self boot];
     }
     return self;
+}
+
+- (void) boot
+{
+    if ([App isNetworkReachable]) {
+        [self updateInventory];
+    } else {
+        [self loadLocallyStoredTrips];
+    }
 }
 
 - (void) updateInventory
@@ -297,7 +301,9 @@ static DataStore *instance;
     }
     
     [[DataStore current].trips removeAllObjects];
-    [self updateInventory];
+    [OperationHelpers removeImgFiles];
+    
+    [[self delegate] reloadMainView];
 }
 
 @end

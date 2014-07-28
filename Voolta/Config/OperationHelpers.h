@@ -20,5 +20,6 @@
 + (void) removeFilesForTripWithResourceId:(NSString*)resourceId;
 
 + (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
++ (void) removeImgFiles;
 
 @end

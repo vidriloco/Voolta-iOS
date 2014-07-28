@@ -195,6 +195,7 @@
 		3A9D7F5918E027DA00174C19 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9D7F5818E027DA00174C19 /* SystemConfiguration.framework */; };
 		3AD389801940C86C000D70D8 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD3897F1940C86C000D70D8 /* GoogleMaps.framework */; };
 		3AD389821940C87C000D70D8 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3AD389811940C87C000D70D8 /* GoogleMaps.bundle */; };
+		3AE20F7C1986C95400ADAA42 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE20F7B1986C95400ADAA42 /* BaseViewController.m */; };
 		DA557F768A4249CEBC5D18BB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 321DA49714D2429EBFF704D4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -459,6 +460,8 @@
 		3AD3897F1940C86C000D70D8 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Voolta/Libraries/GoogleMaps.framework; sourceTree = "<group>"; };
 		3AD389811940C87C000D70D8 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Voolta/Libraries/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		3ADE420D193BAC28002CFC7B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		3AE20F7A1986C95400ADAA42 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		3AE20F7B1986C95400ADAA42 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		A7481FE2817940A3BD5313DE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -740,6 +743,8 @@
 				3A28A6271940C2F000DBEDF7 /* TripViewController.m */,
 				3A28A6281940C2F000DBEDF7 /* UIViewController+CardSized.h */,
 				3A28A6291940C2F000DBEDF7 /* UIViewController+CardSized.m */,
+				3AE20F7A1986C95400ADAA42 /* BaseViewController.h */,
+				3AE20F7B1986C95400ADAA42 /* BaseViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1296,6 +1301,7 @@
 				3A28A74B1940C2F000DBEDF7 /* TripCardCentralView.m in Sources */,
 				3A28A70F1940C2F000DBEDF7 /* OperationHelpers.m in Sources */,
 				3A28A73F1940C2F000DBEDF7 /* HorizontalSlidesBasedPoiView.m in Sources */,
+				3AE20F7C1986C95400ADAA42 /* BaseViewController.m in Sources */,
 				3A28A70B1940C2F000DBEDF7 /* Analytics.m in Sources */,
 				3A28A7291940C2F000DBEDF7 /* SBJsonWriter.m in Sources */,
 				3A28A72C1940C2F000DBEDF7 /* POIDetailsManager.m in Sources */,

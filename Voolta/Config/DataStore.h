@@ -14,6 +14,7 @@
 #import "DataStoreDelegate.h"
 #import "OperationHelpers.h"
 #import "ImageOnInventory.h"
+#import "BaseViewController.h"
 
 @interface DataStore : NSObject
 
@@ -25,6 +26,7 @@
 + (DataStore*) current;
 
 - (id) initWithDelegate:(id<DataStoreDelegate>) delegate;
+- (void) boot;
 - (void) updateInventory;
 - (void) updateGeneralImages;
 - (void) updateTripsInventory;

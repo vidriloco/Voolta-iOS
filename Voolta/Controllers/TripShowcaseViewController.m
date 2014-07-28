@@ -204,6 +204,13 @@
     [self reloadTripsOnCarousel];
 }
 
+- (void) reloadMainView
+{
+    [[OperationHelpers operationQueue] cancelAllOperations];
+    
+    [BaseViewController reloadAndPresentViewController];
+}
+
 #pragma mark -
 #pragma mark iCarousel methods
 
