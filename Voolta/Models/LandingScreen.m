@@ -20,9 +20,10 @@
     self = [super init];
     if (self) {
         _users = [NSMutableArray arrayWithObjects:
+                  @{@"bg": @"colores.png", @"name": @"Aarón Borras", @"tw": @"@avientensetodos", @"pic" : @"aaron.png" },
                   @{@"bg": @"main-background.jpg", @"name": @"Aarón Borras", @"tw": @"@avientensetodos", @"pic" : @"aaron.png" },
                   @{@"bg": @"other-background.jpg", @"name": @"Melanie Mechelen", @"tw": @"@mechelenma", @"pic" : @"melanie.jpg" },
-                  @{@"bg": @"bike-bg.jpg", @"name": @"Joseph Args", @"tw": @"@joseargs", @"pic" : @"joseph.png" },
+                  @{@"bg": @"caminarla.png", @"name": @"Joseph Args", @"tw": @"@joseargs", @"pic" : @"joseph.png" },
                   @{@"bg": @"another-background.jpg", @"name": @"Bici Verde", @"tw": @"@verdecito", @"pic" : @"greenie.png" }, nil];
     }
     return self;

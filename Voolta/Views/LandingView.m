@@ -26,6 +26,8 @@
 - (void) stylizeView
 {
     [self.legendLabel setFont:[LookAndFeel defaultFontLightWithSize:16]];
+    [self.legendLabel.layer setShadowOffset:CGSizeMake(1, 1)];
+    [self.legendLabel.layer setShadowOpacity:0.8];
     [self.nextIconButton setHidden:YES];
     [self.infoIconButton setHidden:NO];
     [self.creditsButton setHidden:YES];

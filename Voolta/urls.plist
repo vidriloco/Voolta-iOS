@@ -4,6 +4,8 @@
 <dict>
 	<key>inventory</key>
 	<dict>
+		<key>trips-light</key>
+		<string>/api/inventory/light/trips.json</string>
 		<key>trashes</key>
 		<string>/api/inventory/trashes.json</string>
 		<key>images</key>

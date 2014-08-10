@@ -9,6 +9,7 @@
 
 static NSDictionary* urls;
 static int environment;
+static int mode;
 
 @implementation App
 
@@ -83,8 +84,9 @@ static int environment;
 /*
  *  Initializes application with environment
  */
-+ (void) initializeWithEnv:(int)env {
++ (void) initializeAppMode:(int)mode_ withEnv:(int)env {
     environment = env;
+    mode = mode_;
 }
 
 + (UIImage*)takeScreenshot:(CALayer*)layer
@@ -129,6 +131,11 @@ static int environment;
 {
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"shown-how-to"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (BOOL) isLiteModeEnabled
+{
+    return mode == kLiteMode;
 }
 
 @end

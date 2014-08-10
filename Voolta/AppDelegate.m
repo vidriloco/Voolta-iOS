@@ -28,7 +28,8 @@
     
     [[Mixpanel sharedInstance] identify:[App currentUID]];
     [GMSServices provideAPIKey:@"AIzaSyDMKDw8oVSqOMBMat2P4O2_g1OqZzYbl9Q"];
-    [App initializeWithEnv:kDev];
+    [App initializeAppMode:kProMode withEnv:kProd];
+    
     [ActiveRecord registerDatabaseName:@"hirooDB" useDirectory:ARStorageDocuments];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

@@ -52,10 +52,16 @@ static DataStore *instance;
 {
     self = [super init];
     if (self) {
-        self.tripsInventoryURL = [App urlForResource:@"inventory" withSubresource:@"trips"];
         self.imagesInventoryURL = [App urlForResource:@"inventory" withSubresource:@"images"];
         self.trashesInventoryURL = [App urlForResource:@"inventory" withSubresource:@"trashes"];
         self.tripURL = [App urlForResource:@"trips" withSubresource:@"show"];
+        
+        if ([App isLiteModeEnabled]) {
+            self.tripsInventoryURL = [App urlForResource:@"inventory" withSubresource:@"trips-light"];
+        } else {
+            self.tripsInventoryURL = [App urlForResource:@"inventory" withSubresource:@"trips"];
+        }
+        
         self.parser = [[SBJsonParser alloc] init];
         self.delegate = delegate;
         [self boot];

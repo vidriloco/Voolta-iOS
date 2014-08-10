@@ -35,8 +35,6 @@
 		3A28A6C61940C2F000DBEDF7 /* aaron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5CB1940C2F000DBEDF7 /* aaron@2x.png */; };
 		3A28A6C71940C2F000DBEDF7 /* another-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5CC1940C2F000DBEDF7 /* another-background.jpg */; };
 		3A28A6C81940C2F000DBEDF7 /* another-background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5CD1940C2F000DBEDF7 /* another-background@2x.jpg */; };
-		3A28A6C91940C2F000DBEDF7 /* bike-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5CE1940C2F000DBEDF7 /* bike-bg.jpg */; };
-		3A28A6CA1940C2F000DBEDF7 /* bike-bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5CF1940C2F000DBEDF7 /* bike-bg@2x.jpg */; };
 		3A28A6CB1940C2F000DBEDF7 /* greenie.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5D01940C2F000DBEDF7 /* greenie.png */; };
 		3A28A6CC1940C2F000DBEDF7 /* greenie@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5D11940C2F000DBEDF7 /* greenie@2x.png */; };
 		3A28A6CD1940C2F000DBEDF7 /* joseph.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5D21940C2F000DBEDF7 /* joseph.png */; };
@@ -171,6 +169,12 @@
 		3A28A74E1940C2F000DBEDF7 /* TripCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A6A41940C2F000DBEDF7 /* TripCardView.xib */; };
 		3A28A74F1940C2F000DBEDF7 /* TripKeyDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A28A6A61940C2F000DBEDF7 /* TripKeyDetailsView.m */; };
 		3A28A7501940C2F000DBEDF7 /* TripKeyDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A6A71940C2F000DBEDF7 /* TripKeyDetailsView.xib */; };
+		3A2FBC0F1998360800DDDC37 /* caminarla.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2FBC0D1998360800DDDC37 /* caminarla.png */; };
+		3A2FBC101998360800DDDC37 /* caminarla@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2FBC0E1998360800DDDC37 /* caminarla@2x.png */; };
+		3A2FBC151998369500DDDC37 /* caminarla.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2FBC111998369500DDDC37 /* caminarla.png */; };
+		3A2FBC161998369500DDDC37 /* caminarla@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2FBC121998369500DDDC37 /* caminarla@2x.png */; };
+		3A2FBC171998369500DDDC37 /* colores.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2FBC131998369500DDDC37 /* colores.png */; };
+		3A2FBC181998369500DDDC37 /* colores@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2FBC141998369500DDDC37 /* colores@2x.png */; };
 		3A471F4A1925B56000E25598 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A471F491925B56000E25598 /* libsqlite3.dylib */; };
 		3A57E58A1942113F00AD9F25 /* small-pleck.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A57E5881942113F00AD9F25 /* small-pleck.png */; };
 		3A57E58B1942113F00AD9F25 /* small-pleck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A57E5891942113F00AD9F25 /* small-pleck@2x.png */; };
@@ -240,8 +244,6 @@
 		3A28A5CB1940C2F000DBEDF7 /* aaron@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aaron@2x.png"; sourceTree = "<group>"; };
 		3A28A5CC1940C2F000DBEDF7 /* another-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "another-background.jpg"; sourceTree = "<group>"; };
 		3A28A5CD1940C2F000DBEDF7 /* another-background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "another-background@2x.jpg"; sourceTree = "<group>"; };
-		3A28A5CE1940C2F000DBEDF7 /* bike-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bike-bg.jpg"; sourceTree = "<group>"; };
-		3A28A5CF1940C2F000DBEDF7 /* bike-bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bike-bg@2x.jpg"; sourceTree = "<group>"; };
 		3A28A5D01940C2F000DBEDF7 /* greenie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenie.png; sourceTree = "<group>"; };
 		3A28A5D11940C2F000DBEDF7 /* greenie@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenie@2x.png"; sourceTree = "<group>"; };
 		3A28A5D21940C2F000DBEDF7 /* joseph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joseph.png; sourceTree = "<group>"; };
@@ -436,6 +438,12 @@
 		3A28A6A71940C2F000DBEDF7 /* TripKeyDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TripKeyDetailsView.xib; sourceTree = "<group>"; };
 		3A28A6A81940C2F000DBEDF7 /* Voolta-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Voolta-Info.plist"; sourceTree = "<group>"; };
 		3A28A6A91940C2F000DBEDF7 /* Voolta-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Voolta-Prefix.pch"; sourceTree = "<group>"; };
+		3A2FBC0D1998360800DDDC37 /* caminarla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caminarla.png; sourceTree = "<group>"; };
+		3A2FBC0E1998360800DDDC37 /* caminarla@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "caminarla@2x.png"; sourceTree = "<group>"; };
+		3A2FBC111998369500DDDC37 /* caminarla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caminarla.png; sourceTree = "<group>"; };
+		3A2FBC121998369500DDDC37 /* caminarla@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "caminarla@2x.png"; sourceTree = "<group>"; };
+		3A2FBC131998369500DDDC37 /* colores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colores.png; sourceTree = "<group>"; };
+		3A2FBC141998369500DDDC37 /* colores@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "colores@2x.png"; sourceTree = "<group>"; };
 		3A471F491925B56000E25598 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		3A57E5881942113F00AD9F25 /* small-pleck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-pleck.png"; sourceTree = "<group>"; };
 		3A57E5891942113F00AD9F25 /* small-pleck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-pleck@2x.png"; sourceTree = "<group>"; };
@@ -597,12 +605,16 @@
 		3A28A5C91940C2F000DBEDF7 /* portadas */ = {
 			isa = PBXGroup;
 			children = (
+				3A2FBC111998369500DDDC37 /* caminarla.png */,
+				3A2FBC121998369500DDDC37 /* caminarla@2x.png */,
+				3A2FBC131998369500DDDC37 /* colores.png */,
+				3A2FBC141998369500DDDC37 /* colores@2x.png */,
+				3A2FBC0D1998360800DDDC37 /* caminarla.png */,
+				3A2FBC0E1998360800DDDC37 /* caminarla@2x.png */,
 				3A28A5CA1940C2F000DBEDF7 /* aaron.png */,
 				3A28A5CB1940C2F000DBEDF7 /* aaron@2x.png */,
 				3A28A5CC1940C2F000DBEDF7 /* another-background.jpg */,
 				3A28A5CD1940C2F000DBEDF7 /* another-background@2x.jpg */,
-				3A28A5CE1940C2F000DBEDF7 /* bike-bg.jpg */,
-				3A28A5CF1940C2F000DBEDF7 /* bike-bg@2x.jpg */,
 				3A28A5D01940C2F000DBEDF7 /* greenie.png */,
 				3A28A5D11940C2F000DBEDF7 /* greenie@2x.png */,
 				3A28A5D21940C2F000DBEDF7 /* joseph.png */,
@@ -1108,6 +1120,7 @@
 				3A28A6D51940C2F000DBEDF7 /* app-icon.png in Resources */,
 				3A28A6B11940C2F000DBEDF7 /* OpenSans-Bold.ttf in Resources */,
 				3A28A6FF1940C2F000DBEDF7 /* final_flag-marker.png in Resources */,
+				3A2FBC161998369500DDDC37 /* caminarla@2x.png in Resources */,
 				3A28A6D91940C2F000DBEDF7 /* spotlight-icon@2x.png in Resources */,
 				3A28A6E81940C2F000DBEDF7 /* flag-start-icon.png in Resources */,
 				3A28A6B61940C2F000DBEDF7 /* OpenSans-Light.ttf in Resources */,
@@ -1133,6 +1146,7 @@
 				3A57E58A1942113F00AD9F25 /* small-pleck.png in Resources */,
 				3A28A6D61940C2F000DBEDF7 /* app-icon@2x.png in Resources */,
 				3A28A73C1940C2F000DBEDF7 /* LegendElementView.xib in Resources */,
+				3A2FBC171998369500DDDC37 /* colores.png in Resources */,
 				3A28A6DC1940C2F000DBEDF7 /* beta-ribbon.png in Resources */,
 				3A28A6F71940C2F000DBEDF7 /* next_icon.png in Resources */,
 				3A28A6E01940C2F000DBEDF7 /* compass-3d-icon.png in Resources */,
@@ -1142,9 +1156,12 @@
 				3A28A6E31940C2F000DBEDF7 /* compass-disabled-icon@2x.png in Resources */,
 				3A28A6EF1940C2F000DBEDF7 /* logo-map.png in Resources */,
 				3A28A6C71940C2F000DBEDF7 /* another-background.jpg in Resources */,
+				3A2FBC151998369500DDDC37 /* caminarla.png in Resources */,
 				3A28A6B01940C2F000DBEDF7 /* html_view.html in Resources */,
+				3A2FBC101998360800DDDC37 /* caminarla@2x.png in Resources */,
 				3A28A6CB1940C2F000DBEDF7 /* greenie.png in Resources */,
 				3A28A6F11940C2F000DBEDF7 /* main-logo.png in Resources */,
+				3A2FBC0F1998360800DDDC37 /* caminarla.png in Resources */,
 				3A28A6D81940C2F000DBEDF7 /* spotlight-icon.png in Resources */,
 				3A28A6C81940C2F000DBEDF7 /* another-background@2x.jpg in Resources */,
 				3A28A6DD1940C2F000DBEDF7 /* beta-ribbon@2x.png in Resources */,
@@ -1160,7 +1177,6 @@
 				3A28A6F21940C2F000DBEDF7 /* main-logo@2x.png in Resources */,
 				3A28A7411940C2F000DBEDF7 /* MiniPOIDetailsView.xib in Resources */,
 				3A28A7461940C2F000DBEDF7 /* POIOnCardView.xib in Resources */,
-				3A28A6C91940C2F000DBEDF7 /* bike-bg.jpg in Resources */,
 				3A28A7081940C2F000DBEDF7 /* pronto-ribbon@2x.png in Resources */,
 				3A28A6D11940C2F000DBEDF7 /* melanie.jpg in Resources */,
 				3A28A6E91940C2F000DBEDF7 /* flag-start-icon@2x.png in Resources */,
@@ -1187,7 +1203,7 @@
 				3A28A6B81940C2F000DBEDF7 /* OpenSans-Regular.ttf in Resources */,
 				3A28A6EB1940C2F000DBEDF7 /* hoop-mini.png_1 in Resources */,
 				3A28A6B31940C2F000DBEDF7 /* OpenSans-ExtraBold.ttf in Resources */,
-				3A28A6CA1940C2F000DBEDF7 /* bike-bg@2x.jpg in Resources */,
+				3A2FBC181998369500DDDC37 /* colores@2x.png in Resources */,
 				3A28A6CD1940C2F000DBEDF7 /* joseph.png in Resources */,
 				3A28A6C11940C2F000DBEDF7 /* info-page-three.png in Resources */,
 				3A28A6FB1940C2F000DBEDF7 /* pin-icon.png in Resources */,

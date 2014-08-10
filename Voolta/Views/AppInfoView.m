@@ -57,20 +57,31 @@
     [infoPageOneLabel setBackgroundColor:[UIColor clearColor]];
 
     if (index == 4) {
+        
+        float buttonHeight = 40;
+        float buttonWidth = 160;
+        self.finishButton = [[UIButton alloc] initWithFrame:CGRectMake(infoPageOne.frame.size.width/2-buttonWidth/2, infoPageOne.frame.size.height/2, buttonWidth, buttonHeight)];
+        
+        [self.finishButton setBackgroundColor:[[UIColor colorWithHexString:@"0d83de"] colorWithAlphaComponent:0.8]];
+        [self.finishButton setAlpha:0.9];
+        [self.finishButton.layer setCornerRadius:5];
+        [self.finishButton setTitle:NSLocalizedString(@"start", nil) forState:UIControlStateNormal];
+        [[self.finishButton titleLabel] setFont:[LookAndFeel defaultFontBookWithSize:15]];
+        [self.finishButton.layer setShadowRadius:0.5];
+        [self.finishButton.layer setShadowOffset:CGSizeMake(1, 1)];
+        [self.finishButton.layer setShadowOpacity:0.5];
+        [self.finishButton.layer setShadowColor:[UIColor blackColor].CGColor];
+        [self.finishButton.layer setBorderWidth:0.4];
+        [self.finishButton.layer setBorderColor:[[UIColor whiteColor] colorWithAlphaComponent:0.7].CGColor];
+        
         [infoPageOneLabel setFrame:CGRectMake(40, yPosition, self.container.frame.size.width-80, 70)];
-        [infoPageOneLabel setFont:[LookAndFeel defaultFontBookWithSize:20]];
+        [infoPageOneLabel setFont:[LookAndFeel defaultFontBookWithSize:17]];
 
-        
-        UIImage *imageNamed = [UIImage imageNamed:@"hoop-mini.png"];
-        
-        UIButton *startButton = [[UIButton alloc] initWithFrame:CGRectMake(kInfoViewWidth/2-45, kInfoViewHeight/2-15, 90, 90)];
-        [startButton setBackgroundImage:imageNamed forState:UIControlStateNormal];
-        
-        [startButton addTarget:self action:@selector(hide) forControlEvents:UIControlEventTouchUpInside];
-        [infoPageOne addSubview:startButton];
+        [self.finishButton addTarget:self action:@selector(hide) forControlEvents:UIControlEventTouchUpInside];
         [infoPageOne setUserInteractionEnabled:YES];
+        [infoPageOne addSubview:self.finishButton];
     } else {
-        [infoPageOneLabel setFont:[LookAndFeel defaultFontBoldWithSize:16]];
+        [infoPageOneLabel setFont:[LookAndFeel defaultFontBookWithSize:16]];
     }
     [infoPageOneLabel setTextAlignment:NSTextAlignmentCenter];
     [infoPageOneLabel setMinimumScaleFactor:0.5];
@@ -165,6 +176,24 @@
         [self setBackgroundColor:[self.backgroundColor colorWithAlphaComponent:0.5]];
     } else {
         [self setBackgroundColor:[self.backgroundColor colorWithAlphaComponent:0.4]];
+    }
+    
+    if (_pageControl.currentPage == 4) {
+        [UIView animateWithDuration:0.5 animations:^{
+            [[self pageControl] setAlpha:0];
+            [self.finishButton setAlpha:1];
+        } completion:^(BOOL finished) {
+            [[self pageControl] setHidden:YES];
+            [self.finishButton setHidden:NO];
+        }];
+    } else {
+        [UIView animateWithDuration:0.5 animations:^{
+            [[self pageControl] setHidden:NO];
+            [[self pageControl] setAlpha:1];
+            [self.finishButton setHidden:YES];
+            [self.finishButton setAlpha:0];
+        } completion:^(BOOL finished) {
+        }];
     }
 }
 

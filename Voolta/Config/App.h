@@ -12,8 +12,14 @@
 #import "Reachability.h"
 
 #define kURLsFile   @"urls.plist"
+
+// Environments for the app
 #define kDev        0
 #define kProd       1
+
+// Modes for lite and pro versions of the app
+#define kLiteMode   10
+#define kProMode    20
 
 
 #define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
@@ -23,7 +29,7 @@
 
 @interface App : NSObject
 
-+ (void) initializeWithEnv:(int)env;
++ (void) initializeAppMode:(int)mode withEnv:(int)env;
 + (CGRect) viewBounds;
 + (CLLocationCoordinate2D) mexicoCityCoordinates;
 
@@ -43,4 +49,5 @@
 
 + (BOOL) hasShownHowTo;
 + (void) markHowToAsShown;
++ (BOOL) isLiteModeEnabled;
 @end

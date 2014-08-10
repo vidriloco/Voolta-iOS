@@ -19,6 +19,8 @@
 @property (nonatomic, strong) UIView *container;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
+@property (nonatomic, strong) UIButton *finishButton;
+
 
 - (id) initSimple;
 - (void) buildViewContents;

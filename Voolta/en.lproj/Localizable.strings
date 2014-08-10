@@ -1,5 +1,7 @@
 "app_tag_line" = "The best cycling guide for discovering the city.";
 
+"start" = "See the trips";
+
 "route_start" = "Final";
 "route_end" = "Start";
 
@@ -13,7 +15,7 @@
 "info-page-two" = "Always a new route, just choose the one you feel more attracted to.";
 "info-page-three" = "We include a brief review on what you will find on each route.";
 "info-page-four" = "Locate points of interest and tips along the route.";
-"info-page-five" = "Where will you ride today?";
+"info-page-five" = "Now you know how Voolta works";
 
 "landing_credits_title" = "Photo by:";
 
