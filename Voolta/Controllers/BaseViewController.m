@@ -45,9 +45,9 @@ static BaseViewController *localInstance;
         [DataStore initializeStoreWithDelegate:_showcaseViewController];
     } else {
         [[DataStore current] setDelegate:_showcaseViewController];
-        [[DataStore current] boot];
     }
-    
+    [[DataStore current] boot];
+
     [self presentViewController:_showcaseViewController animated:NO completion:nil];
 }
 

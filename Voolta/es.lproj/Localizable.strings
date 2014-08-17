@@ -10,6 +10,10 @@
 "reload_accept" = "Continuar";
 "reload_reject" = "Cancelar";
 
+"cannot_reload_message" = "Lo sentimos, tu teléfono debe estar conectado a internet para restaurar los recorridos";
+"cannot_reload_accept" = "Aceptar";
+
+
 // Intro
 "info-page-one" = "La guía con los mejores recorridos para conocer la ciudad.";
 "info-page-two" = "Siempre hay un nuevo recorrido, selecciona el que más te guste.";

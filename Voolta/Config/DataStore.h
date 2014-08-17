@@ -24,6 +24,7 @@
 
 + (id) initializeStoreWithDelegate:(id<DataStoreDelegate>) delegate;
 + (DataStore*) current;
++ (NSArray*) storedTrips;
 
 - (id) initWithDelegate:(id<DataStoreDelegate>) delegate;
 - (void) boot;

@@ -139,18 +139,17 @@
 - (void) reloadTripsOnCarousel
 {
     NSMutableArray *array = [NSMutableArray arrayWithObject:_landingScreen];
-    
-    NSArray *sortedArray = [[DataStore current].trips sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+
+    NSArray *sortedArray = [[DataStore storedTrips] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         return [[obj1 updatedAt] timeIntervalSince1970] < [[obj2 updatedAt] timeIntervalSince1970];
     }];
-    
+        
     [array addObjectsFromArray:sortedArray];
     
     _slides = array;
     
     NSArray *inventoryList = [[[TripOnInventory lazyFetcher] whereField:@"lang" equalToValue:[App currentLang]] fetchRecords];
     _finishedLoading = [inventoryList count] == [_slides count]-1;
-
     [self.carousel reloadData];
 }
 
@@ -370,12 +369,22 @@
 
 - (void) presentReloadDialog
 {
-    UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"reload_title", nil)
-                                                     message:NSLocalizedString(@"reload_message", nil)
-                                                    delegate:self
-                                           cancelButtonTitle:NSLocalizedString(@"reload_reject", nil)
-                                           otherButtonTitles:NSLocalizedString(@"reload_accept", nil), nil];
-    [dialog show];
+    if ([App isNetworkReachable]) {
+        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"reload_title", nil)
+                                                         message:NSLocalizedString(@"reload_message", nil)
+                                                        delegate:self
+                                               cancelButtonTitle:NSLocalizedString(@"reload_reject", nil)
+                                               otherButtonTitles:NSLocalizedString(@"reload_accept", nil), nil];
+        [dialog show];
+    } else {
+        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"reload_title", nil)
+                                                         message:NSLocalizedString(@"cannot_reload_message", nil)
+                                                        delegate:nil
+                                               cancelButtonTitle:NSLocalizedString(@"cannot_reload_accept", nil)
+                                               otherButtonTitles:nil];
+        [dialog show];
+    }
+
 }
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

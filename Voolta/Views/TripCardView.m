@@ -16,15 +16,6 @@
 
 @implementation TripCardView
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-    }
-    return self;
-}
-
-
 - (void) stylize {
     self.visibleCardIndex = 0;
     

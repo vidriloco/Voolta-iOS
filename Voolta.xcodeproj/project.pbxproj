@@ -186,6 +186,7 @@
 		3A91C17F18DE8BC000E30CBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A91C15F18DE8BC000E30CBF /* Foundation.framework */; };
 		3A91C18018DE8BC000E30CBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A91C16318DE8BC000E30CBF /* UIKit.framework */; };
 		3A91C18118DE8BC000E30CBF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A91C16518DE8BC000E30CBF /* CoreData.framework */; };
+		3A97E70619A103C7008BC40B /* chinese-culture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A97E70519A103C7008BC40B /* chinese-culture@2x.png */; };
 		3A9D7F4518E0277600174C19 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9D7F4418E0277600174C19 /* AVFoundation.framework */; };
 		3A9D7F4718E0277F00174C19 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9D7F4618E0277F00174C19 /* CoreLocation.framework */; };
 		3A9D7F4918E0278800174C19 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9D7F4818E0278800174C19 /* CoreText.framework */; };
@@ -454,6 +455,7 @@
 		3A91C16518DE8BC000E30CBF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3A91C17C18DE8BC000E30CBF /* VooltaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VooltaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A91C17D18DE8BC000E30CBF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3A97E70519A103C7008BC40B /* chinese-culture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "chinese-culture@2x.png"; path = "../../../../../Downloads/chinese-culture@2x.png"; sourceTree = "<group>"; };
 		3A9D7F4418E0277600174C19 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3A9D7F4618E0277F00174C19 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3A9D7F4818E0278800174C19 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -578,6 +580,7 @@
 		3A28A5BD1940C2F000DBEDF7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3A97E70519A103C7008BC40B /* chinese-culture@2x.png */,
 				3A28A5BE1940C2F000DBEDF7 /* info-window */,
 				3A28A5C91940C2F000DBEDF7 /* portadas */,
 				3A28A5DA1940C2F000DBEDF7 /* ui */,
@@ -1169,6 +1172,7 @@
 				3A28A6B71940C2F000DBEDF7 /* OpenSans-LightItalic.ttf in Resources */,
 				3A28A6FD1940C2F000DBEDF7 /* sprocket-icon.png in Resources */,
 				3A28A6E11940C2F000DBEDF7 /* compass-3d-icon@2x.png in Resources */,
+				3A97E70619A103C7008BC40B /* chinese-culture@2x.png in Resources */,
 				3A28A7061940C2F000DBEDF7 /* nuevo-ribbon@2x.png in Resources */,
 				3A28A6F61940C2F000DBEDF7 /* my-location@2x.png in Resources */,
 				3A28A6F01940C2F000DBEDF7 /* logo-map@2x.png in Resources */,

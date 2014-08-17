@@ -48,6 +48,11 @@ static DataStore *instance;
     return instance;
 }
 
++ (NSArray*) storedTrips
+{
+    return [instance trips];
+}
+
 - (id) initWithDelegate:(id<DataStoreDelegate>)delegate
 {
     self = [super init];
@@ -64,7 +69,6 @@ static DataStore *instance;
         
         self.parser = [[SBJsonParser alloc] init];
         self.delegate = delegate;
-        [self boot];
     }
     return self;
 }
@@ -122,11 +126,12 @@ static DataStore *instance;
 
 - (void) checkUpdateStatusForImage:(NSDictionary *)dictionary
 {
-
+    // Query for the image on local db having @remoteId
     NSArray *fetched = [[[ImageOnInventory lazyFetcher] whereField:@"remoteId" equalToValue:[dictionary objectForKey:@"id"]] fetchRecords];
     ImageOnInventory *inventoredImg;
     BOOL newRecord = NO;
 
+    // If found, fetch it, otherwise generate a new one with @dictionary params
     if ([fetched count] > 0) {
         inventoredImg = [fetched objectAtIndex:0];
     } else {
@@ -134,12 +139,14 @@ static DataStore *instance;
         newRecord = YES;
     }
     
+    // Mark the image as still current on the backend server
     if ([[inventoredImg url] isEqualToString:[dictionary objectForKey:@"url"]]) {
         [inventoredImg setLastSeenAlive:[NSDate new]];
     }
 
     [inventoredImg save];
     
+    // Whether the image should update or not based on the @updated_at date string or if new
     if ([inventoredImg shouldUpdateBasedOnDateString:[dictionary objectForKey:@"updated_at"]] || newRecord) {
         NSString *filename = [inventoredImg.url componentsSeparatedByString:@"/"].lastObject;
         [OperationHelpers fetchImage:inventoredImg.url withResponseBlock:^(UIImage *image) {
@@ -235,7 +242,6 @@ static DataStore *instance;
                 [tripOnInventory update];
                 [self processTripPayload:data];
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                //NSLog([NSString stringWithFormat:@"%d", [operation.response statusCode]]);
                 if ([operation.response statusCode] == 404) {
                     [OperationHelpers removeFilesForTripWithResourceId:[tripOnInventory resourceId]];
                     [tripOnInventory dropRecord];
@@ -283,13 +289,14 @@ static DataStore *instance;
     Trip *trip = [Trip initWithJsonDictionary:object];
     [_trips addObject:trip];
     
-    [_delegate finishedFetchingTrip];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [_delegate finishedFetchingTrip];
+    }];
 }
 
 - (void) loadLocallyStoredTrips
 {
     NSArray *inventoryList = [[[TripOnInventory lazyFetcher] whereField:@"lang" equalToValue:[App currentLang]] fetchRecords];
-    
     for (TripOnInventory *tripOnInventory in inventoryList) {
         [_delegate startedLoadingTrip];
         [self reconstructTripFromData:[tripOnInventory tripData]];

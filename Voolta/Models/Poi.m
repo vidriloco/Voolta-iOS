@@ -43,21 +43,11 @@
     
     UIImage *imageMarker = [UIImage imageWithContentsOfFile:[OperationHelpers filePathForImage:[kind objectForKey:@"filename"]]];
     
-    if ([poi isMiniUIBased]) {
-        [[OperationHelpers operationQueue] addOperationWithBlock:^{
-            UIImage *icon = [OperationHelpers imageWithImage:imageMarker scaledToSize:CGSizeMake(33, 33)];
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                poi.icon = icon;
-            }];
-        }];
-    } else {
-        [[OperationHelpers operationQueue] addOperationWithBlock:^{
-            UIImage *icon = [OperationHelpers imageWithImage:imageMarker scaledToSize:CGSizeMake(40, 40)];
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                poi.icon = icon;
-            }];
-        }];
-    }
+    CGSize size = [poi isMiniUIBased] ? CGSizeMake(33, 33) : CGSizeMake(40, 40);
+    
+    [[OperationHelpers operationQueue] addOperationWithBlock:^{
+        poi.icon = [OperationHelpers imageWithImage:imageMarker scaledToSize:size];
+    }];
     
     if (![poi isMiniUIBased]) {
         NSString *url = [[dictionary objectForKey:@"image"] objectForKey:@"url"];
