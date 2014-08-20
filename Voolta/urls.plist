@@ -4,6 +4,8 @@
 <dict>
 	<key>inventory</key>
 	<dict>
+		<key>trips-staging</key>
+		<string>/api/inventory/staging/trips.json</string>
 		<key>trips-light</key>
 		<string>/api/inventory/light/trips.json</string>
 		<key>trashes</key>
@@ -19,7 +21,7 @@
 		<string>/api/trips/&lt;id&gt;.json</string>
 	</dict>
 	<key>backendURLDev</key>
-	<string>http://192.168.0.107:3000</string>
+	<string>http://10.0.0.4:3000</string>
 	<key>backendURL</key>
 	<string>http://voolta.co</string>
 </dict>

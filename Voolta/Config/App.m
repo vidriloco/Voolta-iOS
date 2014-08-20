@@ -138,4 +138,9 @@ static int mode;
     return mode == kLiteMode;
 }
 
++ (BOOL) isStagingModeEnabled
+{
+    return mode == kStagingMode;
+}
+
 @end

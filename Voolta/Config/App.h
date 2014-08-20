@@ -18,8 +18,10 @@
 #define kProd       1
 
 // Modes for lite and pro versions of the app
-#define kLiteMode   10
-#define kProMode    20
+#define kLiteMode       10
+#define kProMode        20
+
+#define kStagingMode    30
 
 
 #define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
@@ -50,4 +52,6 @@
 + (BOOL) hasShownHowTo;
 + (void) markHowToAsShown;
 + (BOOL) isLiteModeEnabled;
++ (BOOL) isStagingModeEnabled;
+
 @end

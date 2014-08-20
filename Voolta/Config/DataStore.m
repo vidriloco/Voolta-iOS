@@ -63,6 +63,8 @@ static DataStore *instance;
         
         if ([App isLiteModeEnabled]) {
             self.tripsInventoryURL = [App urlForResource:@"inventory" withSubresource:@"trips-light"];
+        } else if([App isStagingModeEnabled]) {
+            self.tripsInventoryURL = [App urlForResource:@"inventory" withSubresource:@"trips-staging"];
         } else {
             self.tripsInventoryURL = [App urlForResource:@"inventory" withSubresource:@"trips"];
         }
