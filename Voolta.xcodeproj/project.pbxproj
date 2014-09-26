@@ -47,9 +47,6 @@
 		3A28A6D41940C2F000DBEDF7 /* other-background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5D91940C2F000DBEDF7 /* other-background@2x.jpg */; };
 		3A28A6D51940C2F000DBEDF7 /* app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5DC1940C2F000DBEDF7 /* app-icon.png */; };
 		3A28A6D61940C2F000DBEDF7 /* app-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5DD1940C2F000DBEDF7 /* app-icon@2x.png */; };
-		3A28A6D71940C2F000DBEDF7 /* spotlight-icon-min@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5DE1940C2F000DBEDF7 /* spotlight-icon-min@2x.png */; };
-		3A28A6D81940C2F000DBEDF7 /* spotlight-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5DF1940C2F000DBEDF7 /* spotlight-icon.png */; };
-		3A28A6D91940C2F000DBEDF7 /* spotlight-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5E01940C2F000DBEDF7 /* spotlight-icon@2x.png */; };
 		3A28A6DA1940C2F000DBEDF7 /* arrow-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5E21940C2F000DBEDF7 /* arrow-up.png */; };
 		3A28A6DB1940C2F000DBEDF7 /* arrow-up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5E31940C2F000DBEDF7 /* arrow-up@2x.png */; };
 		3A28A6DC1940C2F000DBEDF7 /* beta-ribbon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A28A5E41940C2F000DBEDF7 /* beta-ribbon.png */; };
@@ -257,9 +254,6 @@
 		3A28A5D91940C2F000DBEDF7 /* other-background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "other-background@2x.jpg"; sourceTree = "<group>"; };
 		3A28A5DC1940C2F000DBEDF7 /* app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon.png"; sourceTree = "<group>"; };
 		3A28A5DD1940C2F000DBEDF7 /* app-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon@2x.png"; sourceTree = "<group>"; };
-		3A28A5DE1940C2F000DBEDF7 /* spotlight-icon-min@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spotlight-icon-min@2x.png"; sourceTree = "<group>"; };
-		3A28A5DF1940C2F000DBEDF7 /* spotlight-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spotlight-icon.png"; sourceTree = "<group>"; };
-		3A28A5E01940C2F000DBEDF7 /* spotlight-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spotlight-icon@2x.png"; sourceTree = "<group>"; };
 		3A28A5E21940C2F000DBEDF7 /* arrow-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-up.png"; sourceTree = "<group>"; };
 		3A28A5E31940C2F000DBEDF7 /* arrow-up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-up@2x.png"; sourceTree = "<group>"; };
 		3A28A5E41940C2F000DBEDF7 /* beta-ribbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beta-ribbon.png"; sourceTree = "<group>"; };
@@ -648,9 +642,6 @@
 			children = (
 				3A28A5DC1940C2F000DBEDF7 /* app-icon.png */,
 				3A28A5DD1940C2F000DBEDF7 /* app-icon@2x.png */,
-				3A28A5DE1940C2F000DBEDF7 /* spotlight-icon-min@2x.png */,
-				3A28A5DF1940C2F000DBEDF7 /* spotlight-icon.png */,
-				3A28A5E01940C2F000DBEDF7 /* spotlight-icon@2x.png */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -1124,7 +1115,6 @@
 				3A28A6B11940C2F000DBEDF7 /* OpenSans-Bold.ttf in Resources */,
 				3A28A6FF1940C2F000DBEDF7 /* final_flag-marker.png in Resources */,
 				3A2FBC161998369500DDDC37 /* caminarla@2x.png in Resources */,
-				3A28A6D91940C2F000DBEDF7 /* spotlight-icon@2x.png in Resources */,
 				3A28A6E81940C2F000DBEDF7 /* flag-start-icon.png in Resources */,
 				3A28A6B61940C2F000DBEDF7 /* OpenSans-Light.ttf in Resources */,
 				3A28A7071940C2F000DBEDF7 /* pronto-ribbon.png in Resources */,
@@ -1165,7 +1155,6 @@
 				3A28A6CB1940C2F000DBEDF7 /* greenie.png in Resources */,
 				3A28A6F11940C2F000DBEDF7 /* main-logo.png in Resources */,
 				3A2FBC0F1998360800DDDC37 /* caminarla.png in Resources */,
-				3A28A6D81940C2F000DBEDF7 /* spotlight-icon.png in Resources */,
 				3A28A6C81940C2F000DBEDF7 /* another-background@2x.jpg in Resources */,
 				3A28A6DD1940C2F000DBEDF7 /* beta-ribbon@2x.png in Resources */,
 				3A28A6DF1940C2F000DBEDF7 /* close-icon@2x.png in Resources */,
@@ -1215,7 +1204,6 @@
 				3A28A6F91940C2F000DBEDF7 /* panflet-icon.png in Resources */,
 				3A28A6BC1940C2F000DBEDF7 /* info-page-five@2x.png in Resources */,
 				3A28A6CC1940C2F000DBEDF7 /* greenie@2x.png in Resources */,
-				3A28A6D71940C2F000DBEDF7 /* spotlight-icon-min@2x.png in Resources */,
 				3AD389821940C87C000D70D8 /* GoogleMaps.bundle in Resources */,
 				3A28A7031940C2F000DBEDF7 /* new-ribbon.png in Resources */,
 				3A28A6C21940C2F000DBEDF7 /* info-page-three@2x.png in Resources */,
