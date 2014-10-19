@@ -28,7 +28,7 @@
     
     [[Mixpanel sharedInstance] identify:[App currentUID]];
     [GMSServices provideAPIKey:@"AIzaSyDMKDw8oVSqOMBMat2P4O2_g1OqZzYbl9Q"];
-    [App initializeAppMode:kProMode withEnv:kProd];
+    [App initializeAppMode:kLiteMode withEnv:kProd];
     
     [ActiveRecord registerDatabaseName:@"hirooDB" useDirectory:ARStorageDocuments];
     

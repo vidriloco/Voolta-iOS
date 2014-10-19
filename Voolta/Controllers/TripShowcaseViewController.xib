@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" alpha="0.49999999999999961" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beta-ribbon.png" translatesAutoresizingMaskIntoConstraints="NO" id="y5y-X3-qYt">
+                        <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.49999999999999961" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beta-ribbon.png" translatesAutoresizingMaskIntoConstraints="NO" id="y5y-X3-qYt">
                             <rect key="frame" x="0.0" y="468" width="100" height="100"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <constraints>
