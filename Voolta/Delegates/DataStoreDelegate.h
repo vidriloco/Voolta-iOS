@@ -16,6 +16,7 @@
 - (void) finishedFetchingTrip;
 - (void) failedFetchingTrip;
 - (void) reloadMainView;
+- (void) finishedFetchingEmptyTrips;
 
 @optional
 - (void) imageLoadingPhaseCompleted;

@@ -21,7 +21,6 @@
 @property (nonatomic, strong) NSMutableArray *trips;
 @property (nonatomic, assign) id<DataStoreDelegate> delegate;
 
-
 + (id) initializeStoreWithDelegate:(id<DataStoreDelegate>) delegate;
 + (DataStore*) current;
 + (NSArray*) storedTrips;

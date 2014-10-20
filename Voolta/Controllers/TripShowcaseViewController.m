@@ -171,6 +171,16 @@
 
 #pragma DataDelegate methods
 
+- (void) finishedFetchingEmptyTrips
+{
+    [self finishedFetchingTrip];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"empty_trips_due_lang_title", nil)
+                               message:NSLocalizedString(@"empty_trips_due_lang_msg", nil)
+                              delegate:self
+                     cancelButtonTitle:NSLocalizedString(@"cannot_reload_accept", nil) otherButtonTitles:nil, nil];
+    [alert show];
+}
+
 - (void) finishedFetchingTrip
 {
     NSLog(@"Finished with trip");

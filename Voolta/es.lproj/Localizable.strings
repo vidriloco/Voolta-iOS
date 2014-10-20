@@ -25,3 +25,7 @@
 
 // Trip Card View
 "trip_card_title_pois" = "Algunos lugares en el recorrido";
+
+// Empty list message
+"empty_trips_due_lang_title" = "No hay recorridos disponibles";
+"empty_trips_due_lang_msg" = "Lo sentimos, pero no tenemos recorridos disponibles en tu idioma.";

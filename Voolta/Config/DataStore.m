@@ -187,6 +187,7 @@ static DataStore *instance;
     [manager setRequestSerializer:requestSerializer];
     [manager GET:_tripsInventoryURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *fetchedTrips = [_parser objectWithString:[operation responseString] error:nil];
+
         for (NSDictionary *tripDictionary in fetchedTrips) {
             [self checkUpdateStatusForTrip:tripDictionary];
         }
@@ -202,7 +203,7 @@ static DataStore *instance;
     NSString *checksum = [dictionary objectForKey:@"checksum"];
     NSString *lang = [dictionary objectForKey:@"lang"];
     NSString *resourceId = [dictionary objectForKey:@"trip_resource"];
-
+        
     if ([lang isEqualToString:[App currentLang]]) {
         NSArray *trips = [[[TripOnInventory lazyFetcher] whereField:@"remoteId" equalToValue:identifier] fetchRecords];
         
@@ -226,36 +227,39 @@ static DataStore *instance;
 - (void) updateMarkedTrips
 {
     NSArray *inventoryList = [[[TripOnInventory lazyFetcher] whereField:@"lang" equalToValue:[App currentLang]] fetchRecords];
-    
-    for (TripOnInventory *tripOnInventory in inventoryList) {
-        if ([tripOnInventory shouldUpdate]) {
-            [_delegate startedFetchingTrip];
-            [OperationHelpers removeFilesForTripWithResourceId:[tripOnInventory resourceId]];
-            NSString *finalTripURL = [_tripURL stringByReplacingOccurrencesOfString:@"<id>"
-                                                                         withString:[NSString stringWithFormat:@"%d", [[tripOnInventory remoteId] intValue]]];
-            AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-            AFHTTPRequestSerializer *requestSerializer = [AFHTTPRequestSerializer serializer];
-            [requestSerializer setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
-            [manager setRequestSerializer:requestSerializer];
-            [manager GET:finalTripURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                NSString *data = [operation responseString];
-                [tripOnInventory setTripData:data];
-                [tripOnInventory markAsUpdated];
-                [tripOnInventory update];
-                [self processTripPayload:data];
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                if ([operation.response statusCode] == 404) {
-                    [OperationHelpers removeFilesForTripWithResourceId:[tripOnInventory resourceId]];
-                    [tripOnInventory dropRecord];
-                } else {
-                    // SHOW RELOAD BUTTON AND MESSAGE
-                }
-                
-                [_delegate failedFetchingTrip];
-            }];
-        } else {
-            [_delegate startedLoadingTrip];
-            [self reconstructTripFromData:[tripOnInventory tripData]];
+    if ([inventoryList count] == 0) {
+        [_delegate finishedFetchingEmptyTrips];
+    } else {
+        for (TripOnInventory *tripOnInventory in inventoryList) {
+            if ([tripOnInventory shouldUpdate]) {
+                [_delegate startedFetchingTrip];
+                [OperationHelpers removeFilesForTripWithResourceId:[tripOnInventory resourceId]];
+                NSString *finalTripURL = [_tripURL stringByReplacingOccurrencesOfString:@"<id>"
+                                                                             withString:[NSString stringWithFormat:@"%d", [[tripOnInventory remoteId] intValue]]];
+                AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+                AFHTTPRequestSerializer *requestSerializer = [AFHTTPRequestSerializer serializer];
+                [requestSerializer setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
+                [manager setRequestSerializer:requestSerializer];
+                [manager GET:finalTripURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    NSString *data = [operation responseString];
+                    [tripOnInventory setTripData:data];
+                    [tripOnInventory markAsUpdated];
+                    [tripOnInventory update];
+                    [self processTripPayload:data];
+                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    if ([operation.response statusCode] == 404) {
+                        [OperationHelpers removeFilesForTripWithResourceId:[tripOnInventory resourceId]];
+                        [tripOnInventory dropRecord];
+                    } else {
+                        // SHOW RELOAD BUTTON AND MESSAGE
+                    }
+                    
+                    [_delegate failedFetchingTrip];
+                }];
+            } else {
+                [_delegate startedLoadingTrip];
+                [self reconstructTripFromData:[tripOnInventory tripData]];
+            }
         }
     }
 }

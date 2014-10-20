@@ -24,3 +24,7 @@
 
 // Trip Card View
 "trip_card_title_pois" = "Some spots along the trip";
+
+// Empty list message
+"empty_trips_due_lang_title" = "No trips available";
+"empty_trips_due_lang_msg" = "We are sorry, but we still don't have trips available on your language.";
